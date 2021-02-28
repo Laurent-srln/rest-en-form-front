@@ -67,3 +67,21 @@ Un Workout _possède_ 0 comment au minimum, et 1 commentaire au maximum: 01
 Un commentaire _décrit_ 1 Workout au minimum et 1 Workout au maximum: 11
 
 ## MCD ( Mocodo)
+
+Match, 11 Comment, 01 Workout
+Comment: content
+Write, 0N User, 11 Comment
+Ask, 0N User, 01 Meeting
+Meeting: date, start time, end time
+
+Workout : date, content
+Do, 0N User, 11 Workout
+User: firstname, lastname, email, password, role
+Answer, 0N User, 11 Meeting
+:
+
+Associate, 01 Workout, 11 Health-check
+Health-check: weight,muscular mass, fat mass, bone mass, water mass
+Owned by, 0N User, 0N Specialities
+Specialities:name
+:
