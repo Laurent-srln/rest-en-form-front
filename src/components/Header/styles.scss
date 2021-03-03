@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #ccc;
+  &-logo {
+    background-color: #909cd4;
+    width: 100px;
+    height: 100px;
+  }
+}

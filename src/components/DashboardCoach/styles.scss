@@ -1,0 +1,57 @@
+.dashboard {
+  width: 100%;
+  margin: 1rem auto;
+  background-color: #ccc;
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  &-next-coaching {
+    width: 300px;
+    border: 1px solid;
+    border-radius: 6px;
+    margin: 0.5rem;
+    &-title {
+      border: 1px solid;
+      width: 150px;
+    }
+  }
+  &-last-coaching {
+    width: 300px;
+    border: 1px solid;
+    border-radius: 6px;
+    margin: 0.5rem;
+    &-title {
+      border: 1px solid;
+      width: 150px;
+    }
+  }
+  &-link {
+    display: block;
+    width: 150px;
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: 1px solid;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: 0.5s;
+    &:hover {
+      color: #fff;
+      border-color:  rgb(139, 45, 45);
+      background-color: rgb(139, 45, 45);
+    }
+  }
+  &-list-info {
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid;
+  }
+  &-list-info-item {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid;
+  }
+}
