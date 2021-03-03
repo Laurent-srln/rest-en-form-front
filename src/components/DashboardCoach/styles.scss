@@ -1,32 +1,63 @@
 .dashboard {
   width: 100%;
-  margin: 1rem auto;
-  background-color: #ccc;
+  height: 100vh;
+  //margin: 2rem auto;
+  background-color: #D8E6E7;
   &-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
   }
   &-next-coaching {
-    width: 300px;
     border: 1px solid;
     border-radius: 6px;
-    margin: 0.5rem;
-    &-title {
-      border: 1px solid;
-      width: 150px;
-    }
+    padding: 1rem;
+    margin: 1rem auto;
   }
   &-last-coaching {
-    width: 300px;
     border: 1px solid;
     border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  &-next-coaching-title {
+    width: 150px;
+    max-height: 35px;
+    margin-right: auto;
+    padding: 0.5rem 0 0.5rem 0;
+    border: 1px solid none;
+    border-radius: 3px;
+    background-color: #77AAAD;
+    color: #fff;
+    position: relative;
+    bottom: 1.8rem;
+  }
+  &-next-coaching-container {
+    min-width: 300px;
+    border: 1px solid #eee;
+    border-radius: 6px;
     margin: 0.5rem;
-    &-title {
-      border: 1px solid;
-      width: 150px;
-    }
+    background-color: #9DC3C1;
+  }
+  &-last-coaching-title {
+    width: 150px;
+    max-height: 35px;
+    margin-right: auto;
+    padding: 0.5rem 0 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #77AAAD;
+    color: #fff;
+    position: relative;
+    bottom: 1.8rem;
+  }
+  &-last-coaching-container {
+    min-width: 300px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin: 0.5rem;
+    background-color: #9DC3C1;
   }
   &-link {
     display: block;
@@ -36,22 +67,23 @@
     padding: 0.5rem;
     border: 1px solid;
     border-radius: 6px;
-    background-color: #fff;
+    background-color: #eee;
     transition: 0.5s;
     &:hover {
       color: #fff;
-      border-color:  rgb(139, 45, 45);
-      background-color: rgb(139, 45, 45);
+      border-color:  #77AAAD;
+      background-color: #77AAAD;
     }
   }
   &-list-info {
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid;
+    border: 1px solid none;
   }
   &-list-info-item {
     display: flex;
     justify-content: space-evenly;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #ccc;
+    padding: 3px;
   }
 }
