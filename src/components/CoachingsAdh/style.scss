@@ -1,0 +1,46 @@
+.coachingsadh {
+  // border: 1px solid black;
+}
+
+.coachingAdh {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+
+  &__name {
+    font-weight: 600;
+    font-size: .7em;
+  }
+
+  &__datetime {
+    display: flex;
+    flex-direction: column;
+
+    .date {
+      font-weight: 700;
+      font-size: .7em;
+    }
+
+    .time {
+      font-weight: 700;
+      font-size: .7em;
+    }
+  }
+
+  &__icons {
+
+    .calendar {
+      height: 50px;
+    }
+    
+    .clock {
+     height: 50px;
+    }
+  }
+
+  &__trash {
+    width: 50px;
+  }
+}

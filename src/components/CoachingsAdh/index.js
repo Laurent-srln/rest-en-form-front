@@ -7,9 +7,11 @@ import './style.scss';
 
 // == Composant
 const CoachingsAdh = () => (
-  <div className="coachingsadh">
+  <ul className="coachingsadh">
     <CoachingAdh />
-  </div>
+    <CoachingAdh />
+    <CoachingAdh />
+  </ul>
 );
 
 // == Props Validation
