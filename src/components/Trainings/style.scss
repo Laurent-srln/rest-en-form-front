@@ -1,0 +1,114 @@
+.selectTraining {
+  text-align: left;
+  margin: 1rem;
+
+  &__label {
+    display: block;
+    margin-bottom: .5rem;
+  }
+
+  &__select {
+    color: darkslategray;
+  }
+}
+
+.trainings {
+
+  &__content {
+
+  }
+
+  &__add {
+    border-radius: 20px;
+    background-color: #245768;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    margin: 3rem 1.5rem 1.5rem 15rem;
+  }
+}
+
+.training {
+  border-radius: 30px;
+  box-shadow: 0 0 8px .2px gray;
+  margin: 2rem 1rem;
+  padding: 1rem 1.5rem;
+
+  &__icons {
+    text-align: right;
+    .bubble {
+      width: 30px;
+    }
+
+    .pencil {
+      width: 20px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    margin-bottom: 1.5rem;
+  }
+
+  &__health {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: .6em;
+    margin: 0 4rem;
+
+    .amount {
+      padding: .2rem .5rem;
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: #91E6D8;
+    box-shadow: 0 0 8px .2px gray;
+    color: #245768;
+    border-radius: 10px;
+    padding: .4rem 2rem;
+    float: right;
+  }
+}
+
+
+.coach-comment {
+  margin: .5rem 1rem;
+
+  &__meta {
+    display: flex;
+    align-items: center;
+
+    &--img {
+      width: 60px;
+      margin: 0.8rem 1rem;
+    }
+
+    &--info {
+      font-size: .8em;
+
+      .author {
+        font-weight: bold;
+      }
+
+      .date {
+        font-style: italic;
+      }
+      .time {
+        font-style: italic;
+      }
+    }
+  }
+
+  &--text {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 1rem;
+    margin: 0 2.5rem;
+
+  }
+}
