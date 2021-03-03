@@ -5,9 +5,9 @@ import React from 'react';
 import './style.scss';
 
 // == Composant
-const Training = () => (
-  <ul className="training">
-    <li className="training__item">
+const CoachingAdh = () => (
+  <ul className="coaching">
+    <li className="coaching__item">
       <div className="content">
         <img
           className="content__coachImg"
@@ -52,4 +52,4 @@ const Training = () => (
 // == Props Validation
 
 // == Export
-export default Training;
+export default CoachingAdh;
