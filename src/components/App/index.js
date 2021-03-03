@@ -2,6 +2,7 @@
 import React from 'react';
 
 // == Import
+import Login from 'src/components/Login';
 import DashboardAdh from 'src/components/DashboardAdh';
 
 import './styles.scss';
@@ -9,7 +10,8 @@ import './styles.scss';
 // == Composant
 const App = () => (
   <div className="app">
-    <DashboardAdh />
+    <Login />
+    {/* <DashboardAdh /> */}
   </div>
 );
 

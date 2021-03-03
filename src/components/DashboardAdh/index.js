@@ -17,9 +17,9 @@ const DashboardAd = () => (
         <a href="#">Voir toutes les réservations</a>
       </p>
     </div> */}
-    <div>Dernier training
+    {/* <div>Dernier training
       <Trainings />
-    </div>
+    </div> */}
     {/* <div>Suivi santé</div> */}
   </div>
 
