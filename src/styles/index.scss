@@ -1,8 +1,8 @@
 @use 'reset';
-@use 'vars';
+@use 'vars' as v;
 
 body {
-  font-family: sans-serif;
+  font-family: 'Catamaran', sans-serif;
 }
 
 /* 

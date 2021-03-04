@@ -1,10 +1,13 @@
+@use '../../styles/vars' as v;
+
 .header {
   display: flex;
   width: 100%;
-  background-color: #6E7783;
+  background-color: v.$primary-color;
   &-logo {
-    background-color: #6E7783;
+    background-color:v.$primary-color;
     width: 100px;
     height: 100px;
   }
 }
+//#6E7783 gris vert

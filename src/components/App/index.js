@@ -1,9 +1,9 @@
 // == Import npm
 import React from 'react';
-import Header from '../Header';
-import DashboardCoach from '../DashboardCoach';
 
 // == Import
+import Header from 'src/components/Header';
+import DashboardCoach from 'src/components/DashboardCoach';
 import Footer from 'src/components/Footer';
 import Login from 'src/components/Login';
 // import DashboardAdh from 'src/components/DashboardAdh';
@@ -17,7 +17,7 @@ const App = () => (
     <DashboardCoach />
     <Footer />
     <Login />
-    {/* <DashboardAdh />*/}
+    {/* <DashboardAdh /> */}
   </div>
 );
 
