@@ -7,6 +7,7 @@ import './style.scss';
 // == Composant
 const Login = () => (
   <div className="login">
+    <p className="login__title">Se connecter</p>
     <form
       className="login__form"
       method="post"
