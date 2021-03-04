@@ -7,8 +7,9 @@ import Footer from 'src/components/Footer';
 // import Login from 'src/components/Login';
 // import DashboardCoach from 'src/components/DashboardCoach';
 // import DashboardAdh from 'src/components/DashboardAdh';
+import Coachings from 'src/components/Coachings';
 // import Coachs from 'src/components/Coachs';
-import BookingCoaching from 'src/components/BookingCoaching';
+// import BookingCoaching from 'src/components/BookingCoaching';
 
 import './styles.scss';
 
@@ -19,8 +20,9 @@ const App = () => (
     {/* <Login /> */}
     {/* <DashboardCoach /> */}
     {/* <DashboardAdh /> */}
+    <Coachings />
     {/* <Coachs /> */ }
-    <BookingCoaching />
+    {/* <BookingCoaching /> */}
     <Footer />
   </div>
 );
