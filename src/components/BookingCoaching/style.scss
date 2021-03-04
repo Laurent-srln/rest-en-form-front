@@ -1,0 +1,65 @@
+@use '../../styles/vars'as v;
+
+.booking-coaching {
+
+  &__coachs {
+    width: 80%;
+    margin: v.$gutter auto v.$gutter auto;
+    overflow: auto;
+    max-height: 50vh;
+    border: 1px solid v.$primary-color;
+    border-radius: v.$element-radius;
+  }
+}
+
+
+.add-coaching {
+  width: 50%;
+  margin: v.$gutter * 2.5 auto;
+  
+  &__title {
+    margin: v.$gutter * 2 0 v.$gutter * 2.5 0;
+    font-size: 1.5em;
+    font-weight: v.$text-bold;
+    color: v.$primary-color;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 0 v.$gutter 0;
+    
+  }
+
+  &__label-date {
+    display: block;
+    color: v.$primary-color;
+  }
+
+  &__input-date {
+    display: block;
+    margin: v.$gutter / 2 0 0 0;
+
+  }
+
+  &__select {
+    
+
+  }
+
+  &__submit {
+    padding: v.$gutter / 2 v.$gutter * 2;
+    border: 1.8px solid v.$primary-color;
+    border-radius: v.$element-radius;
+    box-shadow: 0 0 4px .2px #245768;
+    color: v.$primary-color;
+    font-size: .9em;
+    font-weight: v.$text-bold;
+  }
+
+  &__submit:hover {
+    background-color: v.$primary-color;
+    color: v.$alt-color;
+  }
+}
