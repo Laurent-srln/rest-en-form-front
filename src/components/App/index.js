@@ -3,7 +3,7 @@ import React from 'react';
 
 // == Import
 import Login from 'src/components/Login';
-import DashboardAdh from 'src/components/DashboardAdh';
+// import DashboardAdh from 'src/components/DashboardAdh';
 
 import './styles.scss';
 
@@ -11,9 +11,10 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Login />
-    {/* <DashboardAdh /> */}
+    {/* <DashboardAdh />*/}
   </div>
 );
 
 // == Export
 export default App;
+//

@@ -2,7 +2,7 @@
 import React from 'react';
 
 // == Imports
-// import CoachingsAdh from 'src/components/CoachingsAdh';
+import CoachingsAdh from 'src/components/CoachingsAdh';
 import Trainings from 'src/components/Trainings';
 
 import './style.scss';
@@ -10,13 +10,13 @@ import './style.scss';
 // == Composant
 const DashboardAd = () => (
   <div className="dashboardAd">Tableau de bord de l'adhérent
-    {/* <div className="dashboardAd__coaching"> Réservation coaching
+    <div className="dashboardAd__coaching"> Réservation coaching
       <CoachingsAdh />
       <p>
         <a href="#">Réserver un coaching</a>
         <a href="#">Voir toutes les réservations</a>
       </p>
-    </div> */}
+    </div>
     {/* <div>Dernier training
       <Trainings />
     </div> */}

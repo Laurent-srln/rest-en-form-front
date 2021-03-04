@@ -11,7 +11,7 @@ const Login = () => (
       className="login__form"
       method="post"
     >
-      <label
+      {/* <label
         className="login__form-label"
         htmlFor="email"
       >
@@ -23,7 +23,7 @@ const Login = () => (
           id="email"
           placeholder="rodolphe.martin@oclock.io"
         />
-      </label>
+      </label> */}
 
       {/* <label
         className="login__form-label"
@@ -38,7 +38,7 @@ const Login = () => (
         />
       </label> */}
 
-      {/* <label
+      <label
         className="login__form-label"
         htmlFor="password"
       >
@@ -62,7 +62,7 @@ const Login = () => (
           name="password"
           id="password"
         />
-      </label> */}
+      </label>
 
       <div className="login__form-submit">
         <button
