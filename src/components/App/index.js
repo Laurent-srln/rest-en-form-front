@@ -5,6 +5,9 @@ import DashboardCoach from '../DashboardCoach';
 
 // == Import
 import Footer from 'src/components/Footer';
+import Login from 'src/components/Login';
+// import DashboardAdh from 'src/components/DashboardAdh';
+
 import './styles.scss';
 
 // == Composant
@@ -13,8 +16,11 @@ const App = () => (
     <Header />
     <DashboardCoach />
     <Footer />
+    <Login />
+    {/* <DashboardAdh />*/}
   </div>
 );
 
 // == Export
 export default App;
+//

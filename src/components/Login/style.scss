@@ -1,0 +1,44 @@
+.login {
+  padding: 3rem 2rem;
+  margin: 15rem 0;
+  box-shadow: 0 0 8px .2px #245768;
+  border-radius: 10px;
+
+  &__form {
+
+    &-label {
+      display: block;
+      margin: 2rem 0;
+    }
+
+    &-input {
+      display: block;
+      margin-top: .8rem;
+      padding: .4rem .6rem;
+      width: 80%;
+    }
+
+    &-input:focus {
+      box-shadow: 0 0 5px .2px #245768;
+      border: none;
+    }
+
+    &-submit {
+      text-align: right;
+      
+      .button {
+        border: none;
+        margin-top: 2rem;
+        border-radius: 10px;
+        background-color: #91E6D8;
+        box-shadow: 0 0 5px .2px #245768;
+        padding: .5rem 1.5rem;
+      }
+
+      .button:hover {
+        background-color: #245768;
+        color: white;
+      }
+    }
+  }
+}
