@@ -10,13 +10,13 @@
     width: 100%;
   }
   &-next-coaching {
-    border: 1px solid;
+    border: 3px solid  #6E7783;
     border-radius: 6px;
     padding: 1rem;
     margin: 1rem auto;
   }
   &-last-coaching {
-    border: 1px solid;
+    border: 3px solid   #6E7783;
     border-radius: 6px;
     padding: 1rem;
     margin: 1rem auto;
@@ -39,6 +39,7 @@
     border-radius: 6px;
     margin: 0.5rem;
     background-color: #9DC3C1;
+    box-shadow: 3px 3px 10px black;
   }
   &-last-coaching-title {
     width: 150px;
@@ -58,6 +59,7 @@
     border-radius: 6px;
     margin: 0.5rem;
     background-color: #9DC3C1;
+    box-shadow: 3px 3px 10px black;
   }
   &-link {
     display: block;
@@ -78,11 +80,12 @@
   &-list-info {
     display: flex;
     justify-content: space-evenly;
+    padding: 0.5rem 0 0.5rem 1rem;
     border: 1px solid none;
   }
   &-list-info-item {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     border-bottom: 1px solid #ccc;
     padding: 3px;
   }
