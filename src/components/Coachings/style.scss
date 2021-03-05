@@ -1,0 +1,97 @@
+@use '../../styles/vars'as v;
+
+.coachings {
+  width: 50%;
+  margin: v.$gutter * 2 auto;
+
+  &__title {
+    margin: v.$gutter * 2 0 v.$gutter * 2 0;
+    font-size: 1.5em;
+    font-weight: v.$text-bold;
+  }
+
+  &__list {
+
+  }
+
+  &__cta {
+    width: 50%;
+    margin: v.$gutter auto;
+    padding: v.$gutter v.$gutter * 2;
+    background-color: v.$alt-color;
+    border-radius: v.$element-radius;
+    color: v.$primary-color;
+    font-weight: v.$text-bold;
+    border: 1.5px solid v.$primary-color;
+  }
+
+  &__cta:hover {
+    background-color: v.$primary-color;
+    color: v.$alt-color;
+    border: 1.5px solid v.$primary-color;
+  }
+}
+
+.coaching {
+  margin: v.$gutter * 1.5 0;
+  background-color: #245768;
+  box-shadow: 0 0 8px .2px #245768;
+  border-radius: v.$element-radius;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__coach {
+    margin: v.$gutter;
+
+    .img {
+      border-radius: v.$element-radius;
+      width: 130px
+    }
+  
+    .name {
+      padding: v.$gutter v.$gutter / 2 0 0;
+      font-weight: v.$text-bold;
+      font-size: .8em;
+      color: v.$alt-color;
+    }
+  }
+
+
+  &__datetime {
+    display: flex;
+    flex-direction: column;
+    color: v.$alt-color;
+
+    .date {
+      margin: v.$gutter 0;
+      font-weight: v.$text-normal;
+      font-size: 1em;
+    }
+
+    .time {
+      margin: v.$gutter 0;
+      font-weight: v.$text-normal;
+      font-size: 1em;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+
+    .calendar {
+      margin: v.$gutter 0;
+      height: 30px;
+    }
+    
+    .clock {
+      margin: v.$gutter 0;
+     height: 30px;
+    }
+  }
+
+  &__trash {
+    width: 30px;
+  }
+}

@@ -1,11 +1,20 @@
-.footer {
-  background-color: rgba($color: rgb(89, 216, 255), $alpha: 1.0);
-  width:100%;
-  &__team {
-  }
-  &__coachs {
-  }
-  &__LegalNotice {
+@use '../../styles/vars'as v;
 
+.footer {
+  background-color: v.$primary-color;
+  padding: v.$gutter * 2 0;
+  color: v.$alt-color;
+
+  &__content {
+
+    &-team:hover {
+      color: v.$secondary-color;
+    }
+    &-coachs:hover {
+      color: v.$secondary-color;
+    }
+    &-legalNotice:hover {
+      color: v.$secondary-color;
+    }
   }
 }
