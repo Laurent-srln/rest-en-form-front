@@ -1,0 +1,109 @@
+@use '../../styles/vars'as v;
+
+.add-training {
+
+  &__title {
+    margin: v.$gutter * 1.5 0;
+    font-size: 1.6em;
+    font-weight: v.$text-bold;
+    color: v.$primary-color;
+  }
+
+  &__form {
+      margin: v.$gutter * 2 auto;
+      max-width: 90%;
+      padding: v.$gutter;
+      box-shadow: 0 0 8px .2px #245768;
+      border-radius: v.$element-radius;
+
+    &-date {
+      margin: v.$gutter * 1.5 0 v.$gutter * 2 0;
+
+      .label__date {
+        display: block;
+        margin: 0 0 v.$gutter * 3 0;
+        color: v.$primary-color;
+        font-weight: v.$text-bold;
+      }
+
+      .input__date {
+        display: block;
+        margin: v.$gutter auto;
+
+      }
+    }
+
+    .subtitle {
+      margin: v.$gutter 0;
+      color: v.$primary-color;
+      font-weight: v.$text-bold;
+    }
+
+    &-health {
+      margin: v.$gutter 0;
+      display: flex;
+      justify-content: center;
+      font-size: .8em;
+
+      .label {
+        display: block;
+        margin: v.$gutter 0;
+        color: v.$primary-color;
+      }
+
+      .input {
+        margin: v.$gutter / 2.5 v.$gutter / 2;
+        padding: v.$gutter / 2.5 0;
+        width: 25%;
+      }
+    }
+
+    &-details {
+      margin: v.$gutter * 2 0;
+
+      .label__details {
+        color: v.$primary-color;
+        font-weight: v.$text-bold;
+      }
+
+      .input__details {
+        display: block;
+        margin: v.$gutter auto;
+        width: 90%;
+        padding: v.$gutter * 3 v.$gutter / 2;
+      }
+
+    }
+
+    &-comment {
+
+      .label__comment {
+        color: v.$primary-color;
+        font-weight: v.$text-bold;
+      }
+
+      .input__comment {
+        display: block;
+        margin: v.$gutter auto;
+        width: 90%;
+        padding: v.$gutter * 3 v.$gutter / 2;
+      }
+    }
+
+    &-submit {
+      margin: v.$gutter * 2 0;
+      padding: v.$gutter / 2 v.$gutter * 2;
+      border: 1.8px solid v.$primary-color;
+      border-radius: v.$element-radius;
+      box-shadow: 0 0 4px .2px #245768;
+      color: v.$primary-color;
+      font-size: .9em;
+      font-weight: v.$text-bold;
+    }
+
+    &-submit:hover {
+      background-color: v.$primary-color;
+      color: v.$alt-color;
+    }
+  }
+}

@@ -11,6 +11,7 @@ import Footer from 'src/components/Footer';
 // import Coachings from 'src/components/Coachings';
 // import BookingCoaching from 'src/components/BookingCoaching';
 // import Coachs from 'src/components/Coachs';
+import AddTraining from 'src/components/AddTraining';
 
 import './styles.scss';
 
@@ -25,6 +26,7 @@ const App = () => (
     {/* <Coachings /> */}
     {/* <BookingCoaching /> */}
     {/* <Coachs /> */ }
+    <AddTraining />
     <Footer />
   </div>
 );
