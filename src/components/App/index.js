@@ -6,6 +6,7 @@ import Header from 'src/components/Header';
 import DashboardCoach from 'src/components/DashboardCoach';
 import Footer from 'src/components/Footer';
 import Login from 'src/components/Login';
+import DashboardManager from 'src/components/DashboardManager';
 // import DashboardAdh from 'src/components/DashboardAdh';
 
 import './styles.scss';
@@ -14,10 +15,11 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <DashboardCoach />
-    <Footer />
+    {/* <DashboardCoach /> */}
+    <DashboardManager />
+    {/* <Footer />
     <Login />
-    {/* <DashboardAdh /> */}
+     <DashboardAdh /> */}
   </div>
 );
 
