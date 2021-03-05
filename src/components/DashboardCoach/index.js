@@ -1,8 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
-const DashboardCoach = () => (
+const DashboardCoach = ({ date, hour, name }) => (
   <div className="dashboard">
     <div className="dashboard-container">
       <div className="dashboard-next-coaching">
@@ -14,29 +14,9 @@ const DashboardCoach = () => (
             <li>Adhérent</li>
           </ul>
           <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
+            <li>{date}</li>
+            <li>{hour}</li>
+            <li>{name}</li>
           </ul>
         </div>
       </div>
@@ -49,29 +29,9 @@ const DashboardCoach = () => (
             <li>Adhérent</li>
           </ul>
           <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
-          </ul>
-          <ul className="dashboard-list-info-item">
-            <li>Mardi 6 févirer</li>
-            <li>9h15-9h30</li>
-            <li>Jean</li>
+            <li>{date}</li>
+            <li>{hour}</li>
+            <li>{name}</li>
           </ul>
         </div>
       </div>
@@ -80,5 +40,9 @@ const DashboardCoach = () => (
   </div>
 );
 
-// DashboardCoach.propTypes = {};
+DashboardCoach.propTypes = {
+  date: PropTypes.string.isRequired,
+  hour: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
 export default DashboardCoach;
