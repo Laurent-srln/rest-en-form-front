@@ -4,14 +4,13 @@ import React from 'react';
 // == Import
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
-import Login from 'src/components/Login';
-import DashboardManager from 'src/components/DashboardManager';
 // import Login from 'src/components/Login';
-// import DashboardCoach from 'src/components/DashboardCoach';
 // import DashboardAdh from 'src/components/DashboardAdh';
-import Coachings from 'src/components/Coachings';
-// import Coachs from 'src/components/Coachs';
+// import DashboardCoach from 'src/components/DashboardCoach';
+// import DashboardManager from 'src/components/DashboardManager';
+// import Coachings from 'src/components/Coachings';
 // import BookingCoaching from 'src/components/BookingCoaching';
+// import Coachs from 'src/components/Coachs';
 
 import './styles.scss';
 
@@ -19,17 +18,13 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    {/* <DashboardCoach /> */}
-    <DashboardManager />
-    {/* <Footer />
-    <Login />
-     <DashboardAdh /> */}
     {/* <Login /> */}
-    {/* <DashboardCoach /> */}
     {/* <DashboardAdh /> */}
-    <Coachings />
-    {/* <Coachs /> */ }
+    {/* <DashboardCoach /> */}
+    {/* <DashboardManager /> */}
+    {/* <Coachings /> */}
     {/* <BookingCoaching /> */}
+    {/* <Coachs /> */ }
     <Footer />
   </div>
 );
