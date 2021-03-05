@@ -9,9 +9,10 @@ import Footer from 'src/components/Footer';
 // import DashboardCoach from 'src/components/DashboardCoach';
 // import DashboardManager from 'src/components/DashboardManager';
 // import Coachings from 'src/components/Coachings';
+import HealthCheck from 'src/components/HealthCheck';
 // import BookingCoaching from 'src/components/BookingCoaching';
 // import Coachs from 'src/components/Coachs';
-import AddTraining from 'src/components/AddTraining';
+// import AddTraining from 'src/components/AddTraining';
 
 import './styles.scss';
 
@@ -24,9 +25,10 @@ const App = () => (
     {/* <DashboardCoach /> */}
     {/* <DashboardManager /> */}
     {/* <Coachings /> */}
+    <HealthCheck />
     {/* <BookingCoaching /> */}
     {/* <Coachs /> */ }
-    <AddTraining />
+    {/* <AddTraining /> */}
     <Footer />
   </div>
 );
