@@ -1,0 +1,59 @@
+@use '../../styles/vars'as v;
+
+.health-check {
+  max-width: 90%;
+  margin: v.$gutter * 2 auto;
+  padding: v.$gutter;
+  box-shadow: 0 0 8px .2px #245768;
+  border-radius: v.$element-radius;
+  color: v.$primary-color;
+
+  &__title {
+    margin: v.$gutter * 1.5 auto v.$gutter * 2 auto;
+    font-size: 1.4em;
+    font-weight: v.$text-bold;
+    color: v.$primary-color;
+  }
+
+  &__weight {
+    width: 30%;
+    margin: v.$gutter * 2 auto;
+    padding: v.$gutter / 2 v.$gutter;
+    border: 1.5px solid v.$primary-color;
+    border-radius: v.$element-radius;
+    font-weight: v.$text-bold;
+    text-align: center;
+  }
+
+  &__charts {
+    margin: v.$gutter * 2 0;
+
+    .pie__chart {
+      height: 10rem;
+      margin: v.$gutter 0;
+    }
+
+    .line__chart {
+      height: 10rem;
+      margin: v.$gutter 0;
+    }
+  }
+
+  &__data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .water__data {
+      padding: v.$gutter;
+    }
+
+    .other__data {
+      font-size: .8em;
+    }
+  }
+}
+
+.data-text {
+  margin: v.$gutter / 2.3 0;
+}
