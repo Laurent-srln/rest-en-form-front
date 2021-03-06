@@ -5,7 +5,8 @@ import React from 'react';
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 
-import Login from 'src/components/Login';
+// import Login from 'src/components/Login';
+import Login from 'src/containers/Login';
 
 // import DashboardAdh from 'src/components/DashboardAdh';
 // import DashboardCoach from 'src/components/DashboardCoach';
