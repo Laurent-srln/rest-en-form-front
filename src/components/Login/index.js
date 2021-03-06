@@ -6,17 +6,24 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 // == Composant
-const Login = ({ inputMailValue, onChangeInputMailValue }) => {
+const Login = ({ inputMailValue, onChangeInputMailValue, onSubmitForm }) => {
   const handleOnChangeMail = (event) => {
-    console.log('on change', event.target.value);
+    // console.log('on change', event.target.value);
     onChangeInputMailValue(event.target.value);
+  };
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    // console.log('handleOnSubmit');
+    if (inputMailValue) {
+      onSubmitForm();
+    }
   };
   return (
     <div className="login">
       <p className="login__title">Se connecter</p>
       <form
         className="login__form"
-        method="post"
+        onSubmit={handleOnSubmit}
       >
         <label
           className="login__form-label"
@@ -90,6 +97,7 @@ const Login = ({ inputMailValue, onChangeInputMailValue }) => {
 Login.propTypes = {
   inputMailValue: PropTypes.string.isRequired,
   onChangeInputMailValue: PropTypes.func.isRequired,
+  onSubmitForm: PropTypes.func.isRequired,
 };
 
 // == Export
