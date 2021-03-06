@@ -4,20 +4,15 @@
 .login {
   margin: v.$gutter * 5.5 auto;
   padding: v.$gutter * 1.5 v.$gutter * 3.5;
-  width: 50%;
+  width: 90%;
   box-shadow: 0 0 8px .2px #245768;
   border-radius: v.$element-radius;
 
   &__title {
-    margin-top: - v.$gutter * 2.5;
     margin-bottom: v.$gutter * 3;
     padding: v.$gutter / 2 v.$gutter * 2.5;
-    position: relative;
-    width: 30%;
-    text-align: left;
     font-weight: v.$text-bold;
     color: v.$primary-color;
-    background-color: v.$alt-color;
     font-size: 1.2em;
   }
 
@@ -35,7 +30,6 @@
       margin-top: v.$gutter;
       margin-bottom: v.$gutter * 2;
       padding: v.$gutter / 2;
-      width: 70%;
     }
 
     &-input:focus {

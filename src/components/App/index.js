@@ -5,7 +5,7 @@ import React from 'react';
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 
-// import Login from 'src/components/Login';
+import Login from 'src/components/Login';
 
 // import DashboardAdh from 'src/components/DashboardAdh';
 // import DashboardCoach from 'src/components/DashboardCoach';
@@ -38,7 +38,7 @@ const App = () => (
       startSlot="9h45"
       endSlot="10h00"
     /> */}
-    {/* <Login /> */}
+    <Login />
     {/* <DashboardAdh /> */}
     {/* <Coachings /> */}
     {/* <Coachs /> */ }
