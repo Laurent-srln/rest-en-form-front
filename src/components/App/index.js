@@ -26,21 +26,10 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    {/* <DashboardCoach date="28/03" name="Jeanbon" hour="9h00" /> */}
-    {/* <DashboardManager
-      totalMembers={42}
-      totalCoaches={3}
-      specialityName="Chomeur pro"
-      availableSlot="9h00 - 9h15"
-      addStartSlot=""
-      addEndSlot=""
-      coachName="Soun"
-      date="28/03"
-      startSlot="9h45"
-      endSlot="10h00"
-    /> */}
     <Auth />
     {/* <DashboardAdh /> */}
+    {/* <DashboardCoach /> */}
+    {/* <DashboardManager /> */}
     {/* <Coachings /> */}
     {/* <Coachs /> */ }
     {/* <DashboardCoach /> */}

@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-// import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router-dom';
 
 // == Imports
 
@@ -20,9 +20,26 @@ const Auth = () => (
   <div className="auth">
     <p className="auth__title">Se connecter</p>
     <div className="auth__content">
-      <Login />
-      <Password />
-      <NewPassword />
+      <Switch>
+        <Route
+          path="/"
+          exact
+        >
+          <Login />
+        </Route>
+        <Route
+          path="/connexion"
+          exact
+        >
+          <Password />
+        </Route>
+        <Route
+          path="/new-password"
+          exact
+        >
+          <NewPassword />
+        </Route>
+      </Switch>
     </div>
   </div>
 );
