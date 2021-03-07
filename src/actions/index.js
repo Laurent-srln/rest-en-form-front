@@ -12,6 +12,8 @@ export const ADD_NEW_PASSWORD = 'ADD_NEW_PASSWORD';
 export const SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE = 'SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE';
 export const ADD_CONFIRM_NEW_PASSWORD = 'ADD_CONFIRM_NEW_PASSWORD';
 
+export const SAVE_MAIL = 'SAVE_MAIL';
+
 // === Action types
 
 export const setInputMailValue = (value) => ({
@@ -32,9 +34,10 @@ export const addPassword = () => ({
   type: ADD_PASSWORD,
 });
 
-export const setInputNewPasswordValue = (value) => ({
+export const setInputNewPasswordValue = (value, name) => ({
   type: SET_INPUT_NEW_PASSWORD_VALUE,
   value,
+  name,
 });
 
 export const addNewPassword = () => ({
@@ -48,4 +51,9 @@ export const setInputConfirmNewPasswordValue = (value) => ({
 
 export const addConfirmNewPassword = () => ({
   type: ADD_CONFIRM_NEW_PASSWORD,
+});
+
+export const saveMail = (mail) => ({
+  type: SAVE_MAIL,
+  mail,
 });

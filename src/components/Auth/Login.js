@@ -8,12 +8,10 @@ import './style.scss';
 // == Composant
 const Login = ({ inputMailValue, onChangeInputMailValue, onSubmitMailForm }) => {
   const handleOnChangeMail = (event) => {
-    // console.log('on change', event.target.value);
     onChangeInputMailValue(event.target.value);
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    // console.log('handleOnSubmit');
     if (inputMailValue) {
       onSubmitMailForm();
     }
@@ -31,6 +29,7 @@ const Login = ({ inputMailValue, onChangeInputMailValue, onSubmitMailForm }) => 
         Votre adresse email
         <input
           className="loginForm__input"
+          method="post"
           type="email"
           name="email"
           id="email"

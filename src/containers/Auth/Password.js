@@ -5,7 +5,7 @@ import Password from 'src/components/Auth/Password';
 import { setInputPasswordValue, addPassword } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-  inputPasswordValue: state.password,
+  inputPasswordValue: state.auth.password,
 });
 
 const mapDispatchToProps = (dispatch) => ({

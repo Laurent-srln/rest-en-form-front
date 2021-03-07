@@ -9,8 +9,8 @@ import {
 } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-  inputNewPasswordValue: state.newPassword,
-  inputConfirmPasswordValue: state.confirmNewPassword,
+  inputNewPasswordValue: state.auth.newPassword,
+  inputConfirmPasswordValue: state.auth.confirmNewPassword,
 });
 
 const mapDispatchToProps = (dispatch) => ({
