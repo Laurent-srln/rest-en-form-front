@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 
-import Login from 'src/components/Login';
+import Login from 'src/components/Auth/Login';
 
 import { setInputMailValue, addMail } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-  inputMailValue: state.newMail,
+  inputMailValue: state.mail,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('action', action);
     dispatch(action);
   },
-  onSubmitForm: () => {
+  onSubmitMailForm: () => {
     // console.log('je veux ajouter un nouveau message dans le state');
     const action = addMail();
     // console.log('action', action);
