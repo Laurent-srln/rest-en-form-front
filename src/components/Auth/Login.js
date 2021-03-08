@@ -1,12 +1,14 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link, Redirect } from 'react-router-dom';
 
 // == Imports
 import './style.scss';
+import { addMail } from '../../actions';
 
 // == Composant
-const Login = ({ inputMailValue, onChangeInputMailValue, onSubmitMailForm }) => {
+const Login = ({ inputMailValue, onChangeInputMailValue, onSubmitMailForm,  }) => {
   const handleOnChangeMail = (event) => {
     onChangeInputMailValue(event.target.value);
   };
@@ -40,12 +42,18 @@ const Login = ({ inputMailValue, onChangeInputMailValue, onSubmitMailForm }) => 
       </label>
 
       <div className="loginForm__submit">
-        <button
-          className="button"
-          type="submit"
-        >
-          Valider
-        </button>
+        <Link to="/connexion">
+          <button
+            type="submit"
+            className="button"
+            onSubmit={(event) => {
+              event.preventDefault();
+                <Redirect to="/connexion" />;
+            }}
+          >
+            Valider
+          </button>
+        </Link>
       </div>
     </form>
   );

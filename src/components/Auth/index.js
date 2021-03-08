@@ -1,6 +1,6 @@
 // == Import npm
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Imports
@@ -17,43 +17,47 @@ import NewPassword from 'src/containers/Auth/NewPassword';
 import './style.scss';
 
 // == Composant
-const Auth = ({ password }) => (
-  <div className="auth">
-    <p className="auth__title">Se connecter</p>
-    <div className="auth__content">
-      <Switch>
+
+const Auth = ({ password, saveMail }) => {
+  
+  {/* useEffect(saveMail, [password]); */}
+
+  console.log('password', password);
+  return (
+    <div className="auth">
+      <p className="auth__title">Se connecter</p>
+      <div className="auth__content">
+
         <Route
           path="/"
           exact
         >
           <Login />
         </Route>
-        {password && (
-          <Route
-            path="/connexion"
-            exact
-          >
+      
+        <Route
+          exact
+          path="/connexion"
+        >
+          {password && (
             <Password />
-          </Route>
-        )}
-
-        {!password && (
-          <Route
-            path="/new-password"
-            exact
-          >
+          )}
+          {!password && (
             <NewPassword />
-          </Route>
-        )}
-      </Switch>
+          )}
+        </Route>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // == Props Validation
+/*
 Auth.propTypes = {
   password: PropTypes.bool.isRequired,
+  saveMail: PropTypes.func.isRequired,
 };
+*/
 
 // == Export
 export default Auth;
