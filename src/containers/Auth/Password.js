@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Password from 'src/components/Auth/Password';
 
-import { setInputPasswordValue, addPassword } from 'src/actions';
+import { setInputPasswordValue, addPassword } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   inputPasswordValue: state.auth.password,

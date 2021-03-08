@@ -4,7 +4,7 @@ import {
   SET_INPUT_NEW_PASSWORD_VALUE,
   SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE,
   SAVE_MAIL,
-} from 'src/actions';
+} from 'src/actions/auth';
 
 const initialState = {
   email: 'test@gmail.com',

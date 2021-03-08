@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ADD_MAIL, saveMail } from 'src/actions';
+import { ADD_MAIL, saveMail } from 'src/actions/auth';
 
 const auth = (store) => (next) => (action) => {
   switch (action.type) {

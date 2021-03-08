@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import Login from 'src/components/Auth/Login';
 
-import { setInputMailValue, addMail } from 'src/actions';
+import { setInputMailValue, addMail } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   inputMailValue: state.auth.email,
