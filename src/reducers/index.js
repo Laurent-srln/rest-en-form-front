@@ -1,10 +1,9 @@
-const initialState = {};
+import { combineReducers } from 'redux';
 
-const reducer = (state = initialState, action = {}) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+import auth from './auth';
 
-export default reducer;
+const globalReducer = combineReducers({
+  auth,
+});
+
+export default globalReducer;

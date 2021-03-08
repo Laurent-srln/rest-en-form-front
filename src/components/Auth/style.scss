@@ -1,0 +1,161 @@
+@use '../../styles/vars'as v;
+
+
+.auth {
+
+  &__content {
+
+  }
+  
+  &__title {
+    margin: v.$gutter * 2 auto;
+    padding: v.$gutter / 2 v.$gutter * 2.5;
+    font-weight: v.$text-bold;
+    color: v.$primary-color;
+    font-size: 1.2em;
+  }
+
+}
+
+
+.loginForm {
+  margin: v.$gutter auto;
+  padding: v.$gutter * 1.5 v.$gutter * 3.5;
+  width: 90%;
+  box-shadow: 0 0 8px .2px #245768;
+  border-radius: v.$element-radius;
+
+
+  &__label {
+    display: block;
+    margin: v.$gutter * 2 auto;
+    text-align: left;
+    color: v.$primary-color;
+  }
+
+  &__input {
+    display: block;
+    margin-top: v.$gutter;
+    margin-bottom: v.$gutter * 2;
+    padding: v.$gutter / 2;
+  }
+
+  &__input:focus {
+    box-shadow: inset 0 0 5px #245768;
+  }
+
+  &__submit {
+    text-align: right;
+    
+    .button {
+      margin: v.$gutter * 1.5 v.$gutter 0 0;
+      padding: v.$gutter / 2 v.$gutter * 2;
+      border: none;
+      border-radius: v.$element-radius;
+      background-color: v.$secondary-color;
+      box-shadow: 0 0 5px .2px #245768;
+      color: v.$primary-color;
+      font-size: .9em;
+      font-weight: v.$text-bold;
+    }
+
+    .button:hover {
+      background-color: v.$primary-color;
+      color: v.$alt-color;
+    }
+  }
+}
+
+.passwordForm {
+  margin: v.$gutter auto;
+  padding: v.$gutter * 1.5 v.$gutter * 3.5;
+  width: 90%;
+  box-shadow: 0 0 8px .2px #245768;
+  border-radius: v.$element-radius;
+
+  &__label {
+    display: block;
+    margin: v.$gutter * 2 auto;
+    text-align: left;
+    color: v.$primary-color;
+  }
+
+  &__input {
+    display: block;
+    margin-top: v.$gutter;
+    margin-bottom: v.$gutter * 2;
+    padding: v.$gutter / 2;
+  }
+
+  &__input:focus {
+    box-shadow: inset 0 0 5px #245768;
+  }
+
+  &__submit {
+    text-align: right;
+
+    .button {
+      margin: v.$gutter * 1.5 v.$gutter 0 0;
+      padding: v.$gutter / 2 v.$gutter * 2;
+      border: none;
+      border-radius: v.$element-radius;
+      background-color: v.$secondary-color;
+      box-shadow: 0 0 5px .2px #245768;
+      color: v.$primary-color;
+      font-size: .9em;
+      font-weight: v.$text-bold;
+    }
+
+    .button:hover {
+      background-color: v.$primary-color;
+      color: v.$alt-color;
+    }
+  }
+}
+
+.newPasswordForm {
+  margin: v.$gutter auto;
+  padding: v.$gutter * 1.5 v.$gutter * 3.5;
+  width: 90%;
+  box-shadow: 0 0 8px .2px #245768;
+  border-radius: v.$element-radius;
+
+  &__label {
+    display: block;
+    margin: v.$gutter * 2 auto;
+    text-align: left;
+    color: v.$primary-color;
+  }
+
+  &__input {
+    display: block;
+    margin-top: v.$gutter;
+    margin-bottom: v.$gutter * 2;
+    padding: v.$gutter / 2;
+  }
+
+  &__input:focus {
+    box-shadow: inset 0 0 5px #245768;
+  }
+
+  &__submit {
+    text-align: right;
+
+    .button {
+      margin: v.$gutter * 1.5 v.$gutter 0 0;
+      padding: v.$gutter / 2 v.$gutter * 2;
+      border: none;
+      border-radius: v.$element-radius;
+      background-color: v.$secondary-color;
+      box-shadow: 0 0 5px .2px #245768;
+      color: v.$primary-color;
+      font-size: .9em;
+      font-weight: v.$text-bold;
+    }
+
+    .button:hover {
+      background-color: v.$primary-color;
+      color: v.$alt-color;
+    }
+  }
+}
