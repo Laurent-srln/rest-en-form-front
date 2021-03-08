@@ -1,5 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 // == Imports
 import './style.scss';
@@ -15,22 +16,24 @@ const Coach = ({
     <>
       {
         coach.map((coachObject) => (
-        <div className="coach">
-          <div className="coach__info">
-            <p className="coach__info-name">{coachObject.firstname} {coachObject.lastname}</p>
-            <img
-              className="coach__info-img"
-              src="https://blog.salonbodyfitness.com/wp-content/uploads/2019/11/shutterstock_493318507-980x654.jpg"
-              alt=""
-            />
-          </div>
-          <div className="coach__specialities">
-            <p className="coach__specialities-item">spécialité</p>
-          </div>
-          <div className="coach__email">
-            <p className="coach__email-item">{coachObject.email}</p>
-          </div>
-        </div>
+          <React.Fragment key={coachObject.email}>
+            <div className="coach">
+              <div className="coach__info">
+                <p className="coach__info-name">{coachObject.firstname} {coachObject.lastname}</p>
+                <img
+                  className="coach__info-img"
+                  src="https://blog.salonbodyfitness.com/wp-content/uploads/2019/11/shutterstock_493318507-980x654.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="coach__specialities">
+                <p className="coach__specialities-item">{[...coachObject.specialities]}</p>
+              </div>
+              <div className="coach__email">
+                <p className="coach__email-item">{coachObject.email}</p>
+              </div>
+            </div>
+          </React.Fragment>
         ))
       }
     </>
@@ -38,6 +41,13 @@ const Coach = ({
 };
 
 // == Props Validation
-
+Coach.propTypes = {
+  coach: PropTypes.arrayOf(PropTypes.shape({
+    firstname: PropTypes.string.isRequired,
+    lastname: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    specialities: PropTypes.array.isRequired,
+  })).isRequired,
+};
 // == Export
 export default Coach;
