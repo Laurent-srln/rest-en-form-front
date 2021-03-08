@@ -1,12 +1,11 @@
 // == Import npm
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // == Import
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 
 // import Auth from 'src/components/Auth';
-import Coachs from 'src/containers/GetCoachs/Coachs';
 
 // import DashboardAdh from 'src/components/DashboardAdh';
 // import DashboardCoach from 'src/components/DashboardCoach';
@@ -18,7 +17,6 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <Coachs />
     {/* <Auth /> */}
     {/* <DashboardAdh /> */}
     {/* <DashboardCoach /> */}
