@@ -7,10 +7,11 @@ import {
 } from 'src/actions';
 
 const initialState = {
-  email: 'sountidly@gmail.com',
-  password: '',
-  newPassword: '',
-  confirmNewPassword: '',
+  login: {
+    email: 'sountidly@gmail.com',
+    password: '',
+    role: '',
+  },
 };
 
 const auth = (state = initialState, action = {}) => {
@@ -19,6 +20,11 @@ const auth = (state = initialState, action = {}) => {
       return {
         ...state,
         email: action.value,
+      };
+    case SAVE_MAIL:
+      return {
+        ...state,
+        login: action.payload,
       };
     case SET_INPUT_PASSWORD_VALUE:
       return {
@@ -34,11 +40,6 @@ const auth = (state = initialState, action = {}) => {
       return {
         ...state,
         confirmNewPassword: action.value,
-      };
-    case SAVE_MAIL:
-      return {
-        ...state,
-        email: action.email,
       };
     default:
       return state;

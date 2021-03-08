@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // == Imports
 
@@ -16,7 +17,7 @@ import NewPassword from 'src/containers/Auth/NewPassword';
 import './style.scss';
 
 // == Composant
-const Auth = () => (
+const Auth = ({ isPassword }) => (
   <div className="auth">
     <p className="auth__title">Se connecter</p>
     <div className="auth__content">
@@ -27,24 +28,32 @@ const Auth = () => (
         >
           <Login />
         </Route>
-        <Route
-          path="/connexion"
-          exact
-        >
-          <Password />
-        </Route>
-        <Route
-          path="/new-password"
-          exact
-        >
-          <NewPassword />
-        </Route>
+        {isPassword ? (
+          <Route
+            path="/connexion"
+            exact
+          >
+            <Password />
+          </Route>
+        ) : (
+          <Route
+            path="/new-password"
+            exact
+          >
+            <NewPassword />
+          </Route>
+        )}
       </Switch>
     </div>
   </div>
 );
 
 // == Props Validation
+/*
+Auth.propTypes = {
+  isPassword: PropTypes.bool.isRequired,
+};
+*/
 
 // == Export
 export default Auth;
