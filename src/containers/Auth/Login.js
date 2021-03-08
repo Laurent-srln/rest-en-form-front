@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch) => ({
     const action = setInputMailValue(value);
     dispatch(action);
   },
-  onSubmitMailForm: () => {
-    const action = addMail();
+  onSubmitMailForm: (email) => {
+    const action = addMail(email);
     dispatch(action);
   },
 });

@@ -7,7 +7,7 @@ import {
 } from 'src/actions';
 
 const initialState = {
-  email: 'test@gmail.com',
+  email: 'sountidly@gmail.com',
   password: '',
   newPassword: '',
   confirmNewPassword: '',
@@ -38,7 +38,7 @@ const auth = (state = initialState, action = {}) => {
     case SAVE_MAIL:
       return {
         ...state,
-        email: action.auth.email,
+        email: action.email,
       };
     default:
       return state;

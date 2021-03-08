@@ -53,7 +53,7 @@ export const addConfirmNewPassword = () => ({
   type: ADD_CONFIRM_NEW_PASSWORD,
 });
 
-export const saveMail = (mail) => ({
+export const saveMail = (email) => ({
   type: SAVE_MAIL,
-  mail,
+  email,
 });
