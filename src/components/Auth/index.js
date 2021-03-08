@@ -17,7 +17,7 @@ import NewPassword from 'src/containers/Auth/NewPassword';
 import './style.scss';
 
 // == Composant
-const Auth = ({ isPassword }) => (
+const Auth = ({ password }) => (
   <div className="auth">
     <p className="auth__title">Se connecter</p>
     <div className="auth__content">
@@ -28,14 +28,16 @@ const Auth = ({ isPassword }) => (
         >
           <Login />
         </Route>
-        {isPassword ? (
+        {password && (
           <Route
             path="/connexion"
             exact
           >
             <Password />
           </Route>
-        ) : (
+        )}
+
+        {!password && (
           <Route
             path="/new-password"
             exact
@@ -49,11 +51,9 @@ const Auth = ({ isPassword }) => (
 );
 
 // == Props Validation
-/*
 Auth.propTypes = {
-  isPassword: PropTypes.bool.isRequired,
+  password: PropTypes.bool.isRequired,
 };
-*/
 
 // == Export
 export default Auth;

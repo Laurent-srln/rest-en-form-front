@@ -9,7 +9,7 @@ import {
 const initialState = {
   login: {
     email: 'sountidly@gmail.com',
-    password: '',
+    password: false,
     role: '',
   },
 };
