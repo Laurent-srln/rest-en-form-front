@@ -53,11 +53,13 @@ const Password = ({ inputPasswordValue, onChangeInputPasswordValue, onSubmitPass
 };
 
 // == Props Validation
+/*
 Password.propTypes = {
   inputPasswordValue: PropTypes.string.isRequired,
   onChangeInputPasswordValue: PropTypes.func.isRequired,
   onSubmitPasswordForm: PropTypes.func.isRequired,
 };
+*/
 
 // == Export
 export default Password;

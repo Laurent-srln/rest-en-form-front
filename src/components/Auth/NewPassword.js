@@ -80,6 +80,7 @@ const NewPassword = ({
 };
 
 // == Props Validation
+/*
 NewPassword.propTypes = {
   inputNewPasswordValue: PropTypes.string.isRequired,
   inputConfirmPasswordValue: PropTypes.string.isRequired,
@@ -87,6 +88,7 @@ NewPassword.propTypes = {
   onChangeInputConfirmPasswordValue: PropTypes.func.isRequired,
   onSubmitNewPasswordForm: PropTypes.func.isRequired,
 };
+*/
 
 // == Export
 export default NewPassword;
