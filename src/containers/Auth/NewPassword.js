@@ -6,7 +6,7 @@ import {
   setInputNewPasswordValue,
   setInputConfirmNewPasswordValue,
   addConfirmNewPassword,
-} from 'src/actions';
+} from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   inputNewPasswordValue: state.auth.newPassword,

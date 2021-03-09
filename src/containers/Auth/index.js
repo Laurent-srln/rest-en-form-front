@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import Auth from 'src/components/Auth';
 
-import { saveMail } from 'src/actions';
+import { saveMail } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   password: state.auth.login.password,

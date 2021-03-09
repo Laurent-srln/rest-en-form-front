@@ -11,14 +11,6 @@ const Coachs = () => (
     <h1 className="coachs__title">Les coachs</h1>
     <div className="coachs__content">
       <Coach />
-      <Coach />
-      <Coach />
-      <Coach />
-      <Coach />
-      <Coach />
-      <Coach />
-      <Coach />
-      <Coach />
     </div>
     <a href="">
       <p className="coach__cta">+ Réserver un coaching</p>
