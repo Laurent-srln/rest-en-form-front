@@ -26,9 +26,13 @@ const Coach = ({
                   alt=""
                 />
               </div>
-              <div className="coach__specialities">
-                <p className="coach__specialities-item">{[...coachObject.specialities]}</p>
-              </div>
+              {
+                coachObject.specialities.map((specialitieObject) => (
+                  <div className="coach__specialities">
+                    <p className="coach__specialities-item">{[...specialitieObject]}</p>
+                  </div>
+                ))
+              }
               <div className="coach__email">
                 <p className="coach__email-item">{coachObject.email}</p>
               </div>
