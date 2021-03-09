@@ -1,27 +1,29 @@
 import {
   SET_INPUT_MAIL_VALUE,
   SET_INPUT_PASSWORD_VALUE,
-  SET_INPUT_NEW_PASSWORD_VALUE,
-  SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE,
-  SAVE_MAIL,
+  SAVE_USER,
 } from 'src/actions/auth';
 
 const initialState = {
   login: {
     email: 'sountidly@gmail.com',
-    password: false,
+    password: '',
     role: '',
   },
+  isLogged: false,
 };
-
+console.log('Reducer AUTH');
 const auth = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_INPUT_MAIL_VALUE:
       return {
         ...state,
-        email: action.value,
+        login: {
+          email: action.payload,
+          password: state.login.password,
+        },
       };
-    case SAVE_MAIL:
+    case SAVE_USER:
       return {
         ...state,
         login: action.payload,
@@ -29,17 +31,10 @@ const auth = (state = initialState, action = {}) => {
     case SET_INPUT_PASSWORD_VALUE:
       return {
         ...state,
-        password: action.value,
-      };
-    case SET_INPUT_NEW_PASSWORD_VALUE:
-      return {
-        ...state,
-        newPassword: action.value,
-      };
-    case SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE:
-      return {
-        ...state,
-        confirmNewPassword: action.value,
+        login: {
+          email: state.login.email,
+          password: action.payload,
+        },
       };
     default:
       return state;

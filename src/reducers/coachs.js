@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const coachs = (state = initialState, action = {}) => {
-  console.log('reducer before');
   switch (action.type) {
     case SAVE_COACHS:
       console.log('reducers', SAVE_COACHS);

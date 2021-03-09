@@ -1,13 +1,13 @@
 // == Import npm
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 // == Import
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 
 // import Auth from 'src/components/Auth';
-// import Auth from 'src/containers/Auth';
-import Coachs from 'src/containers/GetCoachs/Coachs';
+import Auth from 'src/containers/Auth';
 // import DashboardAdh from 'src/components/DashboardAdh';
 // import DashboardCoach from 'src/components/DashboardCoach';
 // import DashboardManager from 'src/components/DashboardManager';
@@ -18,7 +18,7 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <Coachs />
+    <Auth />
     {/* <Auth /> */}
     {/* <DashboardAdh /> */}
     {/* <DashboardCoach /> */}

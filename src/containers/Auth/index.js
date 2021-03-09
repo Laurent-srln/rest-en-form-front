@@ -3,18 +3,39 @@ import { withRouter } from 'react-router-dom';
 
 import Auth from 'src/components/Auth';
 
-import { saveMail } from 'src/actions/auth';
+import {
+  setInputMailValue,
+  setInputPasswordValue,
+  login,
+} from 'src/actions/auth';
 
+console.log('containers Auth');
 const mapStateToProps = (state) => ({
-  password: state.auth.login.password,
+  inputMailValue: state.auth.login.email,
+  inputPasswordValue: state.auth.login.password,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  
+  onChangeInputMailValue: (value) => {
+    const action = setInputMailValue(value);
+    dispatch(action);
+  },
+  onChangeInputPasswordValue: (value) => {
+    // console.log('Au click, je veux changer le state du mail', value);
+    const action = setInputPasswordValue(value);
+    // console.log('action', action);
+    dispatch(action);
+  },
+  onSubmitMailForm: () => {
+    const action = login();
+    dispatch(action);
+  },
+  /*
   saveMail: () => {
     const action = saveMail();
     dispatch(action);
   },
+  */
 });
 
 const container = connect(mapStateToProps, mapDispatchToProps)(Auth);

@@ -1,35 +1,33 @@
 import axios from 'axios';
 
-import { ADD_MAIL, saveMail } from 'src/actions/auth';
+import { LOGIN, saveUser } from 'src/actions/auth';
 
 const baseUrl = 'https://app-osport.herokuapp.com';
-
 const auth = (store) => (next) => (action) => {
   switch (action.type) {
-    case ADD_MAIL: {
-      const addUserMail = async () => {
+    case LOGIN: {
+      const sendLoginToApi = async () => {
         try {
-          const { email, password, role } = store.getState().auth.login;
+          const { email, password } = store.getState().auth.login;
 
           const stateStringify = JSON.stringify({
             email,
             password,
-            role,
           });
 
-          const response = await axios.post(`${baseUrl}/login-email`, stateStringify, {
+          const response = await axios.post(`${baseUrl}/login-password`, stateStringify, {
             headers: {
               'content-type': 'application/json',
             },
           });
           console.log('response.data', response.data);
-          store.dispatch(saveMail(response.data));
+          store.dispatch(saveUser(response.data));
         }
         catch (error) {
           console.log(error);
         }
       };
-      addUserMail();
+      sendLoginToApi();
       break;
     }
     default:
