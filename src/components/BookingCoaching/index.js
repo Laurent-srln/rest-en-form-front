@@ -11,7 +11,7 @@ const BookingCoaching = () => (
   <div className="booking-coaching">
     <AddCoaching />
     <div className="booking-coaching__coachs">
-      <Coachs />
+      {/* <Coachs /> */}
     </div>
   </div>
 );

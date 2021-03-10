@@ -4,7 +4,7 @@ export const GET_ALL_COACHS = 'GET_ALL_COACHS';
 export const SAVE_COACHS = 'SAVE_COACHS';
 
 // === Action types
-console.log('action');
+console.log('action coach');
 export const getAllCoachs = (payload) => ({
   type: GET_ALL_COACHS,
   payload,

@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import auth from './auth';
-import coachs from './coachs';
+// import coachs from './coachs';
 
 const globalReducer = combineReducers({
   auth,
-  coachs,
+  // coachs,
 });
 
 export default globalReducer;

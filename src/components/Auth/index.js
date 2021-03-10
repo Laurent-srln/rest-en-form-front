@@ -1,63 +1,100 @@
 // == Import npm
-import React, { useEffect } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // == Imports
 
-// import Login from './Login';
-import Login from 'src/containers/Auth/Login';
-
-// import Password from './Password';
-import Password from 'src/containers/Auth/Password';
-
 // import NewPassword from './NewPassword';
-import NewPassword from 'src/containers/Auth/NewPassword';
+// import NewPassword from 'src/containers/Auth/NewPassword';
 
 import './style.scss';
 
 // == Composant
 
-const Auth = ({ password, saveMail }) => {
-  
-  {/* useEffect(saveMail, [password]); */}
+const Auth = ({
+  inputMailValue,
+  onChangeInputMailValue,
+  onSubmitMailForm,
+  inputPasswordValue,
+  onChangeInputPasswordValue,
+}) => {
+  const handleOnChangeMail = (event) => {
+    onChangeInputMailValue(event.target.value);
+  };
+  const handleOnChangePassword = (event) => {
+    // console.log('on change', event.target.value);
+    onChangeInputPasswordValue(event.target.value);
+  };
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    if (inputMailValue && inputPasswordValue) {
+      onSubmitMailForm();
+    }
+  };
 
-  console.log('password', password);
   return (
     <div className="auth">
       <p className="auth__title">Se connecter</p>
       <div className="auth__content">
+        <form
+          className="auth__form"
+          onSubmit={handleOnSubmit}
+        >
+          <label
+            className="auth__form-label"
+            htmlFor="email"
+          >
+            Votre adresse email
+            <input
+              className="auth__form-input"
+              method="post"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="rodolphe.martin@oclock.io"
+              value={inputMailValue}
+              onChange={handleOnChangeMail}
+            />
+          </label>
 
-        <Route
-          path="/"
-          exact
-        >
-          <Login />
-        </Route>
-      
-        <Route
-          exact
-          path="/connexion"
-        >
-          {password && (
-            <Password />
-          )}
-          {!password && (
-            <NewPassword />
-          )}
-        </Route>
+          <label
+            className="auth__form-label"
+            htmlFor="password"
+          >
+            Votre mot de passe
+            <input
+              className="auth__form-input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="*************"
+              value={inputPasswordValue}
+              onChange={handleOnChangePassword}
+            />
+          </label>
+
+          <div className="auth__form-submit">
+            <button
+              type="submit"
+              className="button"
+            >
+              Se connecter
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
 };
 
 // == Props Validation
-/*
 Auth.propTypes = {
-  password: PropTypes.bool.isRequired,
-  saveMail: PropTypes.func.isRequired,
+  inputMailValue: PropTypes.string.isRequired,
+  onChangeInputMailValue: PropTypes.func.isRequired,
+  inputPasswordValue: PropTypes.string.isRequired,
+  onChangeInputPasswordValue: PropTypes.func.isRequired,
+  onSubmitMailForm: PropTypes.func.isRequired,
 };
-*/
 
 // == Export
 export default Auth;
