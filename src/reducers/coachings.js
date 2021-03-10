@@ -1,31 +1,35 @@
+import { SAVE_COACHINGS } from 'src/actions/coachings';
+
 const initialState = {
   coachings: [
     {
-      id: 1,
-      coachName: 'Albus',
-      date: 'Mardi 6 avril',
-      time: '9h15-9h30',
-    },
-    {
-      id: 2,
-      coachName: 'Harry',
-      date: 'Lundi 5 avril',
-      time: '10h15-10h30',
-    },
-    {
-      id: 3,
-      coachName: 'Jean',
-      date: 'dimanche 5 avril',
-      time: '8h15-8h30',
+      id: 0,
+      startTime: '',
+      endTime: '',
+      coachId: 0,
+      coachFirstname: '',
+      coachLastname: '',
+      memberId: 0,
+      createdAt: '',
+      updatedAt: null,
+      memberFirstname: '',
+      memberLastname: '',
     },
   ],
+
 };
 
-const reducer = (state = initialState, action = {}) => {
+const coachings = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SAVE_COACHINGS:
+      console.log('SAVE_COACHINGS', SAVE_COACHINGS);
+      return {
+        ...state,
+        coachings: action.payload,
+      };
     default:
       return state;
   }
 };
 
-export default reducer;
+export default coachings;
