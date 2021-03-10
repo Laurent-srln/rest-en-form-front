@@ -9,6 +9,7 @@ const getNextBookings = (store) => (next) => (action) => {
       const getNextBookingsFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
+          console.log(token);
 
           const response = await axios.get(`${baseUrl}/coach-next-bookings`, {
             headers: {

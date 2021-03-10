@@ -11,8 +11,8 @@ import {
 
 console.log('containers Auth');
 const mapStateToProps = (state) => ({
-  inputMailValue: state.auth.login.email,
-  inputPasswordValue: state.auth.login.password,
+  inputMailValue: state.auth.email,
+  inputPasswordValue: state.auth.password,
 });
 
 const mapDispatchToProps = (dispatch) => ({

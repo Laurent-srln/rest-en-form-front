@@ -8,21 +8,21 @@ const auth = (store) => (next) => (action) => {
     case LOGIN: {
       const sendLoginToApi = async () => {
         try {
-          const { email, password, token } = store.getState().auth.login;
+          const { email, password } = store.getState().auth;
 
-          const stateStringify = JSON.stringify({
+          const userStringify = JSON.stringify({
             email,
             password,
-            token,
           });
 
-          const response = await axios.post(`${baseUrl}/login`, stateStringify, {
+          const response = await axios.post(`${baseUrl}/login`, userStringify, {
             headers: {
               'content-type': 'application/json',
-              Authorization: `bearer ${token}`,
             },
           });
           console.log('response.data', response.data);
+          // stockage du token dans le localStorage (réutiliser dans le reducer)
+          localStorage.setItem('token', response.data.token);
           store.dispatch(saveUser(response.data));
         }
         catch (error) {
