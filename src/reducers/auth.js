@@ -6,11 +6,12 @@ import {
 
 const initialState = {
   login: {
-    email: 'sountidly@gmail.com',
+    email: 'alibaba@gmail.com',
     password: '',
     role: '',
+    isLogged: false,
+    token: '',
   },
-  isLogged: false,
 };
 console.log('Reducer AUTH');
 const auth = (state = initialState, action = {}) => {
@@ -23,11 +24,6 @@ const auth = (state = initialState, action = {}) => {
           password: state.login.password,
         },
       };
-    case SAVE_USER:
-      return {
-        ...state,
-        login: action.payload,
-      };
     case SET_INPUT_PASSWORD_VALUE:
       return {
         ...state,
@@ -35,6 +31,11 @@ const auth = (state = initialState, action = {}) => {
           email: state.login.email,
           password: action.payload,
         },
+      };
+    case SAVE_USER:
+      return {
+        ...state,
+        login: action.payload,
       };
     default:
       return state;

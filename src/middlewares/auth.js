@@ -8,16 +8,18 @@ const auth = (store) => (next) => (action) => {
     case LOGIN: {
       const sendLoginToApi = async () => {
         try {
-          const { email, password } = store.getState().auth.login;
+          const { email, password, token } = store.getState().auth.login;
 
           const stateStringify = JSON.stringify({
             email,
             password,
+            token,
           });
 
-          const response = await axios.post(`${baseUrl}/login-password`, stateStringify, {
+          const response = await axios.post(`${baseUrl}/login`, stateStringify, {
             headers: {
               'content-type': 'application/json',
+              Authorization: `bearer ${token}`,
             },
           });
           console.log('response.data', response.data);
