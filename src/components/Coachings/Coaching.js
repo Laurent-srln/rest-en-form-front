@@ -1,13 +1,13 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // == Imports
 import './style.scss';
 
 // == Composant
-const Coaching = () => (
-  <li className="coaching">
-
+const Coaching = ({ coachName, date, time }) => (
+  <div className="coaching">
     <div className="coaching__coach">
       <img
         className="img"
@@ -17,7 +17,7 @@ const Coaching = () => (
       <p
         className="name"
       >
-        Alexandre Martin
+        {coachName}
       </p>
     </div>
 
@@ -25,12 +25,12 @@ const Coaching = () => (
       <p
         className="date"
       >
-        Mardi 10 mars 2021
+        {date}
       </p>
       <p
         className="time"
       >
-        9h15-9h30
+        {time}
       </p>
     </div>
 
@@ -42,7 +42,7 @@ const Coaching = () => (
       />
       <img
         className="clock"
-        src="https://cdn.icon-icons.com/icons2/930/PNG/512/clock_icon-icons.com_72357.png"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5R-lxqkt0YRbKKNFdKRloCvkpxq_6yuevg&usqp=CAU"
         alt=""
       />
     </div>
@@ -51,10 +51,15 @@ const Coaching = () => (
       src="https://pngimage.net/wp-content/uploads/2018/06/poubelle-logo-png-4.png"
       alt=""
     />
-  </li>
+  </div>
 );
 
 // == Props Validation
+Coaching.propTypes = {
+  coachName: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+};
 
 // == Export
 export default Coaching;

@@ -13,6 +13,8 @@ import DashboardAdh from 'src/components/DashboardAdh';
 import DashboardCoach from 'src/components/DashboardCoach';
 import DashboardManager from 'src/components/DashboardManager';
 
+// import Coachings from 'src/components/Coachings';
+import Coachings from 'src/containers/Coachings/Coachings';
 
 import './styles.scss';
 
@@ -26,6 +28,7 @@ const App = ({ isLogged, role, appInit }) => {
     <div className="app">
       <Header />
       <Switch>
+        <Redirect exact from="/" to="/login" />
         {!isLogged && (
           <Route path="/login" exact>
             <Auth />
@@ -61,6 +64,12 @@ const App = ({ isLogged, role, appInit }) => {
           exact
         >
           <DashboardManager />
+        </Route>
+        <Route
+          exact
+          path="/coachings"
+        >
+          <Coachings />
         </Route>
       </Switch>
       <Footer />
