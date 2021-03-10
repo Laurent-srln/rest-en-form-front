@@ -6,8 +6,8 @@ import {
 
 const initialState = {
   login: {
-    email: 'alibaba@gmail.com',
-    password: '',
+    email: 'alext@coach.com',
+    password: 'coach',
     role: '',
     isLogged: false,
     token: '',
