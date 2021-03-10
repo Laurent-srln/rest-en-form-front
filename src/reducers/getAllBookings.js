@@ -1,7 +1,11 @@
 import { SAVE_NEXT_BOOKINGS } from 'src/actions/nextBookings';
 
 const initialState = {
-  nextBookings: '',
+  nextBookings: [
+    {
+      memberFirstname: '',
+    },
+  ],
 };
 
 const getAllBookings = (state = initialState, action = {}) => {

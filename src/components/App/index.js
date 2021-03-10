@@ -11,7 +11,7 @@ import Auth from 'src/containers/Auth';
 
 import DashboardAdh from 'src/components/DashboardAdh';
 import DashboardManager from 'src/components/DashboardManager';
-import DashboardCoach from 'src/containers/DashboardCoach';
+import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 
 import './styles.scss';
 
@@ -38,7 +38,7 @@ const App = ({ isLogged, role, appInit }) => {
         {role === 'COACH' && (
           <Redirect from="/login" to="/dashboard-coach" />
         )}
-        
+
         {role === 'OWNER' && (
           <Redirect from="/login" to="/dashboard-manager" />
         )}
