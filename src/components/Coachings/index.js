@@ -10,7 +10,6 @@ import './style.scss';
 
 // == Composant
 const Coachings = ({ coachings, getCoachings }) => {
-  console.log('coachingsProps', coachings);
   useEffect(getCoachings, []);
 
   return (

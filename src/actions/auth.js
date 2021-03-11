@@ -19,7 +19,6 @@ export const ADD_PASSWORD = 'ADD_PASSWORD';
 // export const ADD_CONFIRM_NEW_PASSWORD = 'ADD_CONFIRM_NEW_PASSWORD';
 
 // === Action types
-console.log('action auth');
 // Login
 export const setInputMailValue = (payload) => ({
   type: SET_INPUT_MAIL_VALUE,

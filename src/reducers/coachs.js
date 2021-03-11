@@ -7,7 +7,6 @@ const initialState = {
 const coachs = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_COACHS:
-      console.log('reducers', SAVE_COACHS);
       return {
         ...state,
         coach: action.payload,

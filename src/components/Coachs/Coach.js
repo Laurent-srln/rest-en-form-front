@@ -6,12 +6,10 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 // == Composant
-console.log('component');
 const Coach = ({
   coach, getAllCoachs,
 }) => {
   useEffect(getAllCoachs, []);
-  console.log('coach', coach);
   return (
     <>
       {

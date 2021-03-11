@@ -14,7 +14,7 @@ const initialState = {
     token: localStorage.getItem('token'),
   },
 };
-console.log('Reducer AUTH');
+
 const auth = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_INPUT_MAIL_VALUE:

@@ -1,11 +1,9 @@
 import { SAVE_NEXT_BOOKINGS } from 'src/actions/nextBookings';
+import { SAVE_LAST_BOOKINGS } from 'src/actions/lastBookings';
 
 const initialState = {
-  nextBookings: [
-    {
-      memberFirstname: '',
-    },
-  ],
+  nextBookings: [],
+  lastBookings: [],
 };
 
 const getAllBookings = (state = initialState, action = {}) => {
@@ -14,6 +12,11 @@ const getAllBookings = (state = initialState, action = {}) => {
       return {
         ...state,
         nextBookings: action.payload,
+      };
+    case SAVE_LAST_BOOKINGS:
+      return {
+        ...state,
+        lastBookings: action.payload,
       };
     default:
       return state;
