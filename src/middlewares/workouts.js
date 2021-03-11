@@ -9,7 +9,6 @@ const getWorkouts = (store) => (next) => (action) => {
     case GET_WORKOUTS: {
       const getWorkoutsFromApi = async () => {
         try {
-          console.log('GetFromAPI');
           const { token } = store.getState().auth.login;
           const response = await axios.get(`${baseUrl}/workouts`, {
             headers: {

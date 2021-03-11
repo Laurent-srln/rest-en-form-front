@@ -6,6 +6,7 @@ import { getWorkouts } from 'src/actions/workouts';
 
 const mapStateToProps = (state) => ({
   workouts: state.workouts.workouts,
+  date: state.workouts.workouts.date,
 });
 
 const mapDispatchToProps = (dispatch) => ({

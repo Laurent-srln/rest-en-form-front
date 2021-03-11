@@ -5,16 +5,36 @@ import PropTypes from 'prop-types';
 
 // == Imports
 import Workout from './Workout';
-import SelectWorkout from './SelectWorkout';
 import './style.scss';
 
 // == Composant
 const Workouts = ({ workouts, getWorkouts }) => {
   useEffect(getWorkouts, []);
 
+  
+
   return (
     <div className="workout">
-      <SelectWorkout date={date} />
+      <div className="selectWorkout">
+        <label
+          className="selectWorkout__label"
+          htmlFor="workout-select"
+        >
+          Training effectués
+          <select
+            className="selectWorkout__select"
+            name="workouts"
+            id="workout-select"
+          >
+            <option value="">Sélectionner une date</option>
+            {
+              workouts.map((dateItem) => (
+                <option value={'{dateItem.date}'} key={dateItem.date}>{dateItem.date}</option>
+              ))
+            }
+          </select>
+        </label>
+      </div>
       <ul className="workout__content">
         {workouts.map((workout) => <Workout key={workout.id} {...workout} />)}
       </ul>
