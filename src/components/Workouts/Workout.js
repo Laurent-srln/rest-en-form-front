@@ -6,9 +6,9 @@ import CoachComment from './CoachComment';
 import './style.scss';
 
 // == Composant
-const Training = () => (
-  <div className="training">
-    <div className="training__icons">
+const Workout = () => (
+  <div className="workout">
+    <div className="workout__icons">
       <img
         className="bubble"
         src="https://img2.freepng.fr/20180617/pil/kisspng-grow-around-speech-balloon-text-clip-art-conversation-bubble-5b26b2ea357129.2881425615292628262189.jpg"
@@ -20,8 +20,8 @@ const Training = () => (
         alt=""
       />
     </div>
-    <p className="training__date">Vendredi 2 février</p>
-    <p className="training__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius facilis quod illo, consequatur soluta, reprehenderit voluptas veritatis amet officia in fugit magnam, impedit id magni? Doloremque iusto illo aut adipisci?</p>
+    <p className="workout__date">Vendredi 2 février</p>
+    <p className="workout__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius facilis quod illo, consequatur soluta, reprehenderit voluptas veritatis amet officia in fugit magnam, impedit id magni? Doloremque iusto illo aut adipisci?</p>
     <div className="training__health">
       <p className="amount">Poids : 84 kg</p>
       <span className="amount"> / </span>
@@ -36,7 +36,7 @@ const Training = () => (
     <CoachComment />
     <button
       type="button"
-      className="training__button"
+      className="workout__button"
     >
       Voir moins
     </button>
@@ -46,4 +46,4 @@ const Training = () => (
 // == Props Validation
 
 // == Export
-export default Training;
+export default Workout;

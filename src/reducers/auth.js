@@ -5,8 +5,8 @@ import {
 } from 'src/actions/auth';
 
 const initialState = {
-  email: 'alext@coach.com',
-  password: 'coach',
+  email: 'alibaba@gmail.com',
+  password: 'member',
   login: {
     role: '',
     logged: false,
@@ -14,7 +14,7 @@ const initialState = {
     token: localStorage.getItem('token'),
   },
 };
-console.log('Reducer AUTH');
+
 const auth = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_INPUT_MAIL_VALUE:

@@ -22,7 +22,6 @@ const initialState = {
 const coachings = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_COACHINGS:
-      console.log('SAVE_COACHINGS', SAVE_COACHINGS);
       return {
         ...state,
         coachings: action.payload,

@@ -1,4 +1,6 @@
-.selectTraining {
+@use '../../styles/vars' as v;
+
+.selectWorkout {
   text-align: left;
   margin: 1rem;
 
@@ -12,7 +14,7 @@
   }
 }
 
-.trainings {
+.workouts {
 
   &__content {
 
@@ -27,7 +29,7 @@
   }
 }
 
-.training {
+.workout {
   border-radius: 30px;
   box-shadow: 0 0 8px .2px gray;
   margin: 2rem 1rem;

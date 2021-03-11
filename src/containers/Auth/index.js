@@ -9,7 +9,6 @@ import {
   login,
 } from 'src/actions/auth';
 
-console.log('containers Auth');
 const mapStateToProps = (state) => ({
   inputMailValue: state.auth.email,
   inputPasswordValue: state.auth.password,

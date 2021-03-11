@@ -5,19 +5,19 @@ import React from 'react';
 import './style.scss';
 
 // == Composant
-const SelectTraining = () => (
-  <div className="selectTraining">
+const SelectWorkout = () => (
+  <div className="selectWorkout">
     <label
-      className="selectTraining__label"
-      htmlFor="training-select"
+      className="selectWorkout__label"
+      htmlFor="workout-select"
     >
       Training effectués
       <select
-        className="selectTraining__select"
-        name="trainings"
-        id="training-select"
+        className="selectWorkout__select"
+        name="workouts"
+        id="workout-select"
       >
-        <option value="">Sélectionner un training</option>
+        <option value="">Sélectionner une date</option>
         <option value="vendredi 2 février">vendredi 2 février</option>
         <option value="mercredi 31 janvier">mercredi 31 janvier</option>
         <option value="lundi 24 janvier">lundi 24 janvier</option>
@@ -30,4 +30,4 @@ const SelectTraining = () => (
 // == Props Validation
 
 // == Export
-export default SelectTraining;
+export default SelectWorkout;
