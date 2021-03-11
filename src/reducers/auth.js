@@ -5,8 +5,8 @@ import {
 } from 'src/actions/auth';
 
 const initialState = {
-  email: 'alext@coach.com',
-  password: 'coach',
+  email: 'alibaba@gmail.com',
+  password: 'member',
   login: {
     role: '',
     logged: false,

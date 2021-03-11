@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // == Imports
 import Coaching from 'src/components/Coachings/Coaching';
+import { Link } from 'react-router-dom';
 // import Coaching from 'src/containers/Coachings/Coaching';
 
 import './style.scss';
@@ -18,9 +19,9 @@ const Coachings = ({ coachings, getCoachings }) => {
       <div className="coachings__content">
         {coachings.map((coaching) => <Coaching key={coaching.id} {...coaching} />)}
       </div>
-      <a href="">
-        <p className="coachings__cta">+ Réserver un coaching</p>
-      </a>
+      <p className="coachings__cta">
+        <Link to="/booking-coaching">+ Réserver un coaching</Link>
+      </p>
     </div>
   );
 };
