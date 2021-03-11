@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getCoachings: () => {
     const action = getCoachings();
-    console.log('action', action);
     dispatch(action);
   },
 });

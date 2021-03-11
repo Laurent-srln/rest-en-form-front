@@ -9,7 +9,6 @@ import {
   login,
 } from 'src/actions/auth';
 
-console.log('containers Auth');
 const mapStateToProps = (state) => ({
   inputMailValue: state.auth.email,
   inputPasswordValue: state.auth.password,
@@ -21,21 +20,13 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   onChangeInputPasswordValue: (value) => {
-    // console.log('Au click, je veux changer le state du mail', value);
     const action = setInputPasswordValue(value);
-    // console.log('action', action);
     dispatch(action);
   },
   onSubmitMailForm: () => {
     const action = login();
     dispatch(action);
   },
-  /*
-  saveMail: () => {
-    const action = saveMail();
-    dispatch(action);
-  },
-  */
 });
 
 const container = connect(mapStateToProps, mapDispatchToProps)(Auth);

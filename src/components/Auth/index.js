@@ -22,7 +22,6 @@ const Auth = ({
     onChangeInputMailValue(event.target.value);
   };
   const handleOnChangePassword = (event) => {
-    // console.log('on change', event.target.value);
     onChangeInputPasswordValue(event.target.value);
   };
   const handleOnSubmit = (event) => {

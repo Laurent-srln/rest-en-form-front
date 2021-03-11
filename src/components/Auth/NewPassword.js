@@ -14,18 +14,15 @@ const NewPassword = ({
   onSubmitNewPasswordForm,
 }) => {
   const handleOnChangeNewPassword = (event) => {
-    // console.log('on change', event.target.value);
     onChangeInputNewPasswordValue(event.target.value);
   };
 
   const handleOnChangeConfirmPassword = (event) => {
-    // console.log('on change', event.target.value);
     onChangeInputConfirmPasswordValue(event.target.value);
   };
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    // console.log('handleOnSubmit');
     if (inputNewPasswordValue && inputConfirmPasswordValue) {
       onSubmitNewPasswordForm();
     }

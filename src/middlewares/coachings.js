@@ -7,7 +7,6 @@ const baseUrl = 'https://app-osport.herokuapp.com';
 const getCoachings = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_COACHINGS: {
-      console.log('GET_COACHINGS', GET_COACHINGS);
       const getCoachingsFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;

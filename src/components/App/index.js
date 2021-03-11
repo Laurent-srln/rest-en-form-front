@@ -23,8 +23,6 @@ import './styles.scss';
 // == Composant
 const App = ({ isLogged, role, appInit }) => {
   useEffect(appInit, [isLogged, role]);
-  console.log('isLogged', isLogged);
-  console.log('role', role);
 
   return (
     <div className="app">

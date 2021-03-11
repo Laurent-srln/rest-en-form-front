@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { GET_NEXT_BOOKINGS, saveNextBookings } from 'src/actions/nextBookings';
+import { GET_LAST_BOOKINGS, saveLastBookings } from 'src/actions/lastBookings';
 
 const baseUrl = 'https://app-osport.herokuapp.com';
 const getNextBookings = (store) => (next) => (action) => {
@@ -9,7 +10,6 @@ const getNextBookings = (store) => (next) => (action) => {
       const getNextBookingsFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
-          console.log(token);
 
           const response = await axios.get(`${baseUrl}/coach-next-bookings`, {
             headers: {
@@ -17,7 +17,7 @@ const getNextBookings = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          console.log('next bookings', response.data);
           store.dispatch(saveNextBookings(response.data));
         }
         catch (error) {
@@ -25,6 +25,27 @@ const getNextBookings = (store) => (next) => (action) => {
         }
       };
       getNextBookingsFromApi();
+      break;
+    }
+    case GET_LAST_BOOKINGS: {
+      const getLastBookingsFromApi = async () => {
+        try {
+          const { token } = store.getState().auth.login;
+
+          const response = await axios.get(`${baseUrl}/coach-last-bookings`, {
+            headers: {
+              'content-type': 'application/json',
+              Authorization: `bearer ${token}`,
+            },
+          });
+          console.log('last bookings', response.data);
+          store.dispatch(saveLastBookings(response.data));
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+      getLastBookingsFromApi();
       break;
     }
     default:

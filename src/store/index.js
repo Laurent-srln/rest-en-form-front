@@ -6,12 +6,12 @@ import reducer from 'src/reducers';
 import auth from 'src/middlewares/auth';
 import coachings from 'src/middlewares/coachings';
 import coachs from 'src/middlewares/getCoaches';
-import nextBookings from 'src/middlewares/getNextBookings';
+import allBookings from 'src/middlewares/getAllBookings';
 
 const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(auth, coachings),
   applyMiddleware(coachs),
-  applyMiddleware(nextBookings),
+  applyMiddleware(allBookings),
 ));
 
 export default store;
