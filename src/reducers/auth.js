@@ -8,8 +8,8 @@ const initialState = {
   email: 'alext@coach.com',
   password: 'coach',
   login: {
-    role: 'COACH',
-    isLogged: false,
+    role: '',
+    logged: false,
     // utilisation du token récupéré par la requete de login
     token: localStorage.getItem('token'),
   },
