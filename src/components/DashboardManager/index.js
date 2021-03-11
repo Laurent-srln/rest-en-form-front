@@ -135,6 +135,7 @@ const DashboardManager = ({
   </div>
 );
 
+/*
 DashboardManager.propTypes = {
   totalMembers: PropTypes.number.isRequired,
   totalCoaches: PropTypes.number.isRequired,
@@ -147,4 +148,5 @@ DashboardManager.propTypes = {
   startSlot: PropTypes.string.isRequired,
   endSlot: PropTypes.string.isRequired,
 };
+*/
 export default DashboardManager;

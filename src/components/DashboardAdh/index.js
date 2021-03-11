@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // == Imports
 // import CoachingsAdh from 'src/components/CoachingsAdh';
@@ -13,8 +14,8 @@ const DashboardAd = () => (
     <div className="dashboardAd__coaching"> Réservation coaching
       {/* <CoachingsAdh /> */}
       <p>
-        <a href="#">Réserver un coaching</a>
-        <a href="#">Voir toutes les réservations</a>
+        <Link to="/booking-coaching">Réserver un coaching</Link>
+        <Link to="/coachings">Voir toutes les réservations</Link>
       </p>
     </div>
     {/* <div>Dernier training

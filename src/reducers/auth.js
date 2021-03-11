@@ -7,7 +7,7 @@ import {
 const initialState = {
   login: {
     email: 'alibaba@gmail.com',
-    password: '',
+    password: 'member',
     role: '',
     isLogged: false,
     token: '',

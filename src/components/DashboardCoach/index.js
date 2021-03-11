@@ -40,9 +40,11 @@ const DashboardCoach = ({ date, hour, name }) => (
   </div>
 );
 
+/*
 DashboardCoach.propTypes = {
   date: PropTypes.string.isRequired,
   hour: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
+*/
 export default DashboardCoach;
