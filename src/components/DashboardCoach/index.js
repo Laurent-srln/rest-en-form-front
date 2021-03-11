@@ -21,4 +21,19 @@ const DashboardCoach = ({
   );
 };
 
+DashboardCoach.propTypes = {
+  nextBookingsArray: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      memberFirstname: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  lastBookingsArray: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      memberFirstname: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
+
 export default DashboardCoach;

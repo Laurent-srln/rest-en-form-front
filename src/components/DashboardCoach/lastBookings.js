@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const lastCoaching = ({ lastBookingsArray }) => (
+const lastBookings = ({ lastBookingsArray }) => (
   <div className="dashboard-last-coaching">
     <h2 className="dashboard-last-coaching-title">Dernier coachings</h2>
     <div className="dashboard-last-coaching-container">
@@ -12,7 +12,7 @@ const lastCoaching = ({ lastBookingsArray }) => (
       </ul>
       {
           lastBookingsArray.map((lastBookingObject) => (
-            <ul className="dashboard-list-info-item">
+            <ul key={lastBookingObject.id} className="dashboard-list-info-item">
               <li>1 sept 1991</li>
               <li>11h20</li>
               <li>{lastBookingObject.memberFirstname}</li>
@@ -23,5 +23,12 @@ const lastCoaching = ({ lastBookingsArray }) => (
   </div>
 );
 
-// lastCoaching.propTypes = {};
-export default lastCoaching;
+lastBookings.propTypes = {
+  lastBookingsArray: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      memberFirstname: PropTypes.string.isRequired,
+    }),
+  ),
+};
+export default lastBookings;

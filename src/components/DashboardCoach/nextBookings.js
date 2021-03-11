@@ -12,7 +12,7 @@ const nextBookings = ({ nextBookingsArray }) => (
       </ul>
       {
           nextBookingsArray.map((nextBookingObject) => (
-            <ul className="dashboard-list-info-item">
+            <ul key={nextBookingObject.id} className="dashboard-list-info-item">
               <li>1 sept 1991</li>
               <li>11h20</li>
               <li>{nextBookingObject.memberFirstname}</li>
@@ -23,13 +23,12 @@ const nextBookings = ({ nextBookingsArray }) => (
   </div>
 );
 
-/*
 nextBookings.propTypes = {
   nextBookingsArray: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       memberFirstname: PropTypes.string.isRequired,
     }),
   ),
 };
-*/
 export default nextBookings;
