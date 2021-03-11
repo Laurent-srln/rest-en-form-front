@@ -14,7 +14,7 @@ import DashboardManager from 'src/components/DashboardManager';
 import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 
 import Coachings from 'src/containers/Coachings/Coachings';
-import Workouts from 'src/components/Workouts';
+import Workouts from 'src/containers/Workouts/Workouts';
 
 import './styles.scss';
 

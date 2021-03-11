@@ -1,29 +1,30 @@
 import axios from 'axios';
 
-import { GET_COACHINGS, saveCoachings } from 'src/actions/coachings';
+import { GET_WORKOUTS, saveWorkouts } from 'src/actions/workouts';
 
 const baseUrl = 'https://app-osport.herokuapp.com';
 
-const getCoachings = (store) => (next) => (action) => {
+const getWorkouts = (store) => (next) => (action) => {
   switch (action.type) {
-    case GET_COACHINGS: {
-      const getCoachingsFromApi = async () => {
+    case GET_WORKOUTS: {
+      const getWorkoutsFromApi = async () => {
         try {
+          console.log('GetFromAPI');
           const { token } = store.getState().auth.login;
-          const response = await axios.get(`${baseUrl}/member-next-bookings`, {
+          const response = await axios.get(`${baseUrl}/workouts`, {
             headers: {
               'content-type': 'application/json',
               Authorization: `bearer ${token}`,
             },
           });
           console.log('response.data', response.data);
-          store.dispatch(saveCoachings(response.data));
+          store.dispatch(saveWorkouts(response.data));
         }
         catch (error) {
           console.log(error);
         }
       };
-      getCoachingsFromApi();
+      getWorkoutsFromApi();
       break;
     }
     default:
@@ -31,4 +32,4 @@ const getCoachings = (store) => (next) => (action) => {
   }
 };
 
-export default getCoachings;
+export default getWorkouts;

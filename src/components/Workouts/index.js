@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -9,13 +9,12 @@ import SelectWorkout from './SelectWorkout';
 import './style.scss';
 
 // == Composant
-const Workouts = ({ workouts, getworkouts}) => {
-  // useEffect(getWorkouts, []);
-  console.log('workout', workouts);
+const Workouts = ({ workouts, getWorkouts }) => {
+  useEffect(getWorkouts, []);
 
   return (
     <div className="workout">
-      <SelectWorkout />
+      <SelectWorkout date={date} />
       <ul className="workout__content">
         {workouts.map((workout) => <Workout key={workout.id} {...workout} />)}
       </ul>
@@ -25,16 +24,16 @@ const Workouts = ({ workouts, getworkouts}) => {
 };
 
 // == Props Validation
-/*
+
 Workouts.propTypes = {
   workouts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
+      date: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  getWorkings: PropTypes.func.isRequired,
+  getWorkouts: PropTypes.func.isRequired,
 };
-*/
 
 // == Export
 export default Workouts;

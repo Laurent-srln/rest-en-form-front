@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Coachings from 'src/components/Coachings';
 
 import { getCoachings } from 'src/actions/coachings';
@@ -14,4 +15,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Coachings);
+const container = connect(mapStateToProps, mapDispatchToProps)(Coachings);
+
+export default withRouter(container);
