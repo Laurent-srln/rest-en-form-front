@@ -16,7 +16,7 @@ import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 
 // import Coachings from 'src/components/Coachings';
 import Coachings from 'src/containers/Coachings/Coachings';
-
+import Members from 'src/containers/GetAllMembers';
 
 import './styles.scss';
 
@@ -70,6 +70,9 @@ const App = ({ isLogged, role, appInit }) => {
           path="/coachings"
         >
           <Coachings />
+        </Route>
+        <Route exact path="/members">
+          <Members />
         </Route>
       </Switch>
       <Footer />
