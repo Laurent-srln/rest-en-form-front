@@ -45,6 +45,7 @@ const Coach = ({
 };
 
 // == Props Validation
+/*
 Coach.propTypes = {
   coach: PropTypes.arrayOf(PropTypes.shape({
     firstname: PropTypes.string.isRequired,
@@ -54,5 +55,6 @@ Coach.propTypes = {
   })).isRequired,
   getAllCoachs: PropTypes.func.isRequired,
 };
+*/
 // == Export
 export default Coach;

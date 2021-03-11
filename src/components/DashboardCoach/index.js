@@ -19,7 +19,4 @@ const DashboardCoach = ({ getNextBookings, nextBookingsArray }) => {
   );
 };
 
-// DashboardCoach.propTypes = {
-
-// };
 export default DashboardCoach;

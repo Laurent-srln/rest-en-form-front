@@ -124,7 +124,4 @@ const DashboardManager = () => (
   </div>
 );
 
-// DashboardManager.propTypes = {
-
-// };
 export default DashboardManager;

@@ -1,0 +1,194 @@
+@baseUrl = https://app-osport.herokuapp.com
+
+# 
+//snkcmuclyjjrag:e460879da3dc3d10454bd6031a1f3887e8c2be23ad5911e352e49feca6da5fd8@ec2-176-34-222-188.eu-west-1.compute.amazonaws.com:5432/daindlp1mpsoct
+
+
+
+############################## CONNEXION #############################
+
+
+
+### Set new Password
+POST {{baseUrl}}/register?token=0a8c6070-1978-448d-9317-f25dcd93a312
+Content-Type: application/json
+
+{
+    "password": "member",
+    "confirm": "member"
+}
+
+### Connexion
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "alaint@gmail.com",
+    "password": "password"
+}
+
+
+############################## MEMBERS #############################
+
+
+### Récupérer tous les adhérents
+GET {{baseUrl}}/members
+
+### Récupérer un adhérent
+GET {{baseUrl}}/members/3
+
+### Récupérer tous les Workouts d'un adhérent
+GET {{baseUrl}}/workouts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoibWF0aGlsZGUuZnJlcmUxQGdtYWlsLmNvbSIsInJvbGUiOiJNRU1CRVIiLCJpYXQiOjE2MTUyOTA4MTMsImV4cCI6MTYxNTMyNjgxM30.59wM8FQY53H-VN69MfuFYNAHVyC2z7uAeBIBwsUORK0
+
+### Récupérer tous les healthRecords d'un adhérent
+GET {{baseUrl}}/health
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoibWF0aGlsZGUuZnJlcmUxQGdtYWlsLmNvbSIsInJvbGUiOiJNRU1CRVIiLCJpYXQiOjE2MTUzMDA5MDksImV4cCI6MTYxNTMzNjkwOX0.-yDYsGHd8ia95umArcO7QeL2pCx6VKTQjyFlZcImiPo
+
+### Récupérer les prochains RDV d'un member
+GET {{baseUrl}}/member-next-bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1Mzc5MTY4LCJleHAiOjE2MTU0MTUxNjh9.LLxeSRK0kU_LeKxbknRHYlmua3Q8UYsLko3Csk3dRlk
+
+### Ajouter un workout par un member
+POST {{baseUrl}}/new-workout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NDAxNTMwLCJleHAiOjE2MTU0Mzc1MzB9.bMiPnoLxnOf84Q7Do-eh_ut2W0CCqd2yWKwV-ki6MYI
+
+{
+    "date": "2021-02-16",
+    "content": "workout alain terrieur ",
+    "weight": 45,
+    "muscleMass": 87,
+    "fatMass": 8,
+    "boneMass": 5,
+    "bodyWater": 59
+}
+
+### Supprimer un workout par un member
+DELETE {{baseUrl}}/delete-workout/18
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NDAxNTMwLCJleHAiOjE2MTU0Mzc1MzB9.bMiPnoLxnOf84Q7Do-eh_ut2W0CCqd2yWKwV-ki6MYI
+
+### suppression d'un user
+DELETE {{baseUrl}}/users/7
+
+### Ajouter new Member
+POST {{baseUrl}}/new-user
+Content-Type: application/json
+
+{
+    "firstname": "Ali",
+    "lastname": "baba",
+    "email": "alibaba@gmail.com",
+    "role": "MEMBER"
+}
+
+### Ajouter new Coach (même route avec array specialities en plus)
+POST {{baseUrl}}/new-user
+Content-Type: application/json
+
+{
+    "firstname": "TOTO",
+    "lastname": "Térieur",
+    "email": "toto@coach.com",
+    "role": "COACH",
+    "specialities": [2, 5, 7]
+}
+
+
+############################## COACHS #############################
+
+
+### Récupérer tous les coachs
+GET {{baseUrl}}/coachs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1MzgxMzQwLCJleHAiOjE2MTU0MTczNDB9.hAdf7XVga5gvjVDmvyUGo3MnA88RE2uX4MMVc_CUiYE
+### Récupérer le profil d'un coach avec les spécialités
+GET {{baseUrl}}/coachs/6
+
+### Récupérer les prochains RDV d'un coach
+GET {{baseUrl}}/coach-next-bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1Mzc5MTY4LCJleHAiOjE2MTU0MTUxNjh9.LLxeSRK0kU_LeKxbknRHYlmua3Q8UYsLko3Csk3dRlk
+
+### Récuperer les RDv passés d'un coach
+GET {{baseUrl}}/coach-last-bookings
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlbWFpbCI6ImFsZXh0QGNvYWNoLmNvbSIsInJvbGUiOiJDT0FDSCIsImlhdCI6MTYxNTM5OTEzOCwiZXhwIjoxNjE1NDM1MTM4fQ.L6cu4ZTURk5gaZ6sqLynrX7IxPettaYHUX3npT8UPoE
+
+### Ajouter new Coach (même route avec array specialities en plus)
+POST {{baseUrl}}/new-user
+Content-Type: application/json
+
+{
+    "firstname": "Tean",
+    "lastname": "Dupont",
+    "email": "Tean@edf.com",
+    "role": "COACH",
+    "specialities": [2, 5, 7]
+}
+
+### Ajouter new Comment
+POST {{baseUrl}}/new-comment/9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlbWFpbCI6ImFsZXh0QGNvYWNoLmNvbSIsInJvbGUiOiJDT0FDSCIsImlhdCI6MTYxNTM5OTEzOCwiZXhwIjoxNjE1NDM1MTM4fQ.L6cu4ZTURk5gaZ6sqLynrX7IxPettaYHUX3npT8UPoE
+
+{
+    "content": "Test comment."
+}
+
+############################## COACHING #############################
+
+### Ajouter des créneaux coaching 
+POST {{baseUrl}}/new-coachings
+Content-Type: application/json
+
+{
+    "date": "2021-04-15",
+    "start": "09:30",
+    "end": "10:00",
+    "coachId": 34
+}
+
+
+### Récupérer coachings disponibles a une date
+POST {{baseUrl}}/available-coachings
+Content-Type: application/json
+
+{
+    "date": "2021-04-05"
+}
+
+### Récupérer un coaching avec le coach et le membre qui y participe
+GET {{baseUrl}}/coaching/5
+
+### suppression d'un coaching
+DELETE {{baseUrl}}/coaching/5
+
+### Réserver un coaching
+POST {{baseUrl}}/book-coaching
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1Mzc5MTY4LCJleHAiOjE2MTU0MTUxNjh9.LLxeSRK0kU_LeKxbknRHYlmua3Q8UYsLko3Csk3dRlk
+
+{
+    "coachingId": 1
+}
+
+### Supprimer une réservation
+PATCH {{baseUrl}}/bookings/3/delete
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1Mzc5MTY4LCJleHAiOjE2MTU0MTUxNjh9.LLxeSRK0kU_LeKxbknRHYlmua3Q8UYsLko3Csk3dRlk
+
+############################## SPECIALTIES #############################
+
+### Récupérer toutes les spécialités
+GET {{baseUrl}}/specialties
+
+### Ajouter une spécialité
+POST {{baseUrl}}/specialties
+Content-Type: application/json
+
+{
+    "name": "Karate"
+    
+}
+
+### Supprimer une spécialité
+DELETE  {{baseUrl}}/specialties/15
