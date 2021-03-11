@@ -3,26 +3,15 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-const DashboardManager = ({
-  totalMembers,
-  totalCoaches,
-  specialityName,
-  availableSlot,
-  addStartSlot,
-  addEndSlot,
-  coachName,
-  date,
-  startSlot,
-  endSlot,
-}) => (
+const DashboardManager = () => (
   <div className="dashboard">
     <div className="dashboard-content-left">
       <div className="dashboard-show-members">
-        <span className="dashboard-show-members-title">{totalMembers} Adhérents</span>
+        <span className="dashboard-show-members-title">123 Adhérents</span>
         <a className="dashboard-show-members-link">Voir les adhérents</a>
       </div>
       <div className="dashboard-show-coachs">
-        <span className="dashboard-show-coachs-title">{totalCoaches} Coachs</span>
+        <span className="dashboard-show-coachs-title">3 Coachs</span>
         <a className="dashboard-show-coachs-link">Voir les coachs</a>
       </div>
       <div className="dashboard-add-user">
@@ -50,7 +39,7 @@ const DashboardManager = ({
             <h3 className="dashboard-add-user-speciality-title">Spécialités :</h3>
             <label className="dashboard-add-user-speciality-item" htmlFor="checkbox">
               <input type="checkbox" name="checkbox" id="checkbox" />
-              {specialityName}
+              Musculation
             </label>
             <button type="submit" className="dashboard-add-user-submit">Valider</button>
           </div>
@@ -70,7 +59,7 @@ const DashboardManager = ({
             id="slot-select"
           >
             <option placeholder="10/02/2021" value=""> </option>
-            <option value="vendredi 2 février">{availableSlot}</option>
+            <option value="vendredi 2 février">vendredi 2 février</option>
           </select>
         </label>
         <label
@@ -84,7 +73,7 @@ const DashboardManager = ({
             id="slot-select"
           >
             <option value="">Sélectionner un horaire</option>
-            <option value="9h00">{addStartSlot}</option>
+            <option value="9h00">9h00</option>
           </select>
         </label>
         <label
@@ -98,7 +87,7 @@ const DashboardManager = ({
             id="slot-select"
           >
             <option value="">Sélectionner un horaire</option>
-            <option value="9h15">{addEndSlot}</option>
+            <option value="9h15">9h15</option>
           </select>
         </label>
         <label
@@ -112,7 +101,7 @@ const DashboardManager = ({
             id="slot-select"
           >
             <option value="">Sélectionner un coach</option>
-            <option value="Alexis">{coachName}</option>
+            <option value="Alexis">Alexis</option>
           </select>
         </label>
       </div>
@@ -125,28 +114,14 @@ const DashboardManager = ({
           <li>Coach</li>
         </ul>
         <ul>
-          <li>{date}</li>
-          <li>{startSlot}</li>
-          <li>{endSlot}</li>
-          <li>{coachName}</li>
+          <li>date</li>
+          <li>debut</li>
+          <li>fin</li>
+          <li>Sountid</li>
         </ul>
       </div>
     </div>
   </div>
 );
 
-/*
-DashboardManager.propTypes = {
-  totalMembers: PropTypes.number.isRequired,
-  totalCoaches: PropTypes.number.isRequired,
-  specialityName: PropTypes.string.isRequired,
-  availableSlot: PropTypes.string.isRequired,
-  addStartSlot: PropTypes.string.isRequired,
-  addEndSlot: PropTypes.string.isRequired,
-  coachName: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  startSlot: PropTypes.string.isRequired,
-  endSlot: PropTypes.string.isRequired,
-};
-*/
 export default DashboardManager;

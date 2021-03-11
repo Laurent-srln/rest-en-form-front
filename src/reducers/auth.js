@@ -5,12 +5,13 @@ import {
 } from 'src/actions/auth';
 
 const initialState = {
+  email: 'alext@coach.com',
+  password: 'coach',
   login: {
-    email: 'alibaba@gmail.com',
-    password: 'member',
     role: '',
-    isLogged: false,
-    token: '',
+    logged: false,
+    // utilisation du token récupéré par la requete de login
+    token: localStorage.getItem('token'),
   },
 };
 console.log('Reducer AUTH');
@@ -19,22 +20,20 @@ const auth = (state = initialState, action = {}) => {
     case SET_INPUT_MAIL_VALUE:
       return {
         ...state,
-        login: {
-          email: action.payload,
-          password: state.login.password,
-        },
+        email: action.payload,
+        password: state.password,
       };
     case SET_INPUT_PASSWORD_VALUE:
       return {
         ...state,
-        login: {
-          email: state.login.email,
-          password: action.payload,
-        },
+        email: state.email,
+        password: action.payload,
       };
     case SAVE_USER:
       return {
         ...state,
+        email: state.email,
+        password: state.password,
         login: action.payload,
       };
     default:
