@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // == Imports
-import CoachComment from './CoachComment';
 import './style.scss';
 
 // == Composant
@@ -15,6 +14,9 @@ const Workout = ({
   muscleMass,
   boneMass,
   fatMass,
+  commentCoachFirstname,
+  commentContent,
+  commentDate,
 }) => (
   <div className="workout">
     <div className="workout__icons">
@@ -42,7 +44,25 @@ const Workout = ({
       <span className="amount"> / </span>
       <p className="amount">Masse grasse : {fatMass} %</p>
     </div>
-    <CoachComment />
+    
+    <div className="coach-comment">
+      <div className="coach-comment__meta">
+        <img
+          className="coach-comment__meta--img"
+          src="https://blog.salonbodyfitness.com/wp-content/uploads/2019/11/shutterstock_493318507-980x654.jpg"
+          alt=""
+        />
+        <p className="coach-comment__meta--info">
+          <span className="author">{commentCoachFirstname}</span>
+          <span> - </span>
+          <span className="date">{commentDate}</span>
+          <span> - </span>
+          <span className="time">{commentDate}</span>
+        </p>
+      </div>
+      <p className="coach-comment--text">{commentContent}</p>
+    </div>
+
     <button
       type="button"
       className="workout__button"
@@ -61,6 +81,15 @@ Workout.propTypes = {
   muscleMass: PropTypes.number.isRequired,
   boneMass: PropTypes.number.isRequired,
   fatMass: PropTypes.number.isRequired,
+  commentCoachFirstname: PropTypes.string,
+  commentContent: PropTypes.string,
+  commentDate: PropTypes.string,
+};
+
+Workout.defaultProps = {
+  commentCoachFirstname: null,
+  commentContent: null,
+  commentDate: null,
 };
 
 // == Export

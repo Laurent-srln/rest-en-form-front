@@ -11,10 +11,10 @@ import './style.scss';
 const Workouts = ({ workouts, getWorkouts }) => {
   useEffect(getWorkouts, []);
 
-  
+  {/* const filteredWorkouts = workouts.filter(workouts.date) */}
 
   return (
-    <div className="workout">
+    <div className="workouts">
       <div className="selectWorkout">
         <label
           className="selectWorkout__label"
@@ -29,16 +29,16 @@ const Workouts = ({ workouts, getWorkouts }) => {
             <option value="">Sélectionner une date</option>
             {
               workouts.map((dateItem) => (
-                <option value={'{dateItem.date}'} key={dateItem.date}>{dateItem.date}</option>
+                <option value={dateItem.date} key={dateItem.date}>{dateItem.date}</option>
               ))
             }
           </select>
         </label>
       </div>
-      <ul className="workout__content">
+      <ul className="workouts__content">
         {workouts.map((workout) => <Workout key={workout.id} {...workout} />)}
       </ul>
-      <p className="workout__add"><Link to="/add-workout">+ Ajouter une séance d'entraînement</Link></p>
+      <p className="workouts__add"><Link to="/add-workout">+ Ajouter une séance d'entraînement</Link></p>
     </div>
   );
 };

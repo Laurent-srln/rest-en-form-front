@@ -39,7 +39,7 @@ GET {{baseUrl}}/members/3
 
 ### Récupérer tous les Workouts d'un adhérent
 GET {{baseUrl}}/workouts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NDU5NTQzLCJleHAiOjE2MTU0OTU1NDN9.63hw44BYbKKEaTLGLiTdd27MZITQQ6KpJIUpsURMltU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NDc2NDQ5LCJleHAiOjE2MTU1MTI0NDl9.qpAaFFZXiLF_Foupn6gDBm99zuat5nlFe99h8Guy-iU
 
 ### Récupérer tous les healthRecords d'un adhérent
 GET {{baseUrl}}/health
@@ -126,12 +126,12 @@ Content-Type: application/json
 }
 
 ### Ajouter new Comment
-POST {{baseUrl}}/new-comment/9
+POST {{baseUrl}}/new-comment/2
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlbWFpbCI6ImFsZXh0QGNvYWNoLmNvbSIsInJvbGUiOiJDT0FDSCIsImlhdCI6MTYxNTM5OTEzOCwiZXhwIjoxNjE1NDM1MTM4fQ.L6cu4ZTURk5gaZ6sqLynrX7IxPettaYHUX3npT8UPoE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiYWxleHRAY29hY2guY29tIiwicm9sZSI6IkNPQUNIIiwiaWF0IjoxNjE1NDc0OTYwLCJleHAiOjE2MTU1MTA5NjB9.Rn0ZXNXJDyuokK4xbtXWU5xxAMTUp42rVr5t4fFDG8g
 
 {
-    "content": "Test comment."
+    "content": "Bonne séance ! Keep going !!"
 }
 
 ############################## COACHING #############################

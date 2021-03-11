@@ -21,11 +21,20 @@
   }
 
   &__add {
-    border-radius: 20px;
-    background-color: #245768;
-    padding: 1rem 1.5rem;
-    text-align: center;
-    margin: 3rem 1.5rem 1.5rem 15rem;
+    width: 50%;
+    margin: v.$gutter auto;
+    padding: v.$gutter v.$gutter * 2;
+    background-color: v.$primary-color;
+    border-radius: v.$element-radius;
+    color: v.$alt-color;
+    font-weight: v.$text-bold;
+    border: 1.5px solid v.$primary-color;
+  }
+
+  &__add:hover {
+    background-color: v.$alt-color;
+    color: v.$primary-color;
+    border: 1.5px solid v.$primary-color;
   }
 }
 
