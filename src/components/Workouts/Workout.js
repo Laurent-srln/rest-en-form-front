@@ -1,12 +1,21 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // == Imports
 import CoachComment from './CoachComment';
 import './style.scss';
 
 // == Composant
-const Workout = () => (
+const Workout = ({
+  date,
+  description,
+  weight,
+  bodyWater,
+  muscleMass,
+  boneMass,
+  fatMass,
+}) => (
   <div className="workout">
     <div className="workout__icons">
       <img
@@ -20,18 +29,18 @@ const Workout = () => (
         alt=""
       />
     </div>
-    <p className="workout__date">Vendredi 2 février</p>
-    <p className="workout__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius facilis quod illo, consequatur soluta, reprehenderit voluptas veritatis amet officia in fugit magnam, impedit id magni? Doloremque iusto illo aut adipisci?</p>
+    <p className="workout__date">{date}</p>
+    <p className="workout__text">{description}</p>
     <div className="training__health">
-      <p className="amount">Poids : 84 kg</p>
+      <p className="amount">Poids : {weight} kg</p>
       <span className="amount"> / </span>
-      <p className="amount">Masse hydrique : 58 %</p>
+      <p className="amount">Masse hydrique : {bodyWater} %</p>
       <span className="amount"> / </span>
-      <p className="amount">Masse musculaire : 78 %</p>
+      <p className="amount">Masse musculaire : {muscleMass} %</p>
       <span className="amount"> / </span>
-      <p className="amount">Masse osseuse : 17 %</p>
+      <p className="amount">Masse osseuse : {boneMass} %</p>
       <span className="amount"> / </span>
-      <p className="amount">Masse grasse : 5 %</p>
+      <p className="amount">Masse grasse : {fatMass} %</p>
     </div>
     <CoachComment />
     <button
@@ -44,6 +53,15 @@ const Workout = () => (
 );
 
 // == Props Validation
+Workout.propTypes = {
+  date: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  weight: PropTypes.number.isRequired,
+  bodyWater: PropTypes.number.isRequired,
+  muscleMass: PropTypes.number.isRequired,
+  boneMass: PropTypes.number.isRequired,
+  fatMass: PropTypes.number.isRequired,
+};
 
 // == Export
 export default Workout;

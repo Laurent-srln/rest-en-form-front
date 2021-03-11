@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Imports
@@ -16,11 +17,9 @@ const Workouts = ({ workouts, getworkouts}) => {
     <div className="workout">
       <SelectWorkout />
       <ul className="workout__content">
-        <Workout />
-        <Workout />
-        <Workout />
+        {workouts.map((workout) => <Workout key={workout.id} {...workout} />)}
       </ul>
-      <p className="workout__add"><a href="#">+ Ajouter une séance d'entraînement</a></p>
+      <p className="workout__add"><Link to="/add-workout">+ Ajouter une séance d'entraînement</Link></p>
     </div>
   );
 };
