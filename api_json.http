@@ -75,11 +75,12 @@ DELETE {{baseUrl}}/users/7
 ### Ajouter new Member
 POST {{baseUrl}}/new-user
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiSkNhc3RleEBnbWFpbC5jb20iLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTU0NzUxODgsImV4cCI6MTYxNTUxMTE4OH0.MQBgIx__pNlbzHZh2fYwKhq6IpHmI3qt8PbrRnnWTHw
 
 {
-    "firstname": "Ali",
-    "lastname": "baba",
-    "email": "alibaba@gmail.com",
+    "firstname": "Gwen",
+    "lastname": "Stéphanie",
+    "email": "gStephanie@gmail.com",
     "role": "MEMBER"
 }
 

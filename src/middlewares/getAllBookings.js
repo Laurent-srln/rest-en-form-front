@@ -17,7 +17,6 @@ const getNextBookings = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('next bookings', response.data);
           store.dispatch(saveNextBookings(response.data));
         }
         catch (error) {
@@ -38,7 +37,6 @@ const getNextBookings = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('last bookings', response.data);
           store.dispatch(saveLastBookings(response.data));
         }
         catch (error) {

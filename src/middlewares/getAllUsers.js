@@ -1,28 +1,28 @@
 import axios from 'axios';
 
-import { GET_COACHINGS, saveCoachings } from 'src/actions/coachings';
+import { GET_ALL_MEMBERS, saveAllMembers } from 'src/actions/allUsers';
 
 const baseUrl = 'https://app-osport.herokuapp.com';
-
-const getCoachings = (store) => (next) => (action) => {
+const getAllMembers = (store) => (next) => (action) => {
   switch (action.type) {
-    case GET_COACHINGS: {
-      const getCoachingsFromApi = async () => {
+    case GET_ALL_MEMBERS: {
+      const getAllMembersFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
-          const response = await axios.get(`${baseUrl}/member-next-bookings`, {
+
+          const response = await axios.get(`${baseUrl}/members`, {
             headers: {
               'content-type': 'application/json',
               Authorization: `bearer ${token}`,
             },
           });
-          store.dispatch(saveCoachings(response.data));
+          store.dispatch(saveAllMembers(response.data));
         }
         catch (error) {
           console.log(error);
         }
       };
-      getCoachingsFromApi();
+      getAllMembersFromApi();
       break;
     }
     default:
@@ -30,4 +30,4 @@ const getCoachings = (store) => (next) => (action) => {
   }
 };
 
-export default getCoachings;
+export default getAllMembers;
