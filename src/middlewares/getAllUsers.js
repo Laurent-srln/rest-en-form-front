@@ -16,7 +16,6 @@ const getAllMembers = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('next bookings', response.data);
           store.dispatch(saveAllMembers(response.data));
         }
         catch (error) {
