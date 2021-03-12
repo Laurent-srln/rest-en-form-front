@@ -21,36 +21,42 @@ const AddWorkout = ({
   onChangeInputBodyWaterValue,
   inputContentValue,
   onChangeInputContentValue,
+  onSubmitWorkoutForm,
   role,
 }) => {
   const handleOnChangeDate = (event) => {
     onChangeInputDateValue(event.target.value);
-    // console.log('onChangeInputDateValue', event.target.value);
+    console.log('onChangeInputDateValue', event.target.value);
   };
 
   const handleOnChangeWeight = (event) => {
-    onChangeInputWeightValue(event.target.value);
-    // console.log('onChangeInputWeightValue', event.target.value);
+    const DataParsed = Number(event.target.value);
+    onChangeInputWeightValue(DataParsed);
+    console.log('onChangeInputWeightValue', DataParsed);
   };
 
   const handleOnChangeMuscleMass = (event) => {
-    onChangeInputMuscleMassValue(event.target.value);
-    // console.log('onChangeInputMuscleMassValue', event.target.value);
+    const DataParsed = Number(event.target.value);
+    onChangeInputMuscleMassValue(DataParsed);
+    console.log('onChangeInputMuscleMassValue', DataParsed);
   };
 
   const handleOnChangeFatMass = (event) => {
-    onChangeInputFatMassValue(event.target.value);
-    // console.log('onChangeInputFatMassValue', event.target.value);
+    const DataParsed = Number(event.target.value);
+    onChangeInputFatMassValue(DataParsed);
+    console.log('onChangeInputFatMassValue', DataParsed);
   };
 
   const handleOnChangeBoneMass = (event) => {
-    onChangeInputBoneMassValue(event.target.value);
-    // console.log('onChangeInputBoneMassValue', event.target.value);
+    const DataParsed = Number(event.target.value);
+    onChangeInputBoneMassValue(DataParsed);
+    console.log('onChangeInputBoneMassValue', DataParsed);
   };
 
   const handleOnChangeBodyWater = (event) => {
-    onChangeInputBodyWaterValue(event.target.value);
-    // console.log('onChangeInputBodyWaterValue', event.target.value);
+    const DataParsed = Number(event.target.value);
+    onChangeInputBodyWaterValue(DataParsed);
+    console.log('onChangeInputBodyWaterValue', DataParsed);
   };
 
   const handleOnChangeContent = (event) => {
@@ -58,11 +64,30 @@ const AddWorkout = ({
     console.log('onChangeInputContentValue', event.target.value);
   };
 
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    if (
+      inputDateValue
+      && inputWeightValue
+      && inputMuscleMassValue
+      && inputFatMassValue
+      && inputBoneMassValue
+      && inputBodyWaterValue
+      && inputContentValue
+    ) {
+      onSubmitWorkoutForm();
+    }
+    else {
+      alert('Veuillez remplir tous les champs');
+    }
+  };
+
   return (
     <div className="add-workout">
       <h1 className="add-workout__title">Enregistrer un entraînement</h1>
       <form
         className="add-workout__form"
+        onSubmit={handleOnSubmit}
         action="post"
         method="post"
       >
@@ -226,6 +251,7 @@ AddWorkout.propTypes = {
   inputContentValue: PropTypes.string.isRequired,
   onChangeInputContentValue: PropTypes.func.isRequired,
   role: PropTypes.string.isRequired,
+  onSubmitWorkoutForm: PropTypes.func.isRequired,
 };
 
 // == Export

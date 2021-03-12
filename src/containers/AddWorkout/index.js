@@ -11,6 +11,7 @@ import {
   setInputBoneMassValue,
   setInputBodyWaterValue,
   setInputContentValue,
+  addWorkout,
 } from 'src/actions/workouts';
 
 const mapStateToProps = (state) => ({
@@ -65,6 +66,13 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('action setInputContentValue', action);
     dispatch(action);
   },
+
+  onSubmitWorkoutForm: () => {
+    const action = addWorkout();
+    // console.log('action addWorkout', action);
+    dispatch(action);
+  },
+
 });
 
 const container = connect(mapStateToProps, mapDispatchToProps)(AddWorkout);

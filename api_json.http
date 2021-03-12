@@ -23,8 +23,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-    "email": "jcastex@gmail.com",
-    "password": "owner"
+    "email": "alibaba@gmail.com",
+    "password": "member"
 }
 
 
@@ -52,16 +52,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlb
 ### Ajouter un workout par un member
 POST {{baseUrl}}/new-workout
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NTQ2Mjk3LCJleHAiOjE2MTU1ODIyOTd9.yLAk-jyJ_AU05Hku9L1Ddrobh3jZfwBhQQwV6wfw3pU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NTcyOTE3LCJleHAiOjE2MTU2MDg5MTd9.s4y-9ShZkiz01FOxRDaXsZ9lyTWZLjBM5nRRBLkG4js
 
 {
-    "date": "2021-03-10",
-    "content": "workout Ali Baba. Test 3 - Abdo 30 répétitions ",
-    "weight": 90,
-    "muscleMass": 25,
+    "date": "2021-03-12",
+    "content": "workout Ali Baba. Test 4 - Abdo 40 répétitions ",
+    "weight": 70,
+    "muscleMass": 30,
     "fatMass":20,
-    "boneMass": 3,
-    "bodyWater": 50
+    "boneMass": 15,
+    "bodyWater": 10
 }
 
 ### Supprimer un workout par un member

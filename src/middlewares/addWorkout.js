@@ -7,11 +7,12 @@ const baseUrl = 'https://app-osport.herokuapp.com';
 const addWorkout = (store) => (next) => (action) => {
   switch (action.type) {
     case ADD_WORKOUT: {
+      console.log('CASE ADD WORKOUT');
       const sendWorkoutToApi = async () => {
         try {
           const {
             date,
-            weigth,
+            weight,
             muscleMass,
             fatMass,
             boneMass,
@@ -19,9 +20,15 @@ const addWorkout = (store) => (next) => (action) => {
             content,
           } = store.getState().addWorkout;
 
-          const userStringify = JSON.stringify({
+          console.log('store.getState().addWorkout', store.getState().addWorkout);
+
+          const { token } = store.getState().auth.login;
+
+          console.log('token', token);
+
+          const addWorkoutStringify = JSON.stringify({
             date,
-            weigth,
+            weight,
             muscleMass,
             fatMass,
             boneMass,
@@ -29,17 +36,21 @@ const addWorkout = (store) => (next) => (action) => {
             content,
           });
 
-          const response = await axios.post(`${baseUrl}/new-workout`, userStringify, {
+          console.log('userStringify', addWorkoutStringify);
+
+          const response = await axios.post(`${baseUrl}/new-workout`, addWorkoutStringify, {
             headers: {
-              'content-type': 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `bearer ${token}`,
             },
           });
+          console.log('response.data', response.data);
           // stockage du token dans le localStorage (réutiliser dans le reducer)
-          localStorage.setItem('token', response.data.token);
+          // localStorage.setItem('token', response.data.token);
           store.dispatch(saveWorkout(response.data));
         }
         catch (error) {
-          console.log(error);
+          console.log('error.response', error.response);
         }
       };
       sendWorkoutToApi();
