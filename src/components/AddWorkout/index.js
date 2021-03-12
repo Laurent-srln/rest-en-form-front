@@ -21,6 +21,7 @@ const AddWorkout = ({
   onChangeInputBodyWaterValue,
   inputContentValue,
   onChangeInputContentValue,
+  role,
 }) => {
   const handleOnChangeDate = (event) => {
     onChangeInputDateValue(event.target.value);
@@ -178,18 +179,22 @@ const AddWorkout = ({
             />
           </label>
         </div>
-        <div className="add-workout__form-comment">
-          <label
-            className="label__comment"
-            htmlFor="comment"
-          >
-            Ajouter un commentaire
-            <input
-              className="input__comment"
-              type="text"
-            />
-          </label>
-        </div>
+
+        {role === 'COACH' && (
+          <div className="add-workout__form-comment">
+            <label
+              className="label__comment"
+              htmlFor="comment"
+            >
+              Ajouter un commentaire
+              <input
+                className="input__comment"
+                type="text"
+              />
+            </label>
+          </div>
+        )}
+
         <div>
           <button
             className="add-workout__form-submit"
@@ -220,6 +225,7 @@ AddWorkout.propTypes = {
   onChangeInputBodyWaterValue: PropTypes.func.isRequired,
   inputContentValue: PropTypes.string.isRequired,
   onChangeInputContentValue: PropTypes.func.isRequired,
+  role: PropTypes.string.isRequired,
 };
 
 // == Export

@@ -21,6 +21,7 @@ const mapStateToProps = (state) => ({
   inputBoneMassValue: state.addWorkout.boneMass,
   inputBodyWaterValue: state.addWorkout.bodyWater,
   inputContentValue: state.addWorkout.content,
+  role: state.auth.login.role,
 });
 
 const mapDispatchToProps = (dispatch) => ({
