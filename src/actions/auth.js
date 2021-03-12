@@ -6,6 +6,7 @@ export const LOGIN = 'LOGIN';
 export const SAVE_USER = 'SAVE_USER';
 
 export const SEND_LOGIN_FROM_API = 'SEND_LOGIN_FROM_API';
+export const LOGOUT = 'LOGOUT';
 
 export const ADD_MAIL = 'ADD_MAIL';
 export const ADD_PASSWORD = 'ADD_PASSWORD';
@@ -50,6 +51,10 @@ export const addMail = () => ({
 
 export const addPassword = () => ({
   type: ADD_PASSWORD,
+});
+
+export const onClickLogout = () => ({
+  type: LOGOUT,
 });
 
 /*

@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Import
-import Header from 'src/components/Header';
+import Header from 'src/containers/Header';
 import Footer from 'src/components/Footer';
 
 import Auth from 'src/containers/Auth';
@@ -22,19 +22,20 @@ import Workouts from 'src/containers/Workouts/Workouts';
 import './styles.scss';
 
 // == Composant
-const App = ({ isLogged, role, appInit }) => {
-  useEffect(appInit, [isLogged, role]);
+const App = ({
+  isLogged, role, appInit,
+}) => {
+  useEffect(appInit, []);
+  // useEffect(onClickLogout, []);
 
   return (
     <div className="app">
       <Header />
+      {!isLogged && (
+      <Redirect to="/login" />
+      ) }
       <Switch>
-        <Redirect exact from="/" to="/login" />
-        {!isLogged && (
-          <Route path="/login" exact>
-            <Auth />
-          </Route>
-        )}
+        {/* <Redirect exact from="/" to="/login" /> */}
 
         {role === 'MEMBER' && (
           <Redirect from="/login" to="/dashboard-member" />
@@ -47,6 +48,10 @@ const App = ({ isLogged, role, appInit }) => {
         {role === 'OWNER' && (
           <Redirect from="/login" to="/dashboard-manager" />
         )}
+
+        <Route path="/login" exact>
+          <Auth />
+        </Route>
 
         <Route
           path="/dashboard-member"
