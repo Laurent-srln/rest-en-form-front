@@ -3,6 +3,7 @@ import {
   SET_INPUT_WEIGHT_VALUE,
   SET_INPUT_MUSCLE_MASS_VALUE,
   SET_INPUT_FAT_MASS_VALUE,
+  SET_INPUT_BONE_MASS_VALUE,
 } from 'src/actions/workouts';
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
   weight: 0,
   muscleMass: 0,
   fatMass: 0,
+  boneMass: 0,
 };
 
 const addWorkout = (state = initialState, action = {}) => {
@@ -33,6 +35,11 @@ const addWorkout = (state = initialState, action = {}) => {
       return {
         ...state,
         fatMass: action.payload,
+      };
+    case SET_INPUT_BONE_MASS_VALUE:
+      return {
+        ...state,
+        boneMass: action.payload,
       };
     default:
       return state;

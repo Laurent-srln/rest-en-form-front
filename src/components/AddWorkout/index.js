@@ -15,6 +15,8 @@ const AddWorkout = ({
   onChangeInputMuscleMassValue,
   inputFatMassValue,
   onChangeInputFatMassValue,
+  inputBoneMassValue,
+  onChangeInputBoneMassValue,
 }) => {
   const handleOnChangeDate = (event) => {
     onChangeInputDateValue(event.target.value);
@@ -33,7 +35,12 @@ const AddWorkout = ({
 
   const handleOnChangeFatMass = (event) => {
     onChangeInputFatMassValue(event.target.value);
-    console.log('onChangeInputFatMassValue', event.target.value);
+    // console.log('onChangeInputFatMassValue', event.target.value);
+  };
+
+  const handleOnChangeBoneMass = (event) => {
+    onChangeInputBoneMassValue(event.target.value);
+    // console.log('onChangeInputBoneMassValue', event.target.value);
   };
 
   return (
@@ -55,6 +62,7 @@ const AddWorkout = ({
               type="date"
               value={inputDateValue}
               onChange={handleOnChangeDate}
+              required
             />
           </label>
         </div>
@@ -73,6 +81,7 @@ const AddWorkout = ({
                 min={0}
                 value={inputWeightValue}
                 onChange={handleOnChangeWeight}
+                required
               />
               kg
             </label>
@@ -89,6 +98,7 @@ const AddWorkout = ({
                 min={0}
                 value={inputMuscleMassValue}
                 onChange={handleOnChangeMuscleMass}
+                required
               />
               %
             </label>
@@ -103,6 +113,7 @@ const AddWorkout = ({
                 min={0}
                 value={inputFatMassValue}
                 onChange={handleOnChangeFatMass}
+                required
               />
               %
             </label>
@@ -114,7 +125,10 @@ const AddWorkout = ({
               <input
                 className="input"
                 type="number"
-                min="0"
+                min={0}
+                value={inputBoneMassValue}
+                onChange={handleOnChangeBoneMass}
+                required
               />
               %
             </label>
@@ -182,6 +196,8 @@ AddWorkout.propTypes = {
   onChangeInputMuscleMassValue: PropTypes.func.isRequired,
   inputFatMassValue: PropTypes.number.isRequired,
   onChangeInputFatMassValue: PropTypes.func.isRequired,
+  inputBoneMassValue: PropTypes.number.isRequired,
+  onChangeInputBoneMassValue: PropTypes.func.isRequired,
 };
 
 // == Export
