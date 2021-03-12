@@ -5,6 +5,7 @@ export const SAVE_WORKOUTS = 'SAVE_WORKOUTS';
 export const SET_INPUT_DATE_VALUE = 'SET_INPUT_DATE_VALUE';
 export const SET_INPUT_WEIGHT_VALUE = 'SET_INPUT_WEIGHT_VALUE ';
 export const SET_INPUT_MUSCLE_MASS_VALUE = 'SET_INPUT_MUSCLE_MASS_VALUE';
+export const SET_INPUT_FAT_MASS_VALUE = 'SET_INPUT_FAT_MASS_VALUE';
 
 export const ADD_WORKOUT = 'ADD_WORKOUT';
 export const SAVE_WORKOUT = 'SAVE_WORKOUT';
@@ -32,6 +33,11 @@ export const setInputWeightValue = (payload) => ({
 
 export const setInputMuscleMassValue = (payload) => ({
   type: SET_INPUT_MUSCLE_MASS_VALUE,
+  payload,
+});
+
+export const setInputFatMassValue = (payload) => ({
+  type: SET_INPUT_FAT_MASS_VALUE,
   payload,
 });
 
