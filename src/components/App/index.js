@@ -9,7 +9,9 @@ import Footer from 'src/components/Footer';
 
 import Auth from 'src/containers/Auth';
 
-import DashboardAdh from 'src/components/DashboardAdh';
+// import DashboardAdh from 'src/components/DashboardAdh';
+import DashboardAdh from 'src/containers/DashboardAdh';
+
 import DashboardManager from 'src/components/DashboardManager';
 import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 
