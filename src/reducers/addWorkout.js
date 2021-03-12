@@ -6,6 +6,7 @@ import {
   SET_INPUT_BONE_MASS_VALUE,
   SET_INPUT_BODY_WATER_VALUE,
   SET_INPUT_CONTENT_VALUE,
+  SAVE_WORKOUT,
 } from 'src/actions/workouts';
 
 const initialState = {
@@ -54,6 +55,17 @@ const addWorkout = (state = initialState, action = {}) => {
       return {
         ...state,
         content: action.payload,
+      };
+    case SAVE_WORKOUT:
+      return {
+        ...state,
+        date: '',
+        weight: 0,
+        muscleMass: 0,
+        fatMass: 0,
+        boneMass: 0,
+        bodyWater: 0,
+        content: '',
       };
     default:
       return state;

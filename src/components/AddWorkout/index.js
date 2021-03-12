@@ -26,42 +26,35 @@ const AddWorkout = ({
 }) => {
   const handleOnChangeDate = (event) => {
     onChangeInputDateValue(event.target.value);
-    console.log('onChangeInputDateValue', event.target.value);
   };
 
   const handleOnChangeWeight = (event) => {
     const DataParsed = Number(event.target.value);
     onChangeInputWeightValue(DataParsed);
-    console.log('onChangeInputWeightValue', DataParsed);
   };
 
   const handleOnChangeMuscleMass = (event) => {
     const DataParsed = Number(event.target.value);
     onChangeInputMuscleMassValue(DataParsed);
-    console.log('onChangeInputMuscleMassValue', DataParsed);
   };
 
   const handleOnChangeFatMass = (event) => {
     const DataParsed = Number(event.target.value);
     onChangeInputFatMassValue(DataParsed);
-    console.log('onChangeInputFatMassValue', DataParsed);
   };
 
   const handleOnChangeBoneMass = (event) => {
     const DataParsed = Number(event.target.value);
     onChangeInputBoneMassValue(DataParsed);
-    console.log('onChangeInputBoneMassValue', DataParsed);
   };
 
   const handleOnChangeBodyWater = (event) => {
     const DataParsed = Number(event.target.value);
     onChangeInputBodyWaterValue(DataParsed);
-    console.log('onChangeInputBodyWaterValue', DataParsed);
   };
 
   const handleOnChangeContent = (event) => {
     onChangeInputContentValue(event.target.value);
-    console.log('onChangeInputContentValue', event.target.value);
   };
 
   const handleOnSubmit = (event) => {
