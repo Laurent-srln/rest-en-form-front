@@ -14,6 +14,11 @@ import './style.scss';
 const DashboardAd = ({ healthCheck, getHealthCheck }) => {
   useEffect(getHealthCheck, []);
 
+  const findLastHealthCheck = healthCheck[healthCheck.length - 1];
+  const data = { ...findLastHealthCheck };
+  // console.log('findLastHealthCheck', findLastHealthCheck);
+  // console.log('result.createdAt', data.createdAt);
+
   return (
     <div className="dashboardMember">
       <h1>Tableau de bord de l'adhérent</h1>
@@ -39,8 +44,7 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
         </p>
       </div>
       <div className="dashboardMember__healthData">
-        {healthCheck.map((data) => <HealthCheck key={data.id} {...data} />)}
-
+        <HealthCheck findLastHealthCheck={data} />
       </div>
     </div>
   );
