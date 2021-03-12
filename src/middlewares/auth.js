@@ -22,6 +22,7 @@ const auth = (store) => (next) => (action) => {
           });
           // stockage du token dans le localStorage (réutiliser dans le reducer)
           localStorage.setItem('token', response.data.token);
+          localStorage.setItem('logged', response.data.logged);
           store.dispatch(saveUser(response.data));
         }
         catch (error) {
