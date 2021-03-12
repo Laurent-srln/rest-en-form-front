@@ -6,6 +6,7 @@ import coachings from './coachings';
 import workouts from './workouts';
 import getAllBookings from './getAllBookings';
 import getAllUsers from './getAllUsers';
+import healthCheck from './healthCheck';
 
 const globalReducer = combineReducers({
   auth,
@@ -14,6 +15,7 @@ const globalReducer = combineReducers({
   workouts,
   getAllBookings,
   getAllUsers,
+  healthCheck,
 });
 
 export default globalReducer;
