@@ -8,6 +8,7 @@ export const SET_INPUT_MUSCLE_MASS_VALUE = 'SET_INPUT_MUSCLE_MASS_VALUE';
 export const SET_INPUT_FAT_MASS_VALUE = 'SET_INPUT_FAT_MASS_VALUE';
 export const SET_INPUT_BONE_MASS_VALUE = 'SET_INPUT_BONE_MASS_VALUE';
 export const SET_INPUT_BODY_WATER_VALUE = 'SET_INPUT_BODY_WATER_VALUE';
+export const SET_INPUT_CONTENT_VALUE = 'SET_INPUT_CONTENT_VALUE';
 
 export const ADD_WORKOUT = 'ADD_WORKOUT';
 export const SAVE_WORKOUT = 'SAVE_WORKOUT';
@@ -50,6 +51,11 @@ export const setInputBoneMassValue = (payload) => ({
 
 export const setInputBodyWaterValue = (payload) => ({
   type: SET_INPUT_BODY_WATER_VALUE,
+  payload,
+});
+
+export const setInputContentValue = (payload) => ({
+  type: SET_INPUT_CONTENT_VALUE,
   payload,
 });
 

@@ -19,6 +19,8 @@ const AddWorkout = ({
   onChangeInputBoneMassValue,
   inputBodyWaterValue,
   onChangeInputBodyWaterValue,
+  inputContentValue,
+  onChangeInputContentValue,
 }) => {
   const handleOnChangeDate = (event) => {
     onChangeInputDateValue(event.target.value);
@@ -47,7 +49,12 @@ const AddWorkout = ({
 
   const handleOnChangeBodyWater = (event) => {
     onChangeInputBodyWaterValue(event.target.value);
-    console.log('onChangeInputBodyWaterValue', event.target.value);
+    // console.log('onChangeInputBodyWaterValue', event.target.value);
+  };
+
+  const handleOnChangeContent = (event) => {
+    onChangeInputContentValue(event.target.value);
+    console.log('onChangeInputContentValue', event.target.value);
   };
 
   return (
@@ -165,8 +172,9 @@ const AddWorkout = ({
             <input
               className="input__details"
               type="text"
-              size={100}
-              row={100}
+              value={inputContentValue}
+              onChange={handleOnChangeContent}
+              required
             />
           </label>
         </div>
@@ -210,6 +218,8 @@ AddWorkout.propTypes = {
   onChangeInputBoneMassValue: PropTypes.func.isRequired,
   inputBodyWaterValue: PropTypes.number.isRequired,
   onChangeInputBodyWaterValue: PropTypes.func.isRequired,
+  inputContentValue: PropTypes.string.isRequired,
+  onChangeInputContentValue: PropTypes.func.isRequired,
 };
 
 // == Export

@@ -10,6 +10,7 @@ import {
   setInputFatMassValue,
   setInputBoneMassValue,
   setInputBodyWaterValue,
+  setInputContentValue,
 } from 'src/actions/workouts';
 
 const mapStateToProps = (state) => ({
@@ -19,6 +20,7 @@ const mapStateToProps = (state) => ({
   inputFatMassValue: state.addWorkout.fatMass,
   inputBoneMassValue: state.addWorkout.boneMass,
   inputBodyWaterValue: state.addWorkout.bodyWater,
+  inputContentValue: state.addWorkout.content,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -53,7 +55,13 @@ const mapDispatchToProps = (dispatch) => ({
 
   onChangeInputBodyWaterValue: (value) => {
     const action = setInputBodyWaterValue(value);
-    console.log('action setInputBodyWaterValue', action);
+    // console.log('action setInputBodyWaterValue', action);
+    dispatch(action);
+  },
+
+  onChangeInputContentValue: (value) => {
+    const action = setInputContentValue(value);
+    // console.log('action setInputContentValue', action);
     dispatch(action);
   },
 });
