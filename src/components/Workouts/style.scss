@@ -1,4 +1,6 @@
-.selectTraining {
+@use '../../styles/vars' as v;
+
+.selectWorkout {
   text-align: left;
   margin: 1rem;
 
@@ -12,22 +14,31 @@
   }
 }
 
-.trainings {
+.workouts {
 
   &__content {
 
   }
 
   &__add {
-    border-radius: 20px;
-    background-color: #245768;
-    padding: 1rem 1.5rem;
-    text-align: center;
-    margin: 3rem 1.5rem 1.5rem 15rem;
+    width: 50%;
+    margin: v.$gutter auto;
+    padding: v.$gutter v.$gutter * 2;
+    background-color: v.$primary-color;
+    border-radius: v.$element-radius;
+    color: v.$alt-color;
+    font-weight: v.$text-bold;
+    border: 1.5px solid v.$primary-color;
+  }
+
+  &__add:hover {
+    background-color: v.$alt-color;
+    color: v.$primary-color;
+    border: 1.5px solid v.$primary-color;
   }
 }
 
-.training {
+.workout {
   border-radius: 30px;
   box-shadow: 0 0 8px .2px gray;
   margin: 2rem 1rem;
