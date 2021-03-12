@@ -3,6 +3,7 @@ export const GET_WORKOUTS = 'GET_WORKOUTS';
 export const SAVE_WORKOUTS = 'SAVE_WORKOUTS';
 
 export const SET_INPUT_DATE_VALUE = 'SET_INPUT_DATE_VALUE';
+export const SET_INPUT_WEIGHT_VALUE = 'SET_INPUT_WEIGHT_VALUE ';
 
 export const ADD_WORKOUT = 'ADD_WORKOUT';
 export const SAVE_WORKOUT = 'SAVE_WORKOUT';
@@ -20,6 +21,11 @@ export const saveWorkouts = (payload) => ({
 
 export const setInputDateValue = (payload) => ({
   type: SET_INPUT_DATE_VALUE,
+  payload,
+});
+
+export const setInputWeightValue = (payload) => ({
+  type: SET_INPUT_WEIGHT_VALUE,
   payload,
 });
 

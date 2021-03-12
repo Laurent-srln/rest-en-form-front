@@ -9,14 +9,27 @@ const addWorkout = (store) => (next) => (action) => {
     case ADD_WORKOUT: {
       const sendWorkoutToApi = async () => {
         try {
-          const { date, weigth } = store.getState().addWorkout;
+          const {
+            date,
+            weigth,
+            muscleMass,
+            fatMass,
+            boneMass,
+            bodyWater,
+            content,
+          } = store.getState().addWorkout;
 
           const userStringify = JSON.stringify({
             date,
             weigth,
+            muscleMass,
+            fatMass,
+            boneMass,
+            bodyWater,
+            content,
           });
 
-          const response = await axios.post(`${baseUrl}/login`, userStringify, {
+          const response = await axios.post(`${baseUrl}/new-workout`, userStringify, {
             headers: {
               'content-type': 'application/json',
             },

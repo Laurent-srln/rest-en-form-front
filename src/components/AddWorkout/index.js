@@ -9,10 +9,17 @@ import './style.scss';
 const AddWorkout = ({
   inputDateValue,
   onChangeInputDateValue,
+  inputWeightValue,
+  onChangeInputWeightValue,
 }) => {
   const handleOnChangeDate = (event) => {
     onChangeInputDateValue(event.target.value);
     console.log('onChangeInputDateValue', event.target.value);
+  };
+
+  const handleOnChangeWeight = (event) => {
+    onChangeInputWeightValue(event.target.value);
+    console.log('onChangeInputWeightValue', event.target.value);
   };
 
   return (
@@ -49,7 +56,9 @@ const AddWorkout = ({
               <input
                 className="input"
                 type="number"
-                min="0"
+                min={0}
+                value={inputWeightValue}
+                onChange={handleOnChangeWeight}
               />
               kg
             </label>
@@ -149,6 +158,8 @@ const AddWorkout = ({
 AddWorkout.propTypes = {
   inputDateValue: PropTypes.string.isRequired,
   onChangeInputDateValue: PropTypes.func.isRequired,
+  inputWeightValue: PropTypes.number.isRequired,
+  onChangeInputWeightValue: PropTypes.func.isRequired,
 };
 
 // == Export
