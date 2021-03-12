@@ -10,6 +10,7 @@ import coachs from 'src/middlewares/getCoaches';
 import allBookings from 'src/middlewares/getAllBookings';
 import allUsers from 'src/middlewares/getAllUsers';
 import healthCheck from 'src/middlewares/healthCheck';
+import addWorkout from 'src/middlewares/addWorkout';
 
 const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(auth, coachings),
@@ -17,6 +18,7 @@ const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(coachs),
   applyMiddleware(allBookings, allUsers),
   applyMiddleware(auth, healthCheck),
+  applyMiddleware(auth, addWorkout),
 ));
 
 export default store;

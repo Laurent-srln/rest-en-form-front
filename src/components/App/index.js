@@ -18,6 +18,7 @@ import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 import Coachings from 'src/containers/Coachings/Coachings';
 import Members from 'src/containers/GetAllMembers';
 import Workouts from 'src/containers/Workouts/Workouts';
+import AddWorkout from 'src/containers/AddWorkout';
 
 import './styles.scss';
 
@@ -81,6 +82,13 @@ const App = ({ isLogged, role, appInit }) => {
           path="/workout"
         >
           <Workouts />
+        </Route>
+
+        <Route
+          exact
+          path="/add-workout"
+        >
+          <AddWorkout />
         </Route>
       </Switch>
       <Footer />
