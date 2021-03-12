@@ -1,8 +1,13 @@
-import { SET_INPUT_DATE_VALUE, SET_INPUT_WEIGHT_VALUE } from 'src/actions/workouts';
+import {
+  SET_INPUT_DATE_VALUE,
+  SET_INPUT_WEIGHT_VALUE,
+  SET_INPUT_MUSCLE_MASS_VALUE,
+} from 'src/actions/workouts';
 
 const initialState = {
   date: '',
   weight: 0,
+  muscleMass: 0,
 };
 
 const addWorkout = (state = initialState, action = {}) => {
@@ -16,6 +21,11 @@ const addWorkout = (state = initialState, action = {}) => {
       return {
         ...state,
         weight: action.payload,
+      };
+    case SET_INPUT_MUSCLE_MASS_VALUE:
+      return {
+        ...state,
+        muscleMass: action.payload,
       };
     default:
       return state;

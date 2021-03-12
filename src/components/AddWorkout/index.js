@@ -11,6 +11,8 @@ const AddWorkout = ({
   onChangeInputDateValue,
   inputWeightValue,
   onChangeInputWeightValue,
+  inputMuscleMassValue,
+  onChangeInputMuscleMassValue,
 }) => {
   const handleOnChangeDate = (event) => {
     onChangeInputDateValue(event.target.value);
@@ -21,6 +23,12 @@ const AddWorkout = ({
     onChangeInputWeightValue(event.target.value);
     console.log('onChangeInputWeightValue', event.target.value);
   };
+
+  const handleOnChangeMuscleMass = (event) => {
+    onChangeInputMuscleMassValue(event.target.value);
+    console.log('onChangeInputMuscleMassValue', event.target.value);
+  };
+
 
   return (
     <div className="add-workout">
@@ -72,7 +80,9 @@ const AddWorkout = ({
               <input
                 className="input"
                 type="number"
-                min="0"
+                min={0}
+                value={inputMuscleMassValue}
+                onChange={handleOnChangeMuscleMass}
               />
               %
             </label>
@@ -160,6 +170,8 @@ AddWorkout.propTypes = {
   onChangeInputDateValue: PropTypes.func.isRequired,
   inputWeightValue: PropTypes.number.isRequired,
   onChangeInputWeightValue: PropTypes.func.isRequired,
+  inputMuscleMassValue: PropTypes.number.isRequired,
+  onChangeInputMuscleMassValue: PropTypes.func.isRequired,
 };
 
 // == Export
