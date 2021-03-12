@@ -23,8 +23,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-    "email": "alibaba@gmail.com",
-    "password": "member"
+    "email": "jcastex@gmail.com",
+    "password": "owner"
 }
 
 
@@ -75,12 +75,12 @@ DELETE {{baseUrl}}/users/7
 ### Ajouter new Member
 POST {{baseUrl}}/new-user
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiSkNhc3RleEBnbWFpbC5jb20iLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTU0NzUxODgsImV4cCI6MTYxNTUxMTE4OH0.MQBgIx__pNlbzHZh2fYwKhq6IpHmI3qt8PbrRnnWTHw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiSkNhc3RleEBnbWFpbC5jb20iLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTU1NDI3MDEsImV4cCI6MTYxNTU3ODcwMX0.qnWTS7xaHMUIJ62n1_UCJNOg33OH2fIVbshzyMnOYSE
 
 {
-    "firstname": "Gwen",
-    "lastname": "Stéphanie",
-    "email": "gStephanie@gmail.com",
+    "firstname": "Bruce",
+    "lastname": "Ly",
+    "email": "b.ly@gmail.com",
     "role": "MEMBER"
 }
 
