@@ -7,14 +7,15 @@ import {
   setInputDateBookingCoachingValue,
 } from 'src/actions/coachings';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   inputDateBookingCoachingValue: state.bookingCoaching.date,
+  dateName: state.bookingCoaching.dateName,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onChangeInputDateBookingCoachingValue: (value) => {
-    const action = setInputDateBookingCoachingValue(value);
-    console.log('onChangeInputDateBookingCoachingValue', action);
+  onChangeInputDateBookingCoachingValue: (value, name) => {
+    const action = setInputDateBookingCoachingValue(value, name);
+    console.log('setInputDateBookingCoachingValue', action);
     dispatch(action);
   },
 });

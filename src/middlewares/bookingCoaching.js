@@ -10,11 +10,13 @@ const bookingCoaching = (store) => (next) => (action) => {
       const getAvaiblableCoachingsFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
-          const { date } = store.getState().bookingCoaching;
+          const { date, dateName } = store.getState().bookingCoaching;
           console.log('date', date);
-          console.log('action.payload', action.payload);
+          console.log('name', dateName);
+          console.log('action.date', action.date);
+          console.log('action.dateName', action.dateName);
 
-          const response = await axios.get(`${baseUrl}/available-coachings?${date}=${action.payload}`, {
+          const response = await axios.get(`${baseUrl}/available-coachings?${action.dateName}=${action.date}`, {
             headers: {
               'content-type': 'application/json',
               Authorization: `bearer ${token}`,

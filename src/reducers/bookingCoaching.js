@@ -4,6 +4,7 @@ import {
 
 const initialState = {
   date: '',
+  dateName: '',
 };
 
 const bookingCoaching = (state = initialState, action = {}) => {
@@ -11,7 +12,8 @@ const bookingCoaching = (state = initialState, action = {}) => {
     case SET_INPUT_DATE_BOOKING_COACHING_VALUE:
       return {
         ...state,
-        date: action.payload,
+        date: action.date,
+        dateName: action.dateName,
       };
     default:
       return state;
