@@ -19,7 +19,7 @@ import Coachings from 'src/containers/Coachings/Coachings';
 import Members from 'src/containers/GetAllMembers';
 import Workouts from 'src/containers/Workouts/Workouts';
 import AddWorkout from 'src/containers/AddWorkout';
-import BookingCoaching from 'src/components/BookingCoaching';
+import BookingCoaching from 'src/containers/BookingCoaching';
 
 import './styles.scss';
 
@@ -107,7 +107,6 @@ const App = ({
         >
           <AddWorkout />
         </Route>
-        
       </Switch>
       <Footer />
     </div>
