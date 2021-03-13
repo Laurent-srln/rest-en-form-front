@@ -6,8 +6,8 @@ import {
 } from 'src/actions/auth';
 
 const initialState = {
-  email: 'alibaba@gmail.com',
-  password: 'member',
+  email: 'jcastex@gmail.com',
+  password: 'owner',
   login: {
     role: '',
     logged: localStorage.getItem('logged'),

@@ -78,9 +78,9 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiSkNhc3RleEBnbWFpbC5jb20iLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTU1NDI3MDEsImV4cCI6MTYxNTU3ODcwMX0.qnWTS7xaHMUIJ62n1_UCJNOg33OH2fIVbshzyMnOYSE
 
 {
-    "firstname": "Bruce",
-    "lastname": "Ly",
-    "email": "b.ly@gmail.com",
+    "firstname": "Machin",
+    "lastname": "Bidulle",
+    "email": "machin.bidulle@gmail.com",
     "role": "MEMBER"
 }
 
