@@ -2,7 +2,7 @@
 import React from 'react';
 
 // == Imports
-import Coachs from 'src/components/Coachs';
+import Coachs from 'src/containers/GetCoachs/Coachs';
 import AddCoaching from './AddCoaching';
 import './style.scss';
 
@@ -11,7 +11,7 @@ const BookingCoaching = () => (
   <div className="booking-coaching">
     <AddCoaching />
     <div className="booking-coaching__coachs">
-      {/* <Coachs /> */}
+      <Coachs />
     </div>
   </div>
 );
