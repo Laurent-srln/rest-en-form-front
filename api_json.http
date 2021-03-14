@@ -23,8 +23,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-    "email": "alibaba@gmail.com",
-    "password": "member"
+    "email": "jcastex@gmail.com",
+    "password": "owner"
 }
 
 
@@ -91,9 +91,9 @@ Content-Type: application/json
 {
     "firstname": "TOTO",
     "lastname": "Térieur",
-    "email": "toto@coach.com",
+    "email": "tatata@coach.com",
     "role": "COACH",
-    "specialities": [2, 5, 7]
+    "specialities": [2, 5]
 }
 
 
@@ -102,7 +102,7 @@ Content-Type: application/json
 
 ### Récupérer tous les coachs
 GET {{baseUrl}}/coachs
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1MzgxMzQwLCJleHAiOjE2MTU0MTczNDB9.hAdf7XVga5gvjVDmvyUGo3MnA88RE2uX4MMVc_CUiYE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiSkNhc3RleEBnbWFpbC5jb20iLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTU2NjM5NDcsImV4cCI6MTYxNTY5OTk0N30.6125WIM36pxSI2ieMD4hYGM76B6bJV5gHdSiHqMkO-M
 ### Récupérer le profil d'un coach avec les spécialités
 GET {{baseUrl}}/coachs/6
 

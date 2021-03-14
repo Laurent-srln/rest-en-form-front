@@ -14,7 +14,8 @@ const initialState = {
   lastname: '',
   email: '',
   role: '',
-  specialities: null,
+  checkboxSpecialities: [],
+  specialities: [],
   speciality: [
     {
       id: 0,
@@ -53,10 +54,13 @@ const addUser = (state = initialState, action = {}) => {
         role: 'COACH',
       };
     case SET_INPUT_SPECIALITY_VALUE:
+      console.log(action.payload);
       return {
         ...state,
         // ICI A VOIR COMMENT FAIRE
-        specialities: action.payload,
+        checkboxSpecialities: [
+          state.specialities.push(Number(action.payload)),
+        ],
       };
     case SAVE_ALL_SPECIALITIES:
       return {
