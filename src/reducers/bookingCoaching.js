@@ -4,7 +4,6 @@ import {
 
 const initialState = {
   date: '',
-  dateName: '',
 };
 
 const bookingCoaching = (state = initialState, action = {}) => {
@@ -13,7 +12,6 @@ const bookingCoaching = (state = initialState, action = {}) => {
       return {
         ...state,
         date: action.date,
-        dateName: action.dateName,
       };
     default:
       return state;

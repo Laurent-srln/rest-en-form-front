@@ -17,10 +17,9 @@ export const saveCoachings = (payload) => ({
   payload,
 });
 
-export const setInputDateBookingCoachingValue = (date, dateName) => ({
+export const setInputDateBookingCoachingValue = (date) => ({
   type: SET_INPUT_DATE_BOOKING_COACHING_VALUE,
   date,
-  dateName,
 });
 
 export const getAvailableCoachingsToADate = (payload) => ({
