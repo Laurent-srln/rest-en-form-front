@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { GET_HEALTH_CHECK, saveHealthCheck } from 'src/actions/healthCheck';
 
-const baseUrl = 'https://app-osport.herokuapp.com';
+const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const healthCheck = (store) => (next) => (action) => {
   switch (action.type) {

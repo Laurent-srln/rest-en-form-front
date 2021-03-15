@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { GET_WORKOUTS, saveWorkouts } from 'src/actions/workouts';
 
-const baseUrl = 'https://app-osport.herokuapp.com';
+const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const getWorkouts = (store) => (next) => (action) => {
   switch (action.type) {

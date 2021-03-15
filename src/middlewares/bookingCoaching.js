@@ -6,7 +6,7 @@ import formatWithOptions from 'date-fns/fp/formatWithOptions';
 
 import { SET_INPUT_DATE_BOOKING_COACHING_VALUE, saveAvailableCoachings } from 'src/actions/coachings';
 
-const baseUrl = 'https://app-osport.herokuapp.com';
+const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const bookingCoaching = (store) => (next) => (action) => {
   switch (action.type) {
@@ -14,10 +14,7 @@ const bookingCoaching = (store) => (next) => (action) => {
       const getAvaiblableCoachingsFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
-          const { date, nameDate } = store.getState().bookingCoaching;
-          console.log('date', date);
-          console.log('nameDate', nameDate);
-          console.log('action.date', action.date);
+          // const { date, nameDate } = store.getState().bookingCoaching;
 
           const dateToString = format(action.date, 'yyyy-MM-dd');
           console.log('dateToString', dateToString);
@@ -28,6 +25,7 @@ const bookingCoaching = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
+          console.log('response.data', response.data);
           store.dispatch(saveAvailableCoachings(response.data));
         }
         catch (error) {

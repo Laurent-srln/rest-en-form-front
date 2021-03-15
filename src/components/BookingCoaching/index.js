@@ -17,6 +17,7 @@ registerLocale('fr', fr);
 const BookingCoaching = ({
   startDate,
   setStartDate,
+  selectedDate,
 }) => {
   const handleDateChange = (date) => {
     setStartDate(date);
@@ -38,18 +39,10 @@ const BookingCoaching = ({
             onChange={handleDateChange}
             dateFormat={dateToString}
             minDate={new Date()}
-            filterDate={(date) => date.getDay() !== 0 && date.getDay() !== 6}
+            filterDate={(date) => date.getDay() !== 0}
             inline
             locale="fr"
-            // withPortal
           />
-          {/* <input
-            className="add-coaching__input-date"
-            type="date"
-            name="date"
-            value={inputDateBookingCoachingValue}
-            onChange={handleOnChangeDateBookingCoaching}
-          /> */}
         </label>
 
         <form>
@@ -59,9 +52,16 @@ const BookingCoaching = ({
             id="coaching-select"
           >
             <option value="">Sélectionner un créneau</option>
-            <option value="9h00-9h15 - Sountid">9h00-9h15 - Sountid</option>
-            <option value="9h00-9h15 - Mathilde">9h00-9h15 - Mathilde</option>
-            <option value="9h15-9h30 - Sountid">9h15-9h30 - Sountid</option>
+            {
+              selectedDate.map((slot) => (
+                <option
+                  value={slot.id}
+                  key={slot.id}
+                >
+                  {slot.start_time} - {slot.end_time} {slot.firstname}
+                </option>
+              ))
+            }
           </select>
           <div>
             <button
@@ -84,6 +84,15 @@ const BookingCoaching = ({
 BookingCoaching.propTypes = {
   startDate: PropTypes.string.isRequired,
   setStartDate: PropTypes.func.isRequired,
+  selectedDate: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      firstname: PropTypes.string.isRequired,
+      lastname: PropTypes.string.isRequired,
+      start_time: PropTypes.string.isRequired,
+      end_time: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 // == Export

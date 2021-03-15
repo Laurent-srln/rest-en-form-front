@@ -9,6 +9,7 @@ import {
 
 const mapStateToProps = (state) => ({
   startDate: state.bookingCoaching.date,
+  selectedDate: state.bookingCoaching.selectedDate,
 });
 
 const mapDispatchToProps = (dispatch) => ({

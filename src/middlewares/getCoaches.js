@@ -5,7 +5,7 @@ import {
   saveCoachs,
 } from 'src/actions/Coachs';
 
-const URL = 'https://app-osport.herokuapp.com';
+const URL = 'https://app-osport.herokuapp.com/api-v1';
 
 const coachs = (store) => (next) => (action) => {
   switch (action.type) {
