@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Imports
-import Workout from './Workout';
 import './style.scss';
 
 // dayjs
@@ -15,6 +14,8 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
 import localeFr from 'dayjs/locale/fr';
 import updateLocale from 'dayjs/plugin/updateLocale';
+
+import Workout from './Workout';
 
 // dayjs
 dayjs.extend(utc);
