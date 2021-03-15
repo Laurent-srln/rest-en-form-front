@@ -1,10 +1,13 @@
 import axios from 'axios';
 
-import fr from 'date-fns/locale/fr';
 import { format } from 'date-fns/esm';
-import formatWithOptions from 'date-fns/fp/formatWithOptions';
 
-import { SET_INPUT_DATE_BOOKING_COACHING_VALUE, saveAvailableCoachings } from 'src/actions/coachings';
+import {
+  SET_INPUT_DATE_BOOKING_COACHING_VALUE,
+  saveAvailableCoachings,
+  BOOKING_COACHING,
+  saveBookingCoaching,
+} from 'src/actions/coachings';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
@@ -14,10 +17,8 @@ const bookingCoaching = (store) => (next) => (action) => {
       const getAvaiblableCoachingsFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
-          // const { date, nameDate } = store.getState().bookingCoaching;
 
           const dateToString = format(action.date, 'yyyy-MM-dd');
-          console.log('dateToString', dateToString);
 
           const response = await axios.get(`${baseUrl}/available-coachings?date=${dateToString}`, {
             headers: {
@@ -33,6 +34,34 @@ const bookingCoaching = (store) => (next) => (action) => {
         }
       };
       getAvaiblableCoachingsFromApi();
+      break;
+    }
+    case BOOKING_COACHING: {
+      const setSelectedSlotToApi = async () => {
+        try {
+          const { token } = store.getState().auth.login;
+          const { coachingId } = store.getState().bookingCoaching;
+
+          console.log('coachingId', coachingId);
+
+          const idStringify = JSON.stringify({
+            coachingId,
+          });
+
+          const response = await axios.post(`${baseUrl}/book-coaching`, idStringify, {
+            headers: {
+              'content-type': 'application/json',
+              Authorization: `bearer ${token}`,
+            },
+          });
+          console.log('response.data', response.data);
+          store.dispatch(saveBookingCoaching(response.data));
+        }
+        catch (error) {
+          console.log(error.response);
+        }
+      };
+      setSelectedSlotToApi();
       break;
     }
     default:

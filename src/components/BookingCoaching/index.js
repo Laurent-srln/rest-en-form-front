@@ -18,9 +18,22 @@ const BookingCoaching = ({
   startDate,
   setStartDate,
   selectedDate,
+  onChangeInputSlotValue,
+  onSubmitAddCoachingForm,
 }) => {
   const handleDateChange = (date) => {
     setStartDate(date);
+  };
+
+  const handleOnChangeSlot = (event) => {
+    onChangeInputSlotValue(event.target.value);
+  };
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    if (selectedDate) {
+      onSubmitAddCoachingForm();
+    }
   };
 
   const dateToString = formatWithOptions({ fr }, 'dd-MM-yyyy');
@@ -45,11 +58,14 @@ const BookingCoaching = ({
           />
         </label>
 
-        <form>
+        <form
+          onSubmit={handleOnSubmit}
+        >
           <select
             className="add-coaching__select"
             name="coaching"
             id="coaching-select"
+            onChange={handleOnChangeSlot}
           >
             <option value="">Sélectionner un créneau</option>
             {
@@ -93,6 +109,8 @@ BookingCoaching.propTypes = {
       end_time: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  onChangeInputSlotValue: PropTypes.func.isRequired,
+  onSubmitAddCoachingForm: PropTypes.func.isRequired,
 };
 
 // == Export
