@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { LOGIN, saveUser } from 'src/actions/auth';
 
-const baseUrl = 'https://app-osport.herokuapp.com';
+const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 const auth = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {

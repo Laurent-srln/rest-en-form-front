@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { GET_ALL_MEMBERS, saveAllMembers } from 'src/actions/allUsers';
 
-const baseUrl = 'https://app-osport.herokuapp.com';
+const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 const getAllMembers = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_ALL_MEMBERS: {

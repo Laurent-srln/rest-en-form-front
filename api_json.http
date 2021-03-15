@@ -1,4 +1,4 @@
-@baseUrl = https://app-osport.herokuapp.com
+@baseUrl = https://app-osport.herokuapp.com/api-v1
 
 # 
 //snkcmuclyjjrag:e460879da3dc3d10454bd6031a1f3887e8c2be23ad5911e352e49feca6da5fd8@ec2-176-34-222-188.eu-west-1.compute.amazonaws.com:5432/daindlp1mpsoct
@@ -25,8 +25,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-    "email": "soso@gmail.com",
-    "password":"member"
+    "email": "jcastex@gmail.com",
+    "password": "owner"
 }
 
 
@@ -98,6 +98,12 @@ GET {{baseUrl}}/available-coachings?date=2021-04-05
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NDU0MzM3LCJleHAiOjE2MTU0OTAzMzd9.l3CjIwykudQ_ljEC72RY-MXcSR7xlskReZcwu0xOI8M
 
+{
+    "firstname": "Machin",
+    "lastname": "Bidulle",
+    "email": "machin.bidulle@gmail.com",
+    "role": "MEMBER"
+}
 
 ### RÉCUPÉRER LES PROCHAINS COACHINGS PRÉVUS 
 GET {{baseUrl}}/member-next-bookings
@@ -110,7 +116,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1Mzc5MTY4LCJleHAiOjE2MTU0MTUxNjh9.LLxeSRK0kU_LeKxbknRHYlmua3Q8UYsLko3Csk3dRlk
 
 {
-    "coachingId": 1
+    "firstname": "TOTO",
+    "lastname": "Térieur",
+    "email": "tatata@coach.com",
+    "role": "COACH",
+    "specialities": [2, 5]
 }
 
 
@@ -120,6 +130,12 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1Mzc5MTY4LCJleHAiOjE2MTU0MTUxNjh9.LLxeSRK0kU_LeKxbknRHYlmua3Q8UYsLko3Csk3dRlk
 
 
+### Récupérer tous les coachs
+GET {{baseUrl}}/coachs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiSkNhc3RleEBnbWFpbC5jb20iLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTU2NjM5NDcsImV4cCI6MTYxNTY5OTk0N30.6125WIM36pxSI2ieMD4hYGM76B6bJV5gHdSiHqMkO-M
+
+### Récupérer le profil d'un coach avec les spécialités
+GET {{baseUrl}}/coachs/6
 
 
 ##################################################################################
