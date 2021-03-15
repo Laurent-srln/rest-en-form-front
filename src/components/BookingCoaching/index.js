@@ -8,10 +8,29 @@ import 'react-datepicker/dist/react-datepicker.css';
 // import Coachs from 'src/containers/GetCoachs/Coachs';
 import './style.scss';
 
+// date fns
 import fr from 'date-fns/locale/fr';
 import formatWithOptions from 'date-fns/fp/formatWithOptions';
 
+// dayjs
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import LocalizedFormat from 'dayjs/plugin/localizedFormat';
+import localeFr from 'dayjs/locale/fr';
+import updateLocale from 'dayjs/plugin/updateLocale';
+
+// date fns
 registerLocale('fr', fr);
+
+// dayjs
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(customParseFormat);
+dayjs.extend(LocalizedFormat);
+dayjs.locale('fr');
+dayjs.extend(updateLocale);
 
 // == Composant
 const BookingCoaching = ({
@@ -74,7 +93,7 @@ const BookingCoaching = ({
                   value={slot.id}
                   key={slot.id}
                 >
-                  {slot.start_time} - {slot.end_time} {slot.firstname}
+                  {dayjs('2021-03-02' + slot.start_time).tz('Europe/Paris').locale('fr').format('H:mm')} - {dayjs('2021-03-02' + slot.end_time).tz('Europe/Paris').locale('fr').format('H:mm')} {slot.firstname} {slot.lastname}
                 </option>
               ))
             }

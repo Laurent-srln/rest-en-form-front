@@ -16,6 +16,7 @@ const getCoachings = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
+          console.log('response.data', response.data);
           store.dispatch(saveCoachings(response.data));
         }
         catch (error) {
