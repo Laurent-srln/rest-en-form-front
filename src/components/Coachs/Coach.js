@@ -15,7 +15,7 @@ const Coach = ({
       {
         coach.map((coachObject) => (
           <>
-            <div className="coach" key={coachObject.email}>
+            <div className="coach" key={coachObject.id}>
               <div className="coach__info">
                 <p className="coach__info-name">{coachObject.firstname} {coachObject.lastname}</p>
                 <img

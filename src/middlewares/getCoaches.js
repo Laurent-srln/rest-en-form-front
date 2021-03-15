@@ -12,13 +12,19 @@ const coachs = (store) => (next) => (action) => {
     case GET_ALL_COACHS: {
       const getAllCoaches = async () => {
         try {
-          const response = await axios.get(`${URL}/coachs`);
+          const { token } = store.getState().auth.login;
+          const response = await axios.get(`${URL}/coachs`, {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `bearer ${token}`,
+            },
+          });
           console.log(response.data);
           const actionToDispatch = saveCoachs(response.data);
           store.dispatch(actionToDispatch);
         }
         catch (error) {
-          console.log(error);
+          console.log(error.response);
         }
       };
       getAllCoaches();
