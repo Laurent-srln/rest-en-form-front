@@ -7,7 +7,7 @@ import './style.scss';
 
 import dayjs from 'dayjs';
 
-// Pour les timezones
+// dayjs
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
