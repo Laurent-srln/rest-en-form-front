@@ -4,7 +4,7 @@ import {
   SUBMIT_USER, GET_ALL_SPECIALITIES, saveUserForm, saveAllSpecialities,
 } from 'src/actions/addUserForm';
 
-const baseUrl = 'https://app-osport.herokuapp.com';
+const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 console.log('middleware add user');
 
