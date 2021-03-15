@@ -12,7 +12,7 @@ import Auth from 'src/containers/Auth';
 // import DashboardAdh from 'src/components/DashboardAdh';
 import DashboardAdh from 'src/containers/DashboardAdh';
 
-import DashboardManager from 'src/components/DashboardManager';
+import DashboardManager from 'src/containers/DashboardManager';
 import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 
 import Coachings from 'src/containers/Coachings/Coachings';
