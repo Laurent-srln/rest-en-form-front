@@ -31,27 +31,30 @@ const Workouts = ({ workouts, getWorkouts }) => {
 
   return (
     <div className="workouts">
-      <div className="selectWorkout">
-        <label
-          className="selectWorkout__label"
-          htmlFor="workout-select"
-        >
-          Training effectués
-          <select
-            className="selectWorkout__select"
-            name="workouts"
-            id="workout-select"
+      <h1 className="workouts__title">Entraînements</h1>
+      {/*
+        <div className="selectWorkout">
+          <label
+            className="selectWorkout__label"
+            htmlFor="workout-select"
           >
-            <option value="">Sélectionner une date</option>
-            {
-              workouts.map((dateItem) => (
-                <option value={dateItem.date} key={dateItem.id}>{dayjs(dateItem.date).tz('Europe/Paris').locale('fr').format('dddd DD MMMM')}
-                </option>
-              ))
-            }
-          </select>
-        </label>
-      </div>
+            Training effectués
+            <select
+              className="selectWorkout__select"
+              name="workouts"
+              id="workout-select"
+            >
+              <option value="">Sélectionner une date</option>
+              {
+                workouts.map((dateItem) => (
+                  <option value={dateItem.date} key={dateItem.id}>{dayjs(dateItem.date).tz('Europe/Paris').locale('fr').format('dddd DD MMMM')}
+                  </option>
+                ))
+              }
+            </select>
+          </label>
+        </div>
+        */}
       <ul className="workouts__content">
         {workouts.map((workout) => <Workout key={workout.id} {...workout} />)}
       </ul>
