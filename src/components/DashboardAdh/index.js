@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // == Imports
-// import Coachings from 'src/containers/Coachings';
-// import Workouts from 'src/components/Workouts';
+import Coachings from 'src/containers/Coachings/Coachings';
+import Workouts from 'src/containers/Workouts/Workouts';
 import HealthCheck from 'src/components/HealthCheck';
 
 import './style.scss';
@@ -16,18 +16,14 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
 
   const findLastHealthCheck = healthCheck[healthCheck.length - 1];
   const data = { ...findLastHealthCheck };
-  // console.log('findLastHealthCheck', findLastHealthCheck);
-  // console.log('result.createdAt', data.createdAt);
-
-  
-  // return (<HealthCheck key={data.id} {...data} />);
 
   return (
     <div className="dashboardMember">
-      <h1>Tableau de bord de l'adhérent</h1>
-      <div className="dashboardMember__coaching">
-        <h2>Réservation coaching</h2>
-        {/* <Coachings /> */}
+      <h1 className="dashboardMember__title">Tableau de bord</h1>
+      <div>
+        <div className="dashboardMember__coaching">
+          <Coachings />
+        </div>
         <p className="cta">
           <Link to="/booking-coaching" className="cta__text">Réserver un coaching</Link>
         </p>
@@ -36,9 +32,10 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
         </p>
       </div>
 
-      <div className="dashboardMember__workout">
-        <h2>Dernier entraînement</h2>
-        {/* <Workouts /> */}
+      <div>
+        <div className="dashboardMember__workout">
+          <Workouts />
+        </div>
         <p className="cta">
           <Link to="/add-workout" className="cta__text">Ajouter un entraînement</Link>
         </p>

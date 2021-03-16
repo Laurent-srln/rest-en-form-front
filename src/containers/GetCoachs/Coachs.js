@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import Coachs from 'src/components/Coachs/Coach';
+import Coachs from 'src/components/Coachs';
 
 import { getAllCoachs } from 'src/actions/Coachs';
 
 const mapStateToProps = (state) => ({
-  coach: [...state.coachs.coach],
+  coach: state.coachs.coach,
 });
 
 const mapDispatchToProps = (dispatch) => ({

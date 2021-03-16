@@ -33,7 +33,7 @@ const Auth = ({
 
   return (
     <div className="auth">
-      <p className="auth__title">Se connecter</p>
+      <p className="auth__title">Connexion</p>
       <div className="auth__content">
         <form
           className="auth__form"
@@ -43,7 +43,7 @@ const Auth = ({
             className="auth__form-label"
             htmlFor="email"
           >
-            Votre adresse email
+            Adresse email
             <input
               className="auth__form-input"
               method="post"
@@ -60,7 +60,7 @@ const Auth = ({
             className="auth__form-label"
             htmlFor="password"
           >
-            Votre mot de passe
+            Mot de passe
             <input
               className="auth__form-input"
               type="password"

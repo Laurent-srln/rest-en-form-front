@@ -5,21 +5,21 @@ import PropTypes from 'prop-types';
 
 // == Import
 import Header from 'src/containers/Header';
-import Footer from 'src/components/Footer';
+import Footer from 'src/containers/Footer';
 
 import Auth from 'src/containers/Auth';
 
-// import DashboardAdh from 'src/components/DashboardAdh';
 import DashboardAdh from 'src/containers/DashboardAdh';
-
 import DashboardManager from 'src/containers/DashboardManager';
 import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 
 import Coachings from 'src/containers/Coachings/Coachings';
-import Members from 'src/containers/GetAllMembers';
 import Workouts from 'src/containers/Workouts/Workouts';
 import AddWorkout from 'src/containers/AddWorkout';
 import BookingCoaching from 'src/containers/BookingCoaching';
+
+import Members from 'src/containers/GetAllMembers';
+import Coachs from 'src/containers/GetCoachs/Coachs';
 
 import './styles.scss';
 
@@ -107,6 +107,12 @@ const App = ({
         >
           <AddWorkout />
         </Route>
+        <Route
+          exact
+          path="/coachs"
+        >
+          <Coachs />
+        </Route>
       </Switch>
       <Footer />
     </div>
@@ -116,9 +122,9 @@ const App = ({
 // == Props Validation
 /*
 App.propTypes = {
-  isLogged: PropTypes.bool.isRequired,
+  isLogged: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
-  login: PropTypes.func.isRequire,
+  appInit: PropTypes.func,
 };
 */
 
