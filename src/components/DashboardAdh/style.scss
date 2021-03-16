@@ -2,10 +2,23 @@
 
 .dashboardMember {
 
-  &__coaching {
-
+  &__title {
+    margin: v.$gutter * 1.5 0 v.$gutter * 1.5 0;
+    font-size: 1.8em;
+    font-weight: v.$text-bold;
   }
 
+  &__coaching {
+    margin: v.$gutter 0 0 0;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  &__workout {
+    margin: v.$gutter 0 0 0;
+    height: 390px;
+    overflow: hidden;
+  }
   
 }
 
@@ -14,9 +27,8 @@
   display: inline-block;
 
   &__text {
-    width: 50%;
     margin: v.$gutter auto;
-    padding: v.$gutter v.$gutter * 2;
+    padding: v.$gutter / 2 v.$gutter;
     background-color: v.$alt-color;
     border-radius: v.$element-radius;
     color: v.$primary-color;

@@ -96,9 +96,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlb
 
 
 ### RÉCUPÉRER TOUS LES COACHINGS DISPONIBLES À UNE DATE
-GET {{baseUrl}}/available-coachings?date=2021-04-05
+GET {{baseUrl}}/available-coachings?date=2021-03-25
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM1LCJlbWFpbCI6ImFsYWludEBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NDU0MzM3LCJleHAiOjE2MTU0OTAzMzd9.l3CjIwykudQ_ljEC72RY-MXcSR7xlskReZcwu0xOI8M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NzM0MDY5LCJleHAiOjE2MTU3NzAwNjl9.rgU21uOnfrwUmSQauRGjoLDxaw-YzaNxyxQf2pTPoXc
 
 
 ### RÉCUPÉRER LES PROCHAINS COACHINGS PRÉVUS 
@@ -284,6 +284,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlb
 ### AJOUTER DES CRÉNEAUX COACHING 
 POST {{baseUrl}}/new-coachings
 Content-Type: application/json
+<<<<<<< HEAD:api_json_model.http
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlbWFpbCI6ImFsZXh0QGNvYWNoLmNvbSIsInJvbGUiOiJDT0FDSCIsImlhdCI6MTYxNTY0Njk4OCwiZXhwIjoxNjE1NjgyOTg4fQ.sh8q4_TX933CLHBKOGZQNRY7gvmoxntJ15bszwJGO7g
 
 {
@@ -313,4 +314,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlb
 
 ### RÉCUPÉRER LES COACHS
 GET {{baseUrl}}/coachs
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlbWFpbCI6ImFsZXh0QGNvYWNoLmNvbSIsInJvbGUiOiJDT0FDSCIsImlhdCI6MTYxNTQ1ODQ2NywiZXhwIjoxNjE1NDk0NDY3fQ.kbzoCNS6yjW8TdwM_ZoLj6wbgDIzDnBqZ0PpPOfuTuY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiYWxleHRAY29hY2guY29tIiwicm9sZSI6IkNPQUNIIiwiaWF0IjoxNjE1ODg3MzY1LCJleHAiOjE2MTU5MjMzNjV9.2oIBQlWGMLDL-lWhLxnv4tWQFh5q4UTKv9n7z3bqdjE
+

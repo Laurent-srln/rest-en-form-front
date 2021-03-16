@@ -24,7 +24,7 @@ const coachs = (store) => (next) => (action) => {
           store.dispatch(actionToDispatch);
         }
         catch (error) {
-          console.log(error);
+          console.log(error.response);
         }
       };
       getAllCoaches();

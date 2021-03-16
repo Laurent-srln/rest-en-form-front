@@ -1,13 +1,40 @@
 @use '../../styles/vars' as v;
 
 .header {
-  display: flex;
+  margin: 0 0 v.$gutter 0;
+  padding: v.$gutter / 1.5;
   width: 100%;
   background-color: v.$primary-color;
-  &-logo {
-    background-color:v.$primary-color;
-    width: 100px;
-    height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 30%;
+    padding: v.$gutter / 1.5;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    .menu-link {
+      margin: 0 v.$gutter / 2.5;
+      color: v.$alt-color;
+      font-size: .8em;
+    }
+  }
+
+  &__logout {
+
+    .button {
+      padding: v.$gutter / 1.5 v.$gutter;
+      background-color: v.$alt-color;
+      border-radius: v.$element-radius;
+      color: v.$primary-color;
+      font-weight: v.$text-bold;
+      border: 1.5px solid v.$primary-color;
+    }
   }
 }
 //#6E7783 gris vert

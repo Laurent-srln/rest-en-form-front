@@ -4,6 +4,7 @@ import { onClickLogout } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
   isLogged: state.auth.login.logged,
+  role: state.auth.login.role,
 });
 
 const mapDispatchToProps = (dispatch) => ({
