@@ -25,8 +25,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-    "email": "alibaba@gmail.com",
-    "password":"member"
+    "email": "alext@coach.com",
+    "password":"coach"
 }
 
 
@@ -327,4 +327,5 @@ Authorization: Bearer
 
 ### RÉCUPÉRER LES COACHS
 GET {{baseUrl}}/coachs
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlbWFpbCI6ImFsZXh0QGNvYWNoLmNvbSIsInJvbGUiOiJDT0FDSCIsImlhdCI6MTYxNTQ1ODQ2NywiZXhwIjoxNjE1NDk0NDY3fQ.kbzoCNS6yjW8TdwM_ZoLj6wbgDIzDnBqZ0PpPOfuTuY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiYWxleHRAY29hY2guY29tIiwicm9sZSI6IkNPQUNIIiwiaWF0IjoxNjE1ODg3MzY1LCJleHAiOjE2MTU5MjMzNjV9.2oIBQlWGMLDL-lWhLxnv4tWQFh5q4UTKv9n7z3bqdjE
+
