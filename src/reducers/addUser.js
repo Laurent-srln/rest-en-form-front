@@ -15,7 +15,7 @@ const initialState = {
   email: '',
   role: '',
   checkboxSpecialities: [],
-  specialities: [],
+  specialties: [],
   speciality: [
     {
       id: 0,
@@ -59,7 +59,7 @@ const addUser = (state = initialState, action = {}) => {
         ...state,
         // ICI A VOIR COMMENT FAIRE
         checkboxSpecialities: [
-          state.specialities.push(Number(action.payload)),
+          state.specialties.push(Number(action.payload)),
         ],
       };
     case SAVE_ALL_SPECIALITIES:
@@ -75,7 +75,7 @@ const addUser = (state = initialState, action = {}) => {
         lastname: action.payload.lastname,
         email: action.payload.email,
         role: action.payload.role,
-        specialities: action.payload.speciality,
+        specialties: action.payload.speciality,
       };
     default:
       return state;

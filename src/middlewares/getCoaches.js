@@ -11,11 +11,11 @@ const coachs = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_ALL_COACHS: {
       const getAllCoaches = async () => {
+        const { token } = store.getState().auth.login;
         try {
-          const { token } = store.getState().auth.login;
           const response = await axios.get(`${URL}/coachs`, {
             headers: {
-              'Content-Type': 'application/json',
+              'content-type': 'application/json',
               Authorization: `bearer ${token}`,
             },
           });

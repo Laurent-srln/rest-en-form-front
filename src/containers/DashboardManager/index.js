@@ -21,7 +21,7 @@ const mapStateToProps = (state) => ({
   setInputLastnameValue: state.addUser.lastname,
   setInputMemberRoleValue: state.addUser.role,
   setInputCoachRoleValue: state.addUser.role,
-  setInputSpecialityValue: state.addUser.specialities,
+  setInputSpecialityValue: state.addUser.specialties,
   setInputMailValue: state.addUser.mail,
   allSpecialities: state.addUser.speciality,
 });

@@ -1,7 +1,7 @@
 import { SAVE_COACHS } from 'src/actions/Coachs';
 
 const initialState = {
-  coach: [],
+  coachs: [],
 };
 
 const coachs = (state = initialState, action = {}) => {
@@ -9,7 +9,7 @@ const coachs = (state = initialState, action = {}) => {
     case SAVE_COACHS:
       return {
         ...state,
-        coach: action.payload,
+        coachs: action.payload,
       };
     default:
       return state;

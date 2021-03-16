@@ -19,7 +19,7 @@ const addUser = (store) => (next) => (action) => {
             lastname,
             email,
             role,
-            specialities,
+            specialties,
           } = store.getState().addUser;
 
           const { token } = store.getState().auth.login;
@@ -29,7 +29,7 @@ const addUser = (store) => (next) => (action) => {
             lastname,
             email,
             role,
-            specialities,
+            specialties,
           });
 
           const response = await axios.post(`${baseUrl}/new-user`, addUserStringify, {

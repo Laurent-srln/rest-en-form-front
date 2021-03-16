@@ -10,6 +10,7 @@ import healthCheck from './healthCheck';
 import addWorkout from './addWorkout';
 import bookingCoaching from './bookingCoaching';
 import addUser from './addUser';
+import createSlot from './createSlot';
 
 
 const globalReducer = combineReducers({
@@ -23,6 +24,7 @@ const globalReducer = combineReducers({
   addWorkout,
   bookingCoaching,
   addUser,
+  createSlot,
 });
 
 export default globalReducer;
