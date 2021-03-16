@@ -10,6 +10,7 @@ const Coachs = ({ coach, getAllCoachs }) => {
   useEffect(getAllCoachs, []);
   
   const { specialties } = coach;
+  console.log('specialties', specialties);
 
   const coachSpecialties = specialties.map((specialtieObject) => (
     <div className="coach__specialities" key={[...specialtieObject]}>
