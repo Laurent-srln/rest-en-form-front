@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import CreateSlot from 'src/containers/CreateSlote';
+
 import './styles.scss';
 
 const DashboardManager = ({
@@ -57,7 +59,6 @@ const DashboardManager = ({
   // useEffect(saveUser, []);
   useEffect(getAllMembers, []);
   useEffect(getAllSpecialities, []);
-  console.log(allSpecialities);
   return (
     <div className="dashboard">
       <div className="dashboard-content-left">
@@ -158,65 +159,8 @@ const DashboardManager = ({
         </div>
       </div>
       <div className="dashboard-content-right">
-        <div className="dashboard-select-slot">
-          <label
-            className="dashboard-select-slot-label"
-            htmlFor="slot-select"
-          >
-            Date
-            <select
-              className="slot-select"
-              name="slot"
-              id="slot-select"
-            >
-              <option placeholder="10/02/2021" value=""> </option>
-              <option value="vendredi 2 février">vendredi 2 février</option>
-            </select>
-          </label>
-          <label
-            className="dashboard-select-slot-label"
-            htmlFor="slot-select"
-          >
-            Heure de début
-            <select
-              className="slot-select"
-              name="slot"
-              id="slot-select"
-            >
-              <option value="">Sélectionner un horaire</option>
-              <option value="9h00">9h00</option>
-            </select>
-          </label>
-          <label
-            className="dashboard-select-slot-label"
-            htmlFor="slot-select"
-          >
-            Heure de fin
-            <select
-              className="slot-select"
-              name="slot"
-              id="slot-select"
-            >
-              <option value="">Sélectionner un horaire</option>
-              <option value="9h15">9h15</option>
-            </select>
-          </label>
-          <label
-            className="dashboard-select-slot-label"
-            htmlFor="slot-select"
-          >
-            Coach
-            <select
-              className="slot-select"
-              name="slot"
-              id="slot-select"
-            >
-              <option value="">Sélectionner un coach</option>
-              <option value="Alexis">Alexis</option>
-            </select>
-          </label>
-        </div>
-        <div className="dashboard-slot">
+        <CreateSlot />
+        {/* <div className="dashboard-slot">
           <span className="dashboard-slot-title">Liste des créneaux enregistrés</span>
           <ul>
             <li>Date</li>
@@ -230,10 +174,33 @@ const DashboardManager = ({
             <li>fin</li>
             <li>Sountid</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
+};
+
+DashboardManager.protoType = {
+  allSpecialities: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  })).isRequired,
+  setInputFirstnameValue: PropTypes.func.isRequired,
+  onChangeInputFirstnameValue: PropTypes.func.isRequired,
+  onSubmitUserForm: PropTypes.func.isRequired,
+  setInputLastnameValue: PropTypes.func.isRequired,
+  onChangeInputLastnameValue: PropTypes.func.isRequired,
+  onChangeInputMemberRoleValue: PropTypes.func.isRequired,
+  onChangeInputCoachRoleValue: PropTypes.func.isRequired,
+  onChangeInputSpecialityValue: PropTypes.func.isRequired,
+  onChangeInputMailValue: PropTypes.func.isRequired,
+  setInputMemberRoleValue: PropTypes.func.isRequired,
+  setInputCoachRoleValue: PropTypes.func.isRequired,
+  setInputSpecialityValue: PropTypes.func.isRequired,
+  setInputMailValue: PropTypes.string.isRequired,
+  showAllMembers: PropTypes.array.isRequired,
+  getAllMembers: PropTypes.func.isRequired,
+  getAllSpecialities: PropTypes.func.isRequired,
 };
 
 export default DashboardManager;

@@ -9,6 +9,7 @@ import getAllUsers from './getAllUsers';
 import healthCheck from './healthCheck';
 import addWorkout from './addWorkout';
 import addUser from './addUser';
+import createSlot from './createSlot';
 
 const globalReducer = combineReducers({
   auth,
@@ -20,6 +21,7 @@ const globalReducer = combineReducers({
   healthCheck,
   addWorkout,
   addUser,
+  createSlot,
 });
 
 export default globalReducer;

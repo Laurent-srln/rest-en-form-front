@@ -12,7 +12,6 @@ export const ADD_MAIL = 'ADD_MAIL';
 export const ADD_PASSWORD = 'ADD_PASSWORD';
 // export const SAVE_MAIL = 'SAVE_MAIL';
 
-
 // export const SET_INPUT_NEW_PASSWORD_VALUE = 'SET_INPUT_NEW_PASSWORD_VALUE';
 // export const ADD_NEW_PASSWORD = 'ADD_NEW_PASSWORD';
 
@@ -63,9 +62,6 @@ export const saveMail = (payload) => ({
   payload,
 });
 */
-
-
-
 
 // new-password
 /*
