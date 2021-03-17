@@ -21,8 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   onChangeInputConfirmPasswordValue: (value) => {
-    // const action = setInputConfirmNewPasswordValue(value);
-    // dispatch(action);
+    const action = setInputConfirmNewPasswordValue(value);
+    console.log('setInputConfirmNewPasswordValue', action);
+    dispatch(action);
   },
 
   onSubmitNewPasswordForm: () => {

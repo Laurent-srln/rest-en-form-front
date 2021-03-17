@@ -4,6 +4,7 @@ import {
   SAVE_USER,
   LOGOUT,
   SET_INPUT_NEW_PASSWORD_VALUE,
+  SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE,
 } from 'src/actions/auth';
 
 const initialState = {
@@ -57,6 +58,14 @@ const auth = (state = initialState, action = {}) => {
         createPassword: {
           password: action.payload,
           confirm: state.createPassword.confirm,
+        },
+      };
+    case SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE:
+      return {
+        ...state,
+        createPassword: {
+          password: state.createPassword.password,
+          confirm: action.payload,
         },
       };
     default:
