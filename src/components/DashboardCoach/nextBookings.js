@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // dayjs
@@ -36,7 +37,7 @@ const nextBookings = ({ nextBookingsArray }) => (
                 <span> - </span>
                 {dayjs(nextBookingObject.endTime).tz('Europe/Paris').locale('fr').format('H:mm')}
               </li>
-              <li>{nextBookingObject.memberFirstname}</li>
+              <li><Link to={`/members/${nextBookingObject.memberId}/workouts`}>{nextBookingObject.memberFirstname} {nextBookingObject.memberLastname}</Link></li>
             </ul>
           ))
       }
@@ -48,9 +49,11 @@ nextBookings.propTypes = {
   nextBookingsArray: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      memberFirstname: PropTypes.string.isRequired,
       startTime: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
+      memberId: PropTypes.number.isRequired,
+      memberFirstname: PropTypes.string.isRequired,
+      memberLastname: PropTypes.string.isRequired,
     }),
   ),
 };

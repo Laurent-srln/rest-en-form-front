@@ -23,6 +23,28 @@ const initialState = {
       commentDate: null,
     },
   ],
+  workoutsForCoach: [
+    {
+      id: 0,
+      date: '',
+      description: '',
+      createdAt: '',
+      updatedAt: null,
+      memberId: 0,
+      memberFirstname: '',
+      memberLastname: '',
+      weight: 0,
+      muscleMass: 0,
+      fatMass: 0,
+      boneMass: 0,
+      bodyWater: 0,
+      commentCoachId: null,
+      commentCoachFirstname: null,
+      commentCoachLastname: null,
+      commentContent: null,
+      commentDate: null,
+    },
+  ],
 };
 
 const workouts = (state = initialState, action = {}) => {

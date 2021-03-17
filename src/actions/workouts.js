@@ -13,6 +13,8 @@ export const SET_INPUT_CONTENT_VALUE = 'SET_INPUT_CONTENT_VALUE';
 export const ADD_WORKOUT = 'ADD_WORKOUT';
 export const SAVE_WORKOUT = 'SAVE_WORKOUT';
 
+export const GET_WORKOUTS_FOR_COACH = 'GET_WORKOUTS_FOR_COACH';
+
 // === Action types
 export const getWorkouts = (payload) => ({
   type: GET_WORKOUTS,
@@ -65,5 +67,10 @@ export const addWorkout = () => ({
 
 export const saveWorkout = (payload) => ({
   type: SAVE_WORKOUT,
+  payload,
+});
+
+export const getWorkoutsForCoach = (payload) => ({
+  type: GET_WORKOUTS_FOR_COACH,
   payload,
 });

@@ -23,7 +23,7 @@ dayjs.locale('fr');
 dayjs.extend(updateLocale);
 
 // == Composant
-const Workout = ({
+const WorkoutForCoach = ({
   date,
   description,
   weight,
@@ -46,11 +46,6 @@ const Workout = ({
         <img
           className="bubble"
           src="https://img2.freepng.fr/20180617/pil/kisspng-grow-around-speech-balloon-text-clip-art-conversation-bubble-5b26b2ea357129.2881425615292628262189.jpg"
-          alt=""
-        />
-        <img
-          className="pencil"
-          src="https://cdn.pixabay.com/photo/2016/03/31/19/15/crayon-1294842_960_720.png"
           alt=""
         />
       </div>
@@ -97,7 +92,7 @@ const Workout = ({
 };
 
 // == Props Validation
-Workout.propTypes = {
+WorkoutForCoach.propTypes = {
   date: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   weight: PropTypes.number.isRequired,
@@ -110,11 +105,11 @@ Workout.propTypes = {
   commentDate: PropTypes.string,
 };
 
-Workout.defaultProps = {
+WorkoutForCoach.defaultProps = {
   commentCoachFirstname: null,
   commentContent: null,
   commentDate: null,
 };
 
 // == Export
-export default Workout;
+export default WorkoutForCoach;
