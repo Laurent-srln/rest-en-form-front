@@ -21,7 +21,9 @@ const DashboardManager = ({
   setInputSpecialityValue,
   setInputMailValue,
   showAllMembers,
+  showAllCoachs,
   getAllMembers,
+  getAllCoachs,
   getAllSpecialities,
   allSpecialities,
 }) => {
@@ -56,7 +58,7 @@ const DashboardManager = ({
     // }
   };
 
-  // useEffect(saveUser, []);
+  useEffect(getAllCoachs, []);
   useEffect(getAllMembers, []);
   useEffect(getAllSpecialities, []);
   return (
@@ -67,8 +69,8 @@ const DashboardManager = ({
           <Link to="/members" className="dashboard-link">Voir les adhérents </Link>
         </div>
         <div className="dashboard-show-coachs">
-          <span className="dashboard-show-coachs-title">3 Coachs</span>
-          <a className="dashboard-show-coachs-link">Voir les coachs</a>
+          <span className="dashboard-show-coachs-title">{showAllCoachs.length} Coachs</span>
+          <Link to="/coachs" className="dashboard-link">Voir les coachs</Link>
         </div>
         <div className="dashboard-add-user">
           <span className="dashboard-add-user-title">Ajouter un utilisateur</span>

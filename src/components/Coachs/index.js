@@ -6,24 +6,15 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 // == Composant
-const Coachs = ({ coach, getAllCoachs }) => {
+const Coachs = ({ coachs, getAllCoachs }) => {
   useEffect(getAllCoachs, []);
-  
-  const { specialties } = coach;
-  console.log('specialties', specialties);
-
-  const coachSpecialties = specialties.map((specialtieObject) => (
-    <div className="coach__specialities" key={[...specialtieObject]}>
-      <p className="coach__specialities-item">{[...specialtieObject]}</p>
-    </div>
-  ));
-
+  console.log(coachs);
   return (
     <div className="coachs">
       <h1 className="coachs__title">Les coachs</h1>
       <div className="coachs__content">
         {
-          coach.map((coachObject) => (
+          coachs.map((coachObject) => (
             <div className="coach" key={coachObject.id}>
               <div className="coach__info">
                 <p className="coach__info-name">{coachObject.firstname} {coachObject.lastname}</p>
@@ -33,8 +24,8 @@ const Coachs = ({ coach, getAllCoachs }) => {
                   alt=""
                 />
               </div>
-              <div>
-                {coachSpecialties}
+              <div className="coach__specialities" key={coachObject.specialties}>
+                <p className="coach__specialities-item">{coachObject.specialties}</p>
               </div>
             </div>
           ))
@@ -49,9 +40,9 @@ const Coachs = ({ coach, getAllCoachs }) => {
 };
 
 // == Props Validation
-/*
+
 Coachs.propTypes = {
-  coach: PropTypes.arrayOf(
+  coachs: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       firstname: PropTypes.string.isRequired,
@@ -62,7 +53,6 @@ Coachs.propTypes = {
   ).isRequired,
   getAllCoachs: PropTypes.func.isRequired,
 };
-*/
 
 // == Export
 export default Coachs;

@@ -124,10 +124,6 @@ const CreateSlot = ({
   );
 };
 
-CreateSlot.defaultProps = {
-  // setInputDateValue: PropTypes.func,
-};
-
 CreateSlot.propTypes = {
   getAllCoachs: PropTypes.func.isRequired,
   coachsList: PropTypes.arrayOf(PropTypes.shape({

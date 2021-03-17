@@ -6,7 +6,7 @@ import Coachs from 'src/components/Coachs';
 import { getAllCoachs } from 'src/actions/Coachs';
 
 const mapStateToProps = (state) => ({
-  coach: state.coachs.coach,
+  coachs: state.coachs.coachs,
 });
 
 const mapDispatchToProps = (dispatch) => ({

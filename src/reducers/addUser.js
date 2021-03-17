@@ -57,7 +57,6 @@ const addUser = (state = initialState, action = {}) => {
       console.log(action.payload);
       return {
         ...state,
-        // ICI A VOIR COMMENT FAIRE
         checkboxSpecialities: [
           state.specialties.push(Number(action.payload)),
         ],

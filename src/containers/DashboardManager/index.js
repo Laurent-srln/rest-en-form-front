@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import DashboardManager from 'src/components/DashboardManager';
 
 import { getAllMembers } from 'src/actions/allUsers';
+import { getAllCoachs } from 'src/actions/Coachs';
+import { onSubmitSlotForm } from 'src/actions/CreateSlotForm';
 import {
   getAllSpecialities,
   setInputFirstnameValue,
@@ -17,6 +19,7 @@ console.log('container Manager');
 
 const mapStateToProps = (state) => ({
   showAllMembers: state.getAllUsers.allMembers,
+  showAllCoachs: state.coachs.coachs,
   setInputFirstnameValue: state.addUser.firstname,
   setInputLastnameValue: state.addUser.lastname,
   setInputMemberRoleValue: state.addUser.role,
@@ -29,6 +32,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getAllMembers: () => {
     const action = getAllMembers();
+    dispatch(action);
+  },
+  getAllCoachs: () => {
+    const action = getAllCoachs();
     dispatch(action);
   },
   getAllSpecialities: () => {
@@ -63,6 +70,10 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onSubmitUserForm: () => {
     const action = submitUser();
+    dispatch(action);
+  },
+  onSubmitSlotForm: () => {
+    const action = onSubmitSlotForm();
     dispatch(action);
   },
 });

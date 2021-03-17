@@ -45,7 +45,7 @@ const addSlot = (store) => (next) => (action) => {
           store.dispatch(saveSlotForm(response.data));
         }
         catch (error) {
-          console.log('error.response', error.response.message);
+          console.log('error.response', error.response);
         }
       };
       sendSlotToApi();
