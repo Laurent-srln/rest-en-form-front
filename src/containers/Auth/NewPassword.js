@@ -9,30 +9,25 @@ import {
 } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
-  inputNewPasswordValue: state.auth.newPassword,
-  inputConfirmPasswordValue: state.auth.confirmNewPassword,
+  inputNewPasswordValue: state.auth.createPassword.password,
+  inputConfirmPasswordValue: state.auth.createPassword.confirm,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onChangeInputNewPasswordValue: (value) => {
-    // ('Au click, je veux changer le state du nouveau password', value);
     const action = setInputNewPasswordValue(value);
-    // ('action', action);
+    // console.log('setInputNewPasswordValue', action);
     dispatch(action);
   },
 
   onChangeInputConfirmPasswordValue: (value) => {
-    // ('Au click, je veux changer le state de la confirmation du new password', value);
-    const action = setInputConfirmNewPasswordValue(value);
-    // ('action', action);
-    dispatch(action);
+    // const action = setInputConfirmNewPasswordValue(value);
+    // dispatch(action);
   },
 
   onSubmitNewPasswordForm: () => {
-    // ('je veux ajouter un nouveau password dans le state');
-    const action = addConfirmNewPassword();
-    // ('action', action);
-    dispatch(action);
+    // const action = addConfirmNewPassword();
+    // dispatch(action);
   },
 });
 

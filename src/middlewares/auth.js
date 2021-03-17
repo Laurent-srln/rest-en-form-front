@@ -20,7 +20,8 @@ const auth = (store) => (next) => (action) => {
               'content-type': 'application/json',
             },
           });
-          // stockage du token dans le localStorage (réutiliser dans le reducer)
+          console.log('sendLoginToApi', response.data);
+          // stockage du token dans le localStorage (réutilisé dans le reducer)
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('logged', response.data.logged);
           store.dispatch(saveUser(response.data));
