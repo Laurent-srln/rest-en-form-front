@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Imports
@@ -13,6 +14,9 @@ const NewPassword = ({
   onChangeInputConfirmPasswordValue,
   onSubmitNewPasswordForm,
 }) => {
+  const token = useLocation();
+  console.log('token', token.search);
+
   const handleOnChangeNewPassword = (event) => {
     onChangeInputNewPasswordValue(event.target.value);
   };
@@ -24,7 +28,7 @@ const NewPassword = ({
   const handleOnSubmit = (event) => {
     event.preventDefault();
     if (inputNewPasswordValue && inputConfirmPasswordValue) {
-      onSubmitNewPasswordForm();
+      onSubmitNewPasswordForm(token);
     }
   };
 
@@ -34,6 +38,7 @@ const NewPassword = ({
       <form
         className="newPasswordForm"
         onSubmit={handleOnSubmit}
+        value={token}
       >
         <label
           className="newPasswordForm__label"

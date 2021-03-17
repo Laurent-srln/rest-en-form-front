@@ -16,10 +16,8 @@ export const LOGOUT = 'LOGOUT';
 
 // Create password
 export const SET_INPUT_NEW_PASSWORD_VALUE = 'SET_INPUT_NEW_PASSWORD_VALUE';
-// export const ADD_NEW_PASSWORD = 'ADD_NEW_PASSWORD';
-
 export const SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE = 'SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE';
-// export const ADD_CONFIRM_NEW_PASSWORD = 'ADD_CONFIRM_NEW_PASSWORD';
+export const CREATE_PASSWORD = 'CREATE_PASSWORD';
 
 // === Action types
 
@@ -73,14 +71,7 @@ export const setInputConfirmNewPasswordValue = (payload) => ({
   payload,
 });
 
-/*
-export const addNewPassword = () => ({
-  type: ADD_NEW_PASSWORD,
+export const createPassword = (token) => ({
+  type: CREATE_PASSWORD,
+  token,
 });
-*/
-
-/*
-export const addConfirmNewPassword = () => ({
-  type: ADD_CONFIRM_NEW_PASSWORD,
-});
-*/

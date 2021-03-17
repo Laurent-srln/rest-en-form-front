@@ -19,6 +19,7 @@ const initialState = {
   createPassword: {
     password: '',
     confirm: '',
+    token: '',
   },
 };
 

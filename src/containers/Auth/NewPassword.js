@@ -5,7 +5,7 @@ import NewPassword from 'src/components/Auth/NewPassword';
 import {
   setInputNewPasswordValue,
   setInputConfirmNewPasswordValue,
-  addConfirmNewPassword,
+  createPassword,
 } from 'src/actions/auth';
 
 const mapStateToProps = (state) => ({
@@ -22,13 +22,14 @@ const mapDispatchToProps = (dispatch) => ({
 
   onChangeInputConfirmPasswordValue: (value) => {
     const action = setInputConfirmNewPasswordValue(value);
-    console.log('setInputConfirmNewPasswordValue', action);
+    // console.log('setInputConfirmNewPasswordValue', action);
     dispatch(action);
   },
 
-  onSubmitNewPasswordForm: () => {
-    // const action = addConfirmNewPassword();
-    // dispatch(action);
+  onSubmitNewPasswordForm: (token) => {
+    const action = createPassword(token);
+    console.log('createPassword', action);
+    dispatch(action);
   },
 });
 
