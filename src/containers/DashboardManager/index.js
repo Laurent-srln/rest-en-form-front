@@ -13,8 +13,6 @@ import {
   submitUser,
 } from 'src/actions/addUserForm';
 
-console.log('container Manager');
-
 const mapStateToProps = (state) => ({
   showAllMembers: state.getAllUsers.allMembers,
   setInputFirstnameValue: state.addUser.firstname,

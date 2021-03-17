@@ -16,7 +16,7 @@ const getWorkouts = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('getWorkoutsFromApi response.data', response.data);
           store.dispatch(saveWorkouts(response.data));
         }
         catch (error) {
