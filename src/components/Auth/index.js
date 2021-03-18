@@ -32,53 +32,59 @@ const Auth = ({
   };
 
   return (
-    <div className="auth">
-      <p className="auth__title">Connexion</p>
-      <div className="auth__content">
+    <div className="login">
+      <div className="auth">
         <form
-          className="auth__form"
+          className="auth-form"
           onSubmit={handleOnSubmit}
         >
-          <label
-            className="auth__form-label"
-            htmlFor="email"
-          >
-            Adresse email
-            <input
-              className="auth__form-input"
-              method="post"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="rodolphe.martin@oclock.io"
-              value={inputMailValue}
-              onChange={handleOnChangeMail}
-            />
-          </label>
+          <h3 className="auth-form-title">Connexion</h3>
+          <div className="auth-form-group">
+            <label
+              className="auth-form-label"
+              htmlFor="email"
+            >
+              Adresse email
+              <input
+                className="auth-form-input"
+                method="post"
+                type="email"
+                name="email"
+                id="email"
+                // placeholder="rodolphe.martin@oclock.io"
+                value={inputMailValue}
+                onChange={handleOnChangeMail}
+              />
+            </label>
+          </div>
+          <div className="auth-form-group">
+            <label
+              className="auth-form-label"
+              htmlFor="password"
+            >
+              Mot de passe
+              <input
+                className="auth-form-input"
+                type="password"
+                name="password"
+                id="password"
+                // placeholder="*************"
+                value={inputPasswordValue}
+                onChange={handleOnChangePassword}
+              />
+            </label>
+          </div>
 
-          <label
-            className="auth__form-label"
-            htmlFor="password"
-          >
-            Mot de passe
-            <input
-              className="auth__form-input"
-              type="password"
-              name="password"
-              id="password"
-              placeholder="*************"
-              value={inputPasswordValue}
-              onChange={handleOnChangePassword}
-            />
-          </label>
-
-          <div className="auth__form-submit">
+          <div className="auth-form-group">
             <button
               type="submit"
-              className="button"
+              className="auth-form-group-button"
             >
               Se connecter
             </button>
+          </div>
+          <div className="lost-password">
+            <a href="#">Mot de passe perdu ?</a>
           </div>
         </form>
       </div>
