@@ -48,6 +48,8 @@ const auth = (state = initialState, action = {}) => {
     case LOGOUT:
       return {
         ...state,
+        email: '',
+        password: '',
         login: {
           role: '',
           logged: false,

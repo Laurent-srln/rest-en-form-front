@@ -125,9 +125,9 @@ const BookingCoaching = ({
             </button>
           </div>
           {successMessageBookingCoaching && (
-          <div className="success">
-            <p className="success__text">{successMessageBookingCoaching}</p>
-          </div>
+            <div className="success">
+              <p className="success__text">{successMessageBookingCoaching}</p>
+            </div>
           )}
         </form>
       </div>

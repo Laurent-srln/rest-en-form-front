@@ -11,6 +11,7 @@ export const SAVE_ALL_SPECIALITIES = 'SAVE_ALL_SPECIALITIES';
 export const SUBMIT_USER = 'SUBMIT_USER';
 
 export const SAVE_USER_FORM = 'SAVE_USER_FORM';
+export const SAVE_ERROR_USER_FORM = 'SAVE_ERROR_USER_FORM';
 
 export const setInputFirstnameValue = (payload) => ({
   type: SET_INPUT_FIRSTNAME_VALUE,
@@ -58,5 +59,10 @@ export const submitUser = () => ({
 
 export const saveUserForm = (payload) => ({
   type: SAVE_USER_FORM,
+  payload,
+});
+
+export const saveErrorUserForm = (payload) => ({
+  type: SAVE_ERROR_USER_FORM,
   payload,
 });
