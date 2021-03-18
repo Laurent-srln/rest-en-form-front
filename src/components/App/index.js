@@ -18,9 +18,11 @@ import DashboardAdh from 'src/containers/DashboardAdh';
 import DashboardManager from 'src/containers/DashboardManager';
 import DashboardCoach from 'src/containers/DashboardCoach/DashboardCoach';
 
-import Coachings from 'src/containers/Coachings/Coachings';
 import Workouts from 'src/containers/Workouts/Workouts';
 import AddWorkout from 'src/containers/AddWorkout';
+import WorkoutsForCoach from 'src/containers/WorkoutsForCoach/WorkoutsForCoach';
+
+import Coachings from 'src/containers/Coachings/Coachings';
 import BookingCoaching from 'src/containers/BookingCoaching';
 
 import Members from 'src/containers/GetAllMembers';
@@ -109,6 +111,13 @@ const App = ({
           path="/workout"
         >
           <Workouts />
+        </Route>
+
+        <Route
+          exact
+          path="/members/:id/workouts"
+        >
+          <WorkoutsForCoach />
         </Route>
 
         <Route
