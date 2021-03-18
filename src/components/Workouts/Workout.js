@@ -13,7 +13,6 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import LocalizedFormat from 'dayjs/plugin/localizedFormat';
 import localeFr from 'dayjs/locale/fr';
 import updateLocale from 'dayjs/plugin/updateLocale';
-import { Date } from 'core-js';
 
 // dayjs
 dayjs.extend(utc);

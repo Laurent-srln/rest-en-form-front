@@ -6,12 +6,9 @@ import {
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
-console.log('middleware add user');
-
 const addUser = (store) => (next) => (action) => {
   switch (action.type) {
     case SUBMIT_USER: {
-      console.log('LA');
       const sendUserToApi = async () => {
         try {
           const {
@@ -49,7 +46,6 @@ const addUser = (store) => (next) => (action) => {
       break;
     }
     case GET_ALL_SPECIALITIES: {
-      console.log('get all specialities middleware');
       const getAllSpecialitiesfromApi = async () => {
         try {
           const { token } = store.getState().auth.login;

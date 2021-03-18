@@ -1,6 +1,10 @@
 // == Import npm
 import React, { useEffect } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Import
@@ -8,6 +12,7 @@ import Header from 'src/containers/Header';
 import Footer from 'src/containers/Footer';
 
 import Auth from 'src/containers/Auth';
+import NewPassword from 'src/containers/Auth/NewPassword';
 
 import DashboardAdh from 'src/containers/DashboardAdh';
 import DashboardManager from 'src/containers/DashboardManager';
@@ -54,7 +59,12 @@ const App = ({
         <Route path="/login" exact>
           <Auth />
         </Route>
-
+        <Route
+          exact
+          path="/register"
+        >
+          <NewPassword />
+        </Route>
         <Route
           path="/dashboard-member"
           exact

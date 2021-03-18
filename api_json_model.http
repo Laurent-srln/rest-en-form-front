@@ -27,8 +27,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-    "email": "jcastex@gmail.com",
-    "password":"owner"
+    "email": "alibaba@gmail.com",
+    "password":"member"
 }
 
 

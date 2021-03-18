@@ -18,13 +18,14 @@ import createSlot from 'src/middlewares/createSlot';
 const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(auth, coachings),
   applyMiddleware(auth, workouts),
-  applyMiddleware(coachs),
-  applyMiddleware(allBookings, allUsers),
+  applyMiddleware(auth, coachs),
+  applyMiddleware(auth, allBookings),
+  applyMiddleware(auth, allUsers),
   applyMiddleware(auth, healthCheck),
   applyMiddleware(auth, addWorkout),
   applyMiddleware(auth, bookingCoaching),
   applyMiddleware(auth, addUser),
-  applyMiddleware(createSlot),
+  applyMiddleware(auth, createSlot),
 ));
 
 export default store;

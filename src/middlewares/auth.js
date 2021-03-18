@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import { LOGIN, saveUser } from 'src/actions/auth';
+import {
+  LOGIN,
+  saveUser,
+  CREATE_PASSWORD,
+  saveNewUser,
+} from 'src/actions/auth';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 const auth = (store) => (next) => (action) => {
@@ -20,7 +25,8 @@ const auth = (store) => (next) => (action) => {
               'content-type': 'application/json',
             },
           });
-          // stockage du token dans le localStorage (réutiliser dans le reducer)
+          console.log('sendLoginToApi', response.data);
+          // stockage du token dans le localStorage (réutilisé dans le reducer)
           localStorage.setItem('token', response.data.token);
           localStorage.setItem('logged', response.data.logged);
           store.dispatch(saveUser(response.data));
@@ -30,6 +36,32 @@ const auth = (store) => (next) => (action) => {
         }
       };
       sendLoginToApi();
+      break;
+    }
+    case CREATE_PASSWORD: {
+      const sendNewPasswordToApi = async () => {
+        try {
+          const { password, confirm } = store.getState().auth.createPassword;
+          const { search } = action.token;
+
+          const userStringify = JSON.stringify({
+            password,
+            confirm,
+          });
+
+          const response = await axios.post(`${baseUrl}/register${search}`, userStringify, {
+            headers: {
+              'content-type': 'application/json',
+            },
+          });
+          console.log('sendNewPasswordToApi', response.data);
+          store.dispatch(saveNewUser(response.data));
+        }
+        catch (error) {
+          console.log(error.response);
+        }
+      };
+      sendNewPasswordToApi();
       break;
     }
     default:
