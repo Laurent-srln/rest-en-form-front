@@ -4,6 +4,7 @@ import {
   SET_INPUT_END_VALUE,
   SET_INPUT_COACH_VALUE,
   SAVE_SLOT_FORM,
+  SAVE_ERROR_SLOT_FORM,
 } from 'src/actions/CreateSlotForm';
 
 const initialState = {
@@ -11,6 +12,8 @@ const initialState = {
   selectedStart: '',
   selectedEnd: '',
   selectedDate: '',
+  successMessageAddSlot: '',
+  errorMessageAddSlot: '',
 };
 
 const createSlot = (state = initialState, action = {}) => {
@@ -42,6 +45,12 @@ const createSlot = (state = initialState, action = {}) => {
         selectedStart: '',
         selectedEnd: '',
         selectedDate: '',
+        successMessageAddSlot: action.payload.message,
+      };
+    case SAVE_ERROR_SLOT_FORM:
+      return {
+        ...state,
+        errorMessageAddSlot: action.payload,
       };
     default:
       return state;
