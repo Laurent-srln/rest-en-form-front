@@ -4,6 +4,7 @@ import {
   GET_WORKOUTS,
   saveWorkouts,
   GET_WORKOUTS_FOR_COACH,
+  saveWorkoutsForCoach,
 } from 'src/actions/workouts';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
@@ -34,18 +35,16 @@ const getWorkouts = (store) => (next) => (action) => {
       const getWorkoutsForCoachFromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
+          const id = action.payload;
 
-          const workoutsState = store.getState().workouts;
-          console.log('workoutsState', workoutsState);
-
-          const response = await axios.get(`${baseUrl}/members/${memberId}/workouts`, {
+          const response = await axios.get(`${baseUrl}/members/${id}/workouts`, {
             headers: {
               'content-type': 'application/json',
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
-          // store.dispatch(saveWorkouts(response.data));
+          // console.log('getWorkoutsForCoachFromApi response.data', response.data);
+          store.dispatch(saveWorkoutsForCoach(response.data));
         }
         catch (error) {
           console.log(error.response);

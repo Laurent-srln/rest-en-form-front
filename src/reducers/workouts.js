@@ -1,4 +1,4 @@
-import { SAVE_WORKOUTS } from 'src/actions/workouts';
+import { SAVE_WORKOUTS, SAVE_WORKOUTS_FOR_COACH } from 'src/actions/workouts';
 
 const initialState = {
   workouts: [
@@ -53,6 +53,11 @@ const workouts = (state = initialState, action = {}) => {
       return {
         ...state,
         workouts: action.payload,
+      };
+    case SAVE_WORKOUTS_FOR_COACH:
+      return {
+        ...state,
+        workoutsForCoach: action.payload,
       };
     default:
       return state;

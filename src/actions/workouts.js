@@ -14,6 +14,7 @@ export const ADD_WORKOUT = 'ADD_WORKOUT';
 export const SAVE_WORKOUT = 'SAVE_WORKOUT';
 
 export const GET_WORKOUTS_FOR_COACH = 'GET_WORKOUTS_FOR_COACH';
+export const SAVE_WORKOUTS_FOR_COACH = 'SAVE_WORKOUTS_FOR_COACH';
 
 // === Action types
 export const getWorkouts = (payload) => ({
@@ -72,5 +73,10 @@ export const saveWorkout = (payload) => ({
 
 export const getWorkoutsForCoach = (payload) => ({
   type: GET_WORKOUTS_FOR_COACH,
+  payload,
+});
+
+export const saveWorkoutsForCoach = (payload) => ({
+  type: SAVE_WORKOUTS_FOR_COACH,
   payload,
 });
