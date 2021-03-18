@@ -35,11 +35,11 @@ const addUser = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveUserForm(response.data));
         }
         catch (error) {
-          console.log('error.response', error.response);
+          // console.log('error.response', error.response);
         }
       };
       sendUserToApi();
@@ -56,11 +56,11 @@ const addUser = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveAllSpecialities(response.data));
         }
         catch (error) {
-          console.log('error.response', error.response);
+          // console.log('error.response', error.response);
         }
       };
       getAllSpecialitiesfromApi();

@@ -3,10 +3,11 @@ import {
   SET_INPUT_START_VALUE,
   SET_INPUT_END_VALUE,
   SET_INPUT_COACH_VALUE,
+  SAVE_SLOT_FORM,
 } from 'src/actions/CreateSlotForm';
 
 const initialState = {
-  coachId: '',
+  coachId: 0,
   selectedStart: '',
   selectedEnd: '',
   selectedDate: '',
@@ -34,13 +35,14 @@ const createSlot = (state = initialState, action = {}) => {
         ...state,
         coachId: action.payload,
       };
-    // case SAVE_SLOT_FORM:
-    //   return {
-    //     date: action.payload,
-    //     start: action.payload,
-    //     end: action.payload,
-    //     coachId: action.payload,
-    //   };
+    case SAVE_SLOT_FORM:
+      return {
+        ...state,
+        coachId: 0,
+        selectedStart: '',
+        selectedEnd: '',
+        selectedDate: '',
+      };
     default:
       return state;
   }

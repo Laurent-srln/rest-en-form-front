@@ -20,7 +20,7 @@ const healthCheck = (store) => (next) => (action) => {
           store.dispatch(saveHealthCheck(response.data));
         }
         catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       };
       getHealthCheckFromApi();

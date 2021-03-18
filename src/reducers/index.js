@@ -12,7 +12,6 @@ import bookingCoaching from './bookingCoaching';
 import addUser from './addUser';
 import createSlot from './createSlot';
 
-
 const globalReducer = combineReducers({
   auth,
   coachs,

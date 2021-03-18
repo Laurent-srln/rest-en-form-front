@@ -37,13 +37,13 @@ const addWorkout = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // console.log('response.data', response.data);
+          // // console.log('response.data', response.data);
           // stockage du token dans le localStorage (réutiliser dans le reducer)
           // localStorage.setItem('token', response.data.token);
           store.dispatch(saveWorkout(response.data));
         }
         catch (error) {
-          console.log('error.response', error.response);
+          // console.log('error.response', error.response);
         }
       };
       sendWorkoutToApi();

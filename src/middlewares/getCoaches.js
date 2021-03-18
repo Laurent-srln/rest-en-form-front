@@ -19,12 +19,12 @@ const coachs = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log(response.data);
+          // console.log(response.data);
           const actionToDispatch = saveCoachs(response.data);
           store.dispatch(actionToDispatch);
         }
         catch (error) {
-          console.log(error.response);
+          // console.log(error.response);
         }
       };
       getAllCoaches();

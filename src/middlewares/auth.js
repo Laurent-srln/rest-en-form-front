@@ -32,7 +32,7 @@ const auth = (store) => (next) => (action) => {
           store.dispatch(saveUser(response.data));
         }
         catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       };
       sendLoginToApi();

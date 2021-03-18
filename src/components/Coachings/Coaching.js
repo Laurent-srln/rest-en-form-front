@@ -24,6 +24,7 @@ dayjs.extend(updateLocale);
 
 // == Composant
 const Coaching = ({ coachFirstname, startTime, endTime }) => {
+
   const formatedDay = dayjs(startTime).tz('Europe/Paris').locale('fr').format('dddd D MMMM');
   const formatedStartTime = dayjs(startTime).tz('Europe/Paris').locale('fr').format('H:mm');
   const formatedEndTime = dayjs(endTime).tz('Europe/Paris').locale('fr').format('H:mm');

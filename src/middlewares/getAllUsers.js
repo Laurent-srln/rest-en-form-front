@@ -19,7 +19,7 @@ const getAllMembers = (store) => (next) => (action) => {
           store.dispatch(saveAllMembers(response.data));
         }
         catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       };
       getAllMembersFromApi();

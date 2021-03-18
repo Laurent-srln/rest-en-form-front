@@ -26,11 +26,11 @@ const bookingCoaching = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveAvailableCoachings(response.data));
         }
         catch (error) {
-          console.log(error.response);
+          // console.log(error.response);
         }
       };
       getAvaiblableCoachingsFromApi();
@@ -42,7 +42,7 @@ const bookingCoaching = (store) => (next) => (action) => {
           const { token } = store.getState().auth.login;
           const { coachingId } = store.getState().bookingCoaching;
 
-          console.log('coachingId', coachingId);
+          // console.log('coachingId', coachingId);
 
           const idStringify = JSON.stringify({
             coachingId,
@@ -54,11 +54,11 @@ const bookingCoaching = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveBookingCoaching(response.data));
         }
         catch (error) {
-          console.log(error.response);
+          // console.log(error.response);
         }
       };
       setSelectedSlotToApi();

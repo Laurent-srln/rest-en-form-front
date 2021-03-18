@@ -28,48 +28,48 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onChangeInputDateValue: (value) => {
     const action = setInputDateValue(value);
-    // console.log('action setInputDateValue', action);
+    // // console.log('action setInputDateValue', action);
     dispatch(action);
   },
   onChangeInputWeightValue: (value) => {
     const action = setInputWeightValue(value);
-    // console.log('action setInputWeightValue', action);
+    // // console.log('action setInputWeightValue', action);
     dispatch(action);
   },
 
   onChangeInputMuscleMassValue: (value) => {
     const action = setInputMuscleMassValue(value);
-    // console.log('action setInputMuscleMassValue', action);
+    // // console.log('action setInputMuscleMassValue', action);
     dispatch(action);
   },
 
   onChangeInputFatMassValue: (value) => {
     const action = setInputFatMassValue(value);
-    // console.log('action setInputFatMassValue', action);
+    // // console.log('action setInputFatMassValue', action);
     dispatch(action);
   },
 
   onChangeInputBoneMassValue: (value) => {
     const action = setInputBoneMassValue(value);
-    // console.log('action setInputBoneMassValue', action);
+    // // console.log('action setInputBoneMassValue', action);
     dispatch(action);
   },
 
   onChangeInputBodyWaterValue: (value) => {
     const action = setInputBodyWaterValue(value);
-    // console.log('action setInputBodyWaterValue', action);
+    // // console.log('action setInputBodyWaterValue', action);
     dispatch(action);
   },
 
   onChangeInputContentValue: (value) => {
     const action = setInputContentValue(value);
-    // console.log('action setInputContentValue', action);
+    // // console.log('action setInputContentValue', action);
     dispatch(action);
   },
 
   onSubmitWorkoutForm: () => {
     const action = addWorkout();
-    // console.log('action addWorkout', action);
+    // // console.log('action addWorkout', action);
     dispatch(action);
   },
 

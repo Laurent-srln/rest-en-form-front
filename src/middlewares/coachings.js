@@ -20,7 +20,7 @@ const getCoachings = (store) => (next) => (action) => {
           store.dispatch(saveCoachings(response.data));
         }
         catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       };
       getCoachingsFromApi();

@@ -39,11 +39,11 @@ const addSlot = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveSlotForm(response.data));
         }
         catch (error) {
-          console.log('error.response', error.response.message);
+          // console.log('error.response', error.response);
         }
       };
       sendSlotToApi();

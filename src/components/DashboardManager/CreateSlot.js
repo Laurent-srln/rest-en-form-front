@@ -25,19 +25,19 @@ const CreateSlot = ({
 
   const handleSlotDateChange = (date) => {
     onChangeInputSlotDateValue(date);
-    // console.log(event.target.value);
+    // // console.log(event.target.value);
   };
   const handleStartChange = (start) => {
     onChangeInputStartValue(start);
-    // console.log(event.target.value);
+    // // console.log(event.target.value);
   };
   const handleEndChange = (end) => {
     onChangeInputEndValue(end);
-    // console.log(event.target.value);
+    // // console.log(event.target.value);
   };
   const handleCoachChange = (event) => {
     onChangeInputCoachValue(event.target.value);
-    // console.log(event.target.value);
+    // // console.log(event.target.value);
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -46,7 +46,7 @@ const CreateSlot = ({
 
   useEffect(getAllCoachs, []);
 
-  console.log(coachsList);
+  // console.log(coachsList);
 
   return (
     <div className="dashboard-select-slot">
@@ -122,10 +122,6 @@ const CreateSlot = ({
       </form>
     </div>
   );
-};
-
-CreateSlot.defaultProps = {
-  // setInputDateValue: PropTypes.func,
 };
 
 CreateSlot.propTypes = {

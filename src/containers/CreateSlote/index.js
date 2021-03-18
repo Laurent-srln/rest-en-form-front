@@ -23,32 +23,32 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onChangeInputStartValue: (start) => {
     const action = setInputStartValue(start);
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
   onChangeInputEndValue: (end) => {
     const action = setInputEndValue(end);
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
   onChangeInputCoachValue: (value) => {
     const action = setInputCoachValue(value);
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
   onChangeInputSlotDateValue: (date) => {
     const action = setInputSlotDateValue(date);
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
   getAllCoachs: () => {
     const action = getAllCoachs();
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
   onSubmitSlotForm: () => {
     const action = onSubmitSlotForm();
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
 });
