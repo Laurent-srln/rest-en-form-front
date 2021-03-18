@@ -11,6 +11,8 @@ import {
 const mapStateToProps = (state) => ({
   inputNewPasswordValue: state.auth.createPassword.password,
   inputConfirmPasswordValue: state.auth.createPassword.confirm,
+  successMessageSaveNewUser: state.auth.successMessageSaveNewUser,
+  errorMessageSaveNewUser: state.auth.errorMessageSaveNewUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({

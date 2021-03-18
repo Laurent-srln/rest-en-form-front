@@ -6,6 +6,7 @@ import {
   SET_INPUT_NEW_PASSWORD_VALUE,
   SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE,
   SAVE_NEW_USER,
+  SAVE_ERROR_NEW_USER,
 } from 'src/actions/auth';
 
 const initialState = {
@@ -22,6 +23,8 @@ const initialState = {
     confirm: '',
     token: '',
   },
+  successMessageSaveNewUser: '',
+  errorMessageSaveNewUser: '',
 };
 
 const auth = (state = initialState, action = {}) => {
@@ -84,6 +87,12 @@ const auth = (state = initialState, action = {}) => {
           logged: false,
           token: '',
         },
+        successMessageSaveNewUser: action.payload.message,
+      };
+    case SAVE_ERROR_NEW_USER:
+      return {
+        ...state,
+        errorMessageSaveNewUser: action.payload,
       };
     default:
       return state;
