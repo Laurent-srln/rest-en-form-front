@@ -25,7 +25,7 @@ dayjs.extend(updateLocale);
 // == Composant
 const Members = ({ getAllMembers, allMembers }) => {
   useEffect(getAllMembers, []);
-  console.log('allMembers', allMembers);
+  // console.log('allMembers', allMembers);
   return (
     <div className="members">
       <h1 className="members__title">Listing des adhérents</h1>

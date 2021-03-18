@@ -57,7 +57,7 @@ const addUser = (state = initialState, action = {}) => {
         role: 'COACH',
       };
     case SET_INPUT_SPECIALITY_VALUE:
-      console.log(action.payload);
+      // console.log(action.payload);
       return {
         ...state,
         checkboxSpecialities: [
@@ -70,7 +70,7 @@ const addUser = (state = initialState, action = {}) => {
         speciality: action.payload,
       };
     case SAVE_USER_FORM:
-      console.log('save user reducer');
+      // console.log('save user reducer');
       return {
         ...state,
         checked: false,

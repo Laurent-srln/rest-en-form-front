@@ -17,7 +17,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   setStartDate: (date) => {
     const action = setInputDateBookingCoachingValue(date);
-    // console.log('setInputDateBookingCoachingValue', action);
+    // // console.log('setInputDateBookingCoachingValue', action);
     dispatch(action);
   },
 

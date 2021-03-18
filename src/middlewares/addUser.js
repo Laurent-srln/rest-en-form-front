@@ -6,12 +6,12 @@ import {
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
-console.log('middleware add user');
+// console.log('middleware add user');
 
 const addUser = (store) => (next) => (action) => {
   switch (action.type) {
     case SUBMIT_USER: {
-      console.log('LA');
+      // console.log('LA');
       const sendUserToApi = async () => {
         try {
           const {
@@ -38,18 +38,18 @@ const addUser = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveUserForm(response.data));
         }
         catch (error) {
-          console.log('error.response', error.response);
+          // console.log('error.response', error.response);
         }
       };
       sendUserToApi();
       break;
     }
     case GET_ALL_SPECIALITIES: {
-      console.log('get all specialities middleware');
+      // console.log('get all specialities middleware');
       const getAllSpecialitiesfromApi = async () => {
         try {
           const { token } = store.getState().auth.login;
@@ -60,11 +60,11 @@ const addUser = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveAllSpecialities(response.data));
         }
         catch (error) {
-          console.log('error.response', error.response);
+          // console.log('error.response', error.response);
         }
       };
       getAllSpecialitiesfromApi();

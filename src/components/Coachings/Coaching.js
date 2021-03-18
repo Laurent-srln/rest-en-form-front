@@ -24,15 +24,15 @@ dayjs.extend(updateLocale);
 
 // == Composant
 const Coaching = ({ coachFirstname, startTime, endTime }) => {
-  console.log('startTime', startTime);
+  // console.log('startTime', startTime);
   const formatedDay = dayjs(startTime).tz('Europe/Paris').locale('fr').format('dddd D MMMM');
-  console.log(formatedDay);
+  // console.log(formatedDay);
 
   const formatedStartTime = dayjs(startTime).tz('Europe/Paris').locale('fr').format('H:mm');
-  console.log(formatedStartTime);
+  // console.log(formatedStartTime);
 
   const formatedEndTime = dayjs(endTime).tz('Europe/Paris').locale('fr').format('H:mm');
-  console.log(formatedEndTime);
+  // console.log(formatedEndTime);
 
   return (
     <div className="coaching">

@@ -12,7 +12,7 @@ export const SUBMIT_USER = 'SUBMIT_USER';
 
 export const SAVE_USER_FORM = 'SAVE_USER_FORM';
 
-console.log('action add user form');
+// console.log('action add user form');
 
 export const setInputFirstnameValue = (payload) => ({
   type: SET_INPUT_FIRSTNAME_VALUE,

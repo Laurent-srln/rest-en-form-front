@@ -20,7 +20,7 @@ const getNextBookings = (store) => (next) => (action) => {
           store.dispatch(saveNextBookings(response.data));
         }
         catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       };
       getNextBookingsFromApi();
@@ -40,7 +40,7 @@ const getNextBookings = (store) => (next) => (action) => {
           store.dispatch(saveLastBookings(response.data));
         }
         catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       };
       getLastBookingsFromApi();

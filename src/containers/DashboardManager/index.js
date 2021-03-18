@@ -15,7 +15,7 @@ import {
   submitUser,
 } from 'src/actions/addUserForm';
 
-console.log('container Manager');
+// console.log('container Manager');
 
 const mapStateToProps = (state) => ({
   showAllMembers: state.getAllUsers.allMembers,
@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getAllSpecialities: () => {
     const action = getAllSpecialities();
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
   onChangeInputFirstnameValue: (value) => {
@@ -66,7 +66,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onChangeInputSpecialityValue: (value) => {
     const action = setInputSpecialityValue(value);
-    console.log(action);
+    // console.log(action);
     dispatch(action);
   },
   onSubmitUserForm: () => {

@@ -16,11 +16,11 @@ const healthCheck = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          console.log('response.data', response.data);
+          // console.log('response.data', response.data);
           store.dispatch(saveHealthCheck(response.data));
         }
         catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       };
       getHealthCheckFromApi();
