@@ -16,7 +16,7 @@ const healthCheck = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // console.log('response.data', response.data);
+          // console.log('getHealthCheckFromApi response.data', response.data);
           store.dispatch(saveHealthCheck(response.data));
         }
         catch (error) {

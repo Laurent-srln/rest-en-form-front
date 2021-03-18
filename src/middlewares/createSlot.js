@@ -8,8 +8,6 @@ import {
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
-// console.log('middleware add user');
-
 const addSlot = (store) => (next) => (action) => {
   switch (action.type) {
     case ON_SUBMIT_SLOT_FORM: {
