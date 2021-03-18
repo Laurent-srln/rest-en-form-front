@@ -25,8 +25,9 @@ const mapStateToProps = (state) => ({
   setInputMemberRoleValue: state.addUser.role,
   setInputCoachRoleValue: state.addUser.role,
   setInputSpecialityValue: state.addUser.specialties,
-  setInputMailValue: state.addUser.mail,
+  setInputMailValue: state.addUser.email,
   allSpecialities: state.addUser.speciality,
+  isChecked: state.addUser.checked,
 });
 
 const mapDispatchToProps = (dispatch) => ({

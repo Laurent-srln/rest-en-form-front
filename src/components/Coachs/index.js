@@ -8,7 +8,7 @@ import './style.scss';
 // == Composant
 const Coachs = ({ coachs, getAllCoachs }) => {
   useEffect(getAllCoachs, []);
-  console.log(coachs);
+
   return (
     <div className="coachs">
       <h1 className="coachs__title">Les coachs</h1>
@@ -24,12 +24,17 @@ const Coachs = ({ coachs, getAllCoachs }) => {
                   alt=""
                 />
               </div>
-              <div className="coach__specialities" key={coachObject.specialties}>
+              <div className="coach__specialities">
+                {coachObject.specialties === null && (
+                <p className="coach__specialities-item">Ce Coach n'as pas de spécialitées</p>
+                )}
+                {coachObject.specialties !== null && (
                 <p className="coach__specialities-item">{coachObject.specialties}</p>
+                )}
               </div>
             </div>
           ))
-        }
+              }
       </div>
       <a href="">
         <p className="coach__cta">+ Réserver un coaching</p>

@@ -10,6 +10,7 @@ import {
 } from 'src/actions/addUserForm';
 
 const initialState = {
+  checked: false,
   firstname: '',
   lastname: '',
   email: '',
@@ -46,11 +47,13 @@ const addUser = (state = initialState, action = {}) => {
     case SET_INPUT_MEMBER_ROLE_VALUE:
       return {
         ...state,
+        checked: false,
         role: 'MEMBER',
       };
     case SET_INPUT_COACH_ROLE_VALUE:
       return {
         ...state,
+        checked: false,
         role: 'COACH',
       };
     case SET_INPUT_SPECIALITY_VALUE:
@@ -70,11 +73,13 @@ const addUser = (state = initialState, action = {}) => {
       console.log('save user reducer');
       return {
         ...state,
-        firstname: action.payload.firstname,
-        lastname: action.payload.lastname,
-        email: action.payload.email,
-        role: action.payload.role,
-        specialties: action.payload.speciality,
+        checked: false,
+        firstname: '',
+        lastname: '',
+        email: '',
+        role: '',
+        checkboxSpecialities: [],
+        specialties: [],
       };
     default:
       return state;

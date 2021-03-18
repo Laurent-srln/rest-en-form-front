@@ -26,6 +26,7 @@ const DashboardManager = ({
   getAllCoachs,
   getAllSpecialities,
   allSpecialities,
+  isChecked,
 }) => {
   const handleOnChangeFirstname = (event) => {
     onChangeInputFirstnameValue(event.target.value);
@@ -47,20 +48,21 @@ const DashboardManager = ({
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    // if (setInputFirstnameValue
-    //     && setInputLastnameValue
-    //     && setInputMailValue
-    //     && (setInputCoachRoleValue || setInputMemberRoleValue)
-    // ) {
-    onSubmitUserForm();
-    // else {
-    //   alert('Veuillez remplir tous les champs');
-    // }
+    if (setInputFirstnameValue
+         && setInputLastnameValue
+         && setInputMailValue
+         && (setInputCoachRoleValue || setInputMemberRoleValue)) {
+      onSubmitUserForm();
+    }
+    else {
+      alert('Veuillez remplir tous les champs');
+    }
   };
 
   useEffect(getAllCoachs, []);
   useEffect(getAllMembers, []);
   useEffect(getAllSpecialities, []);
+
   return (
     <div className="dashboard">
       <div className="dashboard-content-left">
@@ -83,6 +85,7 @@ const DashboardManager = ({
             <label htmlFor="checkbox">
               Adhérent
               <input
+                // checked={!isChecked}
                 type="radio"
                 name="radio"
                 id="checkbox-member"
@@ -91,6 +94,7 @@ const DashboardManager = ({
               />
               Coach
               <input
+                // checked={!isChecked}
                 type="radio"
                 name="radio"
                 id="checkbox-coach"
@@ -143,7 +147,7 @@ const DashboardManager = ({
               <h3 className="dashboard-add-user-speciality-title">Spécialités :</h3>
               {
                 allSpecialities.map((specialityObject) => (
-                  <label className="dashboard-add-user-speciality-item" htmlFor="checkbox">
+                  <label className="dashboard-add-user-speciality-item" htmlFor="checkbox" key={specialityObject.id}>
                     <input
                       type="checkbox"
                       name={specialityObject.name}
@@ -162,46 +166,42 @@ const DashboardManager = ({
       </div>
       <div className="dashboard-content-right">
         <CreateSlot />
-        {/* <div className="dashboard-slot">
-          <span className="dashboard-slot-title">Liste des créneaux enregistrés</span>
-          <ul>
-            <li>Date</li>
-            <li>Heure de début</li>
-            <li>Heure de fin</li>
-            <li>Coach</li>
-          </ul>
-          <ul>
-            <li>date</li>
-            <li>debut</li>
-            <li>fin</li>
-            <li>Sountid</li>
-          </ul>
-        </div> */}
       </div>
     </div>
   );
 };
 
-DashboardManager.protoType = {
+DashboardManager.defaultProps = {
+  setInputFirstnameValue: '',
+  setInputLastnameValue: '',
+  setInputMemberRoleValue: '',
+  setInputCoachRoleValue: '',
+  setInputSpecialityValue: '',
+  setInputMailValue: '',
+};
+
+DashboardManager.propTypes = {
   allSpecialities: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   })).isRequired,
-  setInputFirstnameValue: PropTypes.func.isRequired,
+  setInputFirstnameValue: PropTypes.string,
+  setInputLastnameValue: PropTypes.string,
+  setInputMemberRoleValue: PropTypes.string,
+  setInputCoachRoleValue: PropTypes.string,
+  setInputSpecialityValue: PropTypes.array,
+  setInputMailValue: PropTypes.string,
   onChangeInputFirstnameValue: PropTypes.func.isRequired,
   onSubmitUserForm: PropTypes.func.isRequired,
-  setInputLastnameValue: PropTypes.func.isRequired,
   onChangeInputLastnameValue: PropTypes.func.isRequired,
   onChangeInputMemberRoleValue: PropTypes.func.isRequired,
   onChangeInputCoachRoleValue: PropTypes.func.isRequired,
   onChangeInputSpecialityValue: PropTypes.func.isRequired,
   onChangeInputMailValue: PropTypes.func.isRequired,
-  setInputMemberRoleValue: PropTypes.func.isRequired,
-  setInputCoachRoleValue: PropTypes.func.isRequired,
-  setInputSpecialityValue: PropTypes.func.isRequired,
-  setInputMailValue: PropTypes.string.isRequired,
   showAllMembers: PropTypes.array.isRequired,
+  showAllCoachs: PropTypes.array.isRequired,
   getAllMembers: PropTypes.func.isRequired,
+  getAllCoachs: PropTypes.func.isRequired,
   getAllSpecialities: PropTypes.func.isRequired,
 };
 
