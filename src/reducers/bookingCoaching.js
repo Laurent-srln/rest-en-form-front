@@ -3,6 +3,7 @@ import {
   SAVE_AVAILABLE_COACHINGS,
   SET_INPUT_SLOT_VALUE,
   SAVE_BOOKING_COACHING,
+  SAVE_ERROR_AVAILABLE_COACHING,
 } from 'src/actions/coachings';
 
 const initialState = {
@@ -10,13 +11,16 @@ const initialState = {
   selectedDate: [
     {
       id: 0,
-      firstname: '',
-      lastname: '',
-      start_time: '',
-      end_time: '',
+      startTime: '',
+      endTime: '',
+      coachFirstname: '',
+      coachLastname: '',
     },
   ],
   coachingId: 0,
+  errorMessageAvailableCoaching: '',
+  successMessageBookingCoaching: '',
+  coaching: {},
 };
 
 const bookingCoaching = (state = initialState, action = {}) => {
@@ -30,6 +34,7 @@ const bookingCoaching = (state = initialState, action = {}) => {
       return {
         ...state,
         selectedDate: action.payload,
+        errorMessageAvailableCoaching: '',
       };
     case SET_INPUT_SLOT_VALUE:
       return {
@@ -42,13 +47,20 @@ const bookingCoaching = (state = initialState, action = {}) => {
         selectedDate: [
           {
             id: 0,
-            firstname: '',
-            lastname: '',
-            start_time: '',
-            end_time: '',
+            startTime: '',
+            endTime: '',
+            coachFirstname: '',
+            coachLastname: '',
           },
         ],
         coachingId: '',
+        successMessageBookingCoaching: action.payload.message,
+        coaching: action.payload.coaching,
+      };
+    case SAVE_ERROR_AVAILABLE_COACHING:
+      return {
+        ...state,
+        errorMessageAvailableCoaching: action.payload,
       };
     default:
       return state;
