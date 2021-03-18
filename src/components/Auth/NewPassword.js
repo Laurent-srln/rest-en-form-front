@@ -15,7 +15,6 @@ const NewPassword = ({
   onSubmitNewPasswordForm,
 }) => {
   const token = useLocation();
-  console.log('token', token.search);
 
   const handleOnChangeNewPassword = (event) => {
     onChangeInputNewPasswordValue(event.target.value);

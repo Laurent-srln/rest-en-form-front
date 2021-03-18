@@ -5,11 +5,12 @@ import {
   LOGOUT,
   SET_INPUT_NEW_PASSWORD_VALUE,
   SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE,
+  SAVE_NEW_USER,
 } from 'src/actions/auth';
 
 const initialState = {
-  email: 'alibaba@gmail.com',
-  password: 'member',
+  email: '',
+  password: '',
   login: {
     role: '',
     logged: localStorage.getItem('logged'),
@@ -67,6 +68,19 @@ const auth = (state = initialState, action = {}) => {
         createPassword: {
           password: state.createPassword.password,
           confirm: action.payload,
+        },
+      };
+    case SAVE_NEW_USER:
+      return {
+        ...state,
+        createPassword: {
+          password: '',
+          confirm: '',
+        },
+        login: {
+          role: '',
+          logged: false,
+          token: '',
         },
       };
     default:

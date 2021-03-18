@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch) => ({
 
   onSubmitNewPasswordForm: (token) => {
     const action = createPassword(token);
-    console.log('createPassword', action);
+    // console.log('createPassword', action);
     dispatch(action);
   },
 });
