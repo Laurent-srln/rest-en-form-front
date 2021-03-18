@@ -16,6 +16,8 @@ export const SAVE_WORKOUT = 'SAVE_WORKOUT';
 export const GET_WORKOUTS_FOR_COACH = 'GET_WORKOUTS_FOR_COACH';
 export const SAVE_WORKOUTS_FOR_COACH = 'SAVE_WORKOUTS_FOR_COACH';
 
+export const SAVE_ERROR_WORKOUT = 'SAVE_ERROR_WORKOUT';
+
 // === Action types
 export const getWorkouts = (payload) => ({
   type: GET_WORKOUTS,
@@ -27,9 +29,9 @@ export const saveWorkouts = (payload) => ({
   payload,
 });
 
-export const setInputDateValue = (payload) => ({
+export const setInputDateValue = (date) => ({
   type: SET_INPUT_DATE_VALUE,
-  payload,
+  date,
 });
 
 export const setInputWeightValue = (payload) => ({
@@ -78,5 +80,10 @@ export const getWorkoutsForCoach = (payload) => ({
 
 export const saveWorkoutsForCoach = (payload) => ({
   type: SAVE_WORKOUTS_FOR_COACH,
+  payload,
+});
+
+export const saveErrorWorkout = (payload) => ({
+  type: SAVE_ERROR_WORKOUT,
   payload,
 });

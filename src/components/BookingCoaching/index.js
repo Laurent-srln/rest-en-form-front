@@ -55,6 +55,9 @@ const BookingCoaching = ({
     if (selectedDate) {
       onSubmitAddCoachingForm();
     }
+    else {
+      alert('Veuillez sélectionner une date');
+    }
   };
 
   const dateToString = formatWithOptions({ fr }, 'dd-MM-yyyy');

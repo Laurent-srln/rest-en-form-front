@@ -7,6 +7,7 @@ import {
   SET_INPUT_BODY_WATER_VALUE,
   SET_INPUT_CONTENT_VALUE,
   SAVE_WORKOUT,
+  SAVE_ERROR_WORKOUT,
 } from 'src/actions/workouts';
 
 const initialState = {
@@ -17,6 +18,8 @@ const initialState = {
   boneMass: 0,
   bodyWater: 0,
   content: '',
+  succesMessageAddWorkout: '',
+  errorMessageAddWorkout: '',
 };
 
 const addWorkout = (state = initialState, action = {}) => {
@@ -24,7 +27,7 @@ const addWorkout = (state = initialState, action = {}) => {
     case SET_INPUT_DATE_VALUE:
       return {
         ...state,
-        date: action.payload,
+        date: action.date,
       };
     case SET_INPUT_WEIGHT_VALUE:
       return {
@@ -66,6 +69,12 @@ const addWorkout = (state = initialState, action = {}) => {
         boneMass: 0,
         bodyWater: 0,
         content: '',
+        succesMessageAddWorkout: action.payload.message,
+      };
+    case SAVE_ERROR_WORKOUT:
+      return {
+        ...state,
+        errorMessageAddWorkout: action.payload,
       };
     default:
       return state;
