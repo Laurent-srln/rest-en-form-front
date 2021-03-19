@@ -3,17 +3,11 @@
 
 body {
   font-family: 'Catamaran', sans-serif;
-  background-color: rgb(225, 236, 236);
+  background-color: v.$alt-color;
 }
 
-/* 
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
-  }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-*/
+h1 {
+  color: v.$primary-color;
+  font-size: 1.8em;
+  font-weight: v.$text-bold;
+}
