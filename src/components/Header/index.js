@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import logo from './logo_small_icon_only.png';
+import logo from './logo_small_dark.png';
 import './styles.scss';
 
 const Header = ({ isLogged, onClickLogout, role }) => (
@@ -12,24 +12,24 @@ const Header = ({ isLogged, onClickLogout, role }) => (
         <NavLink
           to="/dashboard-member"
           exact
-          className="menu-link"
-          activeClassName="menu-link--active"
+          className="header__nav-link"
+          activeClassName="header__nav-link--active"
         >
           <p>Accueil</p>
         </NavLink>
         <NavLink
           to="/workout"
           exact
-          className="menu-link"
-          activeClassName="menu-link--active"
+          className="header__nav-link"
+          activeClassName="header__nav-link--active"
         >
           <p>Entraînements</p>
         </NavLink>
         <NavLink
           to="/coachings"
           exact
-          className="menu-link"
-          activeClassName="menu-link--active"
+          className="header__nav-link"
+          activeClassName="header__nav-link--active"
         >
           <p>Coachings</p>
         </NavLink>
@@ -40,16 +40,16 @@ const Header = ({ isLogged, onClickLogout, role }) => (
         <NavLink
           to="/dashboard-coach"
           exact
-          className="menu-link"
-          activeClassName="menu-link--active"
+          className="header__nav-link"
+          activeClassName="header__nav-link--active"
         >
           <p>Accueil</p>
         </NavLink>
         <NavLink
           to="/members"
           exact
-          className="menu-link"
-          activeClassName="menu-link--active"
+          className="header__nav-link"
+          activeClassName="header__nav-link--active"
         >
           <p>Listing des adhérents</p>
         </NavLink>
@@ -60,8 +60,8 @@ const Header = ({ isLogged, onClickLogout, role }) => (
         <NavLink
           to="/dashboard-manager"
           exact
-          className="menu-link"
-          activeClassName="menu-link--active"
+          className="header__nav-link"
+          activeClassName="header__nav-link--active"
         >
           <p>Accueil</p>
         </NavLink>
@@ -71,7 +71,7 @@ const Header = ({ isLogged, onClickLogout, role }) => (
     {isLogged && (
       <div className="header__logout">
         <button
-          className="button"
+          className="header__logout-button"
           type="submit"
           onClick={onClickLogout}
         >

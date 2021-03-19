@@ -2,10 +2,10 @@
 
 .dashboardMember {
 
+  margin-top: v.$gutter * 8;
+
   &__title {
-    margin: v.$gutter * 1.5 0 v.$gutter * 1.5 0;
-    font-size: 1.8em;
-    font-weight: v.$text-bold;
+    margin: v.$gutter * 1.5;
   }
 
   &__coaching {

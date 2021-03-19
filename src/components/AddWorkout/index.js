@@ -74,20 +74,7 @@ const AddWorkout = ({
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    if (
-      inputDateValue
-      && inputWeightValue
-      && inputMuscleMassValue
-      && inputFatMassValue
-      && inputBoneMassValue
-      && inputBodyWaterValue
-      && inputContentValue
-    ) {
-      onSubmitWorkoutForm();
-    }
-    else {
-      alert('Veuillez sélectionner une date et remplir tous les champs');
-    }
+    onSubmitWorkoutForm();
   };
 
   return (
