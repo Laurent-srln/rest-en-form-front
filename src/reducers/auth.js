@@ -63,6 +63,7 @@ const auth = (state = initialState, action = {}) => {
     case LOGOUT:
       return {
         ...state,
+        message: '',
         email: '',
         password: '',
         login: {
