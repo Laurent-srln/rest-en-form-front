@@ -1,115 +1,109 @@
 @use '../../styles/vars'as v;
 
 
+.login {
+  background-image: url(../../assets/backgroud-login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 75%;
+  box-shadow: 1px 1px 50px rgb(253, 253, 253);
+   height: 74vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1;
+ }
+
 .auth {
-
-  &__content {
-
-  }
-  
-  &__title {
-    margin: v.$gutter * 2 auto;
-    padding: v.$gutter / 2 v.$gutter * 2.5;
-    font-weight: v.$text-bold;
-    color: v.$primary-color;
-    font-size: 1.2em;
-  }
-
-
-  &__form {
-    margin: v.$gutter auto;
-    padding: v.$gutter * 1.5 v.$gutter * 3.5;
-    width: 90%;
-    box-shadow: 0 0 8px .2px #245768;
-    border-radius: v.$element-radius;
-
-
-    &-label {
-      display: block;
-      margin: v.$gutter * 2 auto;
-      text-align: left;
+  width: 550px;
+  height: auto;
+  padding: 25px;
+  background: v.$alt-color;
+  border-radius: 3px;
+  box-shadow: 5px 5px 50px;
+  z-index: 2;
+  &-form {
+    &-title {
       color: v.$primary-color;
+      font-size: 35px;
+      font-weight: 500;
+      margin-bottom: 65px;
+      text-align: center;
+      text-decoration: underline;
+      }
+    &-group {
+    position: relative;
+    display: flex;
+    margin-bottom: 30px;
+      &-button {
+        display: block;
+        width: auto;
+        padding: 15px 60px;
+        border: 3px solid v.$primary-color;
+        border-radius: 999px;
+        background-image: linear-gradient(to right, transparent 50%, v.$primary-color 50%, v.$secondary-color);
+        background-size: 200%;
+        color: v.$primary-color;
+        font-size: 20px;
+        font-weight: 500;
+        transition: 0.5s;
+        cursor: pointer;
+        &:hover {
+          color: #fff;
+          background-position: 100%;
+          border: 3px solid #fff;
+        }
+      }
+      &:nth-child(4) {
+        margin: 65px 0;
+        justify-content: center;
+      }
     }
-
+    &-label {
+      color: v.$primary-color;
+      font-size: 20px;
+      font-weight: 500;
+      transition: 0.4s ease-out;
+    }
     &-input {
       display: block;
-      margin-top: v.$gutter;
-      margin-bottom: v.$gutter * 2;
-      padding: v.$gutter / 2;
-    }
-
-    &-input:focus {
-      box-shadow: inset 0 0 5px #245768;
-    }
-
-    &-submit {
-      text-align: right;
-      
-      .button {
-        margin: v.$gutter * 1.5 v.$gutter 0 0;
-        padding: v.$gutter / 2 v.$gutter * 2;
-        border: none;
-        border-radius: v.$element-radius;
-        background-color: v.$secondary-color;
-        box-shadow: 0 0 5px .2px #245768;
-        color: v.$primary-color;
-        font-size: .9em;
-        font-weight: v.$text-bold;
-      }
-
-      .button:hover {
-        background-color: v.$primary-color;
-        color: v.$alt-color;
+      width: 300px;
+      padding: 10px 5px;
+      border: none;
+      outline: none;
+      background: none;
+      border-bottom: 3px solid #aaa;
+      color: #666;
+      font-size: 20px;
+      transition: 0.4s ease-out;
+      &:focus {
+        border-left: 1px solid v.$primary-color;
+        border-bottom: 3px solid v.$primary-color;
+        padding-left: 10px;
       }
     }
   }
 }
+// .auth h3 {
+//   color: v.$primary-color;
+//   font-weight: 500;
+//   text-decoration: underline;
+// }
 
-.newPassword__title {
-  margin: v.$gutter * 2 0 v.$gutter * 2 0;
-  font-size: 1.5em;
-  font-weight: v.$text-bold;
+.error {
+  color: red;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
 }
 
-.newPasswordForm {
-  margin: v.$gutter auto;
-  padding: v.$gutter * 1.5 v.$gutter * 3.5;
-  width: 90%;
-  box-shadow: 0 0 8px .2px #245768;
-  border-radius: v.$element-radius;
-
-  &__label {
-    display: block;
-    margin: v.$gutter * 2 auto;
-    text-align: left;
-    color: v.$primary-color;
-  }
-
-  &__input {
-    display: block;
-    margin-top: v.$gutter;
-    margin-bottom: v.$gutter * 2;
-    padding: v.$gutter / 2;
-  }
-
-  &__submit {
-    text-align: right;
-
-    .button {
-        margin: v.$gutter * 1.5 v.$gutter 0 0;
-        padding: v.$gutter / 2 v.$gutter * 2;
-        border: none;
-        border-radius: v.$element-radius;
-        background-color: v.$secondary-color;
-        box-shadow: 0 0 5px .2px #245768;
-        color: v.$primary-color;
-        font-size: .9em;
-        font-weight: v.$text-bold;
-      }
-
-      .button:hover {
-        background-color: v.$primary-color;
-        color: v.$alt-color;
-      }
-  }
-}
+// .formBloc .mdpPerdu a {
+//   color: #8b97d7;
+//   font-size: 16px;
+//   font-weight: 400;
+//   text-decoration: none;
+//   padding-bottom: 5px;
+//   border-bottom: 2px solid transparent;
+// }
+// .formBloc .mdpPerdu a:hover {
+//   border-bottom-color: #8b97d7;
+// }

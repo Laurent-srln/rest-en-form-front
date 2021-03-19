@@ -1,28 +1,33 @@
 @use '../../styles/vars' as v;
 
 .header {
-  margin: 0 0 v.$gutter 0;
-  padding: v.$gutter / 1.5;
   width: 100%;
-  background-color: v.$primary-color;
+  background-color: v.$alt-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  border-bottom: 2px solid ccc;
   &__logo {
-    width: 30%;
-    padding: v.$gutter / 1.5;
+    width: 10%;
+    padding: 0;
+    z-index: 5;
+    &__title {
+      color: v.$primary-color;
+      font-weight: v.$text-bold;
+      font-size: 50px;
+      font-family: "Roboto";
+    }
   }
 
   &__nav {
     display: flex;
     align-items: center;
 
-    .menu-link {
-      margin: 0 v.$gutter / 2.5;
-      color: v.$alt-color;
-      font-size: .8em;
-    }
+    // .menu-link {
+    //   margin: 0 v.$gutter / 2.5;
+    //   color: v.$alt-color;
+    //   font-size: .8em;
+    // }
   }
 
   &__logout {

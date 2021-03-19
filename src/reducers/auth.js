@@ -2,6 +2,7 @@ import {
   SET_INPUT_MAIL_VALUE,
   SET_INPUT_PASSWORD_VALUE,
   SAVE_USER,
+  SAVE_ERROR_USER,
   LOGOUT,
   SET_INPUT_NEW_PASSWORD_VALUE,
   SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE,
@@ -14,9 +15,10 @@ const initialState = {
   password: '',
   login: {
     role: '',
-    logged: localStorage.getItem('logged'),
+    logged: false,
     // utilisation du token récupéré par la requete de login
     token: localStorage.getItem('token'),
+    message: '',
   },
   createPassword: {
     password: '',
@@ -46,7 +48,17 @@ const auth = (state = initialState, action = {}) => {
         ...state,
         email: state.email,
         password: state.password,
-        login: action.payload,
+        login: {
+          role: action.payload.role,
+          logged: true,
+          token: localStorage.getItem('token'),
+          message: action.payload.message,
+        },
+      };
+    case SAVE_ERROR_USER:
+      return {
+        ...state,
+        message: action.payload,
       };
     case LOGOUT:
       return {
@@ -56,7 +68,7 @@ const auth = (state = initialState, action = {}) => {
         login: {
           role: '',
           logged: false,
-          token: '',
+          token: localStorage.removeItem('token'),
         },
       };
     case SET_INPUT_NEW_PASSWORD_VALUE:
