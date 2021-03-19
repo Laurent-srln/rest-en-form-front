@@ -42,18 +42,6 @@ const Workout = ({
 
   return (
     <div className="workout">
-      <div className="workout__icons">
-        <img
-          className="bubble"
-          src="https://img2.freepng.fr/20180617/pil/kisspng-grow-around-speech-balloon-text-clip-art-conversation-bubble-5b26b2ea357129.2881425615292628262189.jpg"
-          alt=""
-        />
-        <img
-          className="pencil"
-          src="https://cdn.pixabay.com/photo/2016/03/31/19/15/crayon-1294842_960_720.png"
-          alt=""
-        />
-      </div>
       <p className="workout__date">{formatedDay}</p>
       <p className="workout__text">{description}</p>
       <div className="training__health">
@@ -86,12 +74,6 @@ const Workout = ({
           <p className="coach-comment--text">{commentContent}</p>
         </div>
       )}
-      <button
-        type="button"
-        className="workout__button"
-      >
-        Voir moins
-      </button>
     </div>
   );
 };

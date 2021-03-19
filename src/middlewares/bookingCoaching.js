@@ -7,6 +7,7 @@ import {
   saveAvailableCoachings,
   BOOKING_COACHING,
   saveBookingCoaching,
+  saveErrorAvailableCoachings,
 } from 'src/actions/coachings';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
@@ -26,11 +27,12 @@ const bookingCoaching = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // console.log('response.data', response.data);
+          console.log('getAvaiblableCoachingsFromApi => response.data', response.data);
           store.dispatch(saveAvailableCoachings(response.data));
         }
         catch (error) {
-          // console.log(error.response);
+          console.log(error.response.data.message);
+          store.dispatch(saveErrorAvailableCoachings(error.response.data.message));
         }
       };
       getAvaiblableCoachingsFromApi();
@@ -54,11 +56,11 @@ const bookingCoaching = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // console.log('response.data', response.data);
+          console.log('setSelectedSlotToApi => response.data', response.data);
           store.dispatch(saveBookingCoaching(response.data));
         }
         catch (error) {
-          // console.log(error.response);
+          console.log(error.response);
         }
       };
       setSelectedSlotToApi();

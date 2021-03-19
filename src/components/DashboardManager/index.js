@@ -27,6 +27,9 @@ const DashboardManager = ({
   getAllSpecialities,
   allSpecialities,
   isChecked,
+  successMessageAddUser,
+  detailsSuccessAddUser,
+  errorMessageAddUser,
 }) => {
   const handleOnChangeFirstname = (event) => {
     onChangeInputFirstnameValue(event.target.value);
@@ -160,6 +163,17 @@ const DashboardManager = ({
                 ))
               }
               <button type="submit" className="dashboard-add-user-submit">Valider</button>
+              {successMessageAddUser && (
+                <div className="success">
+                  <p className="success__text">{successMessageAddUser} : {detailsSuccessAddUser.firstname} {detailsSuccessAddUser.lastname}</p>
+                  <p className="success__text"> rôle : {detailsSuccessAddUser.role}</p>
+                </div>
+              )}
+              {errorMessageAddUser && (
+                <div className="error">
+                  <p className="error__text">{errorMessageAddUser}</p>
+                </div>
+              )}
             </div>
           </form>
         </div>
@@ -178,6 +192,9 @@ DashboardManager.defaultProps = {
   setInputCoachRoleValue: '',
   setInputSpecialityValue: '',
   setInputMailValue: '',
+  successMessageAddUser: null,
+  detailsSuccessAddUser: null,
+  errorMessageAddUser: null,
 };
 
 DashboardManager.propTypes = {
@@ -203,6 +220,16 @@ DashboardManager.propTypes = {
   getAllMembers: PropTypes.func.isRequired,
   getAllCoachs: PropTypes.func.isRequired,
   getAllSpecialities: PropTypes.func.isRequired,
+  successMessageAddUser: PropTypes.string,
+  detailsSuccessAddUser: PropTypes.shape({
+    id: PropTypes.number,
+    firstname: PropTypes.string,
+    lastname: PropTypes.string,
+    email: PropTypes.string,
+    role: PropTypes.string,
+    createdAt: PropTypes.string,
+  }),
+  errorMessageAddUser: PropTypes.string,
 };
 
 export default DashboardManager;

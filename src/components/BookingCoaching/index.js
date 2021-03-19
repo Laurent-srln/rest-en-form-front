@@ -5,7 +5,7 @@ import DatePicker, { registerLocale } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 // == Imports
-// import Coachs from 'src/containers/GetCoachs/Coachs';
+import Coachs from 'src/containers/GetCoachs/Coachs';
 import './style.scss';
 
 // date fns
@@ -39,6 +39,8 @@ const BookingCoaching = ({
   selectedDate,
   onChangeInputSlotValue,
   onSubmitAddCoachingForm,
+  errorMessage,
+  successMessageBookingCoaching,
 }) => {
   const handleDateChange = (date) => {
     setStartDate(date);
@@ -53,9 +55,13 @@ const BookingCoaching = ({
     if (selectedDate) {
       onSubmitAddCoachingForm();
     }
+    else {
+      alert('Veuillez sélectionner une date');
+    }
   };
 
   const dateToString = formatWithOptions({ fr }, 'dd-MM-yyyy');
+  const availableDate = new Date();
 
   return (
     <div className="booking-coaching">
@@ -70,12 +76,24 @@ const BookingCoaching = ({
             selected={startDate}
             onChange={handleDateChange}
             dateFormat={dateToString}
-            minDate={new Date()}
+            minDate={availableDate}
             filterDate={(date) => date.getDay() !== 0}
             inline
             locale="fr"
           />
         </label>
+
+        {errorMessage && (
+          <div className="error">
+            <p className="error__text">{errorMessage}</p>
+          </div>
+        )}
+
+        {!selectedDate.length && (
+          <div className="noCoaching">
+            <p className="noCoaching__text">Pas de coaching disponible à cette date</p>
+          </div>
+        )}
 
         <form
           onSubmit={handleOnSubmit}
@@ -93,7 +111,7 @@ const BookingCoaching = ({
                   value={slot.id}
                   key={slot.id}
                 >
-                  {dayjs('2021-03-02' + slot.start_time).tz('Europe/Paris').locale('fr').format('H:mm')} - {dayjs('2021-03-02' + slot.end_time).tz('Europe/Paris').locale('fr').format('H:mm')} {slot.firstname} {slot.lastname}
+                  {dayjs(slot.startTime).tz('Europe/Paris').locale('fr').format('H:mm')} - {dayjs(slot.endTime).tz('Europe/Paris').locale('fr').format('H:mm')} {slot.coachFirstname} {slot.coachLastname}
                 </option>
               ))
             }
@@ -106,10 +124,15 @@ const BookingCoaching = ({
               Valider
             </button>
           </div>
+          {successMessageBookingCoaching && (
+            <div className="success">
+              <p className="success__text">{successMessageBookingCoaching}</p>
+            </div>
+          )}
         </form>
       </div>
       <div className="booking-coaching__coachs">
-        {/* <Coachs /> */}
+        <Coachs />
       </div>
     </div>
   );
@@ -122,14 +145,21 @@ BookingCoaching.propTypes = {
   selectedDate: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      firstname: PropTypes.string.isRequired,
-      lastname: PropTypes.string.isRequired,
-      start_time: PropTypes.string.isRequired,
-      end_time: PropTypes.string.isRequired,
+      startTime: PropTypes.string.isRequired,
+      endTime: PropTypes.string.isRequired,
+      coachFirstname: PropTypes.string.isRequired,
+      coachLastname: PropTypes.string.isRequired,
     }),
   ).isRequired,
   onChangeInputSlotValue: PropTypes.func.isRequired,
   onSubmitAddCoachingForm: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string,
+  successMessageBookingCoaching: PropTypes.string,
+};
+
+BookingCoaching.defaultProps = {
+  errorMessage: null,
+  successMessageBookingCoaching: null,
 };
 
 // == Export

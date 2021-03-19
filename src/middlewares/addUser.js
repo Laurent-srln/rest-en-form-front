@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 import {
-  SUBMIT_USER, GET_ALL_SPECIALITIES, saveUserForm, saveAllSpecialities,
+  SUBMIT_USER,
+  GET_ALL_SPECIALITIES,
+  saveUserForm,
+  saveAllSpecialities,
+  saveErrorUserForm,
 } from 'src/actions/addUserForm';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
@@ -35,11 +39,12 @@ const addUser = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // console.log('response.data', response.data);
+          console.log('sendUserToApi => response.data', response.data);
           store.dispatch(saveUserForm(response.data));
         }
         catch (error) {
-          // console.log('error.response', error.response);
+          console.log('saveErrorUserForm => error.response', error.response);
+          store.dispatch(saveErrorUserForm(error.response.data.message));
         }
       };
       sendUserToApi();
@@ -56,11 +61,11 @@ const addUser = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // console.log('response.data', response.data);
+          // console.log('getAllSpecialitiesfromApi => response.data', response.data);
           store.dispatch(saveAllSpecialities(response.data));
         }
         catch (error) {
-          // console.log('error.response', error.response);
+          console.log('error.response', error.response);
         }
       };
       getAllSpecialitiesfromApi();

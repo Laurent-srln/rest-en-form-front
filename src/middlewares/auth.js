@@ -5,6 +5,7 @@ import {
   saveUser,
   CREATE_PASSWORD,
   saveNewUser,
+  saveErrorNewUser,
   saveErrorUser,
 } from 'src/actions/auth';
 
@@ -61,6 +62,7 @@ const auth = (store) => (next) => (action) => {
         }
         catch (error) {
           console.log(error.response);
+          store.dispatch(saveErrorNewUser(error.response.data.message));
         }
       };
       sendNewPasswordToApi();

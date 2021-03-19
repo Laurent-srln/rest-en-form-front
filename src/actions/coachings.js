@@ -10,6 +10,8 @@ export const SET_INPUT_SLOT_VALUE = 'SET_INPUT_SLOT_VALUE';
 export const BOOKING_COACHING = 'BOOKING_COACHING';
 export const SAVE_BOOKING_COACHING = 'SAVE_BOOKING_COACHING';
 
+export const SAVE_ERROR_AVAILABLE_COACHING = 'SAVE_ERROR_AVAILABLE_COACHING';
+
 // === Action types
 export const getCoachings = (payload) => ({
   type: GET_COACHINGS,
@@ -47,5 +49,10 @@ export const bookingCoaching = () => ({
 
 export const saveBookingCoaching = (payload) => ({
   type: SAVE_BOOKING_COACHING,
+  payload,
+});
+
+export const saveErrorAvailableCoachings = (payload) => ({
+  type: SAVE_ERROR_AVAILABLE_COACHING,
   payload,
 });

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { ADD_WORKOUT, saveWorkout } from 'src/actions/workouts';
+import { ADD_WORKOUT, saveWorkout, saveErrorWorkout } from 'src/actions/workouts';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
@@ -37,13 +37,12 @@ const addWorkout = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // // console.log('response.data', response.data);
-          // stockage du token dans le localStorage (réutiliser dans le reducer)
-          // localStorage.setItem('token', response.data.token);
+          console.log('sendWorkoutToApi => response.data', response.data);
           store.dispatch(saveWorkout(response.data));
         }
         catch (error) {
-          // console.log('error.response', error.response);
+          console.log('error.response', error.response);
+          store.dispatch(saveErrorWorkout(error.response.data.message));
         }
       };
       sendWorkoutToApi();

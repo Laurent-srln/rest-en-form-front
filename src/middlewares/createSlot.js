@@ -3,7 +3,9 @@ import axios from 'axios';
 import { format } from 'date-fns/esm';
 
 import {
-  ON_SUBMIT_SLOT_FORM, saveSlotForm,
+  ON_SUBMIT_SLOT_FORM,
+  saveSlotForm,
+  saveErrorSlotForm,
 } from 'src/actions/CreateSlotForm';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
@@ -39,11 +41,12 @@ const addSlot = (store) => (next) => (action) => {
               Authorization: `bearer ${token}`,
             },
           });
-          // console.log('response.data', response.data);
+          console.log('sendSlotToApi => response.data', response.data);
           store.dispatch(saveSlotForm(response.data));
         }
         catch (error) {
-          // console.log('error.response', error.response);
+          console.log('error.response', error.response);
+          store.dispatch(saveErrorSlotForm(error.response.data.message));
         }
       };
       sendSlotToApi();

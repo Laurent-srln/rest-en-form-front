@@ -20,6 +20,7 @@ export const SET_INPUT_NEW_PASSWORD_VALUE = 'SET_INPUT_NEW_PASSWORD_VALUE';
 export const SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE = 'SET_INPUT_CONFIRM_NEW_PASSWORD_VALUE';
 export const CREATE_PASSWORD = 'CREATE_PASSWORD';
 export const SAVE_NEW_USER = 'SAVE_NEW_USER';
+export const SAVE_ERROR_NEW_USER = 'SAVE_ERROR_NEW_USER';
 
 // === Action types
 
@@ -85,5 +86,10 @@ export const createPassword = (token) => ({
 
 export const saveNewUser = (payload) => ({
   type: SAVE_NEW_USER,
+  payload,
+});
+
+export const saveErrorNewUser = (payload) => ({
+  type: SAVE_ERROR_NEW_USER,
   payload,
 });

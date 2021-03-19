@@ -13,6 +13,8 @@ const NewPassword = ({
   onChangeInputNewPasswordValue,
   onChangeInputConfirmPasswordValue,
   onSubmitNewPasswordForm,
+  successMessageSaveNewUser,
+  errorMessageSaveNewUser,
 }) => {
   const token = useLocation();
 
@@ -26,8 +28,11 @@ const NewPassword = ({
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    if (inputNewPasswordValue && inputConfirmPasswordValue) {
+    if (inputNewPasswordValue === inputConfirmPasswordValue) {
       onSubmitNewPasswordForm(token);
+    }
+    else {
+      alert('Les deux mots de passe doivent être identiques');
     }
   };
 
@@ -68,6 +73,18 @@ const NewPassword = ({
             onChange={handleOnChangeConfirmPassword}
           />
         </label>
+        {/*
+        {inputNewPasswordValue !== inputConfirmPasswordValue && (
+          <div className="error">
+            <p className="error__text">Les deux mots de passe doivent être identiques</p>
+          </div>
+        )}
+        */}
+        {errorMessageSaveNewUser && (
+          <div className="error">
+            <p className="error__text">{errorMessageSaveNewUser}</p>
+          </div>
+        )}
 
         <div className="newPasswordForm__submit">
           <button
@@ -79,6 +96,11 @@ const NewPassword = ({
         </div>
 
       </form>
+      {successMessageSaveNewUser && (
+        <div className="success">
+          <p className="success__text">{successMessageSaveNewUser}</p>
+        </div>
+      )}
     </div>
   );
 };
@@ -91,6 +113,8 @@ NewPassword.propTypes = {
   onChangeInputNewPasswordValue: PropTypes.func.isRequired,
   onChangeInputConfirmPasswordValue: PropTypes.func.isRequired,
   onSubmitNewPasswordForm: PropTypes.func.isRequired,
+  successMessageSaveNewUser: PropTypes.string.isRequired,
+  errorMessageSaveNewUser: PropTypes.string.isRequired,
 };
 
 // == Export

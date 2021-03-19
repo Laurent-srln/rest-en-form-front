@@ -18,6 +18,9 @@ const mapStateToProps = (state) => ({
   coachsList: state.coachs.coachs,
   setInputSlotDateValue,
   setInputCoachValue,
+  successMessageAddSlot: state.createSlot.successMessageAddSlot,
+  errorMessageAddSlot: state.createSlot.errorMessageAddSlot,
+
 });
 
 const mapDispatchToProps = (dispatch) => ({

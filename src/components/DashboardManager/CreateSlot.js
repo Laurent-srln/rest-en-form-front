@@ -20,24 +20,26 @@ const CreateSlot = ({
   onChangeInputEndValue,
   onChangeInputCoachValue,
   onSubmitSlotForm,
+  successMessageAddSlot,
+  errorMessageAddSlot,
 }) => {
   const dateToString = formatWithOptions({ fr }, 'dd-MM-yyyy');
 
   const handleSlotDateChange = (date) => {
     onChangeInputSlotDateValue(date);
-    // // console.log(event.target.value);
+    // console.log(event.target.value);
   };
   const handleStartChange = (start) => {
     onChangeInputStartValue(start);
-    // // console.log(event.target.value);
+    // console.log(event.target.value);
   };
   const handleEndChange = (end) => {
     onChangeInputEndValue(end);
-    // // console.log(event.target.value);
+    // console.log(event.target.value);
   };
   const handleCoachChange = (event) => {
     onChangeInputCoachValue(event.target.value);
-    // // console.log(event.target.value);
+    // console.log(event.target.value);
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -45,8 +47,6 @@ const CreateSlot = ({
   };
 
   useEffect(getAllCoachs, []);
-
-  // console.log(coachsList);
 
   return (
     <div className="dashboard-select-slot">
@@ -119,6 +119,16 @@ const CreateSlot = ({
           </select>
         </label>
         <button type="submit">Valider</button>
+        {successMessageAddSlot && (
+          <div className="success">
+            <p className="success__text">{successMessageAddSlot}</p>
+          </div>
+        )}
+        {errorMessageAddSlot && (
+          <div className="error">
+            <p className="error__text">{errorMessageAddSlot}</p>
+          </div>
+        )}
       </form>
     </div>
   );
@@ -139,5 +149,7 @@ CreateSlot.propTypes = {
   onChangeInputEndValue: PropTypes.func.isRequired,
   onChangeInputCoachValue: PropTypes.func.isRequired,
   onSubmitSlotForm: PropTypes.func.isRequired,
+  successMessageAddSlot: PropTypes.string.isRequired,
+  errorMessageAddSlot: PropTypes.string.isRequired,
 };
 export default CreateSlot;

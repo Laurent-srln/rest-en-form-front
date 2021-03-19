@@ -67,3 +67,61 @@
     color: v.$alt-color;
   }
 }
+
+.error {
+
+  &__text {
+    font-size: .8em;
+    color: brown;
+  }
+}
+
+.noCoaching {
+  animation-duration: 650ms;
+  animation-name: noCoaching;
+  
+
+  @keyframes noCoaching {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    40% {
+      transform: translateY(20%);
+    }
+
+    100% {
+      transform: translateY(0%)
+    }
+  }
+
+  &__text {
+
+    font-size: .8em;
+    color: cornflowerblue;
+  }
+}
+
+.success {
+  animation-duration: 650ms;
+  animation-name: success;
+
+  @keyframes success {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    40% {
+      transform: translateY(20%);
+    }
+
+    100% {
+      transform: translateY(0%)
+    }
+  }
+  
+  &__text {
+    font-size: .8em;
+    color: darkmagenta;
+  }
+}

@@ -7,6 +7,7 @@ import {
   SET_INPUT_MAIL_VALUE,
   SAVE_ALL_SPECIALITIES,
   SAVE_USER_FORM,
+  SAVE_ERROR_USER_FORM,
 } from 'src/actions/addUserForm';
 
 const initialState = {
@@ -25,6 +26,9 @@ const initialState = {
       updatedAt: null,
     },
   ],
+  successMessageAddUser: '',
+  detailsSuccessAddUser: {},
+  errorMessageAddUser: '',
 };
 
 const addUser = (state = initialState, action = {}) => {
@@ -57,7 +61,6 @@ const addUser = (state = initialState, action = {}) => {
         role: 'COACH',
       };
     case SET_INPUT_SPECIALITY_VALUE:
-      // console.log(action.payload);
       return {
         ...state,
         checkboxSpecialities: [
@@ -70,7 +73,6 @@ const addUser = (state = initialState, action = {}) => {
         speciality: action.payload,
       };
     case SAVE_USER_FORM:
-      // console.log('save user reducer');
       return {
         ...state,
         checked: false,
@@ -80,6 +82,13 @@ const addUser = (state = initialState, action = {}) => {
         role: '',
         checkboxSpecialities: [],
         specialties: [],
+        successMessageAddUser: action.payload.message,
+        detailsSuccessAddUser: action.payload.newUser,
+      };
+    case SAVE_ERROR_USER_FORM:
+      return {
+        ...state,
+        errorMessageAddUser: action.payload,
       };
     default:
       return state;

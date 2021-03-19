@@ -2,8 +2,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import DatePicker, { registerLocale } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 // == Imports
 import './style.scss';
+
+// date fns
+import fr from 'date-fns/locale/fr';
+import formatWithOptions from 'date-fns/fp/formatWithOptions';
+
+// date fns
+registerLocale('fr', fr);
 
 // == Composant
 const AddWorkout = ({
@@ -23,9 +33,14 @@ const AddWorkout = ({
   onChangeInputContentValue,
   onSubmitWorkoutForm,
   role,
+  succesMessageAddWorkout,
+  errorMessageAddWorkout,
 }) => {
-  const handleOnChangeDate = (event) => {
-    onChangeInputDateValue(event.target.value);
+  const dateToString = formatWithOptions({ fr }, 'dd-MM-yyyy');
+  const availableDate = new Date();
+
+  const handleOnChangeDate = (date) => {
+    onChangeInputDateValue(date);
   };
 
   const handleOnChangeWeight = (event) => {
@@ -71,7 +86,7 @@ const AddWorkout = ({
       onSubmitWorkoutForm();
     }
     else {
-      alert('Veuillez remplir tous les champs');
+      alert('Veuillez sélectionner une date et remplir tous les champs');
     }
   };
 
@@ -90,12 +105,14 @@ const AddWorkout = ({
             htmlFor="date"
           >
             Sélectionner une date
-            <input
-              className="input__date"
-              type="date"
-              value={inputDateValue}
+            <DatePicker
+              selected={inputDateValue}
               onChange={handleOnChangeDate}
-              required
+              dateFormat={dateToString}
+              maxDate={availableDate}
+              minDate={new Date('01-01-2021')}
+              inline
+              locale="fr"
             />
           </label>
         </div>
@@ -181,6 +198,11 @@ const AddWorkout = ({
               %
             </label>
           </div>
+          {errorMessageAddWorkout && (
+          <div className="error">
+            <p className="error__text">{errorMessageAddWorkout}</p>
+          </div>
+          )}
         </div>
         <div className="add-workout__form-details">
           <label
@@ -188,12 +210,11 @@ const AddWorkout = ({
             htmlFor="details"
           >
             Détailler la séance
-            <input
+            <textarea
               className="input__details"
               type="text"
               value={inputContentValue}
               onChange={handleOnChangeContent}
-              required
             />
           </label>
         </div>
@@ -221,6 +242,11 @@ const AddWorkout = ({
             Valider
           </button>
         </div>
+        {succesMessageAddWorkout && (
+          <div className="success">
+            <p className="success__text">{succesMessageAddWorkout}</p>
+          </div>
+        )}
       </form>
     </div>
   );
@@ -245,7 +271,24 @@ AddWorkout.propTypes = {
   onChangeInputContentValue: PropTypes.func.isRequired,
   role: PropTypes.string.isRequired,
   onSubmitWorkoutForm: PropTypes.func.isRequired,
+  succesMessageAddWorkout: PropTypes.string,
+  errorMessageAddWorkout: PropTypes.string,
+};
+
+AddWorkout.defaultProps = {
+  succesMessageAddWorkout: null,
+  errorMessageAddWorkout: null,
 };
 
 // == Export
 export default AddWorkout;
+
+/*
+  <input
+    className="input__date"
+    type="date"
+    value={inputDateValue}
+    onChange={handleOnChangeDate}
+    required
+  />
+*/
