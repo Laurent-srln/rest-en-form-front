@@ -6,10 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  border-bottom: 2px solid ccc;
   &__logo {
     width: 10%;
     padding: 0;
+    z-index: 5;
     &__title {
       color: v.$primary-color;
       font-weight: v.$text-bold;

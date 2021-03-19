@@ -11,6 +11,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   z-index: 1;
  }
 
 .auth {
@@ -20,13 +21,15 @@
   background: v.$alt-color;
   border-radius: 3px;
   box-shadow: 5px 5px 50px;
+  z-index: 2;
   &-form {
     &-title {
-      color: #666;
+      color: v.$primary-color;
       font-size: 35px;
       font-weight: 500;
-      margin-bottom: 85px;
+      margin-bottom: 65px;
       text-align: center;
+      text-decoration: underline;
       }
     &-group {
     position: relative;
@@ -57,10 +60,6 @@
       }
     }
     &-label {
-      // position: relative;
-      // top: 50%;
-      //left: 10px;
-      // transform: translateY(-50%);
       color: v.$primary-color;
       font-size: 20px;
       font-weight: 500;
@@ -78,17 +77,23 @@
       font-size: 20px;
       transition: 0.4s ease-out;
       &:focus {
-        border-left: 5px solid v.$primary-color;
+        border-left: 1px solid v.$primary-color;
         border-bottom: 3px solid v.$primary-color;
         padding-left: 10px;
       }
     }
   }
 }
-.auth h3 {
-  color: v.$primary-color;
+// .auth h3 {
+//   color: v.$primary-color;
+//   font-weight: 500;
+//   text-decoration: underline;
+// }
+
+.error {
+  color: red;
   font-weight: 500;
-  text-decoration: underline;
+  margin-bottom: 1.5rem;
 }
 
 // .formBloc .mdpPerdu a {

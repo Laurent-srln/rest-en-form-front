@@ -130,13 +130,12 @@ const App = ({
 };
 
 // == Props Validation
-/*
+
 App.propTypes = {
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   role: PropTypes.string.isRequired,
-  appInit: PropTypes.func,
+  appInit: PropTypes.func.isRequired,
 };
-*/
 
 // == Export
 export default App;

@@ -8,6 +8,7 @@ export const ADD_PASSWORD = 'ADD_PASSWORD';
 
 export const LOGIN = 'LOGIN';
 export const SAVE_USER = 'SAVE_USER';
+export const SAVE_ERROR_USER = 'SAVE_ERROR_USER';
 
 export const SEND_LOGIN_FROM_API = 'SEND_LOGIN_FROM_API';
 
@@ -47,6 +48,11 @@ export const login = () => ({
 
 export const saveUser = (payload) => ({
   type: SAVE_USER,
+  payload,
+});
+
+export const saveErrorUser = (payload) => ({
+  type: SAVE_ERROR_USER,
   payload,
 });
 

@@ -17,6 +17,7 @@ const Auth = ({
   onSubmitMailForm,
   inputPasswordValue,
   onChangeInputPasswordValue,
+  message,
 }) => {
   const handleOnChangeMail = (event) => {
     onChangeInputMailValue(event.target.value);
@@ -34,6 +35,7 @@ const Auth = ({
   return (
     <div className="login">
       <div className="auth">
+        <div className="error">{message}</div>
         <form
           className="auth-form"
           onSubmit={handleOnSubmit}
@@ -51,7 +53,7 @@ const Auth = ({
                 type="email"
                 name="email"
                 id="email"
-                // placeholder="rodolphe.martin@oclock.io"
+                placeholder="rodolphe.martin@oclock.io"
                 value={inputMailValue}
                 onChange={handleOnChangeMail}
               />
@@ -68,7 +70,7 @@ const Auth = ({
                 type="password"
                 name="password"
                 id="password"
-                // placeholder="*************"
+                placeholder="*************"
                 value={inputPasswordValue}
                 onChange={handleOnChangePassword}
               />
@@ -99,6 +101,7 @@ Auth.propTypes = {
   inputPasswordValue: PropTypes.string.isRequired,
   onChangeInputPasswordValue: PropTypes.func.isRequired,
   onSubmitMailForm: PropTypes.func.isRequired,
+  message: PropTypes.string.isRequired,
 };
 
 // == Export
