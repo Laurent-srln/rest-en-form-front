@@ -5,6 +5,7 @@ import {
   saveUser,
   CREATE_PASSWORD,
   saveNewUser,
+  saveErrorUser,
 } from 'src/actions/auth';
 
 const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
@@ -32,7 +33,8 @@ const auth = (store) => (next) => (action) => {
           store.dispatch(saveUser(response.data));
         }
         catch (error) {
-          // console.log(error);
+          store.dispatch(saveErrorUser(error.response.data.message));
+          console.log(error.response);
         }
       };
       sendLoginToApi();
