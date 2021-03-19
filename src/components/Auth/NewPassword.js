@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Imports
-import './style.scss';
+import './style2.scss';
 
 // == Composant
 const NewPassword = ({
@@ -37,70 +37,74 @@ const NewPassword = ({
   };
 
   return (
-    <div>
-      <h1 className="newPassword__title">Créer un mot de passe</h1>
-      <form
-        className="newPasswordForm"
-        onSubmit={handleOnSubmit}
-        value={token}
-      >
-        <label
-          className="newPasswordForm__label"
-          htmlFor="newPassword"
+    <div className="password">
+      <div className="new-password">
+        {successMessageSaveNewUser && (
+        <div className="success">
+          <p className="success-text">{successMessageSaveNewUser}</p>
+        </div>
+        )}
+        {errorMessageSaveNewUser && (
+          <div className="error">
+            <p className="error-text">{errorMessageSaveNewUser}</p>
+          </div>
+          )}
+        <form
+          className="new-password-form"
+          onSubmit={handleOnSubmit}
+          value={token}
         >
-          Nouveau mot de passe
-          <input
-            className="newPasswordForm__input"
-            type="password"
-            name="newPassword"
-            id="newPassword"
-            value={inputNewPasswordValue}
-            onChange={handleOnChangeNewPassword}
-          />
-        </label>
-
-        <label
-          className="newPasswordForm__label"
-          htmlFor="confirmPassword"
-        >
-          Confirmation du nouveau mot de passe
-          <input
-            className="newPasswordForm__input"
-            type="password"
-            name="confirmPassword"
-            id="confirmPassword"
-            value={inputConfirmPasswordValue}
-            onChange={handleOnChangeConfirmPassword}
-          />
-        </label>
-        {/*
+          <h3 className="new-password-form-title">Créer un mot de passe</h3>
+          <div className="new-password-form-group">
+            <label
+              className="new-password-form-label"
+              htmlFor="newPassword"
+            >
+              Nouveau mot de passe
+              <input
+                className="new-password-form-input"
+                type="password"
+                name="newPassword"
+                id="newPassword"
+                value={inputNewPasswordValue}
+                onChange={handleOnChangeNewPassword}
+              />
+            </label>
+          </div>
+          <div className="new-password-form-group">
+            <label
+              className="new-password-form-label"
+              htmlFor="confirmPassword"
+            >
+              Confirmation du nouveau mot de passe
+              <input
+                className="new-password-form-input"
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                value={inputConfirmPasswordValue}
+                onChange={handleOnChangeConfirmPassword}
+              />
+            </label>
+          </div>
+          {/*
         {inputNewPasswordValue !== inputConfirmPasswordValue && (
           <div className="error">
             <p className="error__text">Les deux mots de passe doivent être identiques</p>
           </div>
         )}
         */}
-        {errorMessageSaveNewUser && (
-          <div className="error">
-            <p className="error__text">{errorMessageSaveNewUser}</p>
+          <div className="new-password-form-group">
+            <button
+              className="new-password-form-group-button"
+              type="submit"
+            >
+              Valider
+            </button>
           </div>
-        )}
 
-        <div className="newPasswordForm__submit">
-          <button
-            className="button"
-            type="submit"
-          >
-            Valider
-          </button>
-        </div>
-
-      </form>
-      {successMessageSaveNewUser && (
-        <div className="success">
-          <p className="success__text">{successMessageSaveNewUser}</p>
-        </div>
-      )}
+        </form>
+      </div>
     </div>
   );
 };

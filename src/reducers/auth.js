@@ -15,7 +15,6 @@ const initialState = {
   password: '',
   login: {
     role: '',
-    logged: false,
     // utilisation du token récupéré par la requete de login
     token: localStorage.getItem('token'),
     message: '',
@@ -50,7 +49,7 @@ const auth = (state = initialState, action = {}) => {
         password: state.password,
         login: {
           role: action.payload.role,
-          logged: true,
+          logged: action.payload.logged,
           token: localStorage.getItem('token'),
           message: action.payload.message,
         },
