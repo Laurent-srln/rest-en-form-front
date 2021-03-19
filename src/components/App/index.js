@@ -55,9 +55,9 @@ const App = ({
         {role === 'OWNER' && (
           <Redirect from="/login" to="/dashboard-manager" />
         )}
+        <Redirect exact from="/" to="/login" />
 
         <Route path="/login" exact>
-          <Redirect exact from="/" to="/login" />
           <Auth />
         </Route>
         <Route
