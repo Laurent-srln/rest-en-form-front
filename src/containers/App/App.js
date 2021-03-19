@@ -7,6 +7,7 @@ import { appInit } from 'src/actions/init';
 const mapStateToProps = (state) => ({
   isLogged: state.auth.login.logged,
   role: state.auth.login.role,
+  isNewUser: state.addUser.isNewUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({

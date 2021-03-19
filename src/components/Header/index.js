@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logo from './logo_small_icon_only.png';
 import './styles.scss';
@@ -90,7 +90,6 @@ Header.propTypes = {
   onClickLogout: PropTypes.func.isRequired,
 };
 */
-
 
 // Header.propTypes = {};
 export default Header;

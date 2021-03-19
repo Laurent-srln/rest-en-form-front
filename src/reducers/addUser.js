@@ -29,6 +29,7 @@ const initialState = {
   successMessageAddUser: '',
   detailsSuccessAddUser: {},
   errorMessageAddUser: '',
+  isNewUser: false,
 };
 
 const addUser = (state = initialState, action = {}) => {
@@ -84,6 +85,7 @@ const addUser = (state = initialState, action = {}) => {
         specialties: [],
         successMessageAddUser: action.payload.message,
         detailsSuccessAddUser: action.payload.newUser,
+        isNewUser: true,
       };
     case SAVE_ERROR_USER_FORM:
       return {

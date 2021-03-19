@@ -32,7 +32,7 @@ import './styles.scss';
 
 // == Composant
 const App = ({
-  isLogged, role, appInit,
+  isLogged, role, appInit, isNewUser,
 }) => {
   useEffect(appInit, []);
   // useEffect(onClickLogout, []);
@@ -40,12 +40,10 @@ const App = ({
   return (
     <div className="app">
       <Header />
-      {!isLogged && (
+      {isLogged === false && (
       <Redirect to="/login" />
-      ) }
+      )}
       <Switch>
-        <Redirect exact from="/" to="/login" />
-
         {role === 'MEMBER' && (
           <Redirect from="/login" to="/dashboard-member" />
         )}
@@ -59,6 +57,7 @@ const App = ({
         )}
 
         <Route path="/login" exact>
+          <Redirect exact from="/" to="/login" />
           <Auth />
         </Route>
         <Route
