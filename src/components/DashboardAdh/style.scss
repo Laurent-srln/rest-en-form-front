@@ -23,21 +23,36 @@
 
 .cta {
   margin: v.$gutter * 2 v.$gutter;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 
-  &__text {
-    margin: v.$gutter auto;
-    padding: v.$gutter / 2 v.$gutter;
-    background-color: v.$alt-color;
-    border-radius: v.$element-radius;
-    color: v.$primary-color;
-    font-weight: v.$text-bold;
-    border: 1.5px solid v.$primary-color;
+  &__content {
+    margin: 0 v.$gutter;
+    display: inline-block;
   }
 
-  &__text:hover {
-    background-color: v.$primary-color;
-    color: v.$alt-color;
-    border: 1.5px solid v.$primary-color;
+  &__text {
+    display: block;
+    width: auto;
+    padding: v.$gutter / 1.5 v.$gutter * 1.5;
+    border: 2px solid v.$primary-color;
+    border-radius: 999px;
+    background-image: linear-gradient(to right, transparent 50%, v.$primary-color 50%, v.$secondary-color);
+    background-size: 200%;
+    color: v.$primary-color;
+    font-size: .8em;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      color: v.$alt-color;
+      background-position: 100%;
+      border: 2px solid v.$alt-color;
+    }
+  }
+  
+  &:nth-child(4) {
+      margin: 65px 0;
+      justify-content: center;
   }
 }
