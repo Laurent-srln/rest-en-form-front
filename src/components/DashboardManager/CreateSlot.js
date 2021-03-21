@@ -57,12 +57,13 @@ const CreateSlot = ({
         onSubmit={handleOnSubmit}
       >
         <h3
-          className="dashboard-select-slot-label"
+          className="dashboard-select-slot-title"
           htmlFor="slot-select"
         >
-          Sélectionner une date
+          Ajouter des créneaux
         </h3>
         <DatePicker
+          className="dashboard-select-slot-date"
           selected={selectedDate}
           onChange={handleSlotDateChange}
           dateFormat={dateToString}
@@ -74,6 +75,7 @@ const CreateSlot = ({
           placeholderText="22/03/2021"
         />
         <DatePicker
+          className="dashboard-select-slot-input"
           selected={selectedStart}
           onChange={handleStartChange}
           value={onChangeInputStartValue}
@@ -85,6 +87,7 @@ const CreateSlot = ({
           placeholderText="9:00"
         />
         <DatePicker
+          className="dashboard-select-slot-input"
           selected={selectedEnd}
           onChange={handleEndChange}
           value={selectedEnd}
@@ -99,13 +102,14 @@ const CreateSlot = ({
           className="dashboard-select-slot-label"
           htmlFor="slot-select"
         >
-          Coach
+          coach
           <select
-            className="slot-select"
+            className="dashboard-select-slot-select"
             name="slot"
             id="slot-select"
             onChange={handleCoachChange}
           >
+            <option value="Selectionnez un coach">Sélectionnez un coach</option>
             {
             coachsList.map((coachObject) => (
               <option
@@ -118,10 +122,10 @@ const CreateSlot = ({
           }
           </select>
         </label>
-        <button type="submit">Valider</button>
+        <button className="dashboard-select-slot-submit" type="submit">Valider</button>
         {successMessageAddSlot && (
-          <div className="success">
-            <p className="success__text">{successMessageAddSlot}</p>
+          <div className="success-addslot">
+            <p className="success-addslot-text">{successMessageAddSlot}</p>
           </div>
         )}
         {errorMessageAddSlot && (

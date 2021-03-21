@@ -3,7 +3,7 @@ export const SET_INPUT_LASTNAME_VALUE = 'SET_INPUT_LASTNAME_VALUE';
 export const SET_INPUT_MEMBER_ROLE_VALUE = 'SET_INPUT_MEMBER_ROLE_VALUE';
 export const SET_INPUT_COACH_ROLE_VALUE = 'SET_INPUT_COACH_ROLE_VALUE';
 export const SET_INPUT_SPECIALITY_VALUE = 'SET_INPUT_SPECIALITY_VALUE';
-export const SET_INPUT_MAIL_VALUE = 'SET_INPUT_MAIL_VALUE';
+export const SET_INPUT_EMAIL_VALUE = 'SET_INPUT_EMAIL_VALUE';
 
 export const GET_ALL_SPECIALITIES = 'GET_ALL_SPECIALITIES';
 export const SAVE_ALL_SPECIALITIES = 'SAVE_ALL_SPECIALITIES';
@@ -23,8 +23,8 @@ export const setInputLastnameValue = (payload) => ({
   payload,
 });
 
-export const setInputMailValue = (payload) => ({
-  type: SET_INPUT_MAIL_VALUE,
+export const setInputEmailValue = (payload) => ({
+  type: SET_INPUT_EMAIL_VALUE,
   payload,
 });
 

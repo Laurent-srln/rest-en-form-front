@@ -11,7 +11,7 @@ import {
   setInputMemberRoleValue,
   setInputCoachRoleValue,
   setInputSpecialityValue,
-  setInputMailValue,
+  setInputEmailValue,
   submitUser,
 } from 'src/actions/addUserForm';
 
@@ -23,7 +23,7 @@ const mapStateToProps = (state) => ({
   setInputMemberRoleValue: state.addUser.role,
   setInputCoachRoleValue: state.addUser.role,
   setInputSpecialityValue: state.addUser.specialties,
-  setInputMailValue: state.addUser.email,
+  setInputEmailValue: state.addUser.email,
   allSpecialities: state.addUser.speciality,
   isChecked: state.addUser.checked,
   successMessageAddUser: state.addUser.successMessageAddUser,
@@ -54,7 +54,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   onChangeInputMailValue: (value) => {
-    const action = setInputMailValue(value);
+    const action = setInputEmailValue(value);
     dispatch(action);
   },
   onChangeInputMemberRoleValue: (value) => {

@@ -9,6 +9,7 @@
   background-color: v.$alt-color;
   box-shadow: v.$main-shadow;
   position: fixed;
+  z-index: 9999;
 
   &__logo {
     width: 200px;

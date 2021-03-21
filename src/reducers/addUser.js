@@ -4,7 +4,7 @@ import {
   SET_INPUT_MEMBER_ROLE_VALUE,
   SET_INPUT_COACH_ROLE_VALUE,
   SET_INPUT_SPECIALITY_VALUE,
-  SET_INPUT_MAIL_VALUE,
+  SET_INPUT_EMAIL_VALUE,
   SAVE_ALL_SPECIALITIES,
   SAVE_USER_FORM,
   SAVE_ERROR_USER_FORM,
@@ -44,7 +44,7 @@ const addUser = (state = initialState, action = {}) => {
         ...state,
         lastname: action.payload,
       };
-    case SET_INPUT_MAIL_VALUE:
+    case SET_INPUT_EMAIL_VALUE:
       return {
         ...state,
         email: action.payload,
