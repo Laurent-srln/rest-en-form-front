@@ -26,11 +26,12 @@ const Coachs = ({ coachs, getAllCoachs }) => {
               </div>
               <div className="coach__specialities">
                 {coachObject.specialties === null && (
-                <p className="coach__specialities-item">Ce Coach n'as pas de spécialitées</p>
+                <p className="coach__specialities-item">Ce Coach n'as pas de spécialité.</p>
                 )}
                 {coachObject.specialties !== null && (
-                <p className="coach__specialities-item">{coachObject.specialties}</p>
-                )}
+                  coachObject.specialties.map((specialty) => (
+                <p className="coach__specialities-item">{specialty}</p>)
+                ))}
               </div>
             </div>
           ))
