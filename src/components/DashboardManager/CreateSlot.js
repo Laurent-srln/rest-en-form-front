@@ -124,8 +124,8 @@ const CreateSlot = ({
         </label>
         <button className="dashboard-select-slot-submit" type="submit">Valider</button>
         {successMessageAddSlot && (
-          <div className="success">
-            <p className="success__text">{successMessageAddSlot}</p>
+          <div className="success-addslot">
+            <p className="success-addslot-text">{successMessageAddSlot}</p>
           </div>
         )}
         {errorMessageAddSlot && (
