@@ -19,7 +19,7 @@ const DashboardManager = ({
   setInputMemberRoleValue,
   setInputCoachRoleValue,
   setInputSpecialityValue,
-  setInputMailValue,
+  setInputEmailValue,
   showAllMembers,
   showAllCoachs,
   getAllMembers,
@@ -51,15 +51,7 @@ const DashboardManager = ({
   };
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    if (setInputFirstnameValue
-         && setInputLastnameValue
-         && setInputMailValue
-         && (setInputCoachRoleValue || setInputMemberRoleValue)) {
-      onSubmitUserForm();
-    }
-    else {
-      alert('Veuillez remplir tous les champs');
-    }
+    onSubmitUserForm();
   };
 
   useEffect(getAllCoachs, []);
@@ -67,90 +59,103 @@ const DashboardManager = ({
   useEffect(getAllSpecialities, []);
 
   return (
-    <div className="dashboard">
-      <div className="dashboard-content-left">
-        <div className="dashboard-show-members">
-          <span className="dashboard-show-members-title">{showAllMembers.length} Adhérents</span>
-          <Link to="/members" className="dashboard-link">Voir les adhérents </Link>
-        </div>
-        <div className="dashboard-show-coachs">
-          <span className="dashboard-show-coachs-title">{showAllCoachs.length} Coachs</span>
-          <Link to="/coachs" className="dashboard-link">Voir les coachs</Link>
-        </div>
-        <div className="dashboard-add-user">
-          <span className="dashboard-add-user-title">Ajouter un utilisateur</span>
-          <form
-            className="dashboard-add-user-form"
-            onSubmit={handleOnSubmit}
-            action="post"
-            method="post"
-          >
-            <label htmlFor="checkbox">
-              Adhérent
-              <input
-                // checked={!isChecked}
-                type="radio"
-                name="radio"
-                id="checkbox-member"
-                value={setInputMemberRoleValue}
-                onChange={handleOnChangeMemberRole}
-              />
-              Coach
-              <input
-                // checked={!isChecked}
-                type="radio"
-                name="radio"
-                id="checkbox-coach"
-                value={setInputCoachRoleValue}
-                onChange={handleOnChangeCoachRole}
-              />
-            </label>
-            <div className="dashboard-add-user-names">
-              <label className="dashboard-add-user-firstname" htmlFor="text">
-                Prénom
-                <input
-                  className="user__form-input"
-                  method="post"
-                  type="text"
-                  name="text"
-                  id="firstname"
-                  placeholder="Rodolphe"
-                  value={setInputFirstnameValue}
-                  onChange={handleOnChangeFirstname}
-                />
-              </label>
-              <label className="dashboard-add-user-lasttname" htmlFor="text">
-                Nom
-                <input
-                  className="user__form-input"
-                  method="post"
-                  type="text"
-                  name="text"
-                  id="lastname"
-                  placeholder="Martin"
-                  value={setInputLastnameValue}
-                  onChange={handleOnChangeLastname}
-                />
-              </label>
-              <label className="dashboard-add-user-email" htmlFor="text">
-                Email
-                <input
-                  className="user__form-input"
-                  method="post"
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="rodolphe.martin@gmail.com"
-                  value={setInputMailValue}
-                  onChange={handleOnChangeMail}
-                />
-              </label>
+    <div className="manager">
+      <div className="manager-content-left">
+        <div className="manager-content-left-box">
+          <div className="manager-show-members">
+            <div className="manager-show-members-box">
+              <p to="/members" className="manager-show-members-link">{showAllMembers.length} Adhérents</p>
             </div>
-            <div className="dashboard-add-user-speciality">
-              <h3 className="dashboard-add-user-speciality-title">Spécialités :</h3>
-              {
+            <div className="manager-show-members-box">
+              <p to="/coachs" className="manager-show-members-link">{showAllCoachs.length} Coachs</p>
+            </div>
+          </div>
+          <div className="manager-add-user">
+            <form
+              className="manager-add-user-form"
+              onSubmit={handleOnSubmit}
+              action="post"
+              method="post"
+            >
+              <h1 className="manager-add-user-title">Ajouter un utilisateur</h1>
+              <div className="manager-add-user-box">
+                <div className="manager-add-user-checkroles">
+                  <div>
+                    <span className="manager-add-user-checkroles-title">Adhérent</span>
+                    <input
+                      // checked={!isChecked}
+                      className="manager-add-user-checkroles-input"
+                      type="radio"
+                      name="radio"
+                      id="checkbox-member"
+                      value={setInputMemberRoleValue}
+                      onChange={handleOnChangeMemberRole}
+                    />
+                  </div>
+                  <div>
+                    <span className="manager-add-user-checkroles-title">Coach</span>
+                    <input
+                      // checked={!isChecked}
+                      className="manager-add-user-checkroles-input"
+                      type="radio"
+                      name="radio"
+                      id="checkbox-coach"
+                      value={setInputCoachRoleValue}
+                      onChange={handleOnChangeCoachRole}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="manager-add-user-form-names">
+                <label className="manager-add-user-form-names-infos" htmlFor="text">
+                  Prénom
+                  <input
+                    className="manager-add-user-form-names-input"
+                    method="post"
+                    type="text"
+                    name="text"
+                    id="firstname"
+                    placeholder="Rodolphe"
+                    value={setInputFirstnameValue}
+                    onChange={handleOnChangeFirstname}
+                  />
+                </label>
+                <label className="manager-add-user-form-names-infos" htmlFor="text">
+                  Nom
+                  <input
+                    className="manager-add-user-form-names-input"
+                    method="post"
+                    type="text"
+                    name="text"
+                    id="lastname"
+                    placeholder="Martin"
+                    value={setInputLastnameValue}
+                    onChange={handleOnChangeLastname}
+                  />
+                </label>
+                <label className="manager-add-user-form-names-infos" htmlFor="text">
+                  Email
+                  <input
+                    className="manager-add-user-form-names-input"
+                    method="post"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="roro.m@gmail.com"
+                    value={setInputEmailValue}
+                    onChange={handleOnChangeMail}
+                  />
+                </label>
+              </div>
+              <div className="manager-add-user-speciality">
+                {setInputCoachRoleValue === 'COACH' && (
+                <h3 className="manager-add-user-speciality-title">Spécialités</h3>
+                )}
+                {setInputCoachRoleValue === 'COACH' && (
+                <div className="manager-add-user-speciality-container">
+                  {
                 allSpecialities.map((specialityObject) => (
-                  <label className="dashboard-add-user-speciality-item" htmlFor="checkbox" key={specialityObject.id}>
+                  <label className="manager-add-user-speciality-item" htmlFor="checkbox" key={specialityObject.id}>
                     <input
                       type="checkbox"
                       name={specialityObject.name}
@@ -162,23 +167,26 @@ const DashboardManager = ({
                   </label>
                 ))
               }
-              <button type="submit" className="dashboard-add-user-submit">Valider</button>
-              {successMessageAddUser && (
-                <div className="success">
-                  <p className="success__text">{successMessageAddUser} : {detailsSuccessAddUser.firstname} {detailsSuccessAddUser.lastname}</p>
-                  <p className="success__text"> rôle : {detailsSuccessAddUser.role}</p>
                 </div>
-              )}
-              {errorMessageAddUser && (
+                )}
+                <button type="submit" className="manager-add-user-submit">Valider</button>
+                {successMessageAddUser && (
+                <div className="success-adduser">
+                  <p className="success-adduser-text">{successMessageAddUser} : {detailsSuccessAddUser.firstname} {detailsSuccessAddUser.lastname}</p>
+                  <p className="success-adduser-text"> rôle : {detailsSuccessAddUser.role}</p>
+                </div>
+                )}
+                {errorMessageAddUser && (
                 <div className="error">
                   <p className="error__text">{errorMessageAddUser}</p>
                 </div>
-              )}
-            </div>
-          </form>
+                )}
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-      <div className="dashboard-content-right">
+      <div className="manager-content-right">
         <CreateSlot />
       </div>
     </div>
