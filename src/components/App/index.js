@@ -109,7 +109,7 @@ const App = ({
           exact
           path="/workout"
         >
-          <Workouts />
+          <Workouts title="Entraînements" />
         </Route>
 
         <Route

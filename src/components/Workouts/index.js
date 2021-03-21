@@ -26,12 +26,12 @@ dayjs.locale('fr');
 dayjs.extend(updateLocale);
 
 // == Composant
-const Workouts = ({ workouts, getWorkouts }) => {
+const Workouts = ({ workouts, getWorkouts, title }) => {
   useEffect(getWorkouts, []);
 
   return (
     <div className="workouts">
-      <h1 className="workouts__title">Entraînements</h1>
+      <h1 className="workouts__title">{title}</h1>
       {/*
         <div className="selectWorkout">
           <label
@@ -73,6 +73,7 @@ Workouts.propTypes = {
     }),
   ).isRequired,
   getWorkouts: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 // == Export

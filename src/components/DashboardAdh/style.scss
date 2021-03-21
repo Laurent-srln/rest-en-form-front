@@ -29,8 +29,10 @@
 
     &-last {
       margin: v.$gutter 0 0 0;
-      height: 365px;
+      height: 465px;
       overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 8px .2px grey;
     }
   }
 

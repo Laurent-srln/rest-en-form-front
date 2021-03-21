@@ -33,7 +33,7 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
 
         <div className="dashboardMember__workout">
           <div className="dashboardMember__workout-last">
-            <Workouts />
+            <Workouts title="Dernier entraînement" />
           </div>
           <p className="cta">
             <Link to="/add-workout" className="cta__text">Ajouter un entraînement</Link>

@@ -15,15 +15,18 @@
 }
 
 .workouts {
+  padding: v.$gutter * 6 0 v.$gutter * 2 0;
 
   &__title {
     margin: v.$gutter * 2 0 v.$gutter * 2 0;
-    font-size: 1.5em;
+    text-align: center;
+    font-size: 1.7em;
     font-weight: v.$text-bold;
   }
 
   &__content {
-
+    width: 70%;
+    margin: v.$gutter * 2 auto;
   }
 
   &__add {
