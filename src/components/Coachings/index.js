@@ -10,18 +10,21 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 
 // == Composant
-const Coachings = ({ coachings, getCoachings }) => {
+const Coachings = ({ coachings, getCoachings, title }) => {
   useEffect(getCoachings, []);
 
   return (
     <div className="coachings">
-      <h1 className="coachings__title">Prochains coachings</h1>
+      <h1 className="coachings__title">{title}</h1>
       <div className="coachings__content">
         {coachings.map((coaching) => <Coaching key={coaching.id} {...coaching} />)}
       </div>
-      <p className="coachings__cta">
-        <Link to="/booking-coaching">+ Réserver un coaching</Link>
-      </p>
+
+      <div className="ctaCoaching">
+        <p className="ctaCoaching__content">
+          <Link to="/booking-coaching" className="ctaCoaching__text">Réserver un coaching</Link>
+        </p>
+      </div>
     </div>
   );
 };
@@ -34,6 +37,7 @@ Coachings.propTypes = {
     }),
   ).isRequired,
   getCoachings: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 // == Export

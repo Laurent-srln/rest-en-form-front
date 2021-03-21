@@ -22,7 +22,7 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
       <div className="dashboardMember__left">
         <div className="dashboardMember__coaching">
           <div className="dashboardMember__coaching-last">
-            <Coachings />
+            <Coachings title="Prochain coaching" />
           </div>
           <div className="cta">
             <p className="cta__content">

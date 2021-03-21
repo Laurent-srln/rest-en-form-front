@@ -4,7 +4,7 @@
   max-width: 90%;
   margin: v.$gutter * 2 auto;
   padding: v.$gutter;
-  box-shadow: 0 0 8px .2px #245768;
+  box-shadow: 0 0 8px .2px grey;
   border-radius: v.$element-radius;
   background-color: v.$alt-color;
   color: v.$primary-color;
@@ -14,7 +14,7 @@
     text-align: center;
     color: v.$primary-color;
     font-weight: v.$text-bold;
-    font-size: v.$gutter * 1.7;
+    font-size: 1.7em;
   }
 
   &__weight {

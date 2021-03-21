@@ -91,7 +91,7 @@ const App = ({
           exact
           path="/coachings"
         >
-          <Coachings />
+          <Coachings title="Prochains coachings" />
         </Route>
 
         <Route

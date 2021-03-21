@@ -7,31 +7,26 @@
   align-items: center;
   flex-wrap: wrap;
 
-  background-color: red;
-  // background-image: url(../../assets/backgroud-login.jpg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: 25% 75%;
-  // width: 100%;
-  // height: 74vh;
-
   &__left {
     width: 50%;
 
   }
 
   &__coaching {
-    background-color: cornflowerblue;
+    
 
     &-last {
       margin: v.$gutter 0 0 0;
-      height: 250px;
+      height: 380px;
       overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 8px .2px grey;
+      background-color: red;
     }
   }
 
   &__workout {
-    background-color: aqua;
+    // background-color: aqua;
 
     &-last {
       margin: v.$gutter 0 0 0;

@@ -30,22 +30,22 @@ const Header = ({ isLogged, onClickLogout, role }) => (
             </li>
             <li className="menu-item">
               <NavLink
-                to="/workout"
-                exact
-                className="link"
-                activeClassName="link--active"
-              >
-                Entraînements
-              </NavLink>
-            </li>
-            <li className="menu-item">
-              <NavLink
                 to="/coachings"
                 exact
                 className="link"
                 activeClassName="link--active"
               >
                 Coachings
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/workout"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Entraînements
               </NavLink>
             </li>
           </ul>
