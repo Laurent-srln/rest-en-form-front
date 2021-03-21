@@ -105,7 +105,27 @@ const Header = ({ isLogged, onClickLogout, role }) => (
                 className="link"
                 activeClassName="link--active"
               >
-                <p>Tableau de bord</p>
+                Tableau de bord
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/members"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Les adhérents
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/coachs"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Les coachs
               </NavLink>
             </li>
           </ul>

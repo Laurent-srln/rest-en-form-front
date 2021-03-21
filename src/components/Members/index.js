@@ -43,6 +43,7 @@ const Members = ({ getAllMembers, allMembers }) => {
         <li>inscrit depuis le</li>
         <li>Prenom</li>
         <li>nom</li>
+        <li>email</li>
       </ul>
       {
           allMembers.map((memberObject) => (
@@ -50,6 +51,8 @@ const Members = ({ getAllMembers, allMembers }) => {
               <li>{dayjs(memberObject.createdAt).tz('Europe/Paris').locale('fr').format('DD MMMM YYYY')}</li>
               <li>{memberObject.firstname}</li>
               <li>{memberObject.lastname}</li>
+              <li>{memberObject.email}</li>
+
             </ul>
           ))
       }
