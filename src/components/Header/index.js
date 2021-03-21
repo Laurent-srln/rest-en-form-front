@@ -7,64 +7,129 @@ import './styles.scss';
 const Header = ({ isLogged, onClickLogout, role }) => (
   <header className="header">
     <img className="header__logo" src={logo} alt="Logo REST'enforme" />
+
     {role === 'MEMBER' && (
       <nav className="header__nav">
-        <NavLink
-          to="/dashboard-member"
-          exact
-          className="header__nav-link"
-          activeClassName="header__nav-link--active"
-        >
-          <p>Accueil</p>
-        </NavLink>
-        <NavLink
-          to="/workout"
-          exact
-          className="header__nav-link"
-          activeClassName="header__nav-link--active"
-        >
-          <p>Entraînements</p>
-        </NavLink>
-        <NavLink
-          to="/coachings"
-          exact
-          className="header__nav-link"
-          activeClassName="header__nav-link--active"
-        >
-          <p>Coachings</p>
-        </NavLink>
+        <div className="header__nav-wrapper">
+          <input
+            id="checkbox"
+            type="checkbox"
+            className="checkbox"
+          />
+          <label className="toggle" htmlFor="checkbox">&equiv; Menu</label>
+          <ul className="menu">
+            <li className="menu-item">
+              <NavLink
+                to="/dashboard-member"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Tableau de bord
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/workout"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Entraînements
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/coachings"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Coachings
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </nav>
     )}
+
     {role === 'COACH' && (
       <nav className="header__nav">
-        <NavLink
-          to="/dashboard-coach"
-          exact
-          className="header__nav-link"
-          activeClassName="header__nav-link--active"
-        >
-          <p>Accueil</p>
-        </NavLink>
-        <NavLink
-          to="/members"
-          exact
-          className="header__nav-link"
-          activeClassName="header__nav-link--active"
-        >
-          <p>Listing des adhérents</p>
-        </NavLink>
+        <div className="header__nav-wrapper">
+          <input
+            id="checkbox"
+            type="checkbox"
+            className="checkbox"
+          />
+          <label className="toggle" htmlFor="checkbox">&equiv; Menu</label>
+          <ul className="menu">
+            <li className="menu-item">
+              <NavLink
+                to="/dashboard-coach"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Tableau de bord
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/members"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Liste des adhérents
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </nav>
     )}
+    
     {role === 'OWNER' && (
       <nav className="header__nav">
-        <NavLink
-          to="/dashboard-manager"
-          exact
-          className="header__nav-link"
-          activeClassName="header__nav-link--active"
-        >
-          <p>Accueil</p>
-        </NavLink>
+        <div className="header__nav-wrapper">
+          <input
+            id="checkbox"
+            type="checkbox"
+            className="checkbox"
+          />
+          <label className="toggle" htmlFor="checkbox">&equiv; Menu</label>
+          <ul className="menu">
+            <li className="menu-item">
+              <NavLink
+                to="/dashboard-manager"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Tableau de bord
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/members"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Les adhérents
+              </NavLink>
+            </li>
+            <li className="menu-item">
+              <NavLink
+                to="/coachs"
+                exact
+                className="link"
+                activeClassName="link--active"
+              >
+                Les coachs
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </nav>
     )}
 
@@ -84,12 +149,10 @@ const Header = ({ isLogged, onClickLogout, role }) => (
 );
 
 // == Props Validation
-/*
 Header.propTypes = {
-  isLogged: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool,
   onClickLogout: PropTypes.func.isRequired,
 };
-*/
 
 // Header.propTypes = {};
 export default Header;

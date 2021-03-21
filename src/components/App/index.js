@@ -140,7 +140,7 @@ const App = ({
 // == Props Validation
 
 App.propTypes = {
-  isLogged: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool,
   role: PropTypes.string.isRequired,
   appInit: PropTypes.func.isRequired,
 };

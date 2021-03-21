@@ -24,12 +24,14 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
         <div className="dashboardMember__coaching">
           <Coachings />
         </div>
-        <p className="cta">
-          <Link to="/booking-coaching" className="cta__text">Réserver un coaching</Link>
-        </p>
-        <p className="cta">
-          <Link to="/coachings" className="cta__text">Voir toutes les réservations</Link>
-        </p>
+        <div className="cta">
+          <p className="cta__content">
+            <Link to="/booking-coaching" className="cta__text">Réserver un coaching</Link>
+          </p>
+          <p className="cta__content">
+            <Link to="/coachings" className="cta__text">Voir toutes les réservations</Link>
+          </p>
+        </div>
       </div>
 
       <div>
