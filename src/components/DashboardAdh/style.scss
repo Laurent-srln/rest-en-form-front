@@ -1,7 +1,7 @@
 @use '../../styles/vars' as v;
 
 .dashboardMember {
-  padding: v.$gutter * 8 0 v.$gutter * 2 0;
+  padding: v.$gutter * 6 0 v.$gutter * 2 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,8 +41,7 @@
   }
 
   &__healthData {
-    width: 35%;
-    background-color:darkorange;
+    width: 40%;
   }
   
 }
