@@ -109,7 +109,7 @@ const CreateSlot = ({
             id="slot-select"
             onChange={handleCoachChange}
           >
-          <option value="Selectionnez un coach">Sélectionnez un coach</option>
+            <option value="Selectionnez un coach">Sélectionnez un coach</option>
             {
             coachsList.map((coachObject) => (
               <option
