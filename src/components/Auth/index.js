@@ -101,7 +101,7 @@ Auth.propTypes = {
   inputPasswordValue: PropTypes.string.isRequired,
   onChangeInputPasswordValue: PropTypes.func.isRequired,
   onSubmitMailForm: PropTypes.func.isRequired,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.string,
 };
 
 // == Export
