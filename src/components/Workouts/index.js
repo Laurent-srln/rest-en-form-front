@@ -26,12 +26,12 @@ dayjs.locale('fr');
 dayjs.extend(updateLocale);
 
 // == Composant
-const Workouts = ({ workouts, getWorkouts }) => {
+const Workouts = ({ workouts, getWorkouts, title }) => {
   useEffect(getWorkouts, []);
 
   return (
     <div className="workouts">
-      <h1 className="workouts__title">Entraînements</h1>
+      <h1 className="workouts__title">{title}</h1>
       {/*
         <div className="selectWorkout">
           <label
@@ -58,7 +58,11 @@ const Workouts = ({ workouts, getWorkouts }) => {
       <ul className="workouts__content">
         {workouts.map((workout) => <Workout key={workout.id} {...workout} />)}
       </ul>
-      <p className="workouts__add"><Link to="/add-workout">+ Ajouter une séance d'entraînement</Link></p>
+      <div className="ctaWorkout">
+        <p className="ctaWorkout__content">
+          <Link to="/add-workout" className="ctaWorkout__text">Ajouter une séance d'entraînement</Link>
+        </p>
+      </div>
     </div>
   );
 };
@@ -73,6 +77,7 @@ Workouts.propTypes = {
     }),
   ).isRequired,
   getWorkouts: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 // == Export
