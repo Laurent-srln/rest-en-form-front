@@ -50,7 +50,7 @@ const bookingCoaching = (store) => (next) => (action) => {
             coachingId,
           });
 
-          const response = await axios.post(`${baseUrl}/book-coaching`, idStringify, {
+          const response = await axios.patch(`${baseUrl}/book-coaching`, idStringify, {
             headers: {
               'content-type': 'application/json',
               Authorization: `bearer ${token}`,

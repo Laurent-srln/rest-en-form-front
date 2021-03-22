@@ -92,7 +92,7 @@ const App = ({
           exact
           path="/coachings"
         >
-          <Coachings />
+          <Coachings title="Prochains coachings" />
         </Route>
 
         <Route
@@ -110,7 +110,7 @@ const App = ({
           exact
           path="/workout"
         >
-          <Workouts />
+          <Workouts title="Entraînements" />
         </Route>
 
         <Route

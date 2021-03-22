@@ -52,12 +52,7 @@ const BookingCoaching = ({
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    if (selectedDate) {
-      onSubmitAddCoachingForm();
-    }
-    else {
-      alert('Veuillez sélectionner une date');
-    }
+    onSubmitAddCoachingForm();
   };
 
   const dateToString = formatWithOptions({ fr }, 'dd-MM-yyyy');
@@ -65,74 +60,83 @@ const BookingCoaching = ({
 
   return (
     <div className="booking-coaching">
-      <div className="add-coaching">
-        <p className="add-coaching__title">Réserver un coaching</p>
-        <label
-          className="add-coaching__label-date"
-          htmlFor="date"
-        >
-          Sélectionner une date
-          <DatePicker
-            selected={startDate}
-            onChange={handleDateChange}
-            dateFormat={dateToString}
-            minDate={availableDate}
-            filterDate={(date) => date.getDay() !== 0}
-            inline
-            locale="fr"
-          />
-        </label>
+      <div className="booking-coaching__mainContainer">
 
-        {errorMessage && (
-          <div className="error">
-            <p className="error__text">{errorMessage}</p>
-          </div>
-        )}
-
-        {!selectedDate.length && (
-          <div className="noCoaching">
-            <p className="noCoaching__text">Pas de coaching disponible à cette date</p>
-          </div>
-        )}
-
-        <form
-          onSubmit={handleOnSubmit}
-        >
-          <select
-            className="add-coaching__select"
-            name="coaching"
-            id="coaching-select"
-            onChange={handleOnChangeSlot}
-          >
-            <option value="">Sélectionner un créneau</option>
-            {
-              selectedDate.map((slot) => (
-                <option
-                  value={slot.id}
-                  key={slot.id}
-                >
-                  {dayjs(slot.startTime).tz('Europe/Paris').locale('fr').format('H:mm')} - {dayjs(slot.endTime).tz('Europe/Paris').locale('fr').format('H:mm')} {slot.coachFirstname} {slot.coachLastname}
-                </option>
-              ))
-            }
-          </select>
-          <div>
-            <button
-              className="add-coaching__submit"
-              type="submit"
+        <div className="booking-coaching__container">
+          <p className="booking-coaching__title">Réserver un coaching</p>
+          <div className="booking-coaching__content">
+            <label
+              className="add-coaching__label-date"
+              htmlFor="date"
             >
-              Valider
-            </button>
+              Sélectionner une date
+              <DatePicker
+                selected={startDate}
+                onChange={handleDateChange}
+                dateFormat={dateToString}
+                minDate={availableDate}
+                filterDate={(date) => date.getDay() !== 0}
+                inline
+                locale="fr"
+                id="date"
+              />
+              {errorMessage && (
+                <div className="errorBookingCoaching">
+                  <p className="errorBookingCoaching__text">{errorMessage}</p>
+                </div>
+              )}
+
+              {!selectedDate.length && (
+                <div className="noCoaching">
+                  <p className="noCoaching__text">Pas de coaching disponible à cette date</p>
+                </div>
+              )}
+            </label>
+
+
+            <form
+              onSubmit={handleOnSubmit}
+            >
+              <select
+                className="add-coaching__select"
+                name="coaching"
+                id="coaching-select"
+                onChange={handleOnChangeSlot}
+              >
+                <option value="">Sélectionner un créneau</option>
+                {
+                  selectedDate.map((slot) => (
+                    <option
+                      value={slot.id}
+                      key={slot.id}
+                    >
+                      {dayjs(slot.startTime).tz('Europe/Paris').locale('fr').format('H:mm')} - {dayjs(slot.endTime).tz('Europe/Paris').locale('fr').format('H:mm')} {slot.coachFirstname}
+                    </option>
+                  ))
+                }
+              </select>
+              <div className="submitCoaching">
+                <button
+                  className="submitCoaching__text"
+                  type="submit"
+                >
+                  Valider
+                </button>
+              </div>
+              {successMessageBookingCoaching && (
+                <div className="successBookingCoaching">
+                  <p className="successBookingCoaching__text">{successMessageBookingCoaching}</p>
+                </div>
+              )}
+            </form>
+
           </div>
-          {successMessageBookingCoaching && (
-            <div className="success">
-              <p className="success__text">{successMessageBookingCoaching}</p>
-            </div>
-          )}
-        </form>
+        </div>
       </div>
-      <div className="booking-coaching__coachs">
-        <Coachs />
+      <div className="booking-coaching__coachContainer">
+        <div className="booking-coaching__coachs">
+          <Coachs />
+        </div>
       </div>
     </div>
   );

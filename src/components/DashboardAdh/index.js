@@ -19,32 +19,29 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
 
   return (
     <div className="dashboardMember">
-      <h1 className="dashboardMember__title">Tableau de bord</h1>
-      <div>
+      <div className="dashboardMember__left">
         <div className="dashboardMember__coaching">
-          <Coachings />
+          <div className="dashboardMember__coaching-last">
+            <Coachings title="Prochain coaching" />
+          </div>
+          <div className="cta">
+            <p className="cta__content">
+              <Link to="/booking-coaching" className="cta__text">Réserver un coaching</Link>
+            </p>
+          </div>
         </div>
-        <div className="cta">
-          <p className="cta__content">
-            <Link to="/booking-coaching" className="cta__text">Réserver un coaching</Link>
-          </p>
-          <p className="cta__content">
-            <Link to="/coachings" className="cta__text">Voir toutes les réservations</Link>
+
+        <div className="dashboardMember__workout">
+          <div className="dashboardMember__workout-last">
+            <Workouts title="Dernier entraînement" />
+          </div>
+          <p className="cta">
+            <Link to="/add-workout" className="cta__text">Ajouter un entraînement</Link>
           </p>
         </div>
+      
       </div>
 
-      <div>
-        <div className="dashboardMember__workout">
-          <Workouts />
-        </div>
-        <p className="cta">
-          <Link to="/add-workout" className="cta__text">Ajouter un entraînement</Link>
-        </p>
-        <p className="cta">
-          <Link to="/workout" className="cta__text">Voir toutes les entraînements</Link>
-        </p>
-      </div>
       <div className="dashboardMember__healthData">
         <HealthCheck findLastHealthCheck={data} />
       </div>

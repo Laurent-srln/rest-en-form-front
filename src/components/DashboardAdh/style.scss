@@ -1,31 +1,43 @@
 @use '../../styles/vars' as v;
 
 .dashboardMember {
-  padding-top: v.$gutter * 8;
-  background-color: red;
-  // background-image: url(../../assets/backgroud-login.jpg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: 25% 75%;
-  // width: 100%;
-  // height: 74vh;
+  padding: v.$gutter * 6 0 v.$gutter * 2 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 
-  &__title {
-    margin: v.$gutter * 1.5;
-    background-color: burlywood;
+  &__left {
+    width: 50%;
+
   }
 
   &__coaching {
-    margin: v.$gutter 0 0 0;
-    height: 250px;
-    overflow: hidden;
-    background-color: cornflowerblue;
+    
+
+    &-last {
+      margin: v.$gutter 0 0 0;
+      height: 380px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 8px .2px grey;
+    }
   }
 
   &__workout {
-    margin: v.$gutter 0 0 0;
-    height: 390px;
-    overflow: hidden;
+    // background-color: aqua;
+
+    &-last {
+      margin: v.$gutter 0 0 0;
+      height: 465px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 8px .2px grey;
+    }
+  }
+
+  &__healthData {
+    width: 40%;
   }
   
 }

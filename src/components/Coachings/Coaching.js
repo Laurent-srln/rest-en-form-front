@@ -2,6 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { BsCalendarFill } from 'react-icons/bs';
+import { BsClockFill } from 'react-icons/bs';
+
 // == Imports
 import './style.scss';
 
@@ -58,22 +61,9 @@ const Coaching = ({ coachFirstname, startTime, endTime }) => {
       </div>
 
       <div className="coaching__icons">
-        <img
-          className="calendar"
-          src="https://i1.wp.com/www.lasercamp.fr/wp-content/uploads/2018/02/icone-calendrier.png?resize=300%2C288"
-          alt=""
-        />
-        <img
-          className="clock"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5R-lxqkt0YRbKKNFdKRloCvkpxq_6yuevg&usqp=CAU"
-          alt=""
-        />
+        <BsCalendarFill className="calendar" />
+        <BsClockFill className="clock" />
       </div>
-      <img
-        className="coaching__trash"
-        src="https://pngimage.net/wp-content/uploads/2018/06/poubelle-logo-png-4.png"
-        alt=""
-      />
     </div>
   );
 };
