@@ -1,9 +1,14 @@
 @use '../../styles/vars'as v;
 
 .coachs {
-  width: 90%;
-  max-width: 1140px;
-  margin: v.$gutter auto;
+  width: 100%;
+  min-width: 1140px;
+  // margin: v.$gutter auto;
+  background-image: url(../../assets/personal_trainer.jpg);
+  // background-position: 80% 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
 
   &__title {
     margin: v.$gutter * 1.5 0;
