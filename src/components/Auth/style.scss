@@ -2,20 +2,19 @@
 
 
 .login {
-  padding-top: v.$gutter * 8;
-  background-image: url(../../assets/backgroud-login.jpg);
+  background-image: url(../../assets/accueil.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 25% 75%;
   box-shadow: 1px 1px 50px rgb(253, 253, 253);
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // z-index: 1;
+   height: 90vh;
+   display: flex;
+   align-items: center;
+   z-index: 1;
  }
 
 .auth {
+  margin-left: v.$gutter * 15;
   width: 550px;
   height: auto;
   padding: 25px;

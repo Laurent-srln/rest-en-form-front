@@ -27,35 +27,28 @@ const Members = ({ getAllMembers, allMembers }) => {
   useEffect(getAllMembers, []);
   // console.log('allMembers', allMembers);
   return (
-    <div className="members">
-      <h1 className="members__title">Listing des adhérents</h1>
-      <p className="members__number">{allMembers.length} adhérents</p>
-      <div>
-        <input
-          className="members__search"
-          placeholder="rechercher un membre"
-          type="text"
-          name=""
-          id=""
-        />
+    <div className="members-page">
+      <div className="members-page-image">
+        <div className="members-page-text-content">
+          <h2 className="members-page-title">Listing des adhérents</h2>
+          <p className="members-page-number">{allMembers.length} adhérents</p>
+        </div>
       </div>
-      <ul className="dashboard-list-info-item">
-        <li>inscrit depuis le</li>
-        <li>Prenom</li>
-        <li>nom</li>
-        <li>email</li>
-      </ul>
-      {
+      <div className="members-page-container">
+        {
           allMembers.map((memberObject) => (
-            <ul key={memberObject.id} className="dashboard-list-info-item">
-              <li>{dayjs(memberObject.createdAt).tz('Europe/Paris').locale('fr').format('DD MMMM YYYY')}</li>
-              <li>{memberObject.firstname}</li>
-              <li>{memberObject.lastname}</li>
-              <li>{memberObject.email}</li>
+            <div className="members-page-list">
+              <ul key={memberObject.id} className="members-page-list-item">
+                <li className="members-page-list-item-date">Inscription le {dayjs(memberObject.createdAt).tz('Europe/Paris').locale('fr').format('DD MMMM YYYY')}</li>
+                <li className="members-page-list-item-info">{memberObject.firstname}</li>
+                <li className="members-page-list-item-info">{memberObject.lastname}</li>
+                <li className="members-page-list-item-info">{memberObject.email}</li>
 
-            </ul>
+              </ul>
+            </div>
           ))
       }
+      </div>
     </div>
   );
 };

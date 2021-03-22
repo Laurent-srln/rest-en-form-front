@@ -23,22 +23,18 @@ const nextBookings = ({ nextBookingsArray }) => (
   <div className="dashboard-next-coaching">
     <h2 className="dashboard-next-coaching-title">Prochain coachings</h2>
     <div className="dashboard-next-coaching-container">
-      <ul className="dashboard-list-info">
-        <li>Date</li>
-        <li>Heure</li>
-        <li>Adhérent</li>
-      </ul>
       {
           nextBookingsArray.map((nextBookingObject) => (
-            <ul key={nextBookingObject.id} className="dashboard-list-info-item">
-              <li>{dayjs(nextBookingObject.startTime).tz('Europe/Paris').locale('fr').format('dddd DD MMMM')}</li>
-              <li>
-                {dayjs(nextBookingObject.startTime).tz('Europe/Paris').locale('fr').format('H:mm')}
-                <span> - </span>
-                {dayjs(nextBookingObject.endTime).tz('Europe/Paris').locale('fr').format('H:mm')}
-              </li>
-              <li><Link to={`/members/${nextBookingObject.memberId}/workouts`}>{nextBookingObject.memberFirstname} {nextBookingObject.memberLastname}</Link></li>
-            </ul>
+            <Link to={`/members/${nextBookingObject.memberId}/workouts`}>
+              <ul key={nextBookingObject.id} className="dashboard-list-info-item">
+                <li className="dashboard-list-info-item-element">{dayjs(nextBookingObject.startTime).tz('Europe/Paris').locale('fr').format('dddd DD MMMM')}</li>
+                <li className="dashboard-list-info-item-element">De {dayjs(nextBookingObject.startTime).tz('Europe/Paris').locale('fr').format('H:mm')}
+                  <span> - </span>
+                  {dayjs(nextBookingObject.endTime).tz('Europe/Paris').locale('fr').format('H:mm')}
+                </li>
+                <li className="dashboard-list-info-item-element">Avec {nextBookingObject.memberFirstname} {nextBookingObject.memberLastname}</li>
+              </ul>
+            </Link>
           ))
       }
     </div>

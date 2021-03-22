@@ -9,17 +9,17 @@ import './styles.scss';
 // == Composant
 const Footer = ({ isLogged }) => (
   <footer className="footer">
-    <div className="footer__content">
+    <div>
       <Link to="/team" className="footer__content-team">L'équipe</Link>
       <span> - </span>
-      {isLogged && (
-        <div>
-          <Link to="/coachs" className="footer__content-coachs">Les coachs</Link>
-          <span> - </span>
-        </div>
-      )}
-      <Link to="/legal-notice" className="footer__content-legalNotice">Mentions légales</Link>
     </div>
+    {isLogged && (
+    <div>
+      <Link to="/coachs" className="footer__content-coachs">Les coachs</Link>
+      <span> - </span>
+    </div>
+    )}
+    <Link to="/legal-notice" className="footer__content-legalNotice">Mentions légales</Link>
   </footer>
 );
 

@@ -23,22 +23,19 @@ const lastBookings = ({ lastBookingsArray }) => (
   <div className="dashboard-last-coaching">
     <h2 className="dashboard-last-coaching-title">Dernier coachings</h2>
     <div className="dashboard-last-coaching-container">
-      <ul className="dashboard-list-info">
-        <li>Date</li>
-        <li>Heure</li>
-        <li>Adhérent</li>
-      </ul>
       {
           lastBookingsArray.map((lastBookingObject) => (
-            <ul key={lastBookingObject.id} className="dashboard-list-info-item">
-              <li>{dayjs(lastBookingObject.startTime).tz('Europe/Paris').locale('fr').format('dddd DD MMMM')}</li>
-              <li>
-                {dayjs(lastBookingObject.startTime).tz('Europe/Paris').locale('fr').format('H:mm')}
-                <span> - </span>
-                {dayjs(lastBookingObject.endTime).tz('Europe/Paris').locale('fr').format('H:mm')}
-              </li>
-              <li><Link to={`/members/${lastBookingObject.memberId}/workouts`}>{lastBookingObject.memberFirstname} {lastBookingObject.memberLastname}</Link></li>
-            </ul>
+            <Link to={`/members/${lastBookingObject.memberId}/workouts`}>
+              <ul key={lastBookingObject.id} className="dashboard-list-info-item">
+                <li className="dashboard-list-info-item-element">{dayjs(lastBookingObject.startTime).tz('Europe/Paris').locale('fr').format('dddd DD MMMM')}</li>
+                <li className="dashboard-list-info-item-element">
+                  {dayjs(lastBookingObject.startTime).tz('Europe/Paris').locale('fr').format('H:mm')}
+                  <span> - </span>
+                  {dayjs(lastBookingObject.endTime).tz('Europe/Paris').locale('fr').format('H:mm')}
+                </li>
+                <li className="dashboard-list-info-item-element">{lastBookingObject.memberFirstname} {lastBookingObject.memberLastname}</li>
+              </ul>
+            </Link>
           ))
       }
     </div>

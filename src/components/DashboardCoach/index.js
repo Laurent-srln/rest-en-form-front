@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import NextBookings from './nextBookings';
@@ -17,7 +16,6 @@ const DashboardCoach = ({
         <NextBookings nextBookingsArray={nextBookingsArray} />
         <LastBookings lastBookingsArray={lastBookingsArray} />
       </div>
-      <Link to="/members" className="dashboard-link">Voir les adhérents </Link>
     </div>
   );
 };
