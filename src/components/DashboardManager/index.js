@@ -64,10 +64,10 @@ const DashboardManager = ({
         <div className="manager-content-left-box">
           <div className="manager-show-members">
             <div className="manager-show-members-box">
-              <p to="/members" className="manager-show-members-link">{showAllMembers.length} Adhérents</p>
+              <Link to="/members" className="manager-show-members-link">{showAllMembers.length} Adhérents</Link>
             </div>
             <div className="manager-show-members-box">
-              <p to="/coachs" className="manager-show-members-link">{showAllCoachs.length} Coachs</p>
+              <Link to="/coachs" className="manager-show-members-link">{showAllCoachs.length} Coachs</Link>
             </div>
           </div>
           <div className="manager-add-user">
