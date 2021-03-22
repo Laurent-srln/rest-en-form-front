@@ -44,15 +44,15 @@ const WorkoutForCoach = ({
     <div className="workout">
       <p className="workout__date">{formatedDay}</p>
       <p className="workout__text">{description}</p>
-      <div className="training__health">
+      <div className="workout__health">
         <p className="amount">Poids : {weight} kg</p>
-        <span className="amount"> / </span>
+        <span className="amount span"> | </span>
         <p className="amount">Masse hydrique : {bodyWater} %</p>
-        <span className="amount"> / </span>
+        <span className="amount span"> | </span>
         <p className="amount">Masse musculaire : {muscleMass} %</p>
-        <span className="amount"> / </span>
+        <span className="amount span"> | </span>
         <p className="amount">Masse osseuse : {boneMass} %</p>
-        <span className="amount"> / </span>
+        <span className="amount span"> | </span>
         <p className="amount">Masse grasse : {fatMass} %</p>
       </div>
       {commentCoachFirstname && (

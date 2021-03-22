@@ -69,7 +69,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtY
 
 ### RÉCUPÉRER TOUS LES WORKOUTS PAR ORDRE DÉCROISSANT 
 GET {{baseUrl}}/workouts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE2Mzk4NjAxLCJleHAiOjE2MTY0MzQ2MDF9.1-5N0AK68FsOgq_-MzxLtJMKXOq7uXvGfaAH97bq6Eg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE2NDQ2MTk3LCJleHAiOjE2MTY0ODIxOTd9.IevXcSKZd3t0kQuJLLJElVEFAf2-cHGarG1eRPsqz_o
 
 
 ### RÉCUPÉRER TOUS LES ENREGISTREMENTS SANTÉ 
@@ -94,9 +94,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlb
 
 
 ### SUPPRIMER UN WORKOUT ET LES DONNÉES SANTÉ ASSOCIÉES
-DELETE {{baseUrl}}/delete-workout/14
+DELETE {{baseUrl}}/delete-workout/32
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE2Mzk4NjAxLCJleHAiOjE2MTY0MzQ2MDF9.1-5N0AK68FsOgq_-MzxLtJMKXOq7uXvGfaAH97bq6Eg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE2NDQ2MTk3LCJleHAiOjE2MTY0ODIxOTd9.IevXcSKZd3t0kQuJLLJElVEFAf2-cHGarG1eRPsqz_o
 
 
 ////////// COACHINGS \\\\\\\\\\
