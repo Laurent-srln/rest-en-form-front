@@ -26,7 +26,7 @@ dayjs.locale('fr');
 dayjs.extend(updateLocale);
 
 // == Composant
-const Coaching = ({ coachFirstname, startTime, endTime }) => {
+const Coaching = ({ coachFirstname, coachLastname, startTime, endTime }) => {
 
   const formatedDay = dayjs(startTime).tz('Europe/Paris').locale('fr').format('dddd D MMMM');
   const formatedStartTime = dayjs(startTime).tz('Europe/Paris').locale('fr').format('H:mm');
@@ -37,7 +37,7 @@ const Coaching = ({ coachFirstname, startTime, endTime }) => {
       <div className="coaching__coach">
         <img
           className="img"
-          src="https://blog.salonbodyfitness.com/wp-content/uploads/2019/11/shutterstock_493318507-980x654.jpg"
+          src={`profil-pictures/${coachFirstname.toLowerCase()}_${coachLastname.toLowerCase()}.jpg`}
           alt=""
         />
         <p
@@ -71,6 +71,7 @@ const Coaching = ({ coachFirstname, startTime, endTime }) => {
 // == Props Validation
 Coaching.propTypes = {
   coachFirstname: PropTypes.string.isRequired,
+  coachLastname: PropTypes.string.isRequired,
   startTime: PropTypes.string.isRequired,
   endTime: PropTypes.string.isRequired,
 };
