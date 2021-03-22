@@ -35,8 +35,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-    "email": "jcastex@gmail.com",
-    "password":"owner"
+    "email": "alibaba@gmail.com",
+    "password":"member"
 }
 
 
@@ -69,7 +69,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtY
 
 ### RÉCUPÉRER TOUS LES WORKOUTS PAR ORDRE DÉCROISSANT 
 GET {{baseUrl}}/workouts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlbWFpbCI6InNvc29zb0BnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NTQ0NTQxLCJleHAiOjE2MTU1ODA1NDF9.GbuwA3pXyOTDXDC45rehNS5P2Oa9JsvHLLHW699taFk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE2Mzk4NjAxLCJleHAiOjE2MTY0MzQ2MDF9.1-5N0AK68FsOgq_-MzxLtJMKXOq7uXvGfaAH97bq6Eg
 
 
 ### RÉCUPÉRER TOUS LES ENREGISTREMENTS SANTÉ 
@@ -94,9 +94,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlb
 
 
 ### SUPPRIMER UN WORKOUT ET LES DONNÉES SANTÉ ASSOCIÉES
-DELETE {{baseUrl}}/delete-workout/48
+DELETE {{baseUrl}}/delete-workout/14
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiQWxBQkFTQGdtYWlsLmNvbSIsInJvbGUiOiJNRU1CRVIiLCJpYXQiOjE2MTU4OTA0NTIsImV4cCI6MTYxNTkyNjQ1Mn0.zc8G6ZAEiZ13Gzji-VQdXCXBJx_fnCdW4QCaW3UGe2o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiYWxpYmFiYUBnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE2Mzk4NjAxLCJleHAiOjE2MTY0MzQ2MDF9.1-5N0AK68FsOgq_-MzxLtJMKXOq7uXvGfaAH97bq6Eg
 
 
 ////////// COACHINGS \\\\\\\\\\
@@ -196,7 +196,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM0LCJlb
 
 ### RÉCUPÉRER TOUS LES ADHÉRENTS
 GET {{baseUrl}}/members
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlbWFpbCI6InNvc29zb0BnbWFpbC5jb20iLCJyb2xlIjoiTUVNQkVSIiwiaWF0IjoxNjE1NTQ0NTQxLCJleHAiOjE2MTU1ODA1NDF9.GbuwA3pXyOTDXDC45rehNS5P2Oa9JsvHLLHW699taFk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiSkNsYXVkZUBnbWFpbC5jb20iLCJyb2xlIjoiT1dORVIiLCJpYXQiOjE2MTYzOTg1MjQsImV4cCI6MTYxNjQzNDUyNH0.1FffukNcKwLJ5z2hqtuxMwRHirbOjnlh68Up8QCPY1c
 
 
 
