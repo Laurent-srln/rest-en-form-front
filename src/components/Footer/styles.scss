@@ -1,10 +1,12 @@
 @use '../../styles/vars'as v;
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #FFF;
   padding: v.$gutter * 2 0;
   color: v.$primary-color;
-  text-align: center;
 
   &__content {
 
@@ -19,3 +21,4 @@
     }
   }
 }
+

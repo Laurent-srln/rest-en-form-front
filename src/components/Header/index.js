@@ -140,7 +140,7 @@ const Header = ({ isLogged, onClickLogout, role }) => (
           type="submit"
           onClick={onClickLogout}
         >
-          Se déconnecter
+          déconnexion
         </button>
       </div>
     )}

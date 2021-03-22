@@ -27,6 +27,7 @@ import BookingCoaching from 'src/containers/BookingCoaching';
 
 import Members from 'src/containers/GetAllMembers';
 import Coachs from 'src/containers/GetCoachs/Coachs';
+import Team from 'src/components/Team';
 
 import './styles.scss';
 
@@ -130,6 +131,12 @@ const App = ({
           path="/coachs"
         >
           <Coachs />
+        </Route>
+        <Route
+          exact
+          path="/team"
+        >
+          <Team />
         </Route>
       </Switch>
       <Footer />
