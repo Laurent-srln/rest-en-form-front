@@ -79,162 +79,166 @@ const AddWorkout = ({
 
   return (
     <div className="add-workout">
-      <h1 className="add-workout__title">Enregistrer un entraînement</h1>
-      <form
-        className="add-workout__form"
-        onSubmit={handleOnSubmit}
-        action="post"
-        method="post"
-      >
-        <div className="add-workout__form-date">
-          <label
-            className="label__date"
-            htmlFor="date"
+      <div className="add-workout__mainContainer">
+        <div className="add-workout__container">
+          <h1 className="add-workout__title">Ajouter un entraînement</h1>
+          <form
+            className="add-workout__form"
+            onSubmit={handleOnSubmit}
+            action="post"
+            method="post"
           >
-            Sélectionner une date
-            <DatePicker
-              selected={inputDateValue}
-              onChange={handleOnChangeDate}
-              dateFormat={dateToString}
-              maxDate={availableDate}
-              minDate={new Date('01-01-2021')}
-              inline
-              locale="fr"
-            />
-          </label>
-        </div>
+            <div className="add-workout__form-subpart">
+              <div className="add-workout__form-date">
+                <label
+                  className="add-workout__form-label-date"
+                  htmlFor="date"
+                >
+                  Sélectionner une date
+                  <DatePicker
+                    selected={inputDateValue}
+                    onChange={handleOnChangeDate}
+                    dateFormat={dateToString}
+                    maxDate={availableDate}
+                    minDate={new Date('01-01-2021')}
+                    inline
+                    locale="fr"
+                  />
+                </label>
+              </div>
 
-        <p className="subtitle">Ajouter vos données de santé</p>
-        <div className="add-training__form-health">
-          <div>
-            <label
-              className="label"
-              htmlFor="weight"
-            >
-              Poids
-              <input
-                className="input"
-                type="number"
-                min={0}
-                value={inputWeightValue}
-                onChange={handleOnChangeWeight}
-                required
-              />
-              kg
-            </label>
-          </div>
-          <div>
-            <label
-              className="label"
-              htmlFor="muscular"
-            >
-              Masse musculaire
-              <input
-                className="input"
-                type="number"
-                min={0}
-                value={inputMuscleMassValue}
-                onChange={handleOnChangeMuscleMass}
-                required
-              />
-              %
-            </label>
-            <label
-              className="label"
-              htmlFor="fat"
-            >
-              Masse graisseuse
-              <input
-                className="input"
-                type="number"
-                min={0}
-                value={inputFatMassValue}
-                onChange={handleOnChangeFatMass}
-                required
-              />
-              %
-            </label>
-            <label
-              className="label"
-              htmlFor="bone"
-            >
-              Masse osseuse
-              <input
-                className="input"
-                type="number"
-                min={0}
-                value={inputBoneMassValue}
-                onChange={handleOnChangeBoneMass}
-                required
-              />
-              %
-            </label>
-            <label
-              className="label"
-              htmlFor="water"
-            >
-              Masse hydrique
-              <input
-                className="input"
-                type="number"
-                min={0}
-                value={inputBodyWaterValue}
-                onChange={handleOnChangeBodyWater}
-                required
-              />
-              %
-            </label>
-          </div>
-          {errorMessageAddWorkout && (
-          <div className="error">
-            <p className="error__text">{errorMessageAddWorkout}</p>
-          </div>
-          )}
-        </div>
-        <div className="add-workout__form-details">
-          <label
-            className="label__details"
-            htmlFor="details"
-          >
-            Détailler la séance
-            <textarea
-              className="input__details"
-              type="text"
-              value={inputContentValue}
-              onChange={handleOnChangeContent}
-            />
-          </label>
-        </div>
+              <div className="add-workout__form-health">
+                <p className="add-workout__form-subtitle">Ajouter vos données de santé</p>
+                <div className="add-workout__form-healthData">
+                  <label
+                    className="add-workout__form-weight"
+                    htmlFor="weight"
+                  >
+                    Poids
+                    <input
+                      className="add-workout__form-input"
+                      type="number"
+                      value={inputWeightValue}
+                      onChange={handleOnChangeWeight}
+                      required
+                    />
+                    kg
+                  </label>
 
-        {role === 'COACH' && (
-          <div className="add-workout__form-comment">
-            <label
-              className="label__comment"
-              htmlFor="comment"
-            >
-              Ajouter un commentaire
-              <input
-                className="input__comment"
-                type="text"
-              />
-            </label>
-          </div>
-        )}
+                  <label
+                    className="add-workout__form-muscular"
+                    htmlFor="muscular"
+                  >
+                    Masse musculaire
+                    <input
+                      className="add-workout__form-input"
+                      type="number"
+                      value={inputMuscleMassValue}
+                      onChange={handleOnChangeMuscleMass}
+                      required
+                    />
+                    %
+                  </label>
 
-        <div>
-          <button
-            className="add-workout__form-submit"
-            type="submit"
-          >
-            Valider
-          </button>
+                  <label
+                    className="add-workout__form-fat"
+                    htmlFor="fat"
+                  >
+                    Masse graisseuse
+                    <input
+                      className="add-workout__form-input"
+                      type="number"
+                      value={inputFatMassValue}
+                      onChange={handleOnChangeFatMass}
+                      required
+                    />
+                    %
+                  </label>
+
+                  <label
+                    className="add-workout__form-bone"
+                    htmlFor="bone"
+                  >
+                    Masse osseuse
+                    <input
+                      className="add-workout__form-input"
+                      type="number"
+                      value={inputBoneMassValue}
+                      onChange={handleOnChangeBoneMass}
+                      required
+                    />
+                    %
+                  </label>
+
+                  <label
+                    className="add-workout__form-water"
+                    htmlFor="water"
+                  >
+                    Masse hydrique
+                    <input
+                      className="add-workout__form-input"
+                      type="number"
+                      value={inputBodyWaterValue}
+                      onChange={handleOnChangeBodyWater}
+                      required
+                    />
+                    %
+                  </label>
+                </div>
+                {errorMessageAddWorkout && (
+                <div className="errorMessageAddWorkout">
+                  <p className="errorMessageAddWorkout__text">{errorMessageAddWorkout}</p>
+                </div>
+                )}
+              </div>
+            </div>
+
+            <div className="add-workout__form-details">
+              <label
+                className="add-workout__form-details-label"
+                htmlFor="details"
+              >
+                Détailler la séance
+                <textarea
+                  className="add-workout__form-details-input"
+                  type="text"
+                  value={inputContentValue}
+                  onChange={handleOnChangeContent}
+                />
+              </label>
+            </div>
+
+            {role === 'COACH' && (
+              <div className="add-workout__form-comment">
+                <label
+                  className="label__comment"
+                  htmlFor="comment"
+                >
+                  Ajouter un commentaire
+                  <input
+                    className="input__comment"
+                    type="text"
+                  />
+                </label>
+              </div>
+            )}
+
+            <div className="add-workout__form-submit">
+              <button
+                className="add-workout__form-text"
+                type="submit"
+              >
+                Valider
+              </button>
+            </div>
+            {succesMessageAddWorkout && (
+              <div className="successMessageAddWorkout">
+                <p className="successMessageAddWorkout__text">{succesMessageAddWorkout}</p>
+              </div>
+            )}
+          </form>
         </div>
-        {succesMessageAddWorkout && (
-          <div className="success">
-            <p className="success__text">{succesMessageAddWorkout}</p>
-          </div>
-        )}
-      </form>
+      </div>
     </div>
   );
 };
