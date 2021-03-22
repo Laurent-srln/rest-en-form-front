@@ -20,7 +20,7 @@ const Coachs = ({ coachs, getAllCoachs }) => {
                 <p className="coach__info-name">{coachObject.firstname} {coachObject.lastname}</p>
                 <img
                   className="coach__info-img"
-                  src="https://blog.salonbodyfitness.com/wp-content/uploads/2019/11/shutterstock_493318507-980x654.jpg"
+                  src={`profil-pictures/${coachObject.firstname.toLowerCase()}_${coachObject.lastname.toLowerCase()}.jpg`}
                   alt=""
                 />
               </div>
@@ -30,7 +30,7 @@ const Coachs = ({ coachs, getAllCoachs }) => {
                 )}
                 {coachObject.specialties !== null && (
                   coachObject.specialties.map((specialty) => (
-                <p className="coach__specialities-item">{specialty}</p>)
+                <p className="coach__specialities-item" key={`${specialty}${coachObject.id}`}>{specialty}</p>)
                 ))}
               </div>
             </div>
