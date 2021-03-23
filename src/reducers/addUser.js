@@ -91,14 +91,15 @@ const addUser = (state = initialState, action = {}) => {
         specialties: [],
         successMessageAddUser: action.payload.message,
         detailsSuccessAddUser: action.payload.newUser,
-        isNewUser: true,
         errorMessageAddUser: '',
+        isNewUser: true,
       };
     case SAVE_ERROR_USER_FORM:
       return {
         ...state,
         errorMessageAddUser: action.payload,
         successMessageAddUser: '',
+        detailsSuccessAddUser: '',
       };
     default:
       return state;
