@@ -29,17 +29,20 @@ const bookingCoaching = (state = initialState, action = {}) => {
       return {
         ...state,
         date: action.date,
+        successMessageBookingCoaching: '',
       };
     case SAVE_AVAILABLE_COACHINGS:
       return {
         ...state,
         selectedDate: action.payload,
         errorMessageAvailableCoaching: '',
+        successMessageBookingCoaching: '',
       };
     case SET_INPUT_SLOT_VALUE:
       return {
         ...state,
         coachingId: action.coachingId,
+        successMessageBookingCoaching: '',
       };
     case SAVE_BOOKING_COACHING:
       return {
@@ -55,12 +58,14 @@ const bookingCoaching = (state = initialState, action = {}) => {
         ],
         coachingId: '',
         successMessageBookingCoaching: action.payload.message,
+        errorMessageAvailableCoaching: '',
         coaching: action.payload.coaching,
       };
     case SAVE_ERROR_AVAILABLE_COACHING:
       return {
         ...state,
         errorMessageAvailableCoaching: action.payload,
+        successMessageBookingCoaching: '',
       };
     default:
       return state;

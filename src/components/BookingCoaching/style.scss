@@ -2,10 +2,11 @@
 
 .booking-coaching {
   padding: v.$gutter * 5 0 0 0;
+  background-color: #eee;
 
   &__mainContainer {
     padding: v.$gutter 0;
-    background-image: url(../../assets/personal_trainer.jpg);
+    // background-image: url(../../assets/personal_trainer.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 70% 30%;

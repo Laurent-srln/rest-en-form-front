@@ -22,21 +22,25 @@ const createSlot = (state = initialState, action = {}) => {
       return {
         ...state,
         selectedDate: action.payload,
+        successMessageAddSlot: '',
       };
     case SET_INPUT_START_VALUE:
       return {
         ...state,
         selectedStart: action.payload,
+        successMessageAddSlot: '',
       };
     case SET_INPUT_END_VALUE:
       return {
         ...state,
         selectedEnd: action.payload,
+        successMessageAddSlot: '',
       };
     case SET_INPUT_COACH_VALUE:
       return {
         ...state,
         coachId: action.payload,
+        successMessageAddSlot: '',
       };
     case SAVE_SLOT_FORM:
       return {
@@ -46,11 +50,13 @@ const createSlot = (state = initialState, action = {}) => {
         selectedEnd: '',
         selectedDate: '',
         successMessageAddSlot: action.payload.message,
+        errorMessageAddSlot: '',
       };
     case SAVE_ERROR_SLOT_FORM:
       return {
         ...state,
         errorMessageAddSlot: action.payload,
+        successMessageAddSlot: '',
       };
     default:
       return state;
