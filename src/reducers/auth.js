@@ -11,8 +11,8 @@ import {
 } from 'src/actions/auth';
 
 const initialState = {
-  email: 'alibaba@gmail.com',
-  password: 'member',
+  email: '',
+  password: '',
   login: {
     role: '',
     // utilisation du token récupéré par la requete de login
