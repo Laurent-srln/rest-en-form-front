@@ -55,12 +55,14 @@ const bookingCoaching = (state = initialState, action = {}) => {
         ],
         coachingId: '',
         successMessageBookingCoaching: action.payload.message,
+        errorMessageAvailableCoaching: '',
         coaching: action.payload.coaching,
       };
     case SAVE_ERROR_AVAILABLE_COACHING:
       return {
         ...state,
         errorMessageAvailableCoaching: action.payload,
+        successMessageBookingCoaching: '',
       };
     default:
       return state;
