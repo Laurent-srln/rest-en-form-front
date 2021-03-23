@@ -100,11 +100,13 @@ const auth = (state = initialState, action = {}) => {
           token: '',
         },
         successMessageSaveNewUser: action.payload.message,
+        errorMessageSaveNewUser: '',
       };
     case SAVE_ERROR_NEW_USER:
       return {
         ...state,
         errorMessageSaveNewUser: action.payload,
+        successMessageSaveNewUser: '',
       };
     default:
       return state;

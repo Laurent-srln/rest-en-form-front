@@ -46,11 +46,13 @@ const createSlot = (state = initialState, action = {}) => {
         selectedEnd: '',
         selectedDate: '',
         successMessageAddSlot: action.payload.message,
+        errorMessageAddSlot: '',
       };
     case SAVE_ERROR_SLOT_FORM:
       return {
         ...state,
         errorMessageAddSlot: action.payload,
+        successMessageAddSlot: '',
       };
     default:
       return state;

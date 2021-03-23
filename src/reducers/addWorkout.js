@@ -12,11 +12,11 @@ import {
 
 const initialState = {
   date: '',
-  weight: 0,
-  muscleMass: 0,
-  fatMass: 0,
-  boneMass: 0,
-  bodyWater: 0,
+  weight: null,
+  muscleMass: null,
+  fatMass: null,
+  boneMass: null,
+  bodyWater: null,
   content: '',
   succesMessageAddWorkout: '',
   errorMessageAddWorkout: '',
@@ -28,6 +28,8 @@ const addWorkout = (state = initialState, action = {}) => {
       return {
         ...state,
         date: action.date,
+        succesMessageAddWorkout: '',
+        errorMessageAddWorkout: '',
       };
     case SET_INPUT_WEIGHT_VALUE:
       return {
@@ -70,11 +72,13 @@ const addWorkout = (state = initialState, action = {}) => {
         bodyWater: 0,
         content: '',
         succesMessageAddWorkout: action.payload.message,
+        errorMessageAddWorkout: '',
       };
     case SAVE_ERROR_WORKOUT:
       return {
         ...state,
         errorMessageAddWorkout: action.payload,
+        succesMessageAddWorkout: '',
       };
     default:
       return state;
