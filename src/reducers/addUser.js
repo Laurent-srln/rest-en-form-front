@@ -38,28 +38,33 @@ const addUser = (state = initialState, action = {}) => {
       return {
         ...state,
         firstname: action.payload,
+        successMessageAddUser: '',
       };
     case SET_INPUT_LASTNAME_VALUE:
       return {
         ...state,
         lastname: action.payload,
+        successMessageAddUser: '',
       };
     case SET_INPUT_EMAIL_VALUE:
       return {
         ...state,
         email: action.payload,
+        successMessageAddUser: '',
       };
     case SET_INPUT_MEMBER_ROLE_VALUE:
       return {
         ...state,
         checked: false,
         role: 'MEMBER',
+        successMessageAddUser: '',
       };
     case SET_INPUT_COACH_ROLE_VALUE:
       return {
         ...state,
         checked: false,
         role: 'COACH',
+        successMessageAddUser: '',
       };
     case SET_INPUT_SPECIALITY_VALUE:
       return {
@@ -67,6 +72,7 @@ const addUser = (state = initialState, action = {}) => {
         checkboxSpecialities: [
           state.specialties.push(Number(action.payload)),
         ],
+        successMessageAddUser: '',
       };
     case SAVE_ALL_SPECIALITIES:
       return {

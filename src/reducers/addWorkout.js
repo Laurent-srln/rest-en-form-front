@@ -35,31 +35,37 @@ const addWorkout = (state = initialState, action = {}) => {
       return {
         ...state,
         weight: action.payload,
+        succesMessageAddWorkout: '',
       };
     case SET_INPUT_MUSCLE_MASS_VALUE:
       return {
         ...state,
         muscleMass: action.payload,
+        succesMessageAddWorkout: '',
       };
     case SET_INPUT_FAT_MASS_VALUE:
       return {
         ...state,
         fatMass: action.payload,
+        succesMessageAddWorkout: '',
       };
     case SET_INPUT_BONE_MASS_VALUE:
       return {
         ...state,
         boneMass: action.payload,
+        succesMessageAddWorkout: '',
       };
     case SET_INPUT_BODY_WATER_VALUE:
       return {
         ...state,
         bodyWater: action.payload,
+        succesMessageAddWorkout: '',
       };
     case SET_INPUT_CONTENT_VALUE:
       return {
         ...state,
         content: action.payload,
+        succesMessageAddWorkout: '',
       };
     case SAVE_WORKOUT:
       return {
