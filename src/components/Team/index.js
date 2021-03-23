@@ -1,57 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Gwen from 'src/assets/pictures-team/Gwen.png';
+import Laurent from 'src/assets/pictures-team/Laurent.png';
+import Sountid from 'src/assets/pictures-team/Soun.png';
+import Julien from 'src/assets/pictures-team/Julien.png';
+import Mathilde from 'src/assets/pictures-team/Mathilde.png';
+
+// import logoGithub from 'src/assets/pictures/logoGit.png';
+// import logoLinkedin from 'src/assets/pictures/logoLinkedin.png';
+
+import './style.scss';
+
 const Team = () => (
-  <div>
-    <div>
-      <p>Mathilde FRERE</p>
-      <p>ROLE : Product Owner</p>
-
-      <img src="../../assets/backgroud-login" alt="mathilde" />
-      <div>
-        <a href="https://github.com/Mathilde-Frere"><img src="./pictures/logoGit.png" alt="lien profil GIT" /></a>
-        <a href="https://www.linkedin.com/in/mathilde-frere/"><img src="./pictures/logoLinkedin.png" alt="lien profil linkedin" /></a>
-      </div>
+  <div className="box">
+    <div className="title">
+      <a href="#ancre"><h1>LA TEAM</h1></a>
     </div>
-
-    <div>
-      <p>Laurent SERALINE</p>
-      <p>ROLE : Scrum Master</p>
-
-      <img src="../../assets/logoGit.png" alt="Laurent" />
-      <div>
-        <a href="https://github.com/Laurent-srln"><img src="./pictures/logoGit.png" alt="lien profil GIT" /></a>
-        <a href="https://www.linkedin.com/in/laurent-s%C3%A9raline-b6b085137/"><img src="./pictures/logoLinkedin.png" alt="lien profil linkedin" /></a>
+    <div className="team">
+      <div className="team-box">
+        <div>
+          <img className="team-box-img" src={Laurent} alt="laurent" />
+          <div className="team-box-infos">
+            <p>Laurent SERALINE</p>
+            <p><strong>Scrum Master</strong></p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <p>Sountid LY</p>
-      <p>ROLE : Lead dev-back </p>
-
-      <img src="./team/Soun_img.jpg" alt="Sountid" />
-      <div>
-        <a href="https://github.com/Sountid"><img src="./pictures/logoGit.png" alt="lien profil GIT" /></a>
-        <a href="https://www.linkedin.com/in/sountid-claude-ly-718b0419a/"><img src="./pictures/logoLinkedin.png" alt="lien profil linkedin" /></a>
+      <div className="team-box">
+        <div>
+          <img className="team-box-img" src={Gwen} alt="gwen" />
+          <div className="team-box-infos">
+            <p>Gwenaël COTTON</p>
+            <p id="ancre"><strong>Lead dev-front</strong></p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <p>Gwenaël COTTON</p>
-      <p>ROLE : Lead dev-front</p>
-
-      <img src="./team/Gwen_img.jpg" alt="Gwen" />
-      <div>
-        <a href="https://github.com/Gwenael-Cotton"><img src="./pictures/logoGit.png" alt="lien profil GIT" /></a>
-        <a href="https://www.linkedin.com/in/gwena%C3%ABlcotton/"><img src="./pictures/logoLinkedin.png" alt="lien profil linkedin" /></a>
+      <div className="team-box">
+        <div>
+          <img className="team-box-img" src={Sountid} alt="sountid" />
+          <div className="team-box-infos">
+            <p>Sountid LY</p>
+            <p><strong>Lead dev-back</strong></p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <p>Julien BLOTIERE</p>
-      <p>ROLE : Git Master</p>
-
-      <img src="./team/ac22a532dc41475eabcd9195e28410f9.gif" alt="Julien" />
-      <div>
-        <a href="https://github.com/julienblotiere"><img src="./pictures/logoGit.png" alt="lien profil GIT" /></a>
-        <a href=""><img src="./pictures/logoLinkedin.png" alt="lien profil linkedin" /></a>
+      <div className="team-box">
+        <div>
+          <img className="team-box-img" src={Julien} alt="Julien" />
+          <div className="team-box-infos">
+            <p>Julien BLOTIERE</p>
+            <p><strong>Git Master</strong></p>
+          </div>
+        </div>
+      </div>
+      <div className="team-box">
+        <div>
+          <img className="team-box-img" src={Mathilde} alt="mathilde" />
+          <div className="team-box-infos">
+            <p>Mathilde FRERE</p>
+            <p><strong>Product Owner</strong></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
