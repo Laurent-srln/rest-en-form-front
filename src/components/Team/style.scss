@@ -22,7 +22,7 @@
   text-align: right;
   color: rgb(151, 137, 137);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   // font-family: Roboto;
   &-box {
     &-img {
@@ -53,14 +53,15 @@
       flex-direction: column;
       align-items: center;
       margin-top: 10px;
-      border-right: 3px solid v.$primary-color;  
-      border-left: 3px solid v.$primary-color;
+      // border-right: 3px solid v.$primary-color;  
+      // border-left: 3px solid v.$primary-color;
     }
   }
 }
 
 strong {
   color: v.$primary-color;
+  font-size: 1.5rem;
 }
 
 .team-white {
