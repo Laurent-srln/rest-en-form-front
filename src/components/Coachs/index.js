@@ -23,24 +23,23 @@ const Coachs = ({ coachs, getAllCoachs }) => {
                   src={`profil-pictures/${coachObject.firstname.toLowerCase()}_${coachObject.lastname.toLowerCase()}.jpg`}
                   alt=""
                 />
-              </div>
-              <div className="coach__specialities">
-                {coachObject.specialties === null && (
-                <p className="coach__specialities-item">Ce Coach n'as pas de spécialité.</p>
-                )}
-                {coachObject.specialties !== null && (
-                  coachObject.specialties.map((specialty) => (
-                <p className="coach__specialities-item" key={`${specialty}${coachObject.id}`}>{specialty}</p>)
-                ))}
+                <div className="coach__specialities">
+                  {coachObject.specialties === null && (
+                  <p className="coach__specialities-item">Ce Coach n'as pas de spécialité.</p>
+                  )}
+                  {coachObject.specialties !== null && (
+                    coachObject.specialties.map((specialty) => (
+                      <p className="coach__specialities-item" key={`${specialty}${coachObject.id}`}>{specialty}</p>)))}
+                </div>
               </div>
             </div>
           ))
               }
       </div>
-      <a href="">
+      {/* <a href="">
         <p className="coach__cta">+ Réserver un coaching</p>
-        {/* <p className="coach__cta">Ajouter un coach</p> */}
-      </a>
+        <p className="coach__cta">Ajouter un coach</p>
+      </a> */}
     </div>
   );
 };
