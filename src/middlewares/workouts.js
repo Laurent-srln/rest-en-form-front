@@ -7,7 +7,8 @@ import {
   saveWorkoutsForCoach,
 } from 'src/actions/workouts';
 
-const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const getWorkouts = (store) => (next) => (action) => {
   switch (action.type) {

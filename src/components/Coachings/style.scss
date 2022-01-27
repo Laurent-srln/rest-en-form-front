@@ -1,63 +1,61 @@
 @use '../../styles/vars'as v;
 
 .coachings {
-  padding: v.$gutter * 6 0 v.$gutter * 2 0;
-  background-image: url(../../assets/personal_trainer.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 45% 55%;
+  padding: v.$gutter  0 v.$gutter  0;
+  // background-image: url(../../assets/personal_trainer.jpg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: 45% 55%;
+  background-color: white;
 
   &__title {
-    margin: v.$gutter * 2 0 v.$gutter * 2 0;
+    margin: 0 v.$gutter  0;
     text-align: center;
-    font-size: 1.7em;
+    color: v.$secondary-color;
     font-weight: v.$text-bold;
+    font-size: v.$text-size * 1.7;
+    margin-bottom: 0;
+    text-transform: uppercase;
   }
 
   &__content {
-    width: 55%;
+    width: 70%;
     margin: v.$gutter * 2 auto;
   }
 }
 
 .ctaCoaching {
-  margin: v.$gutter * 3 0 0 0;
+  margin: v.$gutter  0 0 0;
   display: flex;
   justify-content: center;
 
   &__content {
-    margin: 0 v.$gutter;
-    display: inline-block;
-    background-color: v.$alt-color;
-    border-radius: 999px;
-  }
-
-  &__text {
-    display: block;
-    width: auto;
-    padding: v.$gutter / 1.3 v.$gutter * 2;
+    padding: v.$gutter / 2;
+    width: 250px;
+    // margin-top: v.$gutter;
+    text-align: center;
     border: 2px solid v.$primary-color;
-    border-radius: 999px;
-    background-image: linear-gradient(to right, transparent 50%, v.$primary-color 50%, v.$secondary-color);
-    background-size: 200%;
-    color: v.$primary-color;
-    font-size: 1.2em;
-    transition: 0.5s;
+    border-radius: 5px;
+    color: oldlace;
+    background-color: v.$primary-color;
+    font-size: v.$gutter * 1.2;
+    font-weight: 500;
+    transition: 0.2s;
     cursor: pointer;
 
     &:hover {
-      color: v.$alt-color;
-      background-position: 100%;
+      color: v.$primary-color;
+      background-color:oldlace;
       border: 2px solid v.$primary-color;
     }
   }
 }
 
 .coaching {
-  margin: v.$gutter * 1.5 0;
+  margin: v.$gutter *0.8 0;
+  margin-bottom: v.$gutter *8;
   padding: v.$gutter / 1.5 0;
-  background-color: #245768;
-  box-shadow: 0 0 10px 1px grey;
+  border: 2px solid RGB(107,199,160);
   border-radius: v.$element-radius;
   display: flex;
   justify-content: space-evenly;
@@ -72,10 +70,14 @@
     }
   
     .name {
-      padding: v.$gutter v.$gutter / 2 0 0;
+      padding: v.$gutter * 0.8;
       font-size: 1.1em;
       color: v.$alt-color;
       text-align: center;
+      text-transform: uppercase;
+      font-weight: 600;
+      background-color: RGB(107,199,160) ;
+      border-radius: 8px;
     }
   }
 
@@ -83,13 +85,17 @@
   &__datetime {
     display: flex;
     flex-direction: column;
-    color: v.$alt-color;
+    color: #666;
     text-align: center;
 
     .date {
       margin: v.$gutter 0;
       font-weight: v.$text-normal;
       font-size: 1.2em;
+      background-color: #666;
+      color: white;
+      padding: 0.4 * v.$gutter;
+      border-radius: 8px;
     }
 
     .time {

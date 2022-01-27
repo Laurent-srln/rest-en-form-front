@@ -35,11 +35,11 @@ const Coaching = ({ coachFirstname, coachLastname, startTime, endTime }) => {
   return (
     <div className="coaching">
       <div className="coaching__coach">
-        <img
+        {/* <img
           className="img"
           src={`profil-pictures/${coachFirstname.toLowerCase()}_${coachLastname.toLowerCase()}.jpg`}
           alt=""
-        />
+        /> */}
         <p
           className="name"
         >

@@ -5,7 +5,8 @@ import {
   saveCoachs,
 } from 'src/actions/Coachs';
 
-const URL = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const coachs = (store) => (next) => (action) => {
   switch (action.type) {
@@ -13,7 +14,7 @@ const coachs = (store) => (next) => (action) => {
       const getAllCoaches = async () => {
         const { token } = store.getState().auth.login;
         try {
-          const response = await axios.get(`${URL}/coachs`, {
+          const response = await axios.get(`${baseUrl}/coachs`, {
             headers: {
               'content-type': 'application/json',
               Authorization: `bearer ${token}`,

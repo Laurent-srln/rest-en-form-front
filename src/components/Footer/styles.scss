@@ -5,20 +5,16 @@
   justify-content: center;
   align-items: center;
   background-color: #FFF;
-  padding: v.$gutter * 2 0;
-  color: v.$primary-color;
+  padding: v.$gutter * 1 0;
+  color: CornflowerBlue;
 
-  &__content {
 
-    &-team:hover {
-      color: v.$secondary-color;
-    }
-    &-coachs:hover {
-      color: v.$secondary-color;
-    }
-    &-legalNotice:hover {
-      color: v.$secondary-color;
-    }
+a {
+  margin: 0 1rem;
+
+  &:hover {
+    color: coral;
   }
 }
 
+}

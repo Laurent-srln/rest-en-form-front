@@ -15,64 +15,88 @@
 }
 
 .workouts {
-  padding: v.$gutter * 6 0 v.$gutter * 2 0;
-  background-image: url(../../assets/training_notes_2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% 80%;
+  padding: v.$gutter v.$gutter * 2 0;
+  background-color: white;
+  // background-image: url(../../assets/bg_1.png);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: 20% 80%;
 
   &__title {
-    margin: v.$gutter * 2 0 v.$gutter * 2 0;
+    margin: 0 v.$gutter * 2 0;
     text-align: center;
-    font-size: 1.7em;
+    color: v.$secondary-color;
     font-weight: v.$text-bold;
+    font-size: v.$text-size * 1.7;
+    margin-bottom: 0;
+    text-transform: uppercase;
   }
 
   &__content {
-    width: 70%;
-    margin: v.$gutter * 2 auto;
+    width: 90%;
+    margin: v.$gutter auto;
   }
 }
 
 .workout {
-  margin: v.$gutter * 1.5 0;
+  margin: 0 0 2 * v.$gutter 0;
   padding: v.$gutter / 1.5 0;
-  background-color: v.$primary-color;
-  box-shadow: 0 0 10px 1px grey;
+  background-color: white;
   border-radius: v.$element-radius;
+  border: 2px solid #666;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 
   &__date {
-    margin-bottom: v.$gutter * 1.5;
+    margin-bottom: v.$gutter;
+    margin-left: v.$gutter;
     padding: v.$gutter v.$gutter * 2;
     font-weight: v.$text-normal;
     font-size: 1.2em;
-    color: v.$alt-color;
+    background-color: #666;
+    color: white;
+    padding: 0.4 * v.$gutter;
+    border-radius: 8px;
+    width: 200px;
 
   }
 
   &__text {
-    width: 60%;
+    width: 50%;
     height: 100px;
     margin: 0 auto v.$gutter * 1.5 auto;
-    padding: v.$gutter * 1.5 v.$gutter * 2;
+    padding: v.$gutter v.$gutter;
     background-color: v.$alt-color;
     border-radius: v.$element-radius;
+    
     text-align: left;
     font-weight: v.$text-normal;
     font-size: 1em;
-    color: v.$primary-color;
+    color: v.$secondary-color;
   }
 
   &__health {
-    margin: 0 v.$gutter * 4;
+    margin: 0 v.$gutter * 2;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     font-size: .85em;
 
     .amount {
-      padding: .2rem .5rem;
-      color: v.$alt-color;
+      padding: .4rem .1rem;
+      color: #666;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      &-span {
+        color: v.$primary-color;
+        font-size: v.$text-size * 1.2;
+      }
 
     }
     .span {
@@ -93,33 +117,27 @@
 }
 
 .ctaWorkout {
-  margin: v.$gutter * 3 0 0 0;
+  margin: v.$gutter  0 0 0;
   display: flex;
   justify-content: center;
 
   &__content {
-    margin: 0 v.$gutter;
-    display: inline-block;
-    background-color: v.$alt-color;
-    border-radius: 999px;
-  }
-
-  &__text {
-    display: block;
-    width: auto;
-    padding: v.$gutter / 1.3 v.$gutter * 2;
+    padding: v.$gutter / 2;
+    width: 250px;
+    // margin-top: v.$gutter;
+    text-align: center;
     border: 2px solid v.$primary-color;
-    border-radius: 999px;
-    background-image: linear-gradient(to right, transparent 50%, v.$primary-color 50%, v.$secondary-color);
-    background-size: 200%;
-    color: v.$primary-color;
-    font-size: 1.2em;
-    transition: 0.5s;
+    border-radius: 5px;
+    color: oldlace;
+    background-color: v.$primary-color;
+    font-size: v.$gutter * 1.2;
+    font-weight: 500;
+    transition: 0.2s;
     cursor: pointer;
 
     &:hover {
-      color: v.$alt-color;
-      background-position: 100%;
+      color: v.$primary-color;
+      background-color:oldlace;
       border: 2px solid v.$primary-color;
     }
   }

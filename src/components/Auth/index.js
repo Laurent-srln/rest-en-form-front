@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import logo from './logo-sans-fond.png';
 
 // == Imports
 
@@ -33,49 +34,59 @@ const Auth = ({
   };
 
   return (
-    <div className="login">
-      <div className="auth">
-        <div className="error">{message}</div>
-        <form
-          className="auth-form"
-          onSubmit={handleOnSubmit}
-        >
-          <h3 className="auth-form-title">Connexion</h3>
-          <div className="auth-form-group">
-            <label
-              className="auth-form-label"
-              htmlFor="email"
-            >
-              Adresse email
-              <input
-                className="auth-form-input"
-                method="post"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="rodolphe.martin@oclock.io"
-                value={inputMailValue}
-                onChange={handleOnChangeMail}
-              />
-            </label>
-          </div>
-          <div className="auth-form-group">
-            <label
-              className="auth-form-label"
-              htmlFor="password"
-            >
-              Mot de passe
-              <input
-                className="auth-form-input"
-                type="password"
-                name="password"
-                id="password"
-                placeholder="*************"
-                value={inputPasswordValue}
-                onChange={handleOnChangePassword}
-              />
-            </label>
-          </div>
+ 
+      <div className="auth-container">
+        <div className ="auth-logo-container">
+          <div className="auth-div-log">
+            <img className="auth-logo" src={logo} alt="Logo REST'enforme" />
+          </div>       
+        </div>
+          <div className="auth">
+
+          <form
+            className="auth-form"
+            onSubmit={handleOnSubmit}
+          >
+            {/*<h3 className="auth-form-title">Connexion</h3>*/}
+            <div className="auth-form-group">
+              <label
+                className="auth-form-label"
+                htmlFor="email"
+              >
+                Email
+                <input
+                  className="auth-form-input"
+                  method="post"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="votre@email.com"
+                  value={inputMailValue}
+                  onChange={handleOnChangeMail}
+                />
+              </label>
+            </div>
+            <div className="auth-form-group">
+              <label
+                className="auth-form-label"
+                htmlFor="password"
+              >
+                Mot de passe
+                <input
+                  className="auth-form-input"
+                  type="password"
+                  name="password"
+                  id="password"
+                  // placeholder=""
+                  value={inputPasswordValue}
+                  onChange={handleOnChangePassword}
+                />
+              </label>
+            <div className="lost-password">
+              <a href="#">J'ai encore oublié mon mot de passe...</a>
+            </div>
+
+            </div>
 
           <div className="auth-form-group">
             <button
@@ -85,12 +96,12 @@ const Auth = ({
               Se connecter
             </button>
           </div>
-          <div className="lost-password">
-            <a href="#">Mot de passe perdu ?</a>
-          </div>
+          { message && (
+          <div className="error">{message}</div>)}
         </form>
+        </div>
       </div>
-    </div>
+
   );
 };
 

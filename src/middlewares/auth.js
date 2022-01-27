@@ -9,7 +9,9 @@ import {
   saveErrorUser,
 } from 'src/actions/auth';
 
-const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+
 const auth = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {

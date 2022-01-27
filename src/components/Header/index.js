@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import logo from './logo_small_dark.png';
+import logo from './logo-sans-fond.png';
 import './styles.scss';
 
 const Header = ({ isLogged, onClickLogout, role }) => (
   <header className="header">
+
     <img className="header__logo" src={logo} alt="Logo REST'enforme" />
 
     {role === 'MEMBER' && (
@@ -16,7 +17,7 @@ const Header = ({ isLogged, onClickLogout, role }) => (
             type="checkbox"
             className="checkbox"
           />
-          <label className="toggle" htmlFor="checkbox">&equiv; Menu</label>
+          <label className="toggle" htmlFor="checkbox">&equiv;</label>
           <ul className="menu">
             <li className="menu-item">
               <NavLink
@@ -48,6 +49,17 @@ const Header = ({ isLogged, onClickLogout, role }) => (
                 Entraînements
               </NavLink>
             </li>
+            {isLogged && (
+      <li className="header__logout">
+        <button
+          className="header__logout-button"
+          type="submit"
+          onClick={onClickLogout}
+        >
+          Me déconnecter
+        </button>
+      </li>
+    )}
           </ul>
         </div>
       </nav>
@@ -61,7 +73,7 @@ const Header = ({ isLogged, onClickLogout, role }) => (
             type="checkbox"
             className="checkbox"
           />
-          <label className="toggle" htmlFor="checkbox">&equiv; Menu</label>
+          <label className="toggle" htmlFor="checkbox">&equiv;</label>
           <ul className="menu">
             <li className="menu-item">
               <NavLink
@@ -83,6 +95,17 @@ const Header = ({ isLogged, onClickLogout, role }) => (
                 Liste des adhérents
               </NavLink>
             </li>
+            {isLogged && (
+      <li className="header__logout">
+        <button
+          className="header__logout-button"
+          type="submit"
+          onClick={onClickLogout}
+        >
+          Me déconnecter
+        </button>
+      </li>
+    )}
           </ul>
         </div>
       </nav>
@@ -96,7 +119,7 @@ const Header = ({ isLogged, onClickLogout, role }) => (
             type="checkbox"
             className="checkbox"
           />
-          <label className="toggle" htmlFor="checkbox">&equiv; Menu</label>
+          <label className="toggle" htmlFor="checkbox">&equiv;</label>
           <ul className="menu">
             <li className="menu-item">
               <NavLink
@@ -128,22 +151,23 @@ const Header = ({ isLogged, onClickLogout, role }) => (
                 Les coachs
               </NavLink>
             </li>
-          </ul>
-        </div>
-      </nav>
-    )}
-
-    {isLogged && (
-      <div className="header__logout">
+            {isLogged && (
+      <li className="header__logout">
         <button
           className="header__logout-button"
           type="submit"
           onClick={onClickLogout}
         >
-          déconnexion
+          Me déconnecter
         </button>
-      </div>
+      </li>
     )}
+          </ul>
+        </div>
+      </nav>
+    )}
+
+
 
   </header>
 );

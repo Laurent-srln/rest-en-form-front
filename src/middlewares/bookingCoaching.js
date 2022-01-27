@@ -10,7 +10,8 @@ import {
   saveErrorAvailableCoachings,
 } from 'src/actions/coachings';
 
-const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const bookingCoaching = (store) => (next) => (action) => {
   switch (action.type) {

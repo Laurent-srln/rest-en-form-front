@@ -43,17 +43,19 @@ const Workout = ({
   return (
     <div className="workout">
       <p className="workout__date">{formatedDay}</p>
+      <div className="workout-content">
       <p className="workout__text">{description}</p>
       <div className="workout__health">
-        <p className="amount">Poids : {weight} kg</p>
-        <span className="amount span"> | </span>
-        <p className="amount">Masse hydrique : {bodyWater} %</p>
-        <span className="amount span"> | </span>
-        <p className="amount">Masse musculaire : {muscleMass} %</p>
-        <span className="amount span"> | </span>
-        <p className="amount">Masse osseuse : {boneMass} %</p>
-        <span className="amount span"> | </span>
-        <p className="amount">Masse grasse : {fatMass} %</p>
+        <p className="amount">Poids : <span className="amount-span">{weight} kg</span></p>
+        {/* <span className="amount span"> | </span> */}
+        <p className="amount">Masse hydrique : <span className="amount-span">{bodyWater} %</span></p>
+        {/* <span className="amount span"> | </span> */}
+        <p className="amount">Masse musculaire : <span className="amount-span">{muscleMass} %</span></p>
+        {/* <span className="amount span"> | </span> */}
+        <p className="amount">Masse osseuse : <span className="amount-span">{boneMass} %</span></p>
+        {/* <span className="amount span"> | </span> */}
+        <p className="amount">Masse grasse : <span className="amount-span">{fatMass} %</span></p>
+      </div>
       </div>
       {commentCoachFirstname && (
         <div className="coach-comment">

@@ -1,5 +1,5 @@
-$primary-color: #245768;
-$secondary-color: #91e6d8;
+$primary-color: coral;
+$secondary-color: rgb(106, 151, 235);
 $alt-color: #fff;
 $font-color: rgb(225, 236, 236);
 $text-color: black;
@@ -7,10 +7,12 @@ $text-color: black;
 $text-light: 300;
 $text-normal: 500;
 $text-bold: 700;
+$text-size: 1rem;
 
 $gutter: 1rem;
+$gutter-header: 0.3rem;
 
-$main-shadow: 0 0 5px .2px $primary-color;
+$main-shadow: 0 0 5px .2px LightSteelBlue;
 
 $element-radius: 10px;
 $button-radius: 10px;

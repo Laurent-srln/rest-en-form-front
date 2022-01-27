@@ -16,15 +16,16 @@ const Coachings = ({ coachings, getCoachings, title }) => {
   return (
     <div className="coachings">
       <h1 className="coachings__title">{title}</h1>
-      <div className="coachings__content">
-        {coachings.map((coaching) => <Coaching key={coaching.id} {...coaching} />)}
-      </div>
-
       <div className="ctaCoaching">
         <p className="ctaCoaching__content">
           <Link to="/booking-coaching" className="ctaCoaching__text">Réserver un coaching</Link>
         </p>
       </div>
+      <div className="coachings__content">
+        {coachings.map((coaching) => <Coaching key={coaching.id} {...coaching} />)}
+      </div>
+
+
     </div>
   );
 };

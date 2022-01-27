@@ -6,7 +6,7 @@
 
   &__mainContainer {
     padding: v.$gutter 0;
-    // background-image: url(../../assets/personal_trainer.jpg);
+    background-image: url(../../assets/bg_1.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 70% 30%;
@@ -18,7 +18,7 @@
     padding: v.$gutter;
     background-color: v.$alt-color;
     border-radius: 10px;
-    box-shadow: 0 0 8px .2px grey;
+    border: 2px solid v.$secondary-color;
     opacity: .9;
   }
 
@@ -26,7 +26,7 @@
     margin: 0 auto v.$gutter auto;
     padding: v.$gutter * 2 0;
     text-align: center;
-    color: v.$primary-color;
+    color: v.$secondary-color;
     font-weight: v.$text-bold;
     font-size: 1.7em;
   }
@@ -58,12 +58,21 @@
 
 .add-coaching {
 
+  &-right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+  }
+
   &__form {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     margin: 0 0 v.$gutter 0;
+    height: 100%;
     
   }
 
@@ -76,7 +85,7 @@
   }
 
   &__select {
-    margin: v.$gutter * 4 auto;
+    margin: v.$gutter auto v.$gutter auto;
     border: none;
     border-bottom: 3px solid #ccc;
     font-size: 1em;
@@ -94,18 +103,17 @@
     width: auto;
     padding: v.$gutter / 1.7 v.$gutter * 1.8;
     border: 2px solid v.$primary-color;
-    border-radius: 999px;
-    background-image: linear-gradient(to right, transparent 50%, v.$primary-color 50%, v.$secondary-color);
-    background-size: 200%;
-    color: v.$primary-color;
+    border-radius: 5px;
+    color: oldlace;
+    background-color: v.$primary-color;
     font-size: 1.2em;
     transition: 0.5s;
     cursor: pointer;
 
     &:hover {
-      color: v.$alt-color;
-      background-position: 100%;
-      border: 2px solid v.$alt-color;
+      color: v.$primary-color;
+      background-color:oldlace;
+      border: 2px solid v.$primary-color;
     }
   }
   
@@ -175,7 +183,9 @@
   }
   
   &__text {
-    font-size: .9em;
-    color: #f0f;
+    color: white;
+    background-color: MediumSeaGreen;
+    border-radius: 8px;
+    padding: 0.5 * v.$gutter;
   }
 }

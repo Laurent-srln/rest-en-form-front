@@ -69,7 +69,7 @@ const BookingCoaching = ({
               className="add-coaching__label-date"
               htmlFor="date"
             >
-              Sélectionner une date
+
               <DatePicker
                 selected={startDate}
                 onChange={handleDateChange}
@@ -94,7 +94,7 @@ const BookingCoaching = ({
             </label>
 
 
-            <form
+            <form className="add-coaching-right"
               onSubmit={handleOnSubmit}
             >
               <select

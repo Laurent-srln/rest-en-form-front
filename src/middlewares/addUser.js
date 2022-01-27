@@ -8,7 +8,8 @@ import {
   saveErrorUserForm,
 } from 'src/actions/addUserForm';
 
-const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const addUser = (store) => (next) => (action) => {
   switch (action.type) {

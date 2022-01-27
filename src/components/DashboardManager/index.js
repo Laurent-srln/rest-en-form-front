@@ -61,16 +61,8 @@ const DashboardManager = ({
   return (
     <div className="manager">
       <div className="manager-content-left">
-        <div className="manager-content-left-box">
-          <div className="manager-show-members">
-            <div className="manager-show-members-box">
-              <Link to="/members" className="manager-show-members-link">{showAllMembers.length} Adhérents</Link>
-            </div>
-            <div className="manager-show-members-box">
-              <Link to="/coachs" className="manager-show-members-link">{showAllCoachs.length} Coachs</Link>
-            </div>
-          </div>
-          <div className="manager-add-user">
+
+  
             <form
               className="manager-add-user-form"
               onSubmit={handleOnSubmit}
@@ -106,7 +98,7 @@ const DashboardManager = ({
                   </div>
                 </div>
               </div>
-              <div className="manager-add-user-form-names">
+              {/* <div className="manager-add-user-form-names"> */}
                 <label className="manager-add-user-form-names-infos" htmlFor="text">
                   Prénom
                   <input
@@ -115,7 +107,7 @@ const DashboardManager = ({
                     type="text"
                     name="text"
                     id="firstname"
-                    placeholder="Rodolphe"
+                    placeholder="Prénom"
                     value={setInputFirstnameValue}
                     onChange={handleOnChangeFirstname}
                   />
@@ -128,7 +120,7 @@ const DashboardManager = ({
                     type="text"
                     name="text"
                     id="lastname"
-                    placeholder="Martin"
+                    placeholder="Nom"
                     value={setInputLastnameValue}
                     onChange={handleOnChangeLastname}
                   />
@@ -141,12 +133,12 @@ const DashboardManager = ({
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="roro.m@gmail.com"
+                    placeholder="utilisateur@email.com"
                     value={setInputEmailValue}
                     onChange={handleOnChangeMail}
                   />
                 </label>
-              </div>
+              {/* </div> */}
               <div className="manager-add-user-speciality">
                 {setInputCoachRoleValue === 'COACH' && (
                 <h3 className="manager-add-user-speciality-title">Spécialités</h3>
@@ -172,8 +164,10 @@ const DashboardManager = ({
                 <button type="submit" className="manager-add-user-submit">Valider</button>
                 {successMessageAddUser && (
                 <div className="success-adduser">
-                  <p className="success-adduser-text">{successMessageAddUser} : {detailsSuccessAddUser.firstname} {detailsSuccessAddUser.lastname}</p>
-                  <p className="success-adduser-text"> rôle : {detailsSuccessAddUser.role}</p>
+                  {detailsSuccessAddUser.role === 'COACH' && (
+                  <p className="success-adduser-text">Le coach <span className="success-adduser-text-name">{detailsSuccessAddUser.firstname} {detailsSuccessAddUser.lastname}</span> a bien été ajouté.</p>)}
+                  {detailsSuccessAddUser.role === 'MEMBER' && (
+                  <p className="success-adduser-text">L'adhérent <span className="success-adduser-text-name">{detailsSuccessAddUser.firstname} {detailsSuccessAddUser.lastname}</span> a bien été ajouté.</p>)}
                 </div>
                 )}
                 {errorMessageAddUser && (
@@ -183,8 +177,8 @@ const DashboardManager = ({
                 )}
               </div>
             </form>
-          </div>
-        </div>
+    
+  
       </div>
       <div className="manager-content-right">
         <CreateSlot />

@@ -13,7 +13,7 @@ const HealthCheck = ({ findLastHealthCheck }) => {
 
   const defaultLabelStyle = {
     fontSize: '.4em',
-    fontFamily: 'Catamaran, sans-serif',
+
   };
 
   const shiftSize = 4;

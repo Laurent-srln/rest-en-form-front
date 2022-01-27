@@ -2,7 +2,8 @@ import axios from 'axios';
 
 import { GET_COACHINGS, saveCoachings } from 'src/actions/coachings';
 
-const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const getCoachings = (store) => (next) => (action) => {
   switch (action.type) {

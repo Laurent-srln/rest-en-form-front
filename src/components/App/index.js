@@ -40,7 +40,7 @@ const App = ({
 
   return (
     <div className="app">
-      <Header />
+ 
       {isLogged === false && (
       <Redirect to="/login" />
       )}
@@ -71,6 +71,7 @@ const App = ({
           path="/dashboard-member"
           exact
         >
+          <Header />
           <DashboardAdh />
         </Route>
 
@@ -78,6 +79,7 @@ const App = ({
           path="/dashboard-coach"
           exact
         >
+          <Header />
           <DashboardCoach />
         </Route>
 
@@ -85,6 +87,7 @@ const App = ({
           path="/dashboard-manager"
           exact
         >
+          <Header />
           <DashboardManager />
         </Route>
 
@@ -92,6 +95,7 @@ const App = ({
           exact
           path="/coachings"
         >
+          <Header />
           <Coachings title="Prochains coachings" />
         </Route>
 
@@ -99,10 +103,12 @@ const App = ({
           exact
           path="/booking-coaching"
         >
+          <Header />
           <BookingCoaching />
         </Route>
 
         <Route exact path="/members">
+          <Header />
           <Members />
         </Route>
 
@@ -110,6 +116,7 @@ const App = ({
           exact
           path="/workout"
         >
+          <Header />
           <Workouts title="Entraînements" />
         </Route>
 
@@ -117,6 +124,7 @@ const App = ({
           exact
           path="/members/:id/workouts"
         >
+          <Header />
           <WorkoutsForCoach />
         </Route>
 
@@ -124,18 +132,21 @@ const App = ({
           exact
           path="/add-workout"
         >
+          <Header />
           <AddWorkout />
         </Route>
         <Route
           exact
           path="/coachs"
         >
+          <Header />
           <Coachs />
         </Route>
         <Route
           exact
           path="/team"
         >
+          <Header />
           <Team />
         </Route>
       </Switch>

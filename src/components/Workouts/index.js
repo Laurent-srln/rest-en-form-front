@@ -55,14 +55,15 @@ const Workouts = ({ workouts, getWorkouts, title }) => {
           </label>
         </div>
         */}
+              <div className="ctaWorkout">
+        <p className="ctaWorkout__content">
+          <Link to="/add-workout" className="ctaWorkout__text">Ajouter une séance</Link>
+        </p>
+      </div>
       <ul className="workouts__content">
         {workouts.map((workout) => <Workout key={workout.id} {...workout} />)}
       </ul>
-      <div className="ctaWorkout">
-        <p className="ctaWorkout__content">
-          <Link to="/add-workout" className="ctaWorkout__text">Ajouter une séance d'entraînement</Link>
-        </p>
-      </div>
+
     </div>
   );
 };

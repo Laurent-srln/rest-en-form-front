@@ -6,6 +6,12 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+    background-image: url(../../assets/bg_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% 80%;
+  height: 95vh;
+  overflow: auto;
 
   &__left {
     width: 50%;
@@ -17,10 +23,10 @@
 
     &-last {
       margin: v.$gutter 0 0 0;
-      height: 380px;
+      height: 300px;
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 0 8px .2px grey;
+      border: 2px solid v.$secondary-color;
     }
   }
 
@@ -29,10 +35,10 @@
 
     &-last {
       margin: v.$gutter 0 0 0;
-      height: 465px;
+      height: 370px;
       overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 0 8px .2px grey;
+      border: 2px solid v.$secondary-color;
     }
   }
 

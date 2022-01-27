@@ -24,20 +24,20 @@ const DashboardAd = ({ healthCheck, getHealthCheck }) => {
           <div className="dashboardMember__coaching-last">
             <Coachings title="Prochain coaching" />
           </div>
-          <div className="cta">
+          {/* <div className="cta">
             <p className="cta__content">
               <Link to="/booking-coaching" className="cta__text">Réserver un coaching</Link>
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className="dashboardMember__workout">
           <div className="dashboardMember__workout-last">
             <Workouts title="Dernier entraînement" />
           </div>
-          <p className="cta">
+          {/* <p className="cta">
             <Link to="/add-workout" className="cta__text">Ajouter un entraînement</Link>
-          </p>
+          </p> */}
         </div>
       
       </div>

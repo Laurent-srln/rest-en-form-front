@@ -9,6 +9,7 @@ import {
 
 const initialState = {
   coachId: 0,
+  selectedCoach:'',
   selectedStart: '',
   selectedEnd: '',
   selectedDate: '',
@@ -17,6 +18,7 @@ const initialState = {
 };
 
 const createSlot = (state = initialState, action = {}) => {
+  console.log('action.payload', action.payload)
   switch (action.type) {
     case SET_INPUT_SLOT_DATE_VALUE:
       return {
@@ -41,6 +43,7 @@ const createSlot = (state = initialState, action = {}) => {
         ...state,
         coachId: action.payload,
         successMessageAddSlot: '',
+        selectedCoach: action.payload
       };
     case SAVE_SLOT_FORM:
       return {
@@ -48,6 +51,7 @@ const createSlot = (state = initialState, action = {}) => {
         coachId: 0,
         selectedStart: '',
         selectedEnd: '',
+        selectedCoach: '',
         selectedDate: '',
         successMessageAddSlot: action.payload.message,
         errorMessageAddSlot: '',

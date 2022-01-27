@@ -3,7 +3,9 @@ import axios from 'axios';
 import { GET_NEXT_BOOKINGS, saveNextBookings } from 'src/actions/nextBookings';
 import { GET_LAST_BOOKINGS, saveLastBookings } from 'src/actions/lastBookings';
 
-const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+
 const getNextBookings = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_NEXT_BOOKINGS: {

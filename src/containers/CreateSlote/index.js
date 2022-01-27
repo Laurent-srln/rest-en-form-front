@@ -15,6 +15,7 @@ const mapStateToProps = (state) => ({
   selectedDate: state.createSlot.selectedDate,
   selectedStart: state.createSlot.selectedStart,
   selectedEnd: state.createSlot.selectedEnd,
+  selectedCoach: state.createSlot.selectedCoach,
   coachsList: state.coachs.coachs,
   setInputSlotDateValue,
   setInputCoachValue,
@@ -26,7 +27,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onChangeInputStartValue: (start) => {
     const action = setInputStartValue(start);
-    // console.log(action);
+    console.log(action);
+    console.log(start)
     dispatch(action);
   },
   onChangeInputEndValue: (end) => {

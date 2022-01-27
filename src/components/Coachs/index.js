@@ -11,25 +11,26 @@ const Coachs = ({ coachs, getAllCoachs }) => {
 
   return (
     <div className="coachs">
-      <h1 className="coachs__title">Les coachs</h1>
+      {/* <h1 className="coachs__title">COACHS</h1> */}
       <div className="coachs__content">
         {
           coachs.map((coachObject) => (
             <div className="coach" key={coachObject.id}>
               <div className="coach__info">
-                <p className="coach__info-name">{coachObject.firstname} {coachObject.lastname}</p>
-                <img
+                <p className="coach__info-firstname">{coachObject.firstname}</p>
+                <p className="coach__info-lastname">{coachObject.lastname}</p>
+                {/* <img
                   className="coach__info-img"
                   src={`profil-pictures/${coachObject.firstname.toLowerCase()}_${coachObject.lastname.toLowerCase()}.jpg`}
                   alt=""
-                />
+                /> */}
                 <div className="coach__specialities">
                   {coachObject.specialties === null && (
                   <p className="coach__specialities-item">Ce Coach n'as pas de spécialité.</p>
                   )}
                   {coachObject.specialties !== null && (
                     coachObject.specialties.map((specialty) => (
-                      <p className="coach__specialities-item" key={`${specialty}${coachObject.id}`}>{specialty}</p>)))}
+                      <p className={`coach__specialities-item specialty-${specialty.toLowerCase()}`} key={`${specialty}${coachObject.id}`}>{specialty}</p>)))}
                 </div>
               </div>
             </div>

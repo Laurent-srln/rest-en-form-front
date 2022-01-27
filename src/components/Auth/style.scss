@@ -1,29 +1,46 @@
 @use '../../styles/vars'as v;
 
-
-.login {
-  background-image: url(../../assets/accueil.jpg);
+.auth-container {
+  display: flex;
+  width: 100%;
+  // background-color: OldLace;
+  height: 95vh;
+  background-image: url(../../assets/bg_1.png);
+  // background-position: 80% 60%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 25% 75%;
-  box-shadow: 1px 1px 50px rgb(253, 253, 253);
-   height: 90vh;
-   display: flex;
-   align-items: center;
-   z-index: 1;
- }
+}
+
+
 
 .auth {
-  margin-left: v.$gutter * 15;
-  width: 550px;
-  height: auto;
+  width: 50%;
   padding: 25px;
-  background: v.$alt-color;
-  border-radius: 3px;
-  box-shadow: 5px 5px 50px;
   z-index: 2;
+  display: flex;
+  align-items: center;
+
+  &-div-log {
+    text-align: right;
+    padding-right: 5rem;
+    width: auto;
+  }
+
+  &-logo-container {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &-logo {
+    width: 350px;
+
+  }
 
   &-form {
+    width: auto;
 
     &-title {
       color: v.$primary-color;
@@ -35,28 +52,32 @@
       }
 
     &-group {
-      position: relative;
-      display: flex;
-      margin-bottom: 30px;
+      // position: relative;
+      // display: flex;
+      // flex-direction: column;;
+       margin-bottom: 30px;
 
       &-button {
         display: block;
-        width: auto;
+        width: 300px;
         padding: 15px 60px;
-        border: 3px solid v.$primary-color;
-        border-radius: 999px;
-        background-image: linear-gradient(to right, transparent 50%, v.$primary-color 50%, v.$secondary-color);
+        border: 3px solid coral;
+        border-radius: 8px;
+        //background-image: linear-gradient(to right, transparent 50%, v.$primary-color 50%, v.$secondary-color);
         background-size: 200%;
-        color: v.$primary-color;
-        font-size: 20px;
+        color: oldlace;
+        font-size: 1rem;
         font-weight: 500;
         transition: 0.5s;
         cursor: pointer;
+        background-color: coral;
+        font-family: 'Raleway', sans-serif;
 
         &:hover {
-          color: #fff;
+          color: coral;
           background-position: 100%;
-          border: 3px solid #fff;
+          background-color: oldlace;
+          border: 3px solid coral;
         }
       }
 
@@ -67,7 +88,7 @@
     }
 
     &-label {
-      color: v.$primary-color;
+      color: coral;
       font-size: 20px;
       font-weight: 500;
       transition: 0.4s ease-out;
@@ -82,8 +103,9 @@
       background: none;
       border-bottom: 3px solid #aaa;
       color: #666;
-      font-size: 20px;
+      font-size: 1rem;
       transition: 0.4s ease-out;
+      margin-top: 0.2rem;
       
       &:focus {
         border-left: 1px solid v.$primary-color;
@@ -93,26 +115,53 @@
     }
   }
 }
-// .auth h3 {
-//   color: v.$primary-color;
-//   font-weight: 500;
-//   text-decoration: underline;
-// }
+
 
 .error {
-  color: red;
+  color: white;
+  background-color: oldlace;
+  text-align: center;
   font-weight: 500;
   margin-bottom: 1.5rem;
+  border: 2px solid tomato;
+  border-radius: 8px;
+  padding: 0.4 * v.$gutter;
 }
 
-// .formBloc .mdpPerdu a {
-//   color: #8b97d7;
-//   font-size: 16px;
-//   font-weight: 400;
-//   text-decoration: none;
-//   padding-bottom: 5px;
-//   border-bottom: 2px solid transparent;
-// }
-// .formBloc .mdpPerdu a:hover {
-//   border-bottom-color: #8b97d7;
-// }
+.lost-password {
+  font-style: italic;
+  text-decoration: underline;
+  margin-top: 0.65rem;
+  font-size: .8;
+  color: #666
+}
+
+@media screen and (max-width: 930px) {
+  .auth {
+
+    width: 90%;
+    
+    &-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-logo {
+      width: 200px;
+    }
+
+    &-logo-container {
+      text-align: center;
+      justify-content: center;
+    }
+
+    &-form {
+      margin: auto;
+    }
+
+    &-div-log {
+      padding-right: 0;
+    }
+}
+}

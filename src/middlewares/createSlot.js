@@ -8,7 +8,8 @@ import {
   saveErrorSlotForm,
 } from 'src/actions/CreateSlotForm';
 
-const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
+import { baseUrl } from 'src/api';
+// const baseUrl = 'https://app-osport.herokuapp.com/api-v1';
 
 const addSlot = (store) => (next) => (action) => {
   switch (action.type) {
@@ -26,6 +27,7 @@ const addSlot = (store) => (next) => (action) => {
 
           const date = format(selectedDate, 'yyyy-MM-dd');
           const start = format(selectedStart, 'HH:mm');
+          console.log(start);
           const end = format(selectedEnd, 'HH:mm');
 
           const addSlotStringify = JSON.stringify({
